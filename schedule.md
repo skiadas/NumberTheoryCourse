@@ -7,6 +7,7 @@ A week-by-week breakdown of the material.
 - Day 1
     - [Numbers: Rationals, Reals, Complex](notes/numbers_intro.md)
     - [Basic proof techniques: Direct](notes/proofs_basic.md)
+    - [Assignment 1](assignments/1.md)
 - Day 2
     - [Basic proof techniques: Indirect](notes/proofs_basic.md)
     - [Square root of 2 is irrational](notes/irrationality_of_sqrt2.md)
