@@ -33,7 +33,7 @@ Section 1.3
 
 - Direct proofs simply start from their hypotheses, and move in a logical progression towards their conclusions.
 - Example 1: Let $m$ and $n$ be two integers. If they are both odd, then their product is also odd.
-    - To be odd means we can write the number as $2k+1$ where $k$ is an integers (why is it important to say that last part?)
+    - To be odd means we can write the number as $2k+1$ where $k$ is an integer (why is it important to say that last part?)
     - We start with the hypothesis: $m$ and $n$ are odd, so we can write them as $m = 2k_1 + 1$ and $n = 2k_2 + 1$ where $k_1$ and $k_2$ are integers.
     - Now we compute $mn = ... = 2(2k_1k_2 + k_1 + k_2) + 1$
     - Since the parenthesized part is an integer (why?), we get that $mn$ has the form required to be an odd integer.
@@ -48,7 +48,7 @@ Section 1.3
 - The most standard amongst them is **contradiction**:
     - We want to show that "if P then Q".
     - We instead assume that P is true but Q is false, and derive a contradiction: Something that is impossible.
-    - Since we saw that if P is true an Q is not true, we would get something impossible, the only alternative is that if P is true then Q must also be true.
+    - Since we saw that if P is true and Q is not true then we would get something impossible, the only alternative is that if P is true then Q must also be true.
 - It is very useful for proving negative statements.
 - Contradiction Example 1: Show that there is no smallest positive rational number.
     - By contradiction: We assume there is one and derive an absurd statement from that assumption.
@@ -56,7 +56,7 @@ Section 1.3
     - Can we construct a number that is positive and smaller? If we can, that is a contradiction, so $q$ could not have existed in the first place.
 - Food for thought:
     - Where does this proof break down if we try to apply it to the integers?
-    - Is that fact enough to conclude that for the integers there *is* a smallest positive rational number?
+    - Is that fact enough to conclude that for the integers there *is* a smallest positive integer number?
 - Contradiction Example 2: Show that for integers $m$, $n$, if $mn$ is odd, then both $m$ and $n$ must be odd.
     - By contradiction, assume that $mn$ is odd and one of $m$ or $n$ is not odd, hence even. Without loss of generality, assume it is $m$.
     - We know (show separately) that if $m$ is even then $mn$ is also even. This contradicts the assumption that $mn$ was odd.
