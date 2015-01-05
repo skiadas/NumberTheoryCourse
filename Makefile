@@ -14,4 +14,7 @@ $(PDFS): site/%.pdf: %.md $(TEXTEMPLATE)
 
 site: $(HTMLFILES) $(PDFS)
 
+email:
+	open "mailto:`cat students.txt`"
+
 all: site
