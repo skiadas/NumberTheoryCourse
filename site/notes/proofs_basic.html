@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="proof-techniques">Proof Techniques</h1>
+<p>In this section we will practice some basic proof techniques.</p>
+<h1 id="reading">Reading</h1>
+<p>Section 1.3</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>1.3 Direct</dt>
+<dd>1, 5, 6, 11, 12
+</dd>
+<dt>1.3 Indirect</dt>
+<dd>2, 4, 9, 10, 13
+</dd>
+<dt>1.3 Advanced</dt>
+<dd>18, 19
+</dd>
+<dt>1.3 Challenge</dt>
+<dd>21, 23, 24
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Proofs are the bread and butter of a mathematician's work. Every assertion we make needs to be proven.</li>
+<li>All assertions have two parts:
+<ul>
+<li><strong>hypotheses</strong> are the things we assume to be true</li>
+<li><strong>conclusions</strong> are the things are trying to deduce as being true <em>under the assumption</em> that the hypotheses are true.</li>
+</ul></li>
+<li>This is paramount: A proof is simply evidence that if the hypotheses were to be true, then the conclusions would also <em>have</em> to be true. It does not concern itself at all with the validity of the hypotheses.</li>
+<li>Proofs fall into various categories. We will start with direct proofs.</li>
+</ul>
+<h3 id="direct-proofs">Direct proofs</h3>
+<ul>
+<li>Direct proofs simply start from their hypotheses, and move in a logical progression towards their conclusions.</li>
+<li>Example 1: Let <span class="math">\(m\)</span> and <span class="math">\(n\)</span> be two integers. If they are both odd, then their product is also odd.
+<ul>
+<li>To be odd means we can write the number as <span class="math">\(2k+1\)</span> where <span class="math">\(k\)</span> is an integers (why is it important to say that last part?)</li>
+<li>We start with the hypothesis: <span class="math">\(m\)</span> and <span class="math">\(n\)</span> are odd, so we can write them as <span class="math">\(m = 2k_1 + 1\)</span> and <span class="math">\(n = 2k_2 + 1\)</span> where <span class="math">\(k_1\)</span> and <span class="math">\(k_2\)</span> are integers.</li>
+<li>Now we compute <span class="math">\(mn = ... = 2(2k_1k_2 + k_1 + k_2) + 1\)</span></li>
+<li>Since the parenthesized part is an integer (why?), we get that <span class="math">\(mn\)</span> has the form required to be an odd integer.</li>
+</ul></li>
+<li>Example 2: Show that for every integer <span class="math">\(n\)</span>, the expression <span class="math">\(n^2+n\)</span> is necessarily an even number.
+<ul>
+<li>Exercise for the students. You have two cases to deal with: If <span class="math">\(n\)</span> is odd, and if <span class="math">\(n\)</span> is even. Do each separately.</li>
+<li>Together in class: Every integer can be written as <span class="math">\(2n+\epsilon\)</span> where <span class="math">\(\epsilon\)</span> is either 0 or 1. This can bring the two cases together in this case.</li>
+</ul></li>
+<li>Food for thought: How do we know that each integer is either even or odd?</li>
+</ul>
+<h3 id="indirect-proofs">Indirect proofs</h3>
+<ul>
+<li>There are many kinds of indirect proofs, but some techniques stand out.</li>
+<li>The most standard amongst them is <strong>contradiction</strong>:
+<ul>
+<li>We want to show that &quot;if P then Q&quot;.</li>
+<li>We instead assume that P is true but Q is false, and derive a contradiction: Something that is impossible.</li>
+<li>Since we saw that if P is true an Q is not true, we would get something impossible, the only alternative is that if P is true then Q must also be true.</li>
+</ul></li>
+<li>It is very useful for proving negative statements.</li>
+<li>Contradiction Example 1: Show that there is no smallest positive rational number.
+<ul>
+<li>By contradiction: We assume there is one and derive an absurd statement from that assumption.</li>
+<li>Say <span class="math">\(q\)</span> is this &quot;smallest positive rational number&quot;.</li>
+<li>Can we construct a number that is positive and smaller? If we can, that is a contradiction, so <span class="math">\(q\)</span> could not have existed in the first place.</li>
+</ul></li>
+<li>Food for thought:
+<ul>
+<li>Where does this proof break down if we try to apply it to the integers?</li>
+<li>Is that fact enough to conclude that for the integers there <em>is</em> a smallest positive rational number?</li>
+</ul></li>
+<li>Contradiction Example 2: Show that for integers <span class="math">\(m\)</span>, <span class="math">\(n\)</span>, if <span class="math">\(mn\)</span> is odd, then both <span class="math">\(m\)</span> and <span class="math">\(n\)</span> must be odd.
+<ul>
+<li>By contradiction, assume that <span class="math">\(mn\)</span> is odd and one of <span class="math">\(m\)</span> or <span class="math">\(n\)</span> is not odd, hence even. Without loss of generality, assume it is <span class="math">\(m\)</span>.</li>
+<li>We know (show separately) that if <span class="math">\(m\)</span> is even then <span class="math">\(mn\)</span> is also even. This contradicts the assumption that <span class="math">\(mn\)</span> was odd.</li>
+</ul></li>
+<li>This is actually best seen as an example of the <strong>contrapositive</strong>:
+<ul>
+<li>Showing &quot;if P then Q&quot; is the same as showing &quot;if not Q then not P&quot;</li>
+<li>In the above example, this would read: If <span class="math">\(m\)</span> or <span class="math">\(n\)</span> is even, then the product <span class="math">\(mn\)</span> is also even.</li>
+<li>Food for thought: Understand why these two are equivalent (page 25 from the book but think about it first).</li>
+</ul></li>
+<li>The <strong>converse</strong> of &quot;if P then Q&quot; is &quot;if Q then P&quot;. These are in general not equivalent statements, one could be true while the other is false. (Students: come up with examples)</li>
+</ul>
+</body>
+</html>
