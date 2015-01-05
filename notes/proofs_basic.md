@@ -2,7 +2,7 @@
 
 In this section we will practice some basic proof techniques.
 
-# Reading
+## Reading
 
 Section 1.3
 
