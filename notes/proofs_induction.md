@@ -28,7 +28,7 @@ Challenge 2.1
 - The motivation behind this principle, is that since we can reach every natural number by starting from $1$ and just adding $1$ over and over again, the two statements above would allow us to reach any $P(n)$ we like (though it may take a while to write it out if we have to say make it to $P(100000)$).
 - Induction effectively allows us to say: "$P(1)$ is true, so $P(2)$ is true, so $P(3)$ is true, so ... so $P(n)$ is true"
 - The book has a number of nice examples, you should read them. We will do a slightly different example here. We will use induction to prove the statement $P(n)$ for all natural numbers, where $P(n)=$"$n$ is either even or odd". So we will effectively be proving that every natural number is either even or odd.
-    - Base case: $P(1)$ is true, since $1$ is in fact an odd number, as it is $2\dot 0 + 1$.
+    - Base case: $P(1)$ is true, since $1$ is in fact an odd number, as it is $2\times 0 + 1$.
     - Inductive case: Suppose $P(k)$ is true, so $k$ is either even or odd.
         - We need to show that $P(k+1)$ is also true.
         - In other words we need to show that $k+1$ is either even or odd.
