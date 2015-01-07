@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-irrationality-of-the-square-root-of-2">The irrationality of the square root of 2<span class="small"> (<a href="2.pdf" title="2">pdf</a>)</span></h1>
+<h2 id="reading">Reading</h2>
+<p>Section 1.4</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>1.4</dt>
+<dd>1, 2, 5, 6, 8, 9, 13
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>A discovery that shocked ancient greeks was that there are numbers, like <span class="math">\(\sqrt{2}\)</span>, that cannot be written as the quotient of two integers.</li>
+<li>This was a heavy blow to the Pythagorean school of thought, one of whose main goals was to derive everything starting from the natural numbers.</li>
+<li>Our proof will be a tad different from the book's. Compare with the book's proof and understand the subtle differences.</li>
+</ul>
+<h3 id="proof-that-sqrt2-is-irrational">Proof that <span class="math">\(\sqrt{2}\)</span> is irrational</h3>
+<ul>
+<li>We start by employing contradiction. Suppose that <span class="math">\(\sqrt{2}\)</span> was irrational.</li>
+<li>Then we can write it as <span class="math">\(\sqrt{2} = \frac{p}{q}\)</span> where <span class="math">\(p,q\)</span> are positive integers (how can we assume that?)</li>
+<li>Moving <span class="math">\(q\)</span> over, we obtain <span class="math">\(q\sqrt{2} = p\)</span>.</li>
+<li>Squaring both sides gives us: <span class="math">\(2q^2 = p^2\)</span>. This means that <span class="math">\(p^2\)</span> is even, therefore <span class="math">\(p\)</span> must also be even.</li>
+<li>Therefore <span class="math">\(p = 2p&#39;\)</span> where <span class="math">\(p&#39;\)</span> is another positive integer smaller than <span class="math">\(p\)</span>.</li>
+<li>Then the equation becomes: <span class="math">\(2q^2 = (2p&#39;)^2 = 4(p&#39;)^2\)</span>. Which we can write as <span class="math">\(q^2 = 2(p&#39;)^2\)</span>.</li>
+<li>The same reasoning tells us that <span class="math">\(q^2\)</span>, and therefore <span class="math">\(q\)</span>, must be even. So <span class="math">\(q = 2q&#39;\)</span> where <span class="math">\(q&#39;\)</span> is a positive integer smaller than <span class="math">\(q\)</span>.</li>
+<li>We also see that <span class="math">\(\frac{p&#39;}{q&#39;} = \frac{2p&#39;}{2q&#39;} = \frac{p}{q} = \sqrt{2}\)</span>.</li>
+<li>So we were able to write <span class="math">\(\sqrt{2}\)</span> as a quotient of two smaller positive integers.</li>
+<li>Continuing in this manner, we can keep writing <span class="math">\(\sqrt{2}\)</span> as a quotient of smaller and smaller integers, each a factor of 2 less than the previous one.</li>
+<li>This process cannot continue forever. This is our contradiction.</li>
+</ul>
+<p>Admittedly the last step is a tad &quot;sketchy&quot;. It will be proven more precisely in the future. To do it properly, we will need one of the following two facts, both of which we will discuss a bit later:</p>
+<ul>
+<li>Every number can be written as a product of prime factors. Once all the factors of two have been removed by repeating the above process from <span class="math">\(p\)</span> to <span class="math">\(p&#39;\)</span>, we would be left with an odd number, so the process can't be repeated any more.</li>
+<li>Every non-empty set of natural numbers has a smallest element. Using this, if we consider the set of all numbers <span class="math">\(p\)</span> such that <span class="math">\(\sqrt{2}\)</span> can be written as a quotient <span class="math">\(p/q\)</span>, then this set is non-empty if <span class="math">\(\sqrt{2}\)</span> is rational. If we consider the smallest such <span class="math">\(p\)</span>, then the above process from <span class="math">\(p\)</span> to <span class="math">\(p&#39;\)</span> would give us a smaller <span class="math">\(p\)</span>, which is impossible.</li>
+</ul>
+</body>
+</html>

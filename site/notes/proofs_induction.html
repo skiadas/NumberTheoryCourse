@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-principle-of-mathematical-induction">The Principle of Mathematical Induction</h1>
+<p>We discuss here the Principle of Mathematical Induction, usually simply called &quot;Induction&quot;, which is a fundamental technique for proving statements about all natural numbers.</p>
+<h2 id="reading">Reading</h2>
+<p>Section 2.1</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>2.1</dt>
+<dd>1, 2, 3, 4, 6, 7, 11, 21, 23
+</dd>
+<dt>Challenge 2.1</dt>
+<dd>(optional) 12, 13, 14, 22
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><p>The principle of induction says the following: In order to prove a statement <span class="math">\(P(n)\)</span> for all natural numbers <span class="math">\(n\)</span>, it is enough to prove the following two statements:</p>
+<dl>
+<dt>base case</dt>
+<dd><span class="math">\(P(1)\)</span> is true
+</dd>
+<dt>inductive step</dt>
+<dd>If <span class="math">\(P(k)\)</span> was true for some particular <span class="math">\(k\)</span>, then <span class="math">\(P(k+1)\)</span> would also have to be true.
+</dd>
+</dl></li>
+<li>This is helpful because we no longer have to prove things for all natural numbers directly. We just need one special case, <span class="math">\(1\)</span>, and then under the assumption that <span class="math">\(P(k)\)</span> is true we have to be able to &quot;move to the next step&quot;. Being able to assume <span class="math">\(P(k)\)</span> to be true while trying to prove <span class="math">\(P(k+1)\)</span> is very powerful.</li>
+<li>The motivation behind this principle, is that since we can reach every natural number by starting from <span class="math">\(1\)</span> and just adding <span class="math">\(1\)</span> over and over again, the two statements above would allow us to reach any <span class="math">\(P(n)\)</span> we like (though it may take a while to write it out if we have to say make it to <span class="math">\(P(100000)\)</span>).</li>
+<li>Induction effectively allows us to say: &quot;<span class="math">\(P(1)\)</span> is true, so <span class="math">\(P(2)\)</span> is true, so <span class="math">\(P(3)\)</span> is true, so ... so <span class="math">\(P(n)\)</span> is true&quot;</li>
+<li>The book has a number of nice examples, you should read them. We will do a slightly different example here. We will use induction to prove the statement <span class="math">\(P(n)\)</span> for all natural numbers, where <span class="math">\(P(n)=\)</span>&quot;<span class="math">\(n\)</span> is either even or odd&quot;. So we will effectively be proving that every natural number is either even or odd.
+<ul>
+<li>Base case: <span class="math">\(P(1)\)</span> is true, since <span class="math">\(1\)</span> is in fact an odd number, as it is <span class="math">\(2\dot 0 + 1\)</span>.</li>
+<li>Inductive case: Suppose <span class="math">\(P(k)\)</span> is true, so <span class="math">\(k\)</span> is either even or odd.
+<ul>
+<li>We need to show that <span class="math">\(P(k+1)\)</span> is also true.</li>
+<li>In other words we need to show that <span class="math">\(k+1\)</span> is either even or odd.</li>
+<li>We take cases on <span class="math">\(k\)</span>. If <span class="math">\(k\)</span> is even, then <span class="math">\(k = 2i\)</span>, and <span class="math">\(k+1=2i+1\)</span> is odd.</li>
+<li>If <span class="math">\(k\)</span> is odd, then <span class="math">\(k=2i+1\)</span> and <span class="math">\(k+1=2i+1+1=2i+2=2(i+1)\)</span> is even.</li>
+<li>So in either case, <span class="math">\(k+1\)</span> is either odd or even. This proves the inductive step.</li>
+</ul></li>
+<li>The principle of induction now tells us that the statement must be true for all natural numbers.</li>
+</ul></li>
+<li>As practice: Prove that every natural number <span class="math">\(n\)</span> is greater than or equal to 1.</li>
+<li><p>Food for thought: Why can't we use induction to prove things for all real numbers? Why isn't the same principle true for all real numbers?</p></li>
+</ul>
+</body>
+</html>
