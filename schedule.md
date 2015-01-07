@@ -13,6 +13,7 @@ A week-by-week breakdown of the material.
     - [Square root of 2 is irrational](notes/irrationality_of_sqrt2.md)
 - Day 3
     - [Quantifiers](notes/proofs_quantifiers.md)
+    - [Assignment 2](assignments/2.md)
 - Day 4
     - [Principle of Mathematical Induction](notes/proofs_induction.md)
 
