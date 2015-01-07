@@ -58,8 +58,9 @@ A week-by-week breakdown of the material.
 
 - Day 1
     - [Fundamental Theorem of Arithmetic](notes/numbers_fundamental_theorem.md)
-- Day 2
     - [Finding all Divisors](notes/numbers_all_divisors.md)
+- Day 2
+    - MIDTERM
 - Day 3
     - [Modular Arithmetic and Congruences](notes/congruence_intro.md)
 - Day 4
@@ -120,6 +121,7 @@ BREAK
 - Day 1
     - [Primitive Root Theorem](notes/residues_primitive_root_theorem.md)
 - Day 2
+    - MIDTERM
     - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 3
     - [Congruential Random Number Generators](notes/numbers_random.md)

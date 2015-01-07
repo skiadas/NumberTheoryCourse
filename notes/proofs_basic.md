@@ -58,7 +58,7 @@ Section 1.3
     - Where does this proof break down if we try to apply it to the integers?
     - Is that fact enough to conclude that for the integers there *is* a smallest positive integer number?
 - Contradiction Example 2: Show that for integers $m$, $n$, if $mn$ is odd, then both $m$ and $n$ must be odd.
-    - By contradiction, assume that $mn$ is odd and one of $m$ or $n$ is not odd, hence even. Without loss of generality, assume it is $m$.
+    - By way of contradiction, assume that $mn$ is odd and one of $m$ or $n$ is not odd, hence even. Without loss of generality, assume it is $m$.
     - We know (show separately) that if $m$ is even then $mn$ is also even. This contradicts the assumption that $mn$ was odd.
 - This is actually best seen as an example of the **contrapositive**:
     - Showing "if P then Q" is the same as showing "if not Q then not P"
