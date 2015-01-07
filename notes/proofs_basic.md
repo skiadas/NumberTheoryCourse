@@ -50,14 +50,20 @@ Section 1.3
     - We instead assume that P is true but Q is false, and derive a contradiction: Something that is impossible.
     - Since we saw that if P is true and Q is not true then we would get something impossible, the only alternative is that if P is true then Q must also be true.
 - It is very useful for proving negative statements.
-- Contradiction Example 1: Show that there is no smallest positive rational number.
+- Contradiction Example 1:
+
+    > Show that there is no smallest positive rational number.
+
     - By contradiction: We assume there is one and derive an absurd statement from that assumption.
     - Say $q$ is this "smallest positive rational number".
     - Can we construct a number that is positive and smaller? If we can, that is a contradiction, so $q$ could not have existed in the first place.
 - Food for thought:
     - Where does this proof break down if we try to apply it to the integers?
     - Is that fact enough to conclude that for the integers there *is* a smallest positive integer number?
-- Contradiction Example 2: Show that for integers $m$, $n$, if $mn$ is odd, then both $m$ and $n$ must be odd.
+- Contradiction Example 2:
+
+    > Show that for integers $m$, $n$, if $mn$ is odd, then both $m$ and $n$ must be odd.
+
     - By way of contradiction, assume that $mn$ is odd and one of $m$ or $n$ is not odd, hence even. Without loss of generality, assume it is $m$.
     - We know (show separately) that if $m$ is even then $mn$ is also even. This contradicts the assumption that $mn$ was odd.
 - This is actually best seen as an example of the **contrapositive**:
