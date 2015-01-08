@@ -13,51 +13,50 @@ A week-by-week breakdown of the material.
     - [Square root of 2 is irrational](notes/irrationality_of_sqrt2.md)
 - Day 3
     - [Quantifiers](notes/proofs_quantifiers.md)
+    - [Principle of Mathematical Induction](notes/proofs_induction.md)
     - [Assignment 2](assignments/2.md)
 - Day 4
-    - [Principle of Mathematical Induction](notes/proofs_induction.md)
+    - [Strong induction and Well-Ordering Principle](notes/proofs_induction_other.md)
+    - [Fibonnaci Numbers](notes/numbers_fibonacci.md)
 
 ## Week  2 (01/12-01/16)
 
 - Day 1
-    - [Strong induction](notes/proofs_strong_induction.md)
-    - [Well Ordering Principle](notes/proofs_well_ordering.md)
-- Day 2
-    - [Fibonnaci Numbers](notes/numbers_fibonacci.md)
-- Day 3
     - [Divisibility](notes/numbers_divisibility.md)
     - [Prime and Composite Numbers](notes/primes_intro.md)
-- Day 4
+- Day 2
     - [Prime Factorization: Existence](notes/primes_factorization_existence.md)
+- Day 3
+    - [Infinitude of Primes](notes/primes_infinitude.md)
+    - [The Prime Number Theorem](notes/primes_theorem.md)
+- Day 4
 
 ## Week  3 (01/19-01/23)
 
 - Day 1
-    - [Infinitude of Primes](notes/primes_infinitude.md)
-    - [The Prime Number Theorem](notes/primes_theorem.md)
-- Day 2
     - [Common Divisors](notes/numbers_gcd.md)
-- Day 3
+- Day 2
     - [The Division Theorem](notes/numbers_division_theorem.md)
-- Day 4
+- Day 3
     - [Euclidean Division Algorithm](notes/numbers_euclidean.md)
+- Day 4
+    - [GCD via Euclidean Algorithm](notes/numbers_gcd_compute.md)
 
 ## Week  4 (01/26-01/30)
 
 - Day 1
-    - [GCD via Euclidean Algorithm](notes/numbers_gcd_compute.md)
-- Day 2
     - [Diophantine Equations](notes/equations_diophantine_intro.md)
-- Day 3
+- Day 2
     - [Euclidean Division and Diophantine Equations](notes/equations_diophantine_and_euclidean.md)
-- Day 4
+- Day 3
     - [Other Diophantine Equations](notes/equations_diophantine_other.md)
     - [Diophantine Equations: Finding all solutions](notes/equations_diophantine_all_solutions.md)
+- Day 4
+    - [Fundamental Theorem of Arithmetic](notes/numbers_fundamental_theorem.md)
 
 ## Week  5 (02/02-02/06)
 
 - Day 1
-    - [Fundamental Theorem of Arithmetic](notes/numbers_fundamental_theorem.md)
     - [Finding all Divisors](notes/numbers_all_divisors.md)
 - Day 2
     - MIDTERM

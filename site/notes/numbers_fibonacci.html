@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-fibonacci-numbers">The Fibonacci Numbers</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 2.3</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>2.3</dt>
+<dd>1, 2, 4
+</dd>
+<dt>Challenge 2.3</dt>
+<dd>(optional) 6, 7, 8, 9, 10, 11
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The Fibonacci numbers are a well known sequence of numbers, defined via a recursion:
+<ul>
+<li><span class="math">\(F_1 = 1\)</span></li>
+<li><span class="math">\(F_2 = 1\)</span></li>
+<li><span class="math">\(F_n = F_{n-1} + F_{n-2}\)</span> for every <span class="math">\(n \geq 2\)</span></li>
+</ul></li>
+<li>In other words, every subsequent number is the sum of the two previous numbers.</li>
+<li>Student TODO: Compute the next 8 terms.</li>
+<li>Student TODO: Compute successive sums:
+<ul>
+<li><span class="math">\(F_1 + F_2\)</span></li>
+<li><span class="math">\(F_1 + F_2 + F_3\)</span></li>
+<li><span class="math">\(F_1 + F_2 + F_3 + F_4\)</span></li>
+<li>Do you notice a pattern in how those number relate, to the Fibonacci sequence perhaps?</li>
+<li>Together TODO: Prove our guess using induction</li>
+</ul></li>
+<li>The Fibonacci numbers have a close relation to the &quot;golden ratio&quot;, which is equal to <span class="math">\(\frac{1+\sqrt{5}}{2}\)</span> and is denoted by <span class="math">\(\varphi\)</span>.</li>
+<li>The golden ratio is the positive solution to the equation <span class="math">\(x^2 = x + 1\)</span> which can also be written as <span class="math">\(x = 1 + \frac{1}{x}\)</span>.</li>
+<li><p>In fact it turns out that the golden ratio equals the limit of the ratios of successive Fibonacci numbers:</p>
+<p><span class="math">\[\varphi=\lim_{n\to\infty}\frac{F_{n+1}}{F_n}\]</span></p></li>
+<li>Try the first couple of quotients by hand.</li>
+<li><p>We now will discuss the following wonderful theorem:</p>
+<blockquote>
+<p>Every natural number <span class="math">\(n\)</span> can be written as a sum of distinct Fibonacci numbers.</p>
+</blockquote>
+<ul>
+<li>First off, try some numbers and convince yourselves that you can write them.</li>
+<li>Here is a sketch of a proof:
+<ul>
+<li>Take the largest Fibonacci number that is not bigger than <span class="math">\(n\)</span>, say it is <span class="math">\(F_k\)</span>.</li>
+<li>Look at <span class="math">\(n - F_k\)</span>. By induction, we can assume that this number can be written as a sum of Fibonacci numbers, say <span class="math">\(n - F_k = F_a + F_b + F_c + ...\)</span>.</li>
+<li>Moving <span class="math">\(F_k\)</span> to the other side would do it, provided there isn't an <span class="math">\(F_k\)</span> there already.</li>
+<li>But we can show that <span class="math">\(n - F_k &lt; F_{k-1}\)</span> (THINK ABOUT IT!), so in fact the Fibonacci numbers used to write <span class="math">\(n - F_k\)</span> cannot include <span class="math">\(F_{k-1}\)</span> nor anything bigger (e.g. not <span class="math">\(F_k\)</span> either).</li>
+</ul></li>
+</ul></li>
+<li>Food for thought: We can always assume that the Fibonacci numbers we use are non-consecutive. Why?</li>
+<li><p>In fact with that extra assumption, there is a uniqueness component:</p>
+<blockquote>
+<p>Every number can be written as a sum of non-consecutive Fibonacci numbers in a unique way.</p>
+</blockquote></li>
+</ul>
+</body>
+</html>
