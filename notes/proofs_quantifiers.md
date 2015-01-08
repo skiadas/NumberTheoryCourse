@@ -21,8 +21,8 @@ Section 1.5
     $\exists$
       ~ "exists". Called the **existential quantifier**.
 
-    They are followed by a variable, and they are meant to suggest that the remaining statement is true for all values (respectively for at least one values).
-- In every theorem or lemma, and variable needs to be quantified. If it is not, it is implicitly assumed that "forall" was intended.
+    They are followed by a variable, and they are meant to suggest that the remaining statement is true for all values (respectively for at least one value).
+- In every theorem or lemma, any variable needs to be quantified. If it is not, it is implicitly assumed that "forall" was intended.
 - To prove a statement "for every integer $n$":
     - Say "let $n$ be an integer". $n$ is now a specific, fixed, but unknown number. It stands as a "placeholder" for any arbitrary number.
     - Continue with the proof.
