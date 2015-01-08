@@ -24,5 +24,5 @@ We will very briefly cover the Well-Ordering Principle and what is known as "str
 
     > Every non-empty subset of the natural numbers must have a smallest element
 
-    We will see examples of this principle as we move along.
+    We will see examples of this principle as we move along. But every time we say "let's take the smallest ..." we are applying this principle.
 
