@@ -25,10 +25,9 @@ A week-by-week breakdown of the material.
     - [Divisibility](notes/numbers_divisibility.md)
     - [Prime and Composite Numbers](notes/primes_intro.md)
 - Day 2
-    - [Prime Factorization: Existence](notes/primes_factorization_existence.md)
-- Day 3
-    - [Infinitude of Primes](notes/primes_infinitude.md)
+    - [Patterns in the Primes](notes/primes_patterns.md)
     - [The Prime Number Theorem](notes/primes_theorem.md)
+- Day 3
 - Day 4
 
 ## Week  3 (01/19-01/23)
