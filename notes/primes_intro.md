@@ -31,7 +31,7 @@ Prime numbers are the fundamental building block in Number Theory:
 
 In order to check if a number is prime, we must try the numbers less than it to see if they divide into it. In fact, it is enough to go only up to the square root of the number:
 
-> If a number $n$ has a non-trivial divisor $d$, then it must have a divisor that is no more than $\sqrt(n)$.
+> If a number $n$ has a non-trivial divisor $d$, then it must have a divisor that is no more than $\sqrt{n}$.
 
 To see this, simply consider that $n = dq$. If $d$ and $q$ were both greater than $\sqrt{n}$, then their product would be bigger than $n$, a contradiction.
 
