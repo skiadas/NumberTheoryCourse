@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="divisibility">Divisibility</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 3.1</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>3.1</dt>
+<dd>1, 3, 5, 7, 9, 10, 13, 16
+</dd>
+<dt>Challenge 3.1</dt>
+<dd>(optional) 8, 14, 25, 28 (and how about the converse of 28?)
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Divisibility is a notion pretty much exclusive to integers (in our context).</p>
+<blockquote>
+<p>We say that <span class="math">\(d\)</span> <strong>divides</strong> <span class="math">\(a\)</span>, and write <span class="math">\(d \mid a\)</span>, when there is an integer <span class="math">\(q\)</span> such that <span class="math">\(qd = a\)</span>.</p>
+<p>In other words, can we evenly multiply <span class="math">\(d\)</span> into <span class="math">\(a\)</span>?</p>
+<p>We also say that <span class="math">\(a\)</span> is <strong>divisible by</strong> <span class="math">\(d\)</span> or a <strong>multiple of</strong> <span class="math">\(d\)</span>, or that <span class="math">\(d\)</span> is a <strong>divisor</strong> or <strong>factor</strong> of <span class="math">\(a\)</span>.</p>
+</blockquote>
+<p>In the case where <span class="math">\(a\)</span> and <span class="math">\(d\)</span> are natural numbers, then <span class="math">\(q\)</span> must be a natural number also.</p>
+<p>Food for thought:</p>
+<ul>
+<li>Which numbers does <span class="math">\(0\)</span> divide?</li>
+<li>Which numbers divide <span class="math">\(0\)</span>?</li>
+<li>Which numbers does <span class="math">\(1\)</span> divide?</li>
+<li>Which numbers divide <span class="math">\(1\)</span>?</li>
+<li>Does a number divide itself?</li>
+</ul>
+<p>Here is a simple but important result:</p>
+<blockquote>
+<p>If <span class="math">\(d \mid a\)</span> and they are both natural numbers, then <span class="math">\(1\leq d \leq a\)</span>.</p>
+</blockquote>
+<p>To see this:</p>
+<ul>
+<li>As all natural numbers, <span class="math">\(1\leq d\)</span>.</li>
+<li>As <span class="math">\(d \mid a\)</span>, we can write <span class="math">\(a = dq\)</span>, <span class="math">\(q\)</span> natural number.</li>
+<li>So <span class="math">\(1 \leq q\)</span>.</li>
+<li>Multiply by <span class="math">\(d\)</span>: <span class="math">\(d \leq dq = a\)</span>.</li>
+<li>So <span class="math">\(1 \leq d \leq a\)</span>.</li>
+</ul>
+<p>This is very useful. It tells us that if we are looking for natural divisors of a natural number <span class="math">\(a\)</span>, we only have to look at the numbers from <span class="math">\(1\)</span> to <span class="math">\(a\)</span>. It considerably limits our search.</p>
+<p>The following simple lemma has very far-reaching consequences:</p>
+<blockquote>
+<p>If <span class="math">\(d\)</span> divides both <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, then it must also divide any <strong>integer linear combination</strong> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, namely any number of the form <span class="math">\(c = ma + nb\)</span> where <span class="math">\(m\)</span>, <span class="math">\(n\)</span> are any integers.</p>
+<p>In particular if <span class="math">\(d\)</span> divides <span class="math">\(a\)</span> then it divides any multiple of <span class="math">\(a\)</span>. And if it divides <span class="math">\(a\)</span>, <span class="math">\(b\)</span> then it also divides their sum <span class="math">\(a + b\)</span>.</p>
+</blockquote>
+<p>Proof:</p>
+<ul>
+<li><span class="math">\(a = d k_1\)</span>, <span class="math">\(b = d k_2\)</span>.</li>
+<li>So <span class="math">\(m a = d m k_1\)</span>. And <span class="math">\(n a = d n k_2\)</span>.</li>
+<li>Then <span class="math">\(c = m a + n b = d m k_1 + d n k_2 = d (m k_1 + n k_2)\)</span>.</li>
+<li>Since the expression in parentheses is an integer, <span class="math">\(d\)</span> divides <span class="math">\(c\)</span>.</li>
+</ul>
+<p>To see how this might be useful, suppose we want to find all the common divisors of the numbers <span class="math">\(119\)</span> and <span class="math">\(203\)</span>. So what numbers divide into both? We already know that <span class="math">\(1\)</span> divides into every number. What other numbers work?</p>
+<ul>
+<li>The trick is that as long as we form integer linear combinations of these numbers, the result must be divisible by any divisor of those two.</li>
+<li>For instance, <span class="math">\(2\times 119 - 203 = 35\)</span>. So whatever common divisors <span class="math">\(119\)</span> and <span class="math">\(203\)</span> have, then <span class="math">\(35\)</span> must have them also.</li>
+<li>Now we make a linear combination of <span class="math">\(35\)</span> and <span class="math">\(119\)</span>: <span class="math">\(119 - 3\times 35 = 14\)</span>. So whatever common divisors <span class="math">\(119\)</span> and <span class="math">\(203\)</span> have, then <span class="math">\(35\)</span> and now <span class="math">\(14\)</span> must have them too.</li>
+<li>Finally, we make a linear combination of <span class="math">\(35\)</span> and <span class="math">\(14\)</span>: <span class="math">\(35 - 2\times 14 = 7\)</span>. So whatever common divisors <span class="math">\(119\)</span> and <span class="math">\(203\)</span> have, then <span class="math">\(7\)</span> must have them also.</li>
+<li>But it is easy to see that <span class="math">\(7\)</span> has no other natural number divisors other than <span class="math">\(1\)</span> and <span class="math">\(7\)</span>. Therefore those are the only common divisors of <span class="math">\(119\)</span> and <span class="math">\(203\)</span>.</li>
+</ul>
+<p>This is an idea we will use a lot in the future. Starting with the numbers whose common divisors we are looking for, we keep forming linear combinations, all the time simplifying our numbers, until they become so small that we can easily figure out all their divisors. We will make this a bit more precise in a couple of days.</p>
+<p>Here is one more consequence of this theorem:</p>
+<blockquote>
+<p>For any <span class="math">\(n\geq 1\)</span>, the numbers <span class="math">\(n\)</span> and <span class="math">\(n + 1\)</span> have no common divisor other than <span class="math">\(1\)</span>.</p>
+</blockquote>
+<p>This follows directly from the fact that if <span class="math">\(d\)</span> divides <span class="math">\(n\)</span> and <span class="math">\(n + 1\)</span>, then it must also divide <span class="math">\((n+1)-n = 1\)</span>. and only <span class="math">\(1\)</span> divides <span class="math">\(1\)</span>.</p>
+<p>In-class: Play the divisor game</p>
+</body>
+</html>

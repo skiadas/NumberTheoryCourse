@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="prime-and-composite-numbers">Prime and Composite Numbers</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 3.2</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>3.2</dt>
+<dd>2, 3, 4, 8, 9, 19
+</dd>
+<dt>Challenge 3.2</dt>
+<dd>(optional) 14, 15, 16, 17
+</dd>
+<dt>Fun 3.2</dt>
+<dd>22
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Prime numbers are the fundamental building block in Number Theory:</p>
+<blockquote>
+<p>A natural number <span class="math">\(p &gt; 1\)</span> is called <strong>prime</strong>, if it has no other positive factors other than <span class="math">\(1\)</span> and <span class="math">\(p\)</span>.</p>
+<p>A natural number that is not prime is called <strong>composite</strong>, and it must have a factor other than <span class="math">\(1\)</span> and <span class="math">\(p\)</span>.</p>
+<p><span class="math">\(1\)</span> is neither prime nor composite.</p>
+<p>Another way to phrase it would be to say that <span class="math">\(p\)</span> is prime if whenever <span class="math">\(p=ab\)</span> where <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are natural numbers, then it must be the case that either <span class="math">\(a\)</span> or <span class="math">\(b\)</span> is <span class="math">\(1\)</span>.</p>
+<p>Conversely, a number is composite if and only if there are <span class="math">\(a, b\)</span> that are strictly inbetween <span class="math">\(1\)</span> and <span class="math">\(n\)</span>, and such that <span class="math">\(n = ab\)</span>.</p>
+</blockquote>
+<p>In order to check if a number is prime, we must try the numbers less than it to see if they divide into it. In fact, it is enough to go only up to the square root of the number:</p>
+<blockquote>
+<p>If a number <span class="math">\(n\)</span> has a non-trivial divisor <span class="math">\(d\)</span>, then it must have a divisor that is no more than <span class="math">\(\sqrt(n)\)</span>.</p>
+</blockquote>
+<p>To see this, simply consider that <span class="math">\(n = dq\)</span>. If <span class="math">\(d\)</span> and <span class="math">\(q\)</span> were both greater than <span class="math">\(\sqrt{n}\)</span>, then their product would be bigger than <span class="math">\(n\)</span>, a contradiction.</p>
+<p>Before moving on, figure out all the prime numbers up to 30.</p>
+<p>A fundamental property of prime numbers is that we can write every other natural number as a product of prime numbers, and in fact in a unique way as we will show later on. But for now, we can say:</p>
+<blockquote>
+<p>Every natural number <span class="math">\(n\)</span> can be written as a product of prime numbers.</p>
+</blockquote>
+<p>Proof:</p>
+<ul>
+<li>If <span class="math">\(n\)</span> is already prime then we are done, it is the &quot;product&quot; of one prime number.</li>
+<li>If <span class="math">\(n\)</span> is composite, then it can be written as <span class="math">\(n = ab\)</span>, where both <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are smaller than <span class="math">\(n\)</span>.</li>
+<li>Using strong induction, we can assume that we have already written both <span class="math">\(a\)</span> and <span class="math">\(b\)</span> as products of prime numbers.</li>
+<li>Combining all those prime numbers into one big product, we have just written <span class="math">\(n\)</span> as a product of prime numbers.</li>
+</ul>
+<p>In-class: Do problem 22</p>
+</body>
+</html>
