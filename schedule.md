@@ -27,6 +27,7 @@ A week-by-week breakdown of the material.
 - Day 2
     - [Patterns in the Primes](notes/primes_patterns.md)
     - [The Prime Number Theorem](notes/primes_theorem.md)
+    - [Assignment 3](assignments/3.md)
 - Day 3
 - Day 4
 
