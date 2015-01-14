@@ -23,10 +23,9 @@ A week-by-week breakdown of the material.
 
 - Day 1
     - [Divisibility](notes/numbers_divisibility.md)
-    - [Prime and Composite Numbers](notes/primes_intro.md)
 - Day 2
+    - [Prime and Composite Numbers](notes/primes_intro.md)
     - [Patterns in the Primes](notes/primes_patterns.md)
-    - [The Prime Number Theorem](notes/primes_theorem.md)
     - [Assignment 3](assignments/3.md)
 - Day 3
 - Day 4
