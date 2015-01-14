@@ -78,6 +78,19 @@ Fermat looked at the formula $F(n) = 2^{2^n} + 1$, in the hopes it would always 
 
 Fermat was able to show the first 4 of those to be prime, but the sequence grows too fast after that. Later on it was shown that $F(5)$ is in fact NOT a prime number.
 
+Here are some open questions about Fermat numbers:
+
+- Is $F_n$ composite for all $n > 4$?
+- Are there infinitely many Fermat primes?
+- Are there infinitely many composite Fermat numbers?
+- Are there any Fermat numbers that are not square-free?
+
+Fermat primes are related to constructible regular polygons.
+
+> The only regular $n$-gons that can be constructed with compass and straightedge are those where $n=2^k p_1 \ldots p_t$ where all the $p_i$ are Fermat primes. (Gauss)
+
+Fermat primes also have applications to the generation of pseudo-random numbers.
+
 #### Dirichlet's Theorem
 
 Dirichlet asked a different question. If we look at "arithmetic" progressions, namely the sequence $an + b$ with $a$, $b$ fixed and $n$ ranging over the natural numbers, can we figure out if such a sequence can or must have infinitely many prime numbers in it?
@@ -105,7 +118,7 @@ These numbers only have a chance of being prime if $p$ is itself a prime, so let
  11  2047
  13  8191
 
-We already see that not all of these numbers are prime. For example, $2047 = 23 * 89$. But they are considered as good candidates for large prime numbers.
+We already see that not all of these numbers are prime. For example, $2047 = 23 \times 89$. But they are considered as good candidates for large prime numbers.
 
 Currently we know a total of $42$ Mersenne Primes, the largest of them being $2^{57,885,161} - 1$, which has $17$ million digits. It would take about 4600 pages to display this number on a standard word processor.
 
