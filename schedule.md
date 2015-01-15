@@ -25,15 +25,15 @@ A week-by-week breakdown of the material.
     - [Divisibility](notes/numbers_divisibility.md)
 - Day 2
     - [Prime and Composite Numbers](notes/primes_intro.md)
-    - [Patterns in the Primes](notes/primes_patterns.md)
     - [Assignment 3](assignments/3.md)
 - Day 3
+    - [Patterns in the Primes](notes/primes_patterns.md)
+    - [Common Divisors](notes/numbers_gcd.md)
 - Day 4
 
 ## Week  3 (01/19-01/23)
 
 - Day 1
-    - [Common Divisors](notes/numbers_gcd.md)
 - Day 2
     - [The Division Theorem](notes/numbers_division_theorem.md)
 - Day 3
