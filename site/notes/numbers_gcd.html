@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="common-divisors">Common Divisors</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 3.3</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>3.3</dt>
+<dd>3, 4, 5, 6, 9, 10, 17, 18, 24
+</dd>
+<dt>Challenge 3.3</dt>
+<dd>(optional) 11, 15, 20, 21, 25
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<blockquote>
+<p>The <strong>greatest common divisor</strong> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> is the largest natural number <span class="math">\(d\)</span> such that <span class="math">\(d\)</span> divides both <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
+<p>We denote it as <span class="math">\(d = \gcd(a, b)\)</span></p>
+<p>Special case: <span class="math">\(a\)</span>, <span class="math">\(b\)</span> called <strong>relatively prime</strong>, if <span class="math">\(\gcd(a, b) = 1\)</span></p>
+<p>Similar definition: <strong>least common multiple</strong></p>
+</blockquote>
+<p>Work out some examples!</p>
+<p>Most direct way: Find all divisors of each number, find the commons ones, pick largest.</p>
+<p>Other option: Factor each number into primes, take the primes both numbers have in common.</p>
+<p>For prime numbers, things are easier:</p>
+<blockquote>
+<p>If <span class="math">\(p\)</span> is prime and <span class="math">\(n\)</span> is any integer, then <span class="math">\(p\)</span> does not divide <span class="math">\(n\)</span> if and only if <span class="math">\(\gcd(p, n) = 1\)</span>.</p>
+</blockquote>
+<p>Proof:</p>
+<ul>
+<li>Forward direction:
+<ul>
+<li>The only possible common divisors are <span class="math">\(1\)</span> and <span class="math">\(p\)</span>.</li>
+<li>Since <span class="math">\(p\)</span> does not divide <span class="math">\(n\)</span>, then <span class="math">\(1\)</span> is the only common divisor.</li>
+<li>So it must be the <span class="math">\(\gcd(p, n)\)</span>.</li>
+</ul></li>
+<li>Backwards direction:
+<ul>
+<li>If <span class="math">\(\gcd(p, n) = 1\)</span>, then there is no common divisor larger than <span class="math">\(1\)</span>.</li>
+<li>In particular <span class="math">\(p\)</span> is not a common divisor.</li>
+<li>But <span class="math">\(p\)</span> divides itself, so it must not divide <span class="math">\(n\)</span>.</li>
+</ul></li>
+</ul>
+<p>Another important result has to do with factoring out the greatest common divisor:</p>
+<blockquote>
+<p>If <span class="math">\(\gcd(a, b) = 1\)</span> and <span class="math">\(x\)</span>, <span class="math">\(y\)</span> are such that <span class="math">\(a = d x\)</span> and <span class="math">\(b = d y\)</span>, then <span class="math">\(\gcd(x, y) = 1\)</span>.</p>
+</blockquote>
+<p>Proof:</p>
+<ul>
+<li>Let <span class="math">\(c = \gcd(x, y)\)</span>. We will show <span class="math">\(c = 1\)</span>.</li>
+<li><span class="math">\(x = c r\)</span>, <span class="math">\(y = c s\)</span> for some integers <span class="math">\(r\)</span>, <span class="math">\(s\)</span>.</li>
+<li>Then <span class="math">\(a = d c r\)</span> and <span class="math">\(b = d c s\)</span>.</li>
+<li>So <span class="math">\(dc\)</span> is a common factor of <span class="math">\(a\)</span>, <span class="math">\(b\)</span>.</li>
+<li>By the definition of <span class="math">\(d\)</span>, must have that <span class="math">\(dc &lt;= d\)</span>.</li>
+<li>So necessarily <span class="math">\(dc = d\)</span>. Hence <span class="math">\(c=1\)</span>.</li>
+</ul>
+</body>
+</html>
