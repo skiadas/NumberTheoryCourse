@@ -18,13 +18,13 @@ Office Hours
   ~ MWF 3pm-3:30pm, WRF 9am-10am, T 10am-12am
 
 Book
-  ~ TODO
+  ~ *Number Theory: A Lively Introduction with Proofs, Applications, and Stories* by Pommersheim, Tim Marks, Erica Flapan
 
 Websites
   ~ [for notes](skiadas.github.io/NumberTheoryCourse/site/)
 
 Class times
-  ~ MWRF 10am-11am SCH246.
+  ~ MWRF 10am-11am in SCH246
 
 ## Course Description
 
@@ -60,7 +60,7 @@ There will be two midterms, on Wednesday, February 4th and Wednesday, March 18th
 
 ## Grading
 
-Your final grade depends on class attendance, labs, project, quizzes, midterms and the final, as follows:
+Your final grade depends on class attendance, homework, midterms and the final, as follows:
 
      Component   Percent
 --------------  --------
