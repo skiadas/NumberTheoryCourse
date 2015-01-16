@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-division-theorem">The Division Theorem</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 3.5</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>3.5</dt>
+<dd>1, 5, 6, 7, 8, 10, 11, 12, 15, 27, 28
+</dd>
+<dt>Challenge 3.5</dt>
+<dd>(optional) 13, 14, 17, 18, 19, 21, 29, 30
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>The main result in this section is the <strong>Division Theorem</strong>:</p>
+<blockquote>
+<p>For any natural <span class="math">\(a\in\mathbb{Z}\)</span>, <span class="math">\(b\in\mathbb{N}\)</span>, there are unique integers <span class="math">\(q\)</span> and <span class="math">\(r\)</span> such that <span class="math">\(0\leq r &lt; b\)</span> and:</p>
+<p><span class="math">\[a = qb + r\]</span></p>
+</blockquote>
+<p>The intuitive idea is that we add together as many <span class="math">\(b\)</span>'s as we can before we reach <span class="math">\(a\)</span>. Then whatever remains cannot have any more <span class="math">\(b\)</span>'s in it, and it will serve as our <span class="math">\(r\)</span>.</p>
+<p>Before we look at the proof, let us look at some consequences of the theorem:</p>
+<ul>
+<li>The fact that every integers is odd or even follows directly, by using <span class="math">\(b=2\)</span>.</li>
+<li>The fact from your homework that every integer was in one of the types A, B, C follows directly, by using <span class="math">\(b=3\)</span>.</li>
+</ul>
+<p>Technical proof:</p>
+<p>The proof has two distinct parts. First we prove that there are <span class="math">\(q\)</span>, <span class="math">\(r\)</span> satisfying the requirements. Then we will prove that they are unique.</p>
+<p>Proof that they exist:</p>
+<ul>
+<li><p>Consider the set:</p>
+<p><span class="math">\[S = \{ a - xb \mid x\in\mathbb{Z}, a-xb \geq 0 \}\]</span></p></li>
+<li>This set <span class="math">\(S\)</span> is always non-empty (WHY?).</li>
+<li>By the Well-Ordering principle, there must be a smallest element, so there is some <span class="math">\(x=q\)</span> that achieves this smallest element in S.</li>
+<li>Define <span class="math">\(r = a-qb\)</span>, which is this smallest element in <span class="math">\(S\)</span>.</li>
+<li>Then first of all <span class="math">\(r\geq 0\)</span>.</li>
+<li>All that is left is to show that <span class="math">\(r &lt; b\)</span>. We proceed by contradiction.
+<ul>
+<li>If <span class="math">\(r &gt;= b\)</span>, then <span class="math">\(r-b\geq 0\)</span>.</li>
+<li>And <span class="math">\(r - b = a - (q+1)b\)</span>.</li>
+<li>So <span class="math">\(r - b\)</span> is a number in <span class="math">\(S\)</span>, and it's smaller that <span class="math">\(r\)</span>, which is a contradiction.</li>
+<li>So it must be the case that <span class="math">\(r &lt; b\)</span>.</li>
+</ul></li>
+<li><p>Essentially the Well-Ordering principle captures the idea to &quot;use as many <span class="math">\(b\)</span>'s as you can fit&quot;.</p></li>
+</ul>
+<p>Proof that they are unique:</p>
+<ul>
+<li><p>This is a simpler contradiction proof. Suppose that we had two ways, so:</p>
+<p><span class="math">\[a = bq + r = bq&#39; + r&#39;\]</span></p></li>
+<li><p>We can rewrite this as:</p>
+<p><span class="math">\[b(q-q&#39;) = r&#39; - r\]</span></p></li>
+<li>Now this equation has on the left side the product of <span class="math">\(b\)</span> with an integer. So unless that integer is <span class="math">\(0\)</span>, this product will be either at least <span class="math">\(b\)</span> or at most <span class="math">\(-b\)</span>.</li>
+<li><p>On the right side it has the difference of two numbers that are <span class="math">\(\geq 0\)</span> and <span class="math">\(&lt;b\)</span>. So this difference must be:</p>
+<p><span class="math">\[-b &lt; r&#39; - r &lt; b\]</span></p></li>
+<li><p>So the only way they can equal each other is if they are both <span class="math">\(0\)</span>. But then <span class="math">\(q=q&#39;\)</span> and <span class="math">\(r=r&#39;\)</span>.</p></li>
+</ul>
+<p>We call <span class="math">\(r\)</span> the <em>remainder</em>, and <span class="math">\(q\)</span> the <em>quotient</em>.</p>
+<blockquote>
+<p><span class="math">\(b\)</span> divides <span class="math">\(a\)</span> if and only if the remainder of dividing <span class="math">\(a\)</span> by <span class="math">\(b\)</span> is <span class="math">\(0\)</span>.</p>
+</blockquote>
+<p>This is fairly straightforward to see.</p>
+<p>Here is one nice consequence of the division theorem:</p>
+<blockquote>
+<p>If <span class="math">\(a|x\)</span> and <span class="math">\(b|x\)</span>, then their least common multiple <span class="math">\(lcm(a,b)|x\)</span> also must divide <span class="math">\(x\)</span>.</p>
+</blockquote>
+<p>To prove this:</p>
+<ul>
+<li>Define <span class="math">\(M = lcm(a,b)\)</span>. We will need to show that <span class="math">\(M|x\)</span>.</li>
+<li>Start by doing the division <span class="math">\(x = qM + r\)</span> where <span class="math">\(0\leq r &lt; M\)</span>.</li>
+<li>It will be enough to show that <span class="math">\(r=0\)</span>.</li>
+<li>Since <span class="math">\(a|M\)</span>, we can write <span class="math">\(M = ad\)</span>.</li>
+<li>So <span class="math">\(x = qda + r\)</span>.
+<ul>
+<li>Question: why is that not enough to say that <span class="math">\(r=0\)</span>, since <span class="math">\(a|x\)</span>?</li>
+<li>Make sure to answer this question before proceeding to the next line.</li>
+</ul></li>
+<li>It must be the case that <span class="math">\(a|r\)</span>, since it divides both <span class="math">\(x\)</span> and <span class="math">\(qda\)</span>.</li>
+<li>With a similar reasoning, <span class="math">\(b|r\)</span>.</li>
+<li>So <span class="math">\(r\)</span> is a common multiple of both <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, so it must be <span class="math">\(\geq M\)</span>. Contradiction.</li>
+</ul>
+<p>Another important theorem is an analog of this for the greatest common divisor:</p>
+<blockquote>
+<ul>
+<li><span class="math">\(\gcd(a,b)\)</span> is an integer linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</li>
+<li>In fact it is the smallest positive number that is an integer linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</li>
+<li>If <span class="math">\(d|a\)</span> and <span class="math">\(d|b\)</span>, then we also have that <span class="math">\(d|\gcd(a,b)\)</span>.</li>
+</ul>
+</blockquote>
+<p>Proof to follow.</p>
+</body>
+</html>

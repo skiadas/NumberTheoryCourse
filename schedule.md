@@ -30,12 +30,12 @@ A week-by-week breakdown of the material.
     - [Patterns in the Primes](notes/primes_patterns.md)
     - [Common Divisors](notes/numbers_gcd.md)
 - Day 4
+    - [The Division Theorem](notes/numbers_division_theorem.md)
 
 ## Week  3 (01/19-01/23)
 
 - Day 1
 - Day 2
-    - [The Division Theorem](notes/numbers_division_theorem.md)
 - Day 3
     - [Euclidean Division Algorithm](notes/numbers_euclidean.md)
 - Day 4
