@@ -88,10 +88,36 @@ To prove this:
 - With a similar reasoning, $b|r$.
 - So $r$ is a common multiple of both $a$ and $b$, so it must be $\geq M$. Contradiction.
 
-Another important theorem is an analog of this for the greatest common divisor:
+Another important theorem relates to the greatest common divisor:
 
 > - $\gcd(a,b)$ is an integer linear combination of $a$ and $b$.
 > - In fact it is the smallest positive number that is an integer linear combination of $a$ and $b$.
 > - If $d|a$ and $d|b$, then we also have that $d|\gcd(a,b)$.
 
-Proof to follow.
+
+To see this:
+
+- Part 1:
+    - This will follow as a byproduct of part 2.
+    - We will also prove it independently later.
+- Part 2:
+    - We start with the set
+
+        $$S = \{ax+by \mid ax+by > 0, x,y\in\mathbb{Z} \}$$
+
+    - This is a nonempty set (WHY?).
+    - So $S$ must have a smallest element, call it $D = ax + by$.
+    - We have seen that any divisor of both $a$ and $b$ must divide their linear combinations.
+    - So it must be the case that $\gcd(a,b)|D$, so $\gcd(a,b)\leq D$.
+    - We will now show that $D$ must divide $a$, and consequently must also divide $b$ by symmetry.
+        - Let us divide $D$ into $a$: $a = Dm + r$ where $0\leq r < D$.
+        - The key observation is that $D-r$ is also in the set $S$.
+        - This is because $r$ is a linear combination of $a$ and $b$.
+        - But this contradicts the choice of $D$, so it must be the case that $r = 0$. So $D|a$.
+    - Since $D$ divides both $a$ and $b$ it must be no more than the gcd.
+    - So $D\leq \gcd(a,b)$.
+    - So it must be the case that $\gcd(a,b) = D$.
+- Part 3:
+    - A divisor of $a$ and $b$ also divides any linear combination of them.
+    - The $\gcd(a,b)$ is a linear combination.
+    - Therefore any divisor of $a$ and $b$ also divides $\gcd(a,b)$.

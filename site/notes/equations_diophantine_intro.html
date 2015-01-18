@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="diophantine-equations">Diophantine Equations</h1>
+<h2 id="reading">Reading</h2>
+<p>Section 5.1</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>5.1</dt>
+<dd>2, 3, 4, 11, 18, 20
+</dd>
+<dt>Challenge 5.1</dt>
+<dd>(optional) 12, 13, 14, 15
+</dd>
+<dt>Fun 5.1</dt>
+<dd>1
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Diophantine equations have the form:</p>
+<p><span class="math">\[ax + by = c\]</span></p>
+<p>where all numbers are integers.</p>
+<p>We in general are interested in three questions:</p>
+<ol style="list-style-type: decimal">
+<li>Does it have any solutions?</li>
+<li>How <em>many</em> solutions does it have?</li>
+<li>Under what conditions on <span class="math">\(a,b,c\)</span> do those answers change?</li>
+</ol>
+<h3 id="case-of-1-variable">Case of 1 variable</h3>
+<p>Let us start with the simplest case:</p>
+<p><span class="math">\[ax = c\]</span></p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math">\(a = 0\)</span>, then there is a solution only if <span class="math">\(c=0\)</span>, and in that case we have infinitely many solutions.</li>
+<li>If <span class="math">\(a \neq 0\)</span>, then there is a solution if and only if <span class="math">\(a\)</span> divides <span class="math">\(c\)</span>, and in that case there is exactly one solution, the quotient <span class="math">\(x=c/a\)</span>.</li>
+</ol>
+<p>Now let's look at the case of two variables.</p>
+<h3 id="case-of-2-variables">Case of 2 variables</h3>
+<p>First, a necessary condition:</p>
+<blockquote>
+<p>For <span class="math">\(ax+by=c\)</span> to have a solution, we must have that <span class="math">\(\gcd(a,b) | c\)</span>.</p>
+</blockquote>
+<p>This is easy to see. The interesting thing is that the converse is also true:</p>
+<blockquote>
+<p>If <span class="math">\(\gcd(a,b) | c\)</span>, then the equation <span class="math">\(ax+by=c\)</span> has a solution.</p>
+</blockquote>
+<p>This is also easy to see.</p>
+<ul>
+<li>Suppose <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(c = dk\)</span>.</li>
+<li>We saw already that the gcd is an integer combination of <span class="math">\(a,b\)</span>, so there must be some <span class="math">\(m,n\)</span> so that: <span class="math">\(d = am + bn\)</span>.</li>
+<li>But then <span class="math">\(c=dk = amk + bnk\)</span>. So we found a solution <span class="math">\(x=mk\)</span>, <span class="math">\(b=nk\)</span>.</li>
+</ul>
+<p>Here is a special case of this result:</p>
+<blockquote>
+<p>The equation <span class="math">\(ax+by=1\)</span> has a solution if and only if <span class="math">\(\gcd(a,b) = 1\)</span>.</p>
+</blockquote>
+<p>This follows as the only way <span class="math">\(\gcd(a,b)\)</span> would divide <span class="math">\(1\)</span> is if it were actually equal to 1.</p>
+</body>
+</html>

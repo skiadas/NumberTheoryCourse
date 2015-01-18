@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-euclidean-algorithm-and-its-applications">The Euclidean Algorithm and its Applications</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 4.1</li>
+<li>Section 4.2</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>4.1</dt>
+<dd>3, 5, 6, 7, 8
+</dd>
+<dt>Challenge 4.1</dt>
+<dd>(optional) 10
+</dd>
+<dt>4.2</dt>
+<dd>1, 2, 3, 6
+</dd>
+<dt>Challenge 4.2</dt>
+<dd>13, 14
+</dd>
+<dt>Computer 4.2</dt>
+<dd>(optional) 5
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="euclidean-algorithm">Euclidean Algorithm</h3>
+<p>Euclidean algorithm is a stepwise process that starts from two numbers <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, and produces a series of equations.</p>
+<p>In each step, you divide the previous divisor with the previous remainder, like so:</p>
+<blockquote>
+<p><span class="math">\[a = q_1 b + r_1,\quad 0 \leq r_1 &lt; b\]</span></p>
+<p><span class="math">\[b = q_1 r_1 + r_2,\quad 0 \leq r_2 &lt; r_1\]</span></p>
+<p><span class="math">\[r_1 = q_1 r_2 + r_3,\quad 0 \leq r_3 &lt; r_2\]</span></p>
+<p><span class="math">\[r_2 = q_1 r_3 + r_4,\quad 0 \leq r_4 &lt; r_3\]</span></p>
+<p><span class="math">\[\vdots\]</span></p>
+<p><span class="math">\[r_{n-1} = q_{n+1}r_n + 0\]</span></p>
+</blockquote>
+<p>We can be guaranteed that eventually we will end up with a <span class="math">\(0\)</span> remainder, as the integers <span class="math">\(r_i\)</span> keep getting smaller and smaller.</p>
+<h3 id="euclidean-algorithm-and-gcd">Euclidean Algorithm and GCD</h3>
+<p>The main relation between the Euclidean algorithm and the greatest common divisor is simple:</p>
+<blockquote>
+<p>The <span class="math">\(\gcd(a,b)\)</span> is the last non-zero remainder in the Euclidean algorithm that starts from <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
+</blockquote>
+<p>The proof follows directly from the following lemma:</p>
+<blockquote>
+<p>If <span class="math">\(a,b,q,r\)</span> are integers with <span class="math">\(a = qb + r\)</span>, then <span class="math">\(\gcd(a,b) = \gcd(b,r)\)</span>.</p>
+</blockquote>
+<p>Let us prove this lemma:</p>
+<ul>
+<li>Any divisor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> must also divide <span class="math">\(r = a - qb\)</span>. (Linear combination lemma)</li>
+<li>Any divisor of <span class="math">\(b\)</span> and <span class="math">\(r\)</span> must also divide <span class="math">\(a = r + qb\)</span>.</li>
+<li>So <span class="math">\(\gcd(a,b)\)</span> and <span class="math">\(\gcd(b,r)\)</span> must divide each other, so must be equal.</li>
+</ul>
+<p>The Euclidean algorithm is extremely fast. We will not show this here, but for two numbers <span class="math">\(a,b\)</span> the algorithm takes <span class="math">\(\log_2(ab)\)</span> steps. Even for <span class="math">\(100\)</span>-digit numbers, this will be no more than around 650 steps, something a computer can handle quickly. Better bounds can be obtained.</p>
+</body>
+</html>

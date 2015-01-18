@@ -90,7 +90,7 @@
 <li>With a similar reasoning, <span class="math">\(b|r\)</span>.</li>
 <li>So <span class="math">\(r\)</span> is a common multiple of both <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, so it must be <span class="math">\(\geq M\)</span>. Contradiction.</li>
 </ul>
-<p>Another important theorem is an analog of this for the greatest common divisor:</p>
+<p>Another important theorem relates to the greatest common divisor:</p>
 <blockquote>
 <ul>
 <li><span class="math">\(\gcd(a,b)\)</span> is an integer linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</li>
@@ -98,6 +98,38 @@
 <li>If <span class="math">\(d|a\)</span> and <span class="math">\(d|b\)</span>, then we also have that <span class="math">\(d|\gcd(a,b)\)</span>.</li>
 </ul>
 </blockquote>
-<p>Proof to follow.</p>
+<p>To see this:</p>
+<ul>
+<li>Part 1:
+<ul>
+<li>This will follow as a byproduct of part 2.</li>
+<li>We will also prove it independently later.</li>
+</ul></li>
+<li>Part 2:
+<ul>
+<li><p>We start with the set</p>
+<p><span class="math">\[S = \{ax+by \mid ax+by &gt; 0, x,y\in\mathbb{Z} \}\]</span></p></li>
+<li>This is a nonempty set (WHY?).</li>
+<li>So <span class="math">\(S\)</span> must have a smallest element, call it <span class="math">\(D = ax + by\)</span>.</li>
+<li>We have seen that any divisor of both <span class="math">\(a\)</span> and <span class="math">\(b\)</span> must divide their linear combinations.</li>
+<li>So it must be the case that <span class="math">\(\gcd(a,b)|D\)</span>, so <span class="math">\(\gcd(a,b)\leq D\)</span>.</li>
+<li>We will now show that <span class="math">\(D\)</span> must divide <span class="math">\(a\)</span>, and consequently must also divide <span class="math">\(b\)</span> by symmetry.
+<ul>
+<li>Let us divide <span class="math">\(D\)</span> into <span class="math">\(a\)</span>: <span class="math">\(a = Dm + r\)</span> where <span class="math">\(0\leq r &lt; D\)</span>.</li>
+<li>The key observation is that <span class="math">\(D-r\)</span> is also in the set <span class="math">\(S\)</span>.</li>
+<li>This is because <span class="math">\(r\)</span> is a linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</li>
+<li>But this contradicts the choice of <span class="math">\(D\)</span>, so it must be the case that <span class="math">\(r = 0\)</span>. So <span class="math">\(D|a\)</span>.</li>
+</ul></li>
+<li>Since <span class="math">\(D\)</span> divides both <span class="math">\(a\)</span> and <span class="math">\(b\)</span> it must be no more than the gcd.</li>
+<li>So <span class="math">\(D\leq \gcd(a,b)\)</span>.</li>
+<li>So it must be the case that <span class="math">\(\gcd(a,b) = D\)</span>.</li>
+</ul></li>
+<li>Part 3:
+<ul>
+<li>A divisor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> also divides any linear combination of them.</li>
+<li>The <span class="math">\(\gcd(a,b)\)</span> is a linear combination.</li>
+<li>Therefore any divisor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> also divides <span class="math">\(\gcd(a,b)\)</span>.</li>
+</ul></li>
+</ul>
 </body>
 </html>

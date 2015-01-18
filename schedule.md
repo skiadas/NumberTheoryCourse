@@ -35,16 +35,17 @@ A week-by-week breakdown of the material.
 ## Week  3 (01/19-01/23)
 
 - Day 1
+    - [The Division Theorem (cont)](notes/numbers_division_theorem.md)
+    - [Assignment 4](assignments/4.md)
 - Day 2
+    - [The Euclidean Algorithm](notes/numbers_euclidean_algorithm.md)
 - Day 3
-    - [Euclidean Division Algorithm](notes/numbers_euclidean.md)
+    - [Diophantine Equations](notes/equations_diophantine_intro.md)
 - Day 4
-    - [GCD via Euclidean Algorithm](notes/numbers_gcd_compute.md)
 
 ## Week  4 (01/26-01/30)
 
 - Day 1
-    - [Diophantine Equations](notes/equations_diophantine_intro.md)
 - Day 2
     - [Euclidean Division and Diophantine Equations](notes/equations_diophantine_and_euclidean.md)
 - Day 3
