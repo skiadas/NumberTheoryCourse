@@ -35,6 +35,7 @@ A week-by-week breakdown of the material.
 ## Week  3 (01/19-01/23)
 
 - Day 1
+    - [A weird number system](notes/weird_number_system.md)
     - [The Division Theorem (cont)](notes/numbers_division_theorem.md)
     - [Assignment 4](assignments/4.md)
 - Day 2

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="a-weird-number-system">A weird number system</h1>
+<h2 id="notes">Notes</h2>
+<p>We will describe here a weird number system that provides counter-examples for many of the theorems we will see later. This is effectively an extension of the integers by including a &quot;square root of -5&quot;. In this new system, unique factorization into primes as well as the euclidean division algorithm no longer work.</p>
+<p>We will call this new number system <span class="math">\(A\)</span>. So it will be defined as:</p>
+<blockquote>
+<p><span class="math">\[A = \{ a + b\sqrt{-5} \mid a,b\in \mathbb{Z} \}\]</span></p>
+</blockquote>
+<p>You can easily see that if we add or multiply numbers of this form, they will be of the same form. In that sense this is a perfectly valid number system, with addition and multiplication satisfying the normal properties that integers do.</p>
+<h3 id="the-norm-function">The &quot;norm&quot; function</h3>
+<p>There is a special function that takes numbers in <span class="math">\(A\)</span> and turns them into normal integers, called the &quot;norm function&quot;, and denoted by <span class="math">\(N\)</span>. Its definition is a follows:</p>
+<blockquote>
+<p>If <span class="math">\(x = a + b\sqrt{-5}\)</span>, then <span class="math">\(N(x) = a^2 + 5b^2\)</span>.</p>
+<p><span class="math">\(N\)</span> is multiplicative: If <span class="math">\(x,y\in A\)</span>, then <span class="math">\(N(xy) = N(x)N(y)\)</span>.</p>
+</blockquote>
+<p>For small values of <span class="math">\(n\)</span>, we can classify those numbers in <span class="math">\(A\)</span> with <span class="math">\(N(x) = n\)</span>.</p>
+<p>This is based on the observation that <span class="math">\(a\)</span> and <span class="math">\(b\)</span> must be integers, so <span class="math">\(a^2+5b^2\)</span> does not have many choices:</p>
+<dl>
+<dt><span class="math">\(0\)</span></dt>
+<dd>when <span class="math">\(a=b=0\)</span>
+</dd>
+<dt><span class="math">\(1\)</span></dt>
+<dd>when <span class="math">\(a=\pm 1\)</span>, <span class="math">\(b=0\)</span>
+</dd>
+<dt><span class="math">\(4\)</span></dt>
+<dd>when <span class="math">\(a=\pm 2\)</span>, <span class="math">\(b=0\)</span>
+</dd>
+<dt><span class="math">\(5\)</span></dt>
+<dd>when <span class="math">\(a=0\)</span>, <span class="math">\(b=\pm 1\)</span>
+</dd>
+<dt><span class="math">\(6\)</span></dt>
+<dd>when <span class="math">\(a=\pm 1\)</span>, <span class="math">\(b=\pm 1\)</span>
+</dd>
+<dt><span class="math">\(9\)</span></dt>
+<dd>when <span class="math">\(a=\pm 3\)</span> and <span class="math">\(b=0\)</span>, or when <span class="math">\(a=\pm 2\)</span> and <span class="math">\(b=\pm 1\)</span>
+</dd>
+<dt><span class="math">\(14\)</span></dt>
+<dd>when <span class="math">\(a=\pm 3\)</span> and <span class="math">\(b\pm 1\)</span>
+</dd>
+<dt><span class="math">\(16\)</span></dt>
+<dd>when <span class="math">\(a=\pm 4\)</span> and <span class="math">\(b=0\)</span>
+</dd>
+<dt><span class="math">\(21\)</span></dt>
+<dd>when <span class="math">\(a=\pm 4\)</span> and <span class="math">\(b=\pm 1\)</span>
+</dd>
+<dt><span class="math">\(20\)</span></dt>
+<dd>when <span class="math">\(a=0\)</span> and <span class="math">\(b=\pm 2\)</span>
+</dd>
+<dt><span class="math">\(21\)</span></dt>
+<dd>when <span class="math">\(a=\pm 1\)</span> and <span class="math">\(b=\pm 2\)</span>
+</dd>
+<dt><span class="math">\(24\)</span></dt>
+<dd>when <span class="math">\(a=\pm 2\)</span> and <span class="math">\(b=\pm 2\)</span>
+</dd>
+<dt><span class="math">\(25\)</span></dt>
+<dd>when <span class="math">\(a=\pm 5\)</span> and <span class="math">\(b=0\)</span>
+</dd>
+<dt><span class="math">\(29\)</span></dt>
+<dd>when <span class="math">\(a=\pm 3\)</span> and <span class="math">\(b=\pm 2\)</span>
+</dd>
+<dt><span class="math">\(36\)</span></dt>
+<dd>when <span class="math">\(a=\pm 6\)</span> and <span class="math">\(b=0\)</span>, or <span class="math">\(a\pm 4\)</span> and <span class="math">\(b=\pm 2\)</span>
+</dd>
+</dl>
+<p>Based on this, here are the choices for <span class="math">\(N(x)\)</span>:</p>
+<dl>
+<dt><span class="math">\(N(x) = 0\)</span></dt>
+<dd><span class="math">\(x=0\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 1\)</span></dt>
+<dd><span class="math">\(x=\pm 1\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 4\)</span></dt>
+<dd><span class="math">\(x=\pm 2\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 5\)</span></dt>
+<dd><span class="math">\(x=\pm \sqrt{-5}\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 6\)</span></dt>
+<dd><span class="math">\(x=\pm 1 \pm \sqrt{-5}\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 9\)</span></dt>
+<dd><span class="math">\(x=\pm 2 \pm \sqrt{-5}\)</span> or <span class="math">\(x=\pm 3\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 14\)</span></dt>
+<dd><span class="math">\(x\pm 3 \pm \sqrt{-5}\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 16\)</span></dt>
+<dd><span class="math">\(x=\pm 4\)</span>
+</dd>
+<dt><span class="math">\(N(x) = 21\)</span></dt>
+<dd><span class="math">\(x=\pm 4 \pm \sqrt{-5}\)</span>
+</dd>
+</dl>
+<h3 id="some-prime-numbers">Some prime numbers</h3>
+<p>We can now use this information to determine some prime numbers in this new number system. Recall that the definition of a prime is that the only numbers dividing it are <span class="math">\(1\)</span> and itself. Now if <span class="math">\(p=xy\)</span> then <span class="math">\(N(p) = N(x)N(y)\)</span>, so based on this the only hope a number has of being composite is if its &quot;norm&quot; <span class="math">\(N(p)\)</span> is a product of two smaller norms that are not 1.</p>
+<p>Based on this observation, the numbers corresponding to <span class="math">\(N(x) = 4,5,6,9,14,21\)</span> are all prime. So all the numbers above in this group are automatically prime numbers.</p>
+<h3 id="no-unique-factorization">No unique factorization</h3>
+<p>In this weird number system, there is no unique factorization of numbers. For example, we can write 6 as a product of &quot;primes&quot; in two different ways:</p>
+<blockquote>
+<p><span class="math">\[6 = 2 \times 3 = (1+\sqrt{-5})\times(1-\sqrt{-5})\]</span></p>
+</blockquote>
+<p>This kind of behavior is not possible on the real line. One consequence of this is also that you can have a prime that divides a product of two numbers, but does not divide any of the numbers individually.</p>
+<h3 id="gcd-as-a-linear-combination">GCD as a linear combination</h3>
+<p>It is also the case in this new system that we cannot always express the gcd of two numbers as an integer linear combination of the numbers. To see this, consider the numbers <span class="math">\(1+\sqrt{-5}\)</span> and <span class="math">\(1-\sqrt{-5}\)</span>. These are prime so their gcd is 1. You can show that there are no integers <span class="math">\(a_1,a_2,b_1,b_2\)</span> such that:</p>
+<p><span class="math">\[(a_1 + a_2\sqrt{-5})(1+\sqrt{-5}) + (b_1 + b_2\sqrt{-5})(1-\sqrt{-5}) = 1\]</span></p>
+<p>If you perform the multiplication and equate terms, you will come up with the equations:</p>
+<p><span class="math">\[a_1 - 5a_2 + b_1 - 5b_2 = 1\]</span></p>
+<p>and</p>
+<p><span class="math">\[a_1 + a_2 + b_1 + b_2 = 0\]</span></p>
+<p>Subtracting the equations from each other we find that we would need:</p>
+<p><span class="math">\[6a_2 + 6b_2 = 1\]</span></p>
+<p>which is not possible.</p>
+</body>
+</html>
