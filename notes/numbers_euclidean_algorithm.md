@@ -32,11 +32,11 @@ In each step, you divide the previous divisor with the previous remainder, like 
 
 > $$a = q_1 b + r_1,\quad 0 \leq r_1 < b$$
 >
-> $$b = q_1 r_1 + r_2,\quad 0 \leq r_2 < r_1$$
+> $$b = q_2 r_1 + r_2,\quad 0 \leq r_2 < r_1$$
 >
-> $$r_1 = q_1 r_2 + r_3,\quad 0 \leq r_3 < r_2$$
+> $$r_1 = q_3 r_2 + r_3,\quad 0 \leq r_3 < r_2$$
 >
-> $$r_2 = q_1 r_3 + r_4,\quad 0 \leq r_4 < r_3$$
+> $$r_2 = q_4 r_3 + r_4,\quad 0 \leq r_4 < r_3$$
 >
 > $$\vdots$$
 >

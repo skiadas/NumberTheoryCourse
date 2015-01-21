@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="finding-all-solutions-to-diophantine-equations">Finding all Solutions to Diophantine Equations</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 5.4</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<p>5.4 ~</p>
+<dl>
+<dt>Challenge 5.4</dt>
+<dd>(Optional)
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Now that we know how to find one solution, the question naturally arises if we can find more, preferably if we can find them all.</p>
+<p>Let us think about this for a minute. Suppose we did have another solution, so:</p>
+<p><span class="math">\[ax_1 + by_1 = c = ax_2 + by_2\]</span></p>
+<p>Then we should be able to say:</p>
+<p><span class="math">\[a(x_1-x_2) = b(y_2-y_1)\]</span></p>
+<p>So there is some relation between these solutions and a <em>common multiple</em> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
+<p>Before proceeding, we will need a lemma:</p>
+<blockquote>
+<p>The <span class="math">\(lcm(a,b)\)</span> divides all other common multiples of <span class="math">\(a\)</span>, <span class="math">\(b\)</span>.</p>
+</blockquote>
+<p>This is actually easy to see, and once again boils down to Euclidean Division:</p>
+<ul>
+<li>Say <span class="math">\(m = lcm(a,b)\)</span> and <span class="math">\(M\)</span> is another common multiple.</li>
+<li>Divide <span class="math">\(m\)</span> into <span class="math">\(M\)</span>: <span class="math">\(M = qm + r\)</span>, <span class="math">\(0 \leq r &lt; m\)</span>.</li>
+<li>Then <span class="math">\(m-r\)</span> is a common multiple, and <span class="math">\(0 &lt; m-r \leq m\)</span>.</li>
+<li>It must be the case that <span class="math">\(r=0\)</span>. So <span class="math">\(m|M\)</span>.</li>
+</ul>
+<p>Let us return to our main topic. Here is a theorem that tells us how to find other solutions:</p>
+<blockquote>
+<p>Suppose <span class="math">\(a x_1 + b y_1 = c\)</span>, <span class="math">\(m = lcm(a,b)\)</span> and <span class="math">\(d_1\)</span>, <span class="math">\(d_2\)</span> are such that <span class="math">\(ad_1 = bd_2 = m\)</span>.</p>
+<p>Then <span class="math">\(a (x_1 - kd_1) + b (y_1 + kd_2) = c\)</span> for all integers <span class="math">\(k\)</span>.</p>
+<p>Moreover, all solutions to <span class="math">\(ax+by=c\)</span> have this form.</p>
+</blockquote>
+<p>We have already seen that other solutions <span class="math">\((x_2,y_2)\)</span> have to relate to the original <span class="math">\((x1,y1)\)</span> via:</p>
+<p><span class="math">\[x_1 - x_2 = k_1\]</span></p>
+<p><span class="math">\[y_2 - y_1 = k_2\]</span></p>
+<p>where <span class="math">\(k_1\)</span> and <span class="math">\(k_2\)</span> are such that</p>
+<p><span class="math">\[ak_1 = bk_2\]</span></p>
+<p>All we need to do now is find all such pairs <span class="math">\((k_1, k_2)\)</span>.</p>
+<blockquote>
+<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are such that</p>
+<p><span class="math">\[a = da&#39;,\quad b = db&#39;\]</span></p>
+<p>Then for any pair <span class="math">\((k_1, k_2)\)</span> with <span class="math">\(ak_1 = bk_2\)</span> there is an integer <span class="math">\(k\)</span> such that</p>
+<p><span class="math">\[k_1 = k b&#39;,\quad k_2 = k a&#39;\]</span></p>
+</blockquote>
+<p>Let us prove this:</p>
+<ul>
+<li>First of all, note that numbers <span class="math">\((k_1,k_2)\)</span> that have this form <span class="math">\((kb&#39;,ka&#39;)\)</span> do satisfy the needed equation <span class="math">\(ak_1=bk_2\)</span>. So this does in fact give us all such pairs of numbers.</li>
+<li>For proving the other direction, suppose <span class="math">\(ak_1 = bk_2\)</span>.</li>
+<li>Note that <span class="math">\(a&#39;\)</span> and <span class="math">\(b&#39;\)</span> are relatively prime: <span class="math">\(\gcd(a&#39;,b&#39;)=1\)</span>.</li>
+<li>Since <span class="math">\(a=da&#39;\)</span> and <span class="math">\(b=db&#39;\)</span>, it follows that <span class="math">\(a&#39;k_1 = b&#39;k_2\)</span>.</li>
+<li>We claim that <span class="math">\(b&#39;\)</span> must divide <span class="math">\(k_1\)</span>.
+<ul>
+<li>If we believe that for a minute, we can finish the proof: <span class="math">\(k_1 = b&#39; k\)</span></li>
+<li>Therefore the previous equation becomes <span class="math">\(a&#39;b&#39;k=b&#39;k_2\)</span>, or <span class="math">\(a&#39;k = k_2\)</span>.</li>
+</ul></li>
+<li>The fact that <span class="math">\(b&#39;\)</span> must divide <span class="math">\(k_1\)</span> will follow from the following more general statement:</li>
+</ul>
+<blockquote>
+<p>If <span class="math">\(\gcd(a,b) = 1\)</span> and <span class="math">\(b | ac\)</span>, then it must be the case that <span class="math">\(b|c\)</span>.</p>
+</blockquote>
+<p>To prove this:</p>
+<ul>
+<li>We start with the equation <span class="math">\(ax+by=1\)</span>, which we know must have a solution since <span class="math">\(a,b\)</span> are relatively prime.</li>
+<li>We multiply both sides by <span class="math">\(c\)</span>. We then get <span class="math">\(acx + bcx = c\)</span>.</li>
+<li>Since <span class="math">\(b\)</span> divides both terms on the left side, it must also divide the right hand side <span class="math">\(c\)</span>.</li>
+</ul>
+</body>
+</html>
