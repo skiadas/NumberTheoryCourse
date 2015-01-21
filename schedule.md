@@ -42,13 +42,13 @@ A week-by-week breakdown of the material.
     - [The Euclidean Algorithm](notes/numbers_euclidean_algorithm.md)
 - Day 3
     - [Diophantine Equations](notes/equations_diophantine_intro.md)
+    - [Euclidean Division and Diophantine Equations](notes/equations_diophantine_and_euclidean.md)
 - Day 4
 
 ## Week  4 (01/26-01/30)
 
 - Day 1
 - Day 2
-    - [Euclidean Division and Diophantine Equations](notes/equations_diophantine_and_euclidean.md)
 - Day 3
     - [Other Diophantine Equations](notes/equations_diophantine_other.md)
     - [Diophantine Equations: Finding all solutions](notes/equations_diophantine_all_solutions.md)

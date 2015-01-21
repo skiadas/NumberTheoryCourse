@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="diophantine-equations-and-the-euclidean-algorithm">Diophantine Equations and the Euclidean Algorithm</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 5.2</li>
+<li>Section 5.3</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>5.2</dt>
+<dd>2-7, 11, 13
+</dd>
+<dt>Challenge 5.2</dt>
+<dd>(Optional) 14
+</dd>
+<dt>5.3</dt>
+<dd>1, 2-5, 12, 15
+</dd>
+<dt>Challenge 5.3</dt>
+<dd>(Optional) 25
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="case-of-cgcd">Case of c=gcd</h3>
+<p>The Euclidean Algorithm allows us to find a solution to the equation</p>
+<p><span class="math">\[ax+by=c\]</span></p>
+<p>where <span class="math">\(c=d=\gcd(a,b)\)</span>. We can then use this to find a solution for any <span class="math">\(c\)</span> divisible by <span class="math">\(d=\gcd(a,b)\)</span>.</p>
+<p>Let us take a look at the first few steps in the Euclidean Algorithm:</p>
+<p><span class="math">\[a = q_1b + r_1\]</span></p>
+<p><span class="math">\[b = q_2r_1 + r_2\]</span></p>
+<p><span class="math">\[r_1 = q_3r_2 + r_3\]</span></p>
+<p>We will show that all <span class="math">\(r_1\)</span>, <span class="math">\(r_2\)</span>, <span class="math">\(r_3\)</span> are explicit linear combinations of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. For <span class="math">\(r_1\)</span> this is clear, as:</p>
+<p><span class="math">\[r_1 = a - q_1 b\]</span></p>
+<p>For <span class="math">\(r_2\)</span> we would use this fact, so we would have:</p>
+<p><span class="math">\[r_2 = b - q_2r_1 = b - q_2(a-q_1 b) = (1+q_1q_2)b - q_2a\]</span></p>
+<p>Similarly we can write <span class="math">\(r_3\)</span> as an explicit compination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> by using its equation along with the fact that we already have a way to write <span class="math">\(r_1\)</span> and <span class="math">\(r_2\)</span>.</p>
+<p>This continues:</p>
+<blockquote>
+<p>In the Euclidean Division algorithm, each remainder <span class="math">\(r_{n}\)</span> is an <em>explicit</em> integer linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
+</blockquote>
+<p>Since the last step is the <span class="math">\(\gcd(a,b)\)</span>, we now have a way of writing <span class="math">\(\gcd(a,b)\)</span> in an explicit way as an integer linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
+<h3 id="case-of-other-cs">Case of other c's</h3>
+<p>We already know two things:</p>
+<ul>
+<li>How to find an explicit solution to <span class="math">\(ax+by=\gcd(a,b)\)</span></li>
+<li>That the only way that <span class="math">\(ax+by=c\)</span> has a solution is if <span class="math">\(\gcd(a,b) |c\)</span></li>
+</ul>
+<p>We now want to find an explicit solution in the case where <span class="math">\(\gcd(a,b) | c\)</span>. To do that:</p>
+<ul>
+<li>Write <span class="math">\(c = d \gcd(a,b)\)</span>, where <span class="math">\(d\)</span> is an integer.</li>
+<li>Write <span class="math">\(ax+by = \gcd(a,b)\)</span> for some integers <span class="math">\(x,y\)</span>.</li>
+<li>Then we have <span class="math">\(a(xd) + b(yd) = \gcd(a,b) d = c\)</span> and we have our solution.</li>
+</ul>
+<p>So every solution to the <span class="math">\(c=\gcd\)</span> case can scale up to a solution of the <span class="math">\(c\)</span> case for all those <span class="math">\(c\)</span> for which there is a solution in the first place.</p>
+</body>
+</html>

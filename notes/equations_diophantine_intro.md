@@ -26,8 +26,9 @@ where all numbers are integers.
 We in general are interested in three questions:
 
 1. Does it have any solutions?
-2. How *many* solutions does it have?
-3. Under what conditions on $a,b,c$ do those answers change?
+2. Can we *find* a solution?
+3. How *many* solutions does it have?
+4. Under what conditions on $a,b,c$ do those answers change?
 
 ### Case of 1 variable
 
@@ -61,3 +62,5 @@ Here is a special case of this result:
 > The equation $ax+by=1$ has a solution if and only if $\gcd(a,b) = 1$.
 
 This follows as the only way $\gcd(a,b)$ would divide $1$ is if it were actually equal to 1.
+
+In the next segment, we will see how the Euclidean Algorithm can help us find a solution.
