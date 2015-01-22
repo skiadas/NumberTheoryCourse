@@ -7,10 +7,10 @@
 ## Practice Problems
 
 5.4
-  ~
+  ~ 1-4, 10-12, 20, 21, 22
 
 Challenge 5.4
-  ~ (Optional)
+  ~ (Optional) 18, 19
 
 ## Notes
 
@@ -24,42 +24,58 @@ Then we should be able to say:
 
 $$a(x_1-x_2) = b(y_2-y_1)$$
 
-So there is some relation between these solutions and a *common multiple* of $a$ and $b$.
+So there is some relation between these solutions and a *common multiple* of $a$ and $b$. Let's make it more precise:
 
-Before proceeding, we will need a lemma:
-
-> The $lcm(a,b)$ divides all other common multiples of $a$, $b$.
-
-This is actually easy to see, and once again boils down to Euclidean Division:
-
-- Say $m = lcm(a,b)$ and $M$ is another common multiple.
-- Divide $m$ into $M$: $M = qm + r$, $0 \leq r < m$.
-- Then $m-r$ is a common multiple, and $0 < m-r \leq m$.
-- It must be the case that $r=0$. So $m|M$.
-
-Let us return to our main topic. Here is a theorem that tells us how to find other solutions:
-
-> Suppose $a x_1 + b y_1 = c$, $m = lcm(a,b)$ and $d_1$, $d_2$ are such that $ad_1 = bd_2 = m$.
+> If $ax_1 + by_1 = c$ is a solution.
 >
-> Then $a (x_1 - kd_1) + b (y_1 + kd_2) = c$ for all integers $k$.
+> Then every other solution can be obtained as
 >
-> Moreover, all solutions to $ax+by=c$ have this form.
-
-We have already seen that other solutions $(x_2,y_2)$ have to relate to the original $(x1,y1)$ via:
-
-$$x_1 - x_2 = k_1$$
-
-$$y_2 - y_1 = k_2$$
-
-where $k_1$ and $k_2$ are such that
-
-$$ak_1 = bk_2$$
-
-All we need to do now is find all such pairs $(k_1, k_2)$.
-
-> Let $d=\gcd(a,b)$ and $a'$, $b'$ are such that
+> $$x_2 = x_1 - k_1, \quad y_2 = y_1 + k_2$$
 >
-> $$a = da',\quad b = db'$$
+> where $(k_1, k_2)$ are such that $ak_1 = bk_2$.
+
+This is easy to see. So the solutions to the diophantine equations are in 1-1 correspondence with these pairs of numbers.
+
+Before we see the main theorem, let us have some definitions and a key result:
+
+> Let $d=\gcd(a,b)$ and $m=lcm(a,b)$. Further let $a'd = a$ and $b'd = b$. Then:
+>
+> - $a'$, $b'$ are relatively prime.
+> - $a'b = ab' = m$.
+> - $dm = ab$.
+
+To see this:
+
+- Any common factor of $a'$ and $b'$ would, when multiplied by $d$, provide a common divisor of $a$ and $b$. $d$ is the largest such divisor, so that common factor can only be 1. So $a'$, $b'$ must be relatively prime.
+- The other two parts say the same thing, so we only need to show one of them. We will show the last one, that $dm = ab$.
+    - First, notice that $\frac{ab}{d}$ is an integer that is a common multiple of $a$ and $b$. Therefore $\frac{ab}{d}\geq m$, so $ab\geq md$.
+    - Second, notice that since $d$ is the gcd we can write $d = ax + by$. Multiplying by $m$ gives us: $md = amx + bmy$.
+    - Since $m$ is a multiple of $b$, and also a mupltiple of $a$, it follows that the two terms in the right hand side are both multiples of $ab$.
+    - So that equation becomes $md = K \times ab$. But this says $md\geq ab$.
+    - Hence $md = ab$.
+
+Here is the main theorem that tells us how to find other solutions:
+
+> Suppose $a x_1 + b y_1 = c$, $m = lcm(a,b)$ and $a'$, $b'$ are as above.
+>
+> Then $a (x_1 - kb') + b (y_1 + ka') = c$ for all integers $k$.
+>
+> Moreover, all solutions to $ax+by = c$ have this form.
+
+To see this:
+
+- We have already seen that other solutions $(x_2,y_2)$ have to relate to the original $(x_1,y_1)$ via:
+
+    $$x_1 - x_2 = k_1$$
+
+    $$y_2 - y_1 = k_2$$
+
+    where $k_1$ and $k_2$ are such that
+
+    $$ak_1 = bk_2$$
+- All we need to do now is find all such pairs $(k_1, k_2)$. This will be done in the next theorem.
+
+> Let $d=\gcd(a,b)$ and $a'$, $b'$ are as before.
 >
 > Then for any pair $(k_1, k_2)$ with $ak_1 = bk_2$ there is an integer $k$ such that
 >

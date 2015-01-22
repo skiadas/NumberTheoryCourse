@@ -18,10 +18,12 @@
 <li>Section 5.4</li>
 </ul>
 <h2 id="practice-problems">Practice Problems</h2>
-<p>5.4 ~</p>
 <dl>
+<dt>5.4</dt>
+<dd>1-4, 10-12, 20, 21, 22
+</dd>
 <dt>Challenge 5.4</dt>
-<dd>(Optional)
+<dd>(Optional) 18, 19
 </dd>
 </dl>
 <h2 id="notes">Notes</h2>
@@ -30,33 +32,52 @@
 <p><span class="math">\[ax_1 + by_1 = c = ax_2 + by_2\]</span></p>
 <p>Then we should be able to say:</p>
 <p><span class="math">\[a(x_1-x_2) = b(y_2-y_1)\]</span></p>
-<p>So there is some relation between these solutions and a <em>common multiple</em> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
-<p>Before proceeding, we will need a lemma:</p>
+<p>So there is some relation between these solutions and a <em>common multiple</em> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. Let's make it more precise:</p>
 <blockquote>
-<p>The <span class="math">\(lcm(a,b)\)</span> divides all other common multiples of <span class="math">\(a\)</span>, <span class="math">\(b\)</span>.</p>
+<p>If <span class="math">\(ax_1 + by_1 = c\)</span> is a solution.</p>
+<p>Then every other solution can be obtained as</p>
+<p><span class="math">\[x_2 = x_1 - k_1, \quad y_2 = y_1 + k_2\]</span></p>
+<p>where <span class="math">\((k_1, k_2)\)</span> are such that <span class="math">\(ak_1 = bk_2\)</span>.</p>
 </blockquote>
-<p>This is actually easy to see, and once again boils down to Euclidean Division:</p>
+<p>This is easy to see. So the solutions to the diophantine equations are in 1-1 correspondence with these pairs of numbers.</p>
+<p>Before we see the main theorem, let us have some definitions and a key result:</p>
+<blockquote>
+<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(m=lcm(a,b)\)</span>. Further let <span class="math">\(a&#39;d = a\)</span> and <span class="math">\(b&#39;d = b\)</span>. Then:</p>
 <ul>
-<li>Say <span class="math">\(m = lcm(a,b)\)</span> and <span class="math">\(M\)</span> is another common multiple.</li>
-<li>Divide <span class="math">\(m\)</span> into <span class="math">\(M\)</span>: <span class="math">\(M = qm + r\)</span>, <span class="math">\(0 \leq r &lt; m\)</span>.</li>
-<li>Then <span class="math">\(m-r\)</span> is a common multiple, and <span class="math">\(0 &lt; m-r \leq m\)</span>.</li>
-<li>It must be the case that <span class="math">\(r=0\)</span>. So <span class="math">\(m|M\)</span>.</li>
+<li><span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are relatively prime.</li>
+<li><span class="math">\(a&#39;b = ab&#39; = m\)</span>.</li>
+<li><span class="math">\(dm = ab\)</span>.</li>
 </ul>
-<p>Let us return to our main topic. Here is a theorem that tells us how to find other solutions:</p>
-<blockquote>
-<p>Suppose <span class="math">\(a x_1 + b y_1 = c\)</span>, <span class="math">\(m = lcm(a,b)\)</span> and <span class="math">\(d_1\)</span>, <span class="math">\(d_2\)</span> are such that <span class="math">\(ad_1 = bd_2 = m\)</span>.</p>
-<p>Then <span class="math">\(a (x_1 - kd_1) + b (y_1 + kd_2) = c\)</span> for all integers <span class="math">\(k\)</span>.</p>
-<p>Moreover, all solutions to <span class="math">\(ax+by=c\)</span> have this form.</p>
 </blockquote>
-<p>We have already seen that other solutions <span class="math">\((x_2,y_2)\)</span> have to relate to the original <span class="math">\((x1,y1)\)</span> via:</p>
+<p>To see this:</p>
+<ul>
+<li>Any common factor of <span class="math">\(a&#39;\)</span> and <span class="math">\(b&#39;\)</span> would, when multiplied by <span class="math">\(d\)</span>, provide a common divisor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. <span class="math">\(d\)</span> is the largest such divisor, so that common factor can only be 1. So <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> must be relatively prime.</li>
+<li>The other two parts say the same thing, so we only need to show one of them. We will show the last one, that <span class="math">\(dm = ab\)</span>.
+<ul>
+<li>First, notice that <span class="math">\(\frac{ab}{d}\)</span> is an integer that is a common multiple of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. Therefore <span class="math">\(\frac{ab}{d}\geq m\)</span>, so <span class="math">\(ab\geq md\)</span>.</li>
+<li>Second, notice that since <span class="math">\(d\)</span> is the gcd we can write <span class="math">\(d = ax + by\)</span>. Multiplying by <span class="math">\(m\)</span> gives us: <span class="math">\(md = amx + bmy\)</span>.</li>
+<li>Since <span class="math">\(m\)</span> is a multiple of <span class="math">\(b\)</span>, and also a mupltiple of <span class="math">\(a\)</span>, it follows that the two terms in the right hand side are both multiples of <span class="math">\(ab\)</span>.</li>
+<li>So that equation becomes <span class="math">\(md = K \times ab\)</span>. But this says <span class="math">\(md\geq ab\)</span>.</li>
+<li>Hence <span class="math">\(md = ab\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is the main theorem that tells us how to find other solutions:</p>
+<blockquote>
+<p>Suppose <span class="math">\(a x_1 + b y_1 = c\)</span>, <span class="math">\(m = lcm(a,b)\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are as above.</p>
+<p>Then <span class="math">\(a (x_1 - kb&#39;) + b (y_1 + ka&#39;) = c\)</span> for all integers <span class="math">\(k\)</span>.</p>
+<p>Moreover, all solutions to <span class="math">\(ax+by = c\)</span> have this form.</p>
+</blockquote>
+<p>To see this:</p>
+<ul>
+<li><p>We have already seen that other solutions <span class="math">\((x_2,y_2)\)</span> have to relate to the original <span class="math">\((x_1,y_1)\)</span> via:</p>
 <p><span class="math">\[x_1 - x_2 = k_1\]</span></p>
 <p><span class="math">\[y_2 - y_1 = k_2\]</span></p>
 <p>where <span class="math">\(k_1\)</span> and <span class="math">\(k_2\)</span> are such that</p>
-<p><span class="math">\[ak_1 = bk_2\]</span></p>
-<p>All we need to do now is find all such pairs <span class="math">\((k_1, k_2)\)</span>.</p>
+<span class="math">\[ak_1 = bk_2\]</span></li>
+<li><p>All we need to do now is find all such pairs <span class="math">\((k_1, k_2)\)</span>. This will be done in the next theorem.</p></li>
+</ul>
 <blockquote>
-<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are such that</p>
-<p><span class="math">\[a = da&#39;,\quad b = db&#39;\]</span></p>
+<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are as before.</p>
 <p>Then for any pair <span class="math">\((k_1, k_2)\)</span> with <span class="math">\(ak_1 = bk_2\)</span> there is an integer <span class="math">\(k\)</span> such that</p>
 <p><span class="math">\[k_1 = k b&#39;,\quad k_2 = k a&#39;\]</span></p>
 </blockquote>
