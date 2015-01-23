@@ -56,7 +56,7 @@ To see this:
 
 Here is the main theorem that tells us how to find other solutions:
 
-> Suppose $a x_1 + b y_1 = c$, $m = lcm(a,b)$ and $a'$, $b'$ are as above.
+> Suppose $a x_1 + b y_1 = c$ and $a'$, $b'$ are as above.
 >
 > Then $a (x_1 - kb') + b (y_1 + ka') = c$ for all integers $k$.
 >
