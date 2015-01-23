@@ -45,6 +45,7 @@ A week-by-week breakdown of the material.
     - [Euclidean Division and Diophantine Equations](notes/equations_diophantine_and_euclidean.md)
 - Day 4
     - [Finding all Solutions](notes/equations_diophantine_all_solutions.md)
+    - [Assignment 5](assignments/5.md)
 
 ## Week  4 (01/26-01/30)
 
