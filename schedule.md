@@ -50,21 +50,20 @@ A week-by-week breakdown of the material.
 ## Week  4 (01/26-01/30)
 
 - Day 1
-- Day 2
-- Day 3
-    - [Other Diophantine Equations](notes/equations_diophantine_other.md)
-    - [Diophantine Equations: Finding all solutions](notes/equations_diophantine_all_solutions.md)
-- Day 4
+    - [Finding all Solutions (cont)](notes/equations_diophantine_all_solutions.md)
     - [Fundamental Theorem of Arithmetic](notes/numbers_fundamental_theorem.md)
+- Day 2
+    - [Consequences of Fundamental Theorem](notes/numbers_fta_consequences.md)
+- Day 3
+    - [Modular Arithmetic and Congruences](notes/congruence_intro.md)
+- Day 4
 
 ## Week  5 (02/02-02/06)
 
 - Day 1
-    - [Finding all Divisors](notes/numbers_all_divisors.md)
 - Day 2
     - MIDTERM
 - Day 3
-    - [Modular Arithmetic and Congruences](notes/congruence_intro.md)
 - Day 4
     - [Arithmetic with Congruences](notes/congruence_arithmetic.md)
     - [Divisibility Tests](notes/numbers_divisibility_tests.md)
