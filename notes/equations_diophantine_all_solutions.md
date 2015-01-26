@@ -85,12 +85,11 @@ Let us prove this:
 
 - First of all, note that numbers $(k_1,k_2)$ that have this form $(kb',ka')$ do satisfy the needed equation $ak_1=bk_2$. So this does in fact give us all such pairs of numbers.
 - For proving the other direction, suppose $ak_1 = bk_2$.
-- Note that $a'$ and $b'$ are relatively prime: $\gcd(a',b')=1$.
-- Since $a=da'$ and $b=db'$, it follows that $a'k_1 = b'k_2$.
-- We claim that $b'$ must divide $k_1$.
-    - If we believe that for a minute, we can finish the proof: $k_1 = b' k$
-    - Therefore the previous equation becomes $a'b'k=b'k_2$, or $a'k = k_2$.
-- The fact that $b'$ must divide $k_1$ will follow from the following more general statement:
+- This number is a common multiple of $a$ and $b$, so must be equal to $mk$ for some $k$.
+- Then $ak_1=mk$, $bk_2 = mk$.
+- Since $b' = m/a$ and $a' = m/b$, we see that $k_1 = b'k$ and $k_2=a'k$.
+
+Random property of the gcd that is worth mentioning.
 
 > If $\gcd(a,b) = 1$ and $b | ac$, then it must be the case that $b|c$.
 
