@@ -57,6 +57,7 @@ A week-by-week breakdown of the material.
 - Day 3
     - [Modular Arithmetic and Congruences](notes/congruence_intro.md)
 - Day 4
+    - [Arithmetic with Congruences](notes/congruence_arithmetic.md)
 
 ## Week  5 (02/02-02/06)
 
@@ -65,7 +66,6 @@ A week-by-week breakdown of the material.
     - MIDTERM
 - Day 3
 - Day 4
-    - [Arithmetic with Congruences](notes/congruence_arithmetic.md)
     - [Divisibility Tests](notes/numbers_divisibility_tests.md)
 
 ## Week  6 (02/09-02/13)

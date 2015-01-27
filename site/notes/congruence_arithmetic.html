@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="arithmetic-with-congruences">Arithmetic with congruences</h1>
+<h1 id="modular-arithmetic-and-congruences">Modular Arithmetic and Congruences</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 7.2</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>7.2</dt>
+<dd>1, 3, 6, 8, 9, 10, 22, 26
+</dd>
+<dt>Challenge 7.2</dt>
+<dd>(Optional) 27, 32, 33
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>One of the most powerful facts about congruence relations is that they respect arithmetic operations:</p>
+<blockquote>
+<p>If <span class="math">\(a \equiv b \bmod n\)</span> and <span class="math">\(c \equiv d \bmod n\)</span> then:</p>
+<p><span class="math">\[a + c \equiv b + d \bmod n\]</span></p>
+<p><span class="math">\[ac \equiv bd \bmod n\]</span></p>
+<p><span class="math">\[a^k \equiv b^k \bmod n\]</span> for all <span class="math">\(k\in\mathbb{Z}\)</span>.</p>
+</blockquote>
+<p>This has many far-reaching consequences, that we will examine in due course.</p>
+<p>The proof of these two statements is fairly straighforward:</p>
+<ul>
+<li>If <span class="math">\(n|(b-a)\)</span> and <span class="math">\(n|(d-c)\)</span>, then it also is the case that <span class="math">\(n|(b-a+d-c) = b+d- (a+c)\)</span>.</li>
+<li>For the second assertion:
+<ul>
+<li>If <span class="math">\(n|(b-a)\)</span> then it also divides <span class="math">\(db-da\)</span>.</li>
+<li>If <span class="math">\(n|(d-c)\)</span> then it also divides <span class="math">\(ad-ac\)</span>.</li>
+<li>Therefore it divides <span class="math">\(db - da + ad - ac = bd - ac\)</span>.</li>
+</ul></li>
+<li>The third assertion follows by induction and using the second assertion.</li>
+</ul>
+<p>As a simple example, we can easily reduce a complex computation if can do reduce its individual parts first. For instance, if we want to compute &quot;mod 10&quot;, then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:</p>
+<p><span class="math">\[45322 \times 343523 \times 34519 \equiv 2\times 3 \times 9 \equiv 54 \equiv 4\bmod 10\]</span></p>
+<p>As another example, let us try to compute <span class="math">\(2^{10}\bmod 5\)</span>:</p>
+<p><span class="math">\[2^3 = 8 \equiv 3 \bmod 5\]</span></p>
+<p><span class="math">\[2^4 = 8 \times 2 = 3\times 2 = 6 \equiv 1 \bmod 5\]</span></p>
+<p><span class="math">\[2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5\]</span></p>
+<p><span class="math">\[2^10 = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5\]</span></p>
+<p>In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number.</p>
+<p>This technique can give rise to some really nice divisibility tests:</p>
+<blockquote>
+<p>A number is congruent to the sum of its digits modulo 9.</p>
+<p>Consequently a number is divisible by 9 if and only if the sum of its digits is.</p>
+<p>A number is congruent to the alternating sum of its digits modulo 11.</p>
+<p>Consequently a number is divisible by 11 if and only if the alternating sum of its digits is.</p>
+</blockquote>
+<p>For example, 3412458 is divisible by <span class="math">\(9\)</span> since <span class="math">\(8+5+4+2+1+4+3 = 27\)</span>. It is not divisible by <span class="math">\(11\)</span> since <span class="math">\(8-5+4-2+1-4+3 = 5\)</span>.</p>
+<blockquote>
+<p>Question: Can we have two numbers that are not <span class="math">\(\equiv 0\mod n\)</span> but whose product is <span class="math">\(\equiv 0\mod n\)</span>?</p>
+</blockquote>
+</body>
+</html>

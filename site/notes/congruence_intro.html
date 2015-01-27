@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="modular-arithmetic-and-congruences">Modular Arithmetic and Congruences</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 7.1</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>7.1</dt>
+<dd>2, 4, 7, 8, 10
+</dd>
+<dt>Challenge 7.1</dt>
+<dd>(Optional) 9, 16, 18, 19, 20, 21, 28
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p><em>Modular arithmetic</em> considers operations &quot;up to a multiple of a specific number&quot;. That specific number is called the <strong>modulus</strong>.</p>
+<p>You are rather used to this already: If it is now 11 o'clock, then 2 hours later it will be 1 o'clock, and not 13. This is because we &quot;reset things&quot; every time we hit 12. This is really the same as saying: We ignore multiples of 12 in &quot;clock arithmetic&quot;.</p>
+<p>Let us start with our key definition:</p>
+<blockquote>
+<p>We say <span class="math">\(a\)</span>, <span class="math">\(b\)</span> are <strong>congruent modulo n</strong>, if <span class="math">\(n | (a-b)\)</span>, in other words if they differ by a multiple of <span class="math">\(n\)</span>.</p>
+<p><span class="math">\(n\)</span> is called the <strong>modulus</strong> in this case.</p>
+<p>We write: <span class="math">\(a \equiv b \bmod n\)</span></p>
+<p><span class="math">\[a\equiv b \bmod n \Longleftrightarrow n | (a-b) \Longleftrightarrow a = b + kn\quad\text{for some }k\in\mathbb{Z}\]</span></p>
+</blockquote>
+<p>For instance, &quot;modulo 4&quot;, the numbers 1, 5, 9, 13 are all congruent to each other. In fact every number that leaves a remainder of 1 when divided by 4 is congruent to them as well.</p>
+<p>Food for thought: When are two numbers congruent modulo 2?</p>
+<p>In fact, the consideration of the remainder is the only condition for two numbers to be congruent:</p>
+<blockquote>
+<p><span class="math">\(a\)</span>, <span class="math">\(b\)</span> are congruent modulo <span class="math">\(n\)</span> if and only if they leave the same remainder when divided by <span class="math">\(n\)</span>.</p>
+<p>We often call this remainder the <strong>reduction of <span class="math">\(a\)</span> modulo <span class="math">\(n\)</span></strong>.</p>
+<p>If <span class="math">\(r\)</span> is the reduction of <span class="math">\(a\)</span> modulo <span class="math">\(n\)</span>, then we have:</p>
+<ul>
+<li><span class="math">\(a \equiv r \bmod n\)</span></li>
+<li><span class="math">\(r\)</span> is one of <span class="math">\(0, 1, \ldots, n-1\)</span></li>
+</ul>
+</blockquote>
+<p>The later parts follow easily from the first. Let us show the first part:</p>
+<ul>
+<li>Say <span class="math">\(a = q_1 n + r_1\)</span>, <span class="math">\(b = q_2 n + r_2\)</span>, with <span class="math">\(0\leq r_1,r_2 &lt; n\)</span>.</li>
+<li>Then <span class="math">\(a-b = (q_1-q_2)n + (r_1 - r_2)\)</span>.</li>
+<li>So <span class="math">\(n|(a-b)\)</span> if and only if <span class="math">\(n|(r_1-r_2)\)</span>.</li>
+<li>But since <span class="math">\(-n &lt; r_1 - r_2 &lt; n\)</span>, this happens iff <span class="math">\(r_1 - r_2 = 0\)</span>.</li>
+</ul>
+<p>A key property of congruence is that <strong>congruence is an equivalence relation</strong>:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><span class="math">\(a \equiv a \bmod n\)</span> for all <span class="math">\(a\)</span>.</li>
+<li>If <span class="math">\(a \equiv b \bmod n\)</span> then we also have <span class="math">\(b \equiv a \bmod n\)</span>.</li>
+<li>If <span class="math">\(a \equiv b \bmod n\)</span> and <span class="math">\(b \equiv c \bmod n\)</span>, then it is also the case that <span class="math">\(a \equiv c \bmod n\)</span>.</li>
+</ol>
+</blockquote>
+<p>These are all easy to see and left as exercise for the reader.</p>
+<p>If you are familiar with equivalences, then the following should be easy to follow. If not, we will go into greater detail in the next section:</p>
+<p>Whenever you have an equivalence, your set in decomposed into <em>equivalence classes</em>: These are disjoint sets, each consisting of all elements that are equivalent to each other. Every element is in one equivalence class.</p>
+<p>In the case of congruences, we call these <strong>congruence classes</strong>:</p>
+<blockquote>
+<ul>
+<li>Two numbers <span class="math">\(a\)</span>, <span class="math">\(b\)</span> are in the same congruence class if and only if they are congruent mod <span class="math">\(n\)</span>.</li>
+<li>There are exactly <span class="math">\(n\)</span> congruence classes mod <span class="math">\(n\)</span>, represented by the possible remainders when divided by <span class="math">\(n\)</span>.</li>
+<li>The congruence class corresponding to the remainder <span class="math">\(r\)</span> can be described as <span class="math">\(\{ r + k n \mid k \in \mathbb{Z} \}\)</span>.</li>
+</ul>
+</blockquote>
+<h3 id="more-on-equivalences">More on equivalences</h3>
+<p>We will assume in this section that you are not too familiar with equivalences, and we will build things from the ground up. First off, let's recall the 3 key properties that make congruence an equivalence:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>(reflexivity) <span class="math">\(a \equiv a \bmod n\)</span> for all <span class="math">\(a\)</span>.</li>
+<li>(symmetry) If <span class="math">\(a \equiv b \bmod n\)</span> then we also have <span class="math">\(b \equiv a \bmod n\)</span>.</li>
+<li>(transitivity) If <span class="math">\(a \equiv b \bmod n\)</span> and <span class="math">\(b \equiv c \bmod n\)</span>, then it is also the case that <span class="math">\(a \equiv c \bmod n\)</span>.</li>
+</ol>
+</blockquote>
+<p>Armed with this in hand, let us make the following definition:</p>
+<blockquote>
+<p>The <em>congruence class of <span class="math">\(a\)</span></em> is the set of all <span class="math">\(b\)</span> that are congruent to <span class="math">\(a\)</span>. In other words it is the set:</p>
+<p><span class="math">\[C(a) = \{ a + nk \mid k \in\mathbb{Z} \} = \{ b \mid  b\equiv a \bmod n \}\]</span></p>
+</blockquote>
+<p>We will show the following:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>For all <span class="math">\(a\)</span>, the set <span class="math">\(C(a)\)</span> is non-empty.</li>
+<li>For any <span class="math">\(a\)</span>, <span class="math">\(b\)</span>, we have <span class="math">\(a\equiv b \bmod n\)</span> if and only if <span class="math">\(C(a) = C(b)\)</span> if and only if <span class="math">\(b \in C(a)\)</span>.</li>
+<li>If <span class="math">\(a\not\equiv b \bmod n\)</span> then <span class="math">\(C(a) \cap C(b) = \emptyset\)</span>.</li>
+<li>In other words, the <span class="math">\(C(a)\)</span> are disjoint sets, when they are not identical sets.</li>
+<li>If <span class="math">\(r\)</span> is the remainder of dividing <span class="math">\(a\)</span> by <span class="math">\(n\)</span>, then <span class="math">\(a\equiv r \bmod n\)</span> and <span class="math">\(C(a) = C(r)\)</span>.</li>
+<li>If <span class="math">\(0\leq r_1\neq r_2 &lt; n\)</span>, then <span class="math">\(C(r_1) \neq C(r_2)\)</span>.</li>
+<li>There is exactly one congruence class for each remainder <span class="math">\(0, 1,\ldots, n-1\)</span>. Every other congruence class is equal to one of these.</li>
+</ol>
+</blockquote>
+<p>Now let us prove each step at a time:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math">\(a\in C(a)\)</span> because <span class="math">\(a\equiv a \bmod n\)</span>. So <span class="math">\(C(a)\)</span> is non-empty and containing <span class="math">\(a\)</span>.</li>
+<li>The second statement is the most complicated to show, but it is also the most important one. It has multiple parts, so let's get started:
+<ul>
+<li>If <span class="math">\(a\equiv b \bmod n\)</span>, then <span class="math">\(C(a) = C(b)\)</span>. To show this:
+<ul>
+<li>First, note that, because of symmetry we also have <span class="math">\(b\equiv a \bmod n\)</span>.</li>
+<li>So if we can come up with an argument that <span class="math">\(C(a)\subset C(b)\)</span>, then the other inclusion will follow by the same reasoning with <span class="math">\(a\)</span> and <span class="math">\(b\)</span> reversed, and would finish the proof of this part.</li>
+<li>To show that <span class="math">\(C(a) \subset C(b)\)</span>, start with a <span class="math">\(c\in C(a)\)</span>. Then <span class="math">\(c\equiv a \bmod n\)</span>.</li>
+<li>Since we also know <span class="math">\(a\equiv b \bmod n\)</span>, the transitivity property says that <span class="math">\(c\equiv b \bmod n\)</span>.</li>
+<li>This is the definition of saying <span class="math">\(c\in C(b)\)</span>. So we just showed that every element of <span class="math">\(C(a)\)</span> is also in <span class="math">\(C(b)\)</span>.</li>
+</ul></li>
+<li>If <span class="math">\(C(a) = C(b)\)</span> then <span class="math">\(b\in C(a)\)</span>. This is trivial, since <span class="math">\(b\in C(b)\)</span>.</li>
+<li>If <span class="math">\(b\in C(a)\)</span> then <span class="math">\(b \equiv a \bmod n\)</span>. This follows directly from symmetry. This completes a circular chain of implications.</li>
+</ul></li>
+<li>To show that if <span class="math">\(a\not\equiv b \bmod n\)</span> then <span class="math">\(C(a) \cap C(b) = \emptyset\)</span>, we instead show the contrapositive: &quot;If there is a <span class="math">\(c\in C(a) \cap C(b)\)</span>, then it must be the case that <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are congruent to each other. To see this:
+<ul>
+<li>Suppose there was a <span class="math">\(c\in C(a)\)</span> and <span class="math">\(c\in C(b)\)</span>.</li>
+<li>Then <span class="math">\(C(a) = C(c)\)</span> and <span class="math">\(C(b) = C(c)\)</span> from the previous part.</li>
+<li>Therefore <span class="math">\(C(a) = C(b)\)</span> which in particular means that <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are congruent to each other.</li>
+</ul></li>
+<li>This follows directly from the previous two parts.</li>
+<li>Follows directly from the division theorem.</li>
+<li>This follows because <span class="math">\(r_1 - r_2\)</span> cannot be divisible by <span class="math">\(n\)</span> without the two remainders being equal to each other.</li>
+</ol>
+</body>
+</html>
