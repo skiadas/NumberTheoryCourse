@@ -3,5 +3,6 @@ Number Theory Course
 
 Site for my MAT320 Number Theory Course
 
-- [syllabus](syllabus.md)
-- [schedule](schedule.md)
+- [Syllabus](syllabus.md)
+- [Schedule](schedule.md)
+- [Midterm 1 Study Guide](studyGuide1.md)
