@@ -1,7 +1,5 @@
 # Arithmetic with congruences
 
-# Modular Arithmetic and Congruences
-
 ## Reading
 
 - Section 7.2
