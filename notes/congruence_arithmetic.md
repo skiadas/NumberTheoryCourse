@@ -37,7 +37,7 @@ The proof of these two statements is fairly straighforward:
     - Therefore it divides $db - da + ad - ac = bd - ac$.
 - The third assertion follows by induction and using the second assertion.
 
-As a simple example, we can easily reduce a complex computation if can do reduce its individual parts first. For instance, if we want to compute "mod 10", then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:
+As a simple example, we can easily reduce a complex computation if can reduce its individual parts first. For instance, if we want to compute "mod 10", then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:
 
 $$45322 \times 343523 \times 34519 \equiv 2\times 3 \times 9 \equiv 54 \equiv 4\bmod 10$$
 
@@ -51,7 +51,7 @@ $$2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5$$
 
 $$2^10 = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5$$
 
-In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number.
+In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to $2^{100}$ modulo 5.
 
 This technique can give rise to some really nice divisibility tests:
 

@@ -47,14 +47,14 @@
 </ul></li>
 <li>The third assertion follows by induction and using the second assertion.</li>
 </ul>
-<p>As a simple example, we can easily reduce a complex computation if can do reduce its individual parts first. For instance, if we want to compute &quot;mod 10&quot;, then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:</p>
+<p>As a simple example, we can easily reduce a complex computation if can reduce its individual parts first. For instance, if we want to compute &quot;mod 10&quot;, then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:</p>
 <p><span class="math">\[45322 \times 343523 \times 34519 \equiv 2\times 3 \times 9 \equiv 54 \equiv 4\bmod 10\]</span></p>
 <p>As another example, let us try to compute <span class="math">\(2^{10}\bmod 5\)</span>:</p>
 <p><span class="math">\[2^3 = 8 \equiv 3 \bmod 5\]</span></p>
 <p><span class="math">\[2^4 = 8 \times 2 = 3\times 2 = 6 \equiv 1 \bmod 5\]</span></p>
 <p><span class="math">\[2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5\]</span></p>
 <p><span class="math">\[2^10 = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5\]</span></p>
-<p>In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number.</p>
+<p>In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to <span class="math">\(2^{100}\)</span> modulo 5.</p>
 <p>This technique can give rise to some really nice divisibility tests:</p>
 <blockquote>
 <p>A number is congruent to the sum of its digits modulo 9.</p>
