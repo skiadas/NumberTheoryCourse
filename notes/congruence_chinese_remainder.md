@@ -7,10 +7,10 @@
 ## Practice Problems
 
 7.4
-  ~ TODO
+  ~ 1-4, 7-13, 15-17, 21, 25
 
 Challenge 7.4
-  ~ (Optional)
+  ~ (Optional) 22
 
 ## Notes
 
@@ -74,3 +74,8 @@ At this point one way to proceed is to write down all the numbers that are equal
 $$1452365 \equiv 17 \bmod 36$$
 
 Indeed: $$1452365 = 40343\times 36 + 17$$
+
+An important consequence of the chinese remainder theorem is the following:
+
+> If $a,b$ are relatively prime, then $x\equiv y\bmod ab$ if and only if $x\equiv y \bmod a$ and $x\equiv y \bmod b$.
+
