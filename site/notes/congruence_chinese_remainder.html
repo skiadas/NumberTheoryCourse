@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-chinese-remainder-theorem">The Chinese Remainder Theorem</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 7.4</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>7.4</dt>
+<dd>TODO
+</dd>
+<dt>Challenge 7.4</dt>
+<dd>(Optional)
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>The Chinese remainder theorem concerns itself with the simultaneous solution of two congruence equations:</p>
+<blockquote>
+<p>For <span class="math">\(a, b\in\mathbb{N}\)</span> and <span class="math">\(\ell, k\in\mathbb{Z}\)</span>, the equations</p>
+<p><span class="math">\[x \equiv \ell \bmod a\]</span> <span class="math">\[x \equiv k \bmod b\]</span></p>
+<p>have a common solution if and only if <span class="math">\(\gcd(a,b) \mid (\ell-k)\)</span>.</p>
+<p>Furthermore the solution is unique modulo <span class="math">\(lcm(a,b)\)</span>.</p>
+</blockquote>
+<p>A special version of this theorem, and usually the one refered to as the Chinese Remainder Theorem, is when <span class="math">\(a,b\)</span> are relatively prime:</p>
+<blockquote>
+<p>If <span class="math">\(a,b\)</span> are relatively prime, then the equations</p>
+<p><span class="math">\[x \equiv \ell \bmod a\]</span> <span class="math">\[x \equiv k \bmod b\]</span></p>
+<p>have a common solution.</p>
+<p>Furthermore the solution is unique modulo <span class="math">\(ab\)</span>.</p>
+</blockquote>
+<p>Let us describe the proof of the first theorem:</p>
+<ul>
+<li>First we prove that the condition is necessary and sufficient.
+<ul>
+<li>The two equations amount to looking for an <span class="math">\(x\)</span> that is equal to <span class="math">\(\ell + ay\)</span> for some <span class="math">\(y\)</span> and at the same time equal to <span class="math">\(k + bz\)</span> for some <span class="math">\(z\)</span>.</li>
+<li>This can obviously be done exactly when those two can equal each other.</li>
+<li>So we turned out problem into finding <span class="math">\(y, z\)</span> such that <span class="math">\(ax - bz = k - \ell\)</span>.</li>
+<li>This is a diophantine equation with unknowns <span class="math">\(x,z\)</span>. So it has a solution if and only if <span class="math">\(\gcd(a,b)\)</span> divides <span class="math">\(k - \ell\)</span>.</li>
+<li>This proves the necessary and sufficient condition for there to be a solution.</li>
+<li>It also tells us how to <em>find</em> a solution: By solving the diophantine equation.</li>
+</ul></li>
+<li>Now we prove that the solution is unique modulo <span class="math">\(lcm(a,b)\)</span>, if a solution exists.
+<ul>
+<li>Suppose we have two solutions, <span class="math">\(x_1\)</span> and <span class="math">\(x_2\)</span> to both equations.</li>
+<li>Then <span class="math">\(x_1-x_2 \equiv 0 \bmod a\)</span> and also <span class="math">\(\equiv 0 \bmod b\)</span>.</li>
+<li>In other words, <span class="math">\(x_1-x_2\)</span> is a common multiple of <span class="math">\(a,b\)</span>.</li>
+<li>Therefore it must be divisible by the <span class="math">\(lcm\)</span>.</li>
+<li>So <span class="math">\(x_1-x_2 \equiv 0 \bmod lcm(a,b)\)</span>.</li>
+<li>This means <span class="math">\(x_1=x_2 \equiv lcm(a,b)\)</span>.</li>
+</ul></li>
+</ul>
+<p>In class: Do a specific example.</p>
+<p>This allows us to find solutions to moduli problems with complex moduli, by instead solving it for their factors.</p>
+<p>For example, say we want to compute <span class="math">\(1452365\)</span> modulo <span class="math">\(36\)</span>. Since <span class="math">\(36=4\times 9\)</span>, and those two are relatively prime to each other, we can start with solving those systems:</p>
+<p><span class="math">\[x \equiv 1452365 \bmod 4\]</span> <span class="math">\[x \equiv 1452365 \bmod 9\]</span></p>
+<p>Both of these are much easier: Since <span class="math">\(4\)</span> divides into <span class="math">\(100\)</span>, only the last two digits matter, and since <span class="math">\(65 \equiv 1 \bmod 4\)</span> we can say that the first equation is simply: <span class="math">\(x \equiv 1 \bmod 4\)</span>.</p>
+<p>For the second equation, we can instead work with the sum of the digits, which is <span class="math">\(26\)</span>, which is <span class="math">\(8\)</span> modulo <span class="math">\(9\)</span>. So now our system becomes:</p>
+<p><span class="math">\[x \equiv 1 \bmod 4\]</span> <span class="math">\[x \equiv 8 \bmod 9\]</span></p>
+<p>At this point one way to proceed is to write down all the numbers that are equal to 8 modulo 9, that do not exceed 36. One of those must be a solution to the other equation as well. These numbers are: 8, 17, 26 and 35. From them only one will be equal to 1 mod 4, and it is 17. So this means that:</p>
+<p><span class="math">\[1452365 \equiv 17 \bmod 36\]</span></p>
+<p>Indeed: <span class="math">\[1452365 = 40343\times 36 + 17\]</span></p>
+</body>
+</html>

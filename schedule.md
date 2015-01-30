@@ -62,18 +62,17 @@ A week-by-week breakdown of the material.
 ## Week  5 (02/02-02/06)
 
 - Day 1
+    - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
 - Day 2
     - MIDTERM
 - Day 3
 - Day 4
-    - [Divisibility Tests](notes/numbers_divisibility_tests.md)
 
 ## Week  6 (02/09-02/13)
 
 - Day 1
-    - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
-- Day 2
     - [Congruence Classes as a Number System](notes/congruence_system.md)
+- Day 2
 - Day 3
     - [Zn as a Ring](notes/congruence_ring.md)
 - Day 4
