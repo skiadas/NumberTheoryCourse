@@ -49,9 +49,9 @@ $$2^4 = 8 \times 2 = 3\times 2 = 6 \equiv 1 \bmod 5$$
 
 $$2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5$$
 
-$$2^10 = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5$$
+$$2^{10} = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5$$
 
-In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to $2^{100}$ modulo 5.
+In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to $2^{100}$ modulo 5, as well as $3^{100}$ and $4^{100}$.
 
 This technique can give rise to some really nice divisibility tests:
 
