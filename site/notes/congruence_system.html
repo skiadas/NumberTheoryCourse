@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="congruences-as-a-number-system-zn">Congruences as a number system: Zn</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 8.1, 8.2</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<p>8.2 ~</p>
+<dl>
+<dt>Challenge 8.2</dt>
+<dd>(Optional)
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>We saw that if we consider the congruence classes modulo <span class="math">\(n\)</span>, there are exactly <span class="math">\(n\)</span> of them, represented by the remainders when dividing by <span class="math">\(n\)</span>. We will denote them thusly:</p>
+<blockquote>
+<p><span class="math">\[\mathbb{Z}_n = \bar 0, \bar 1, \ldots, \overline{n-1}\]</span></p>
+</blockquote>
+<p>This idea takes some getting used to: Each of these &quot;barred numbers&quot; represents a whole set of numbers, namely all elements in that congruence class. Yet we want to think of that entire set as &quot;one number&quot;.</p>
+<p>The interesting thing is that we can now define arithmetic operations on this set:</p>
+<blockquote>
+<p>We define the &quot;sum&quot; and &quot;product&quot; of two congruence classes, as the congruence class of the sum/product of representatives of those classes. In other words:</p>
+<p><span class="math">\[\bar a + \bar b = \overline{a+b}\]</span> <span class="math">\[\bar a \cdot \bar b = \overline{a \cdot b}\]</span></p>
+</blockquote>
+<p>We must show that this is actually <em>well-defined</em>: What if we choose a different <span class="math">\(a\)</span> to present the class <span class="math">\(\bar a\)</span>? Could that possibly change the result?</p>
+<p>The fact that these operations are well-defined follows from our previous result for how congruences behave under addition and multiplication. Recall:</p>
+<blockquote>
+<p>If <span class="math">\(a\equiv c \bmod n\)</span> and <span class="math">\(b\equiv d \bmod n\)</span>, then <span class="math">\(a+b \equiv c+d\bmod n\)</span> and <span class="math">\(a\cdot b \equiv c\cdot d\bmod n\)</span>.</p>
+</blockquote>
+<p>This says exactly what we need: Congruent input values give us congruent results. So changing the representative does not change the congruence class of the result.</p>
+<p>As a quick example, suppose we work modulo <span class="math">\(5\)</span>. Then <span class="math">\(\bar 2 + \bar 4 = \bar 6 = \bar 1\)</span>. If we choose different representatives, we would get the same result: <span class="math">\(\bar 7 + \bar 4 = \bar 11 = \bar 1\)</span>.</p>
+<p>This is an important general idea to keep in mind, when we want to define operations like this:</p>
+<ol style="list-style-type: decimal">
+<li>We want to define something that should make sense as an operation on an entire set (like a congruence class in this example).</li>
+<li>To do that, we pick an arbitrary representative from the set, and use that specific element to define the operation.</li>
+<li>We then show that the result does not depend on the choice of representative.</li>
+<li>We then can say that the operation is <em>well-defined</em>.</li>
+</ol>
+<p>We will denote this system of congruence classes modulo n with <span class="math">\(\mathbb{Z}_n\)</span>, and call it a <strong>finite number system</strong>. There is one such system for every <span class="math">\(n\)</span>.</p>
+<p>These finite number systems retain many of the familiar properties. Consider each of the following questions.</p>
+<ol style="list-style-type: decimal">
+<li>Is addition commutative?</li>
+<li>Is addition associative?</li>
+<li>Is there an identity for addition? (similar to the &quot;zero&quot;)</li>
+<li>Does every element have an additive inverse?</li>
+<li>Is multiplication commutative?</li>
+<li>Is multiplication associative?</li>
+<li>Is there an identity for multiplication? (similar to the &quot;one&quot;)</li>
+<li>Does multiplication distribute over addition?</li>
+<li>Does every element have a multiplicative inverse?</li>
+<li>Can I cancel out the same number if present on both sides of an equation?</li>
+</ol>
+<p>Properties 1-8 together are the definition of what we would call a <strong>ring</strong>. So we can say that <span class="math">\(\mathbb{Z}_n\)</span> has a ring structure.</p>
+</body>
+</html>
