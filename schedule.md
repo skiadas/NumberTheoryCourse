@@ -62,12 +62,12 @@ A week-by-week breakdown of the material.
 ## Week  5 (02/02-02/06)
 
 - Day 1
-    - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
 - Day 2
     - MIDTERM
 - Day 3
-    - [Congruence Classes as a Number System](notes/congruence_system.md)
+    - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
 - Day 4
+    - [Congruence Classes as a Number System](notes/congruence_system.md)
 
 ## Week  6 (02/09-02/13)
 
