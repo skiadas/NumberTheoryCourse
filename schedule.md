@@ -66,6 +66,7 @@ A week-by-week breakdown of the material.
     - MIDTERM
 - Day 3
     - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
+    - [Assignment 6](assignments/6.md)
 - Day 4
     - [Congruence Classes as a Number System](notes/congruence_system.md)
 
