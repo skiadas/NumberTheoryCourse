@@ -62,6 +62,7 @@ A week-by-week breakdown of the material.
 ## Week  5 (02/02-02/06)
 
 - Day 1
+    - Review
 - Day 2
     - MIDTERM
 - Day 3
@@ -73,11 +74,10 @@ A week-by-week breakdown of the material.
 ## Week  6 (02/09-02/13)
 
 - Day 1
+    - [Multiplicative Inverses](notes/congruence_multiplicative_inverses.md)
 - Day 2
 - Day 3
-    - [Zn as a Ring](notes/congruence_ring.md)
 - Day 4
-    - [Multiplicative Inverses](notes/congruence_multiplicative_inverses.md)
     - [Multiplicative Cancellation](notes/congruence_multiplicative_cancellation.md)
 
 ## Week  7 (02/16-02/20)
