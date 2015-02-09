@@ -64,7 +64,23 @@ The converse is also true: If $\mathbb{Z}_n$ has multiplicative inverses, then $
 
 If $n$ is a composite number, then $n = ab$ for some $0 < a,b< n$. Then $\bar a\neq 0$ and $\bar b\neq 0$. But $\bar a \bar b = \bar n = \bar 0$. So $\mathbb{Z}_n$ has zero-divisors.
 
-Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So If $\bar a \bar b = \bar 0 = \bar a \bar 0$, and $\bar a\neq 0$, then we could cancel it and get $\bar b = \bar 0$.
+Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So if $\bar a \bar b = \bar 0 = \bar a \bar 0$, and $\bar a\neq 0$, then we could cancel it and get $\bar b = \bar 0$.
+
+In this case the converse is true also:
+
+> Any finite ring with no zero-divisor is a field: Every non-zero element has a multiplicative inverse.
+>
+> This is usually phrased as: "Any finite integral domain is a field"
+
+To see this in our specific case, consider a fixed non-zero $\bar a$, and consider it as a function that takes $\bar x$ to $\bar a \bar x$. This is a function:
+
+$$\mathbb{Z}_n \to \mathbb{Z}_n$$
+
+Let us see what "no zero-divisors" means for this function: If $\bar a \bar x = \bar a \bar y$, then $\bar a (\bar x - \bar y) = \bar 0$. Since we have no zero-divisors and $\bar a\neq 0$, it must be that $\bar x = \bar y$. In other words:
+
+> No zero-divisors means that the function "multiply by $\bar a$" is 1-1.
+
+Because the function is between two sets of the same finite size, a function is 1-1 if and only if it is also an onto function. In particular, there must be a $\bar x$ so that $\bar a \bar x = \bar 1$, i.e. $\bar a$ has a multiplicative inverse.
 
 ### Wilson's Theorem
 

@@ -72,7 +72,19 @@
 </blockquote>
 <p><strong>Zero-divisors</strong> are two non-zero elements <span class="math">\(x\)</span>, <span class="math">\(y\)</span> such that <span class="math">\(xy=0\)</span>, i.e. they are non-zero elements that multiply to zero.</p>
 <p>If <span class="math">\(n\)</span> is a composite number, then <span class="math">\(n = ab\)</span> for some <span class="math">\(0 &lt; a,b&lt; n\)</span>. Then <span class="math">\(\bar a\neq 0\)</span> and <span class="math">\(\bar b\neq 0\)</span>. But <span class="math">\(\bar a \bar b = \bar n = \bar 0\)</span>. So <span class="math">\(\mathbb{Z}_n\)</span> has zero-divisors.</p>
-<p>Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So If <span class="math">\(\bar a \bar b = \bar 0 = \bar a \bar 0\)</span>, and <span class="math">\(\bar a\neq 0\)</span>, then we could cancel it and get <span class="math">\(\bar b = \bar 0\)</span>.</p>
+<p>Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So if <span class="math">\(\bar a \bar b = \bar 0 = \bar a \bar 0\)</span>, and <span class="math">\(\bar a\neq 0\)</span>, then we could cancel it and get <span class="math">\(\bar b = \bar 0\)</span>.</p>
+<p>In this case the converse is true also:</p>
+<blockquote>
+<p>Any finite ring with no zero-divisor is a field: Every non-zero element has a multiplicative inverse.</p>
+<p>This is usually phrased as: &quot;Any finite integral domain is a field&quot;</p>
+</blockquote>
+<p>To see this in our specific case, consider a fixed non-zero <span class="math">\(\bar a\)</span>, and consider it as a function that takes <span class="math">\(\bar x\)</span> to <span class="math">\(\bar a \bar x\)</span>. This is a function:</p>
+<p><span class="math">\[\mathbb{Z}_n \to \mathbb{Z}_n\]</span></p>
+<p>Let us see what &quot;no zero-divisors&quot; means for this function: If <span class="math">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math">\(\bar a (\bar x - \bar y) = \bar 0\)</span>. Since we have no zero-divisors and <span class="math">\(\bar a\neq 0\)</span>, it must be that <span class="math">\(\bar x = \bar y\)</span>. In other words:</p>
+<blockquote>
+<p>No zero-divisors means that the function &quot;multiply by <span class="math">\(\bar a\)</span>&quot; is 1-1.</p>
+</blockquote>
+<p>Because the function is between two sets of the same finite size, a function is 1-1 if and only if it is also an onto function. In particular, there must be a <span class="math">\(\bar x\)</span> so that <span class="math">\(\bar a \bar x = \bar 1\)</span>, i.e. <span class="math">\(\bar a\)</span> has a multiplicative inverse.</p>
 <h3 id="wilsons-theorem">Wilson's Theorem</h3>
 <p>Wilson's Theorem is an interesting observation on the product of elements in <span class="math">\(\mathbb{Z}_n\)</span>. The question concerns the product of all non-zero elements:</p>
 <blockquote>
