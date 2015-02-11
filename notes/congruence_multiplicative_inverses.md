@@ -82,6 +82,17 @@ Let us see what "no zero-divisors" means for this function: If $\bar a \bar x = 
 
 Because the function is between two sets of the same finite size, a function is 1-1 if and only if it is also an onto function. In particular, there must be a $\bar x$ so that $\bar a \bar x = \bar 1$, i.e. $\bar a$ has a multiplicative inverse.
 
+Let us put all this in order:
+
+> - Invertible elements cannot be zero-divisors.
+> - Every field is also an integral domain.
+> - In $\mathbb{Z}_n$, $\bar a$ is invertible iff $\gcd(a,n) = 1$.
+> - If $n$ is prime, all nonzero elements in $\mathbb{Z}_n$ are invertible, so $\mathbb{Z}_n$ is a field.
+> - If $n$ is composite, it has zero-divisors, so $\mathbb{Z}_n$ is not even an integral domain.
+> - $\bar a$ is not a zero-divisor iff the function "multiply by a" is 1-1.
+> - $\bar a$ is invertible iff the function "multiply by a" is onto.
+> - any integral domain with finitely many elements must be a field.
+
 ### Wilson's Theorem
 
 Wilson's Theorem is an interesting observation on the product of elements in $\mathbb{Z}_n$. The question concerns the product of all non-zero elements:

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="basics-of-cryptography">Basics of Cryptography</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 8.4</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>8.4</dt>
+<dd>2, 3
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Cryptography is centered around the following ideas:</p>
+<dl>
+<dt>Alice and Bob</dt>
+<dd>Typically there are two parties that are trying to communicate, and one is trying to send a message to the other. We typically call them Alice and Bob.
+</dd>
+<dt>cypher</dt>
+<dd>This is the term for the specific cryptographic scheme that the two parties are going to employ.
+</dd>
+<dt>plaintext</dt>
+<dd>This is the text message we want to send. It is typically converted to a series of numbers via some letter-number correspondence.
+</dd>
+<dt>encryption</dt>
+<dd>We &quot;encrypt&quot; the plaintext via some algorithm that tells us how to convert each number in the plaintext into a new number.
+</dd>
+<dt>cyphertext</dt>
+<dd>This is the result of the encryption process. It is the text we send across to the other party. It would typically look like meaningless jumble. In a good cryptographic system, knowing the cyphertext should not be giving you any information about the plaintext it came from.
+</dd>
+<dt>decryption</dt>
+<dd>The other part will &quot;decrypt&quot; the cyphertext using an algorithm analogous to the encryption algorithm.
+</dd>
+<dt>secret key</dt>
+<dd>Usually the encryption and decryption algorithms are based on some secret key that is somehow shared between the two parties. Only someone would knows the correct key would be able to correctly decrypt the cyphertext.
+</dd>
+</dl>
+<p>A very simple cypher could be developed using modular arithmetic. We start by assigning each letter to a number, starting with A being 1, B being 2 and so on, till Z which is 26.</p>
+<p>For instance the word NUMBER would become the sequence of numbers &quot;14 21 13 2 5 18&quot;.</p>
+<p>Next we decide on a &quot;secret key&quot;, which is a number between 0 and 26. We will choose 3. Now we shift all numbers up by 3, modulo 26. So a 24 would have become 1. In our example above, this would be &quot;17 24 16 5 8 21&quot;.</p>
+<p>Lastly we convert this back to letters: &quot;QXPEHU&quot;. This is our cyphertext.</p>
+<p>To decrypt this at the receiving end, we need to know that it was shifted up by 3. All we would have to do to decrypt then would be to shift left by 3, to revert the above process.</p>
+<p>For practice, decrypt this: &quot;DZHVRPH&quot;</p>
+<p>This cypher is of course quite vulnerable to a brute force attack: There are only 26 different possibilities, we could just try all possible shifts till we find one that makes sense.</p>
+</body>
+</html>

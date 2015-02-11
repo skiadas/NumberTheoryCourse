@@ -76,16 +76,15 @@ A week-by-week breakdown of the material.
 - Day 1
     - [Multiplicative Inverses](notes/congruence_multiplicative_inverses.md)
 - Day 2
+    - [Multiplicative Inverses (cont)](notes/congruence_multiplicative_inverses.md)
 - Day 3
+    - [Basics of Encryption](notes/encryption_basic.md)
 - Day 4
-    - [Multiplicative Cancellation](notes/congruence_multiplicative_cancellation.md)
 
 ## Week  7 (02/16-02/20)
 
 - Day 1
-    - [Wilson's Theorem](notes/congruence_wilsons.md)
 - Day 2
-    - [Basics of Encryption](notes/encryption_basic.md)
 - Day 3
     - [Encryption via Multiplication](notes/encryption_mult.md)
 - Day 4
