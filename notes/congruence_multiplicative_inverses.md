@@ -114,7 +114,7 @@ The only numbers that can't be paired up are those that are their own inverses, 
 
 - It is obvious that those two numbers are their own inverses ($\overline{p-1}$ is just another way of writing $\overline{-1}$).
 - Suppose $\bar x ^2 = \bar 1$.
-- Then $p divides $x^2 - 1 = (x-1)(x+1)$.
+- Then $p$ divides $x^2 - 1 = (x-1)(x+1)$.
 - Since $p$ is prime, it must divide $x-1$ or $x+1$.
 - So $\bar x = \bar 1$ or $\bar x = \overline{-1}$.
 
