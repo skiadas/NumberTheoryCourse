@@ -84,8 +84,11 @@ Because the function is between two sets of the same finite size, a function is 
 
 Let us put all this in order:
 
+> - $\bar a$ cancellable iff not a zero-divisor.
+> - $\bar a$ invertible iff $\bar a \bar x = \bar c$ solvable for all $c$.
 > - Invertible elements cannot be zero-divisors.
 > - Every field is also an integral domain.
+> - Not all integral domains are fields (e.g. $\mathbb{Z}$)
 > - In $\mathbb{Z}_n$, $\bar a$ is invertible iff $\gcd(a,n) = 1$.
 > - If $n$ is prime, all nonzero elements in $\mathbb{Z}_n$ are invertible, so $\mathbb{Z}_n$ is a field.
 > - If $n$ is composite, it has zero-divisors, so $\mathbb{Z}_n$ is not even an integral domain.
