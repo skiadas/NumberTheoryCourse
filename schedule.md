@@ -80,13 +80,13 @@ A week-by-week breakdown of the material.
 - Day 3
     - [Basics of Encryption](notes/encryption_basic.md)
 - Day 4
+    - [Encryption via Multiplication](notes/encryption_mult.md)
 
 ## Week  7 (02/16-02/20)
 
 - Day 1
 - Day 2
 - Day 3
-    - [Encryption via Multiplication](notes/encryption_mult.md)
 - Day 4
     - [Fermat's Little Theorem](notes/congruence_fermats.md)
 
