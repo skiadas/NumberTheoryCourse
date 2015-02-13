@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="reduced-residues-and-eulers-phi">Reduced Residues and Euler's phi</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 9.2</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>9.2</dt>
+<dd>1, 3, 4, 5, 8, 10, 11, 18, 21, 22
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="reduced-residues">Reduced Residues</h3>
+<blockquote>
+<p><span class="math">\(\bar a\)</span> is a <strong>reduced residue</strong> if <span class="math">\(\gcd(a,n) = 1\)</span>.</p>
+<p>Reduced residues are also called &quot;units&quot;. The set of all reduced residues is some times denoted by <span class="math">\(\mathbb{Z}_n^*\)</span>.</p>
+<p>Euler's phi function is: <span class="math">\(\phi(n)=\)</span> the number of reduced residues modulo <span class="math">\(n\)</span>, i.e. the size of <span class="math">\(\mathbb{Z}_n^*\)</span>.</p>
+</blockquote>
+<p>This is well defined: If <span class="math">\(\bar a = \bar b\)</span> and <span class="math">\(\gcd(a,n) = 1\)</span>, then it is also the case that <span class="math">\(\gcd(b,n) = 1\)</span>. To see this, note that <span class="math">\(b = a + nk\)</span> for some integer <span class="math">\(k\)</span>. And we already know <span class="math">\(\gcd(a + nk, n) =\gcd(a, n)\)</span>.</p>
+<p>What are the reduced residues in <span class="math">\(\mathbb{Z}_{10}\)</span>, <span class="math">\(\mathbb{Z}_{12}\)</span>, <span class="math">\(\mathbb{Z}_{15}\)</span>?</p>
+<p>Here is a crucial property of reduced residues:</p>
+<blockquote>
+<p>If <span class="math">\(\bar a\)</span> and <span class="math">\(\bar b\)</span> are two reduced residues in <span class="math">\(\mathbb{Z}_n\)</span>, then their product <span class="math">\(\bar a \cdot \bar b\)</span> is also a reduced residue.</p>
+<p>In other words the set <span class="math">\(\mathbb{Z}_n^*\)</span> of residues is closed under the operation of multiplication. And as we also know, all elements there also have inverses.</p>
+<p>In algebraic systems language, we say that <span class="math">\(\mathbb{Z}_n^*\)</span> is a <strong>group</strong> under multiplication.</p>
+</blockquote>
+<p>Some standard results about Euler's phi function:</p>
+<blockquote>
+<ul>
+<li>If <span class="math">\(p\)</span> is prime, then <span class="math">\(\phi(p) = p-1\)</span>.</li>
+<li>If <span class="math">\(p\)</span> is prime and <span class="math">\(a &gt; 0\)</span> then <span class="math">\(\phi(p^a) = (p-1)p^{a-1}\)</span>.</li>
+<li>If <span class="math">\(p,q\)</span> are distinct primes, then <span class="math">\(\phi(pq) = (p-1)(q-1)\)</span>.</li>
+<li>In general if <span class="math">\(m,n\)</span> are relatively prime, then <span class="math">\(\phi(mn) = \phi(m)\phi(n)\)</span>.</li>
+<li>If <span class="math">\(p_1, p_2, \ldots p_k\)</span> are distinct primes and <span class="math">\(a_1, a_2, \ldots a_k\)</span> are nonnegative, then: <span class="math">\[\phi(p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}) = (p_1-1)p_1^{a_1 - 1}\cdots (p_k - 1)p_k^{a_k - 1}\]</span></li>
+</ul>
+</blockquote>
+</body>
+</html>

@@ -79,8 +79,10 @@ A week-by-week breakdown of the material.
     - [Multiplicative Inverses (cont)](notes/congruence_multiplicative_inverses.md)
 - Day 3
     - [Basics of Encryption](notes/encryption_basic.md)
-- Day 4
     - [Encryption via Multiplication](notes/encryption_mult.md)
+- Day 4
+    - [Fermat's Little Theorem](notes/congruence_fermats.md)
+    - [Reduced Residues and phi](notes/residues_basic.md)
 
 ## Week  7 (02/16-02/20)
 
@@ -88,7 +90,6 @@ A week-by-week breakdown of the material.
 - Day 2
 - Day 3
 - Day 4
-    - [Fermat's Little Theorem](notes/congruence_fermats.md)
 
 ## Week  8 (02/23-02/27)
 
@@ -97,7 +98,6 @@ BREAK
 ## Week  9 (03/02-03/06)
 
 - Day 1
-    - [Reduced Residues and Euler's phi](notes/residues_basics.md)
 - Day 2
     - [Euler's Theorem](notes/residues_eulers_theorem.md)
 - Day 3
