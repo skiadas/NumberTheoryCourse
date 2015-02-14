@@ -82,11 +82,12 @@ A week-by-week breakdown of the material.
     - [Encryption via Multiplication](notes/encryption_mult.md)
 - Day 4
     - [Fermat's Little Theorem](notes/congruence_fermats.md)
-    - [Reduced Residues and phi](notes/residues_basic.md)
+    - [Assignment 7](assignments/7.md)
 
 ## Week  7 (02/16-02/20)
 
 - Day 1
+    - [Reduced Residues and phi](notes/residues_basic.md)
 - Day 2
 - Day 3
 - Day 4
