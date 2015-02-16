@@ -87,10 +87,12 @@ A week-by-week breakdown of the material.
 ## Week  7 (02/16-02/20)
 
 - Day 1
-    - [Reduced Residues and phi](notes/residues_basic.md)
 - Day 2
+    - [Reduced Residues and phi](notes/residues_basic.md)
 - Day 3
+    - [Reduced Residues and phi (cont)](notes/residues_basic.md)
 - Day 4
+    - [Euler's Theorem](notes/residues_eulers_theorem.md)
 
 ## Week  8 (02/23-02/27)
 
@@ -100,7 +102,7 @@ BREAK
 
 - Day 1
 - Day 2
-    - [Euler's Theorem](notes/residues_eulers_theorem.md)
+
 - Day 3
     - [Fast exponentiation](notes/residues_exponentation.md)
 - Day 4
@@ -146,7 +148,6 @@ BREAK
 - Day 2
     - [Gauss's Lemma](notes/residues_gauss_lemma.md)
 - Day 3
-    - []
 - Day 4
 
 ## Week 14 (04/06-04/10)
