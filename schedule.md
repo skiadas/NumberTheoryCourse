@@ -104,7 +104,6 @@ BREAK
 - Day 2
 
 - Day 3
-    - [Fast exponentiation](notes/residues_exponentation.md)
 - Day 4
     - [Encryption via Exponentiation](notes/encryption_exp.md)
 

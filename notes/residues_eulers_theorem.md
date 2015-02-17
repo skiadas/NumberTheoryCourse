@@ -7,7 +7,7 @@
 ## Practice Problems
 
 9.3
-  ~
+  ~ 1-12, 15-18
 
 ## Notes
 
