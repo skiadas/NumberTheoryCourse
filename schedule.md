@@ -101,16 +101,15 @@ BREAK
 ## Week  9 (03/02-03/06)
 
 - Day 1
+    - [Encryption via Exponentiation](notes/encryption_exponentiation.md)
 - Day 2
-
+    - [Public Keys and RSA](notes/encryption_rsa.md)
 - Day 3
 - Day 4
-    - [Encryption via Exponentiation](notes/encryption_exp.md)
 
 ## Week 10 (03/09-03/13)
 
 - Day 1
-    - [Public Keys and RSA](notes/encryption_rsa.md)
 - Day 2
     - [Order of Elements in Zn](notes/residues_order.md)
 - Day 3
