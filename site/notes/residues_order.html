@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="order-of-elements">Order of Elements</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 10.1</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>10.1</dt>
+<dd>2, 3, 5, 6, 7, 11, 14, 15
+</dd>
+<dt>10.1</dt>
+<dd>(Challenge, Optional) 25-31 (The point of these exercises is to show that computing the order of an element is as hard as factoring the modulus)
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="order-of-elements-1">Order of Elements</h3>
+<p>The reduced residues modulo <span class="math">\(n\)</span> form a group under multiplication. In this section we start the study of this group, that has many interesting properties. We will not however assume knowledge of group theory.</p>
+<blockquote>
+<p>Let <span class="math">\(\bar a\in\mathbb{Z}_n\)</span> be a reduced residue. The <strong>order</strong> of <span class="math">\(\bar a\)</span>, also called the order of <span class="math">\(a\)</span> modulo <span class="math">\(n\)</span>, is the smallest positive <span class="math">\(r\)</span> such that:</p>
+<p><span class="math">\[\bar a^k = 1\]</span></p>
+<p>It is denoted <span class="math">\(ord_n(a)\)</span>.</p>
+</blockquote>
+<p>As an example, let's recall the orders of various elements modulo <span class="math">\(11\)</span>:</p>
+<ul>
+<li><span class="math">\(ord_{11}(2) = 10\)</span></li>
+<li><span class="math">\(ord_{11}(3) = 5\)</span></li>
+<li><span class="math">\(ord_{11}(4) = 5\)</span></li>
+<li><span class="math">\(ord_{11}(4) = 5\)</span></li>
+<li><span class="math">\(ord_{11}(10) = 2\)</span></li>
+</ul>
+<p>Here are some key properties of orders of elements:</p>
+<blockquote>
+<p>Let <span class="math">\(a\)</span> be a reduced residue modulo <span class="math">\(n\)</span> with order <span class="math">\(r\)</span>. Then:</p>
+<ul>
+<li>For a power <span class="math">\(e\)</span> we have <span class="math">\(\bar a^e = \bar 1\bmod n\)</span> if and only if <span class="math">\(r\)</span> divides <span class="math">\(e\)</span>.</li>
+<li>In particular, <span class="math">\(r\)</span> must divide <span class="math">\(\phi(n)\)</span>.</li>
+<li>For two powers <span class="math">\(j\)</span>, <span class="math">\(k\)</span> we have <span class="math">\(\bar a^j = \bar a^k\bmod n\)</span> if and only if <span class="math">\(j=k\bmod r\)</span>.</li>
+<li>For any <span class="math">\(j\)</span>, we have <span class="math">\(ord(\bar a^j) | r\)</span>.</li>
+<li>More precisely, <span class="math">\(ord(\bar a^j) = \frac{r}{\gcd(j, r)}\)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li>We start by proving the first property.
+<ul>
+<li>Suppose <span class="math">\(a^e = 1\)</span> and perform Euclidean division: <span class="math">\(e = kr + r&#39;\)</span>.</li>
+<li>Then <span class="math">\(1 = a^e = a^{kr}a^{r&#39;} = 1 \cdot a^{r&#39;}\)</span>.</li>
+<li>So <span class="math">\(a^{r&#39;} = 1\)</span>. Since <span class="math">\(r&#39; &lt; r\)</span>, and <span class="math">\(r\)</span> was defined to be the smallest positive integer that makes <span class="math">\(a^r=1\)</span>, we must have that <span class="math">\(r&#39; = 0\)</span>.</li>
+<li>So <span class="math">\(e = kr\)</span> is a multiple of <span class="math">\(r\)</span>.</li>
+<li>The converse is straightforward: If <span class="math">\(e = kr\)</span> then <span class="math">\(a^e = (a^r)^k = 1\)</span></li>
+</ul></li>
+<li>For the third property:
+<ul>
+<li>The first condition is equivalent to <span class="math">\(\bar a^{j-k} = 1\bmod n\)</span>.</li>
+<li>The second condition is equivalent to <span class="math">\(j-k = 0 \bmod r\)</span>, which in turn is equivalent to <span class="math">\(r | j-k\)</span>.</li>
+<li>The equivalence of these two then follows from the first property.</li>
+</ul></li>
+<li>For the fourth property:
+<ul>
+<li>Note that <span class="math">\((a^j)^r = (a^r)^j = 1\)</span>. So <span class="math">\(r\)</span> is a number that makes <span class="math">\(a^j\)</span> equal to 1 when raised to it. So by our first property it must be the case that <span class="math">\(ord(a^j) | r\)</span>.</li>
+</ul></li>
+<li>For the fifth property:
+<ul>
+<li>Let <span class="math">\(d = \gcd(j, r)\)</span>, <span class="math">\(r&#39; = r / d\)</span>.</li>
+<li>We must first show that <span class="math">\((a^j)^{r&#39;} = 1\)</span>.
+<ul>
+<li>Since <span class="math">\(d|j\)</span>, we also have <span class="math">\(r = r&#39;d | r&#39;j\)</span>.</li>
+<li>Hence <span class="math">\((a^j)^{r&#39;} = a^{r&#39;j}\)</span> must also equal <span class="math">\(1\)</span>.</li>
+</ul></li>
+<li>Now we must show that it is the smallest such positive power.
+<ul>
+<li>Suppose <span class="math">\((a^j)^k = 1\)</span>.</li>
+<li>Then <span class="math">\(a^{jk} = 1\)</span>.</li>
+<li>Since <span class="math">\(d = mj + \ell r\)</span>, we also get <span class="math">\(dk = mjk + \ell rk\)</span>.</li>
+<li>So <span class="math">\(dk = mjk\bmod r\)</span>.</li>
+<li>So we must also have <span class="math">\(a^{dk} = (a^{jk})^m = 1\)</span>.</li>
+<li>So <span class="math">\(dk \geq r\)</span> (assuming <span class="math">\(k\)</span> is positive).</li>
+<li>So <span class="math">\(k \geq r / d = r&#39;\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Let us see an illustration of some of these results.</p>
+<ul>
+<li>By direct computation we can see that <span class="math">\(2^{10}=1\bmod 11\)</span> and that is the first power of <span class="math">\(2\)</span> that equals <span class="math">\(1\)</span>. So the order of <span class="math">\(2\)</span> modulo <span class="math">\(11\)</span> is <span class="math">\(10\)</span>.</li>
+<li>Suppose <span class="math">\(j = 6\)</span>, so <span class="math">\(2^6 = (2^3)^2 = 8^2 = (-3)^2 = 9\bmod 11\)</span>.</li>
+<li>Since <span class="math">\(\gcd(6, 10) = 2\)</span>, and <span class="math">\(r&#39; = 10 / 2 = 5\)</span>, we should expect <span class="math">\(9\)</span> to have order <span class="math">\(5\)</span>.</li>
+<li>In fact <span class="math">\(9^5 = (-2)^5 = -10 = 1\bmod 11\)</span>.</li>
+<li>Since <span class="math">\(5\)</span> is a prime power, there is no smaller power that would divide into it. Hence it must be the order of <span class="math">\(9\)</span>. So it must indeed be the order of <span class="math">\(9\)</span>.</li>
+<li>Similarly consider <span class="math">\(j = 5\)</span>, so <span class="math">\(2^5 = 32 = 10\bmod 11\)</span>. Then it should have order <span class="math">\(10 / \gcd(5, 10) = 10 / 5 = 2\)</span>. In fact this is the case.</li>
+</ul>
+</body>
+</html>

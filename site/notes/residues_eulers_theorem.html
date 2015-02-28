@@ -60,7 +60,7 @@
 <p>So that's our final answer, <span class="math">\(6^{91}\equiv 501\bmod 715\)</span>.</p>
 <p>This may have been a lot of work, but let us count the operations: We had to do 7 multiplications to compute <span class="math">\(6\)</span> raised to the powers of <span class="math">\(2\)</span>, and at most another 7 multiplications to combine those powers to get our answer. So a total of <span class="math">\(2\times 7 = 14\)</span> multiplications (instead of <span class="math">\(91\)</span>).</p>
 <blockquote>
-<p>Exponentiation via repeated squaring requires <span class="math">\(\log_2(k)\)</span> multiplications.</p>
+<p>Exponentiation via repeated squaring requires <span class="math">\(2 \log_2(k)\)</span> multiplications.</p>
 </blockquote>
 <p>This scales very well as the power <span class="math">\(k\)</span> grows.</p>
 <p>For completeness, let us describe an algorithm for carrying the fast exponentiation out. Those of you with programming inclinations should try implement the algorithm.</p>

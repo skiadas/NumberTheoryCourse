@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="public-key-cryptography-and-rsa">Public Key cryptography and RSA</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 9.5</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>9.5</dt>
+<dd>1-9
+</dd>
+<dt>9.5</dt>
+<dd>(Challenge, Optional) Implement these algorithms in a programming language, and do exercises 10-12.
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="public-key-cryptography">Public Key Cryptography</h3>
+<p>The cryptographic techniques we have seen so far are <em>symmetric</em>: The same key is used for both encryption and decryption.</p>
+<p>This presents a problem: When two parties want to communicate with each other, they need to both know that key. But if someone is listening on the line, how will they communicate that key to each other at the beginning?</p>
+<blockquote>
+<p>Symmetric Key Encryption relies on the two parties having already established a shared secret key. This has to happen with some other means.</p>
+</blockquote>
+<p>So for example if you want to talk to your bank over the internet, how could you and your bank share this secret key, when it is possible that someone is watching everything you send to each other over the internet?</p>
+<p>Before the advent of Public Key Cryptography the answer was that you simply could not do it. You could perhaps have arranged for the bank to physically mail you some secret number via the postal service, or you could go by the bank and pick it up. Then you could use that to shared secret key to talk to each other over the internet.</p>
+<p>But there is another way, Public Key Cryptography:</p>
+<blockquote>
+<p>In Public Key Cryptography there are two keys:</p>
+<dl>
+<dt>public key</dt>
+<dd>This key is used to encrypt messages. You share this with the &quot;world&quot;, so <em>everyone knows how to encrypt messages</em> and send them to you.
+</dd>
+<dt>private key</dt>
+<dd>This key is used to decrypt messages. You keep this key private, noone else knows about it. So <em>only you can decrypt messages</em>.
+</dd>
+</dl>
+<p>This is therefore an <em>asymmetric</em> encryption scheme.</p>
+<p>So encryption is done via the public key, and decryption via the private key. Since encryption is always an inverse process to decryption, this requires that we have some &quot;function&quot; whose inverse cannot be efficiently computed.</p>
+</blockquote>
+<p>Asymmetric encryption schemes tend to be more expensive. They are typically used at the beginning of a communication, they allow the two parties to use a public medium to share a secret key. Once they have that shared secret, they can use a faster symmetric encryption scheme.</p>
+<p>So here is a typical way this might go (remember our two parties are called Alice and Bob):</p>
+<blockquote>
+<p>Basic Public Key Cryptography Handshake</p>
+<ul>
+<li>Alice knows Bob's public key. She devises a new, unique, &quot;secret key&quot;, then encodes it using Bob's key.</li>
+<li>Alice sends the encrypted secret key to Bob.</li>
+<li>Bob uses his private key to decrypt Alice's message. He now also knows that &quot;secret key&quot;.</li>
+<li>Alice and Bob now both share a secret key, and can use that in future communication using a symmetric scheme.</li>
+<li>Anyone listening in does not know what this secret key is. They only saw its encrypted form, and without Bob's private key they cannot decrypt that message.</li>
+</ul>
+</blockquote>
+<p>This is a perfectly good scheme, but it leaves something out: It would be nice if there was a way for Bob to know that he's really talking to Alice. He knows Alice's public key, maybe this can be used somehow? Indeed it can!</p>
+<p>The key here is that decryption and encryption are trully inverse processes to each other: If D, E are the decryption and encryption algorithms respectively, then we have:</p>
+<p><span class="math">\[E(D(x)) = x\]</span> <span class="math">\[D(E(x)) = x\]</span></p>
+<p>In other words, you can either first use D and then E, or first use E and then D, and in both cases you get back the original message.</p>
+<p>Using this we can do what is known as <em>digital signing</em></p>
+<blockquote>
+<p>Digital Signature using Public Keys</p>
+<ul>
+<li>Alice wants to send a message <span class="math">\(x\)</span> to Bob. She needs to encrypt that message, but also somehow &quot;sign it&quot; to identify it as comming from her.</li>
+<li>Alice has a public key, which is used in algorithm <span class="math">\(E_A\)</span>, and a private key, used in algorithm <span class="math">\(D_A\)</span>.</li>
+<li>Bob has a public key, which is used in algorithm <span class="math">\(E_B\)</span>, and a private key, used in algorithm <span class="math">\(D_B\)</span>.</li>
+<li>Alice uses her private key on the message, resulting in <span class="math">\(D_A(x)\)</span>.</li>
+<li>Alice then uses Bob's public key to encrypt the message, resulting in <span class="math">\(E_B(D_A(x))\)</span>.</li>
+<li>Alice sends this over to Bob.</li>
+<li>Bob can use his private key to decrypt this message, resulting in <span class="math">\(D_A(x)\)</span> (as <span class="math">\(D_B(E_B(D_A(x)))) = D_A(x)\)</span>).</li>
+<li>Bob then uses Alice's public key to compute <span class="math">\(E_A(D_A(x)) = x\)</span> and obtains the message <span class="math">\(x\)</span>.</li>
+<li>Anyone listening in cannot break the message because they don't know Bob's private key.</li>
+<li>Bob knows the message came from Alice, because noone could have produced <span class="math">\(D_A(x)\)</span> without knowing Alice's private key.</li>
+</ul>
+<p>To sum up: Alice performs <span class="math">\(D_A\)</span> followed by <span class="math">\(E_B\)</span>, Bob performs <span class="math">\(D_B\)</span> followed by <span class="math">\(E_A\)</span>.</p>
+</blockquote>
+<h3 id="the-rsa-algorithm">The RSA algorithm</h3>
+<p>The RSA algorithm is an Public Key Encryption scheme that uses exponentiation. It is named after its three creators, Ron Rivest, Adi Shamir and Leonard Adleman. It is widely used in internet communications.</p>
+<blockquote>
+<p>RSA system</p>
+<ul>
+<li>Choose two large prime numbers <span class="math">\(p\)</span>, and <span class="math">\(q\)</span>. Compute <span class="math">\(N = pq\)</span>.</li>
+<li>The number <span class="math">\(\phi(N) = (p-1)(q-1)\)</span> is only known to those that know <span class="math">\(p\)</span> and <span class="math">\(q\)</span>.</li>
+<li>Choose encryption exponent <span class="math">\(e\)</span> with <span class="math">\(gcd(e, \phi(N)) = 1\)</span>.</li>
+<li>Compute decryption exponent <span class="math">\(d\)</span> such that <span class="math">\(de = 1\bmod \phi(N)\)</span>.</li>
+<li>Share the public key: <span class="math">\((N, e)\)</span></li>
+<li>Keep the private key: <span class="math">\((N, d)\)</span></li>
+<li>To encrypt a message <span class="math">\(x\)</span>: Compute <span class="math">\(E(x) = x^e\bmod N\)</span>.</li>
+<li>To decrypt an encrypted message <span class="math">\(c\)</span>: Compute <span class="math">\(D(c) = c^d\bmod N\)</span>.</li>
+<li><span class="math">\(d\)</span> can only be computed if you know <span class="math">\(\phi(N)\)</span>.</li>
+<li><span class="math">\(\phi(N)\)</span> can only be known if you know how to factor <span class="math">\(N\)</span> into <span class="math">\(p\)</span> and <span class="math">\(q\)</span>.</li>
+<li>This factorization cannot be done efficiently without prior knowledge of <span class="math">\(p\)</span>, <span class="math">\(q\)</span>, if the those numbers are large enough.</li>
+</ul>
+</blockquote>
+<p>You might wanted</p>
+</body>
+</html>

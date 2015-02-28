@@ -72,7 +72,7 @@ So that's our final answer, $6^{91}\equiv 501\bmod 715$.
 
 This may have been a lot of work, but let us count the operations: We had to do 7 multiplications to compute $6$ raised to the powers of $2$, and at most another 7 multiplications to combine those powers to get our answer. So a total of $2\times 7 = 14$ multiplications (instead of $91$).
 
-> Exponentiation via repeated squaring requires $\log_2(k)$ multiplications.
+> Exponentiation via repeated squaring requires $2 \log_2(k)$ multiplications.
 
 This scales very well as the power $k$ grows.
 

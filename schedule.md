@@ -92,7 +92,7 @@ A week-by-week breakdown of the material.
 - Day 3
     - [Reduced Residues and phi (cont)](notes/residues_basic.md)
 - Day 4
-    - [Euler's Theorem](notes/residues_eulers_theorem.md)
+    - [Reduced Residues and phi (cont)](notes/residues_basic.md)
 
 ## Week  8 (02/23-02/27)
 
@@ -101,17 +101,19 @@ BREAK
 ## Week  9 (03/02-03/06)
 
 - Day 1
-    - [Encryption via Exponentiation](notes/encryption_exponentiation.md)
+    - [Euler's Theorem](notes/residues_eulers_theorem.md)
 - Day 2
-    - [Public Keys and RSA](notes/encryption_rsa.md)
+    - [Encryption via Exponentiation](notes/encryption_exponentiation.md)
 - Day 3
+    - [Public Key Cryprography and RSA](notes/encryption_rsa.md)
 - Day 4
+    - [Order of Elements in Zn](notes/residues_order.md)
 
 ## Week 10 (03/09-03/13)
 
 - Day 1
+    - Everything below is work in progress.
 - Day 2
-    - [Order of Elements in Zn](notes/residues_order.md)
 - Day 3
     - [Polynomials over Zn](notes/residues_polynomials.md)
 - Day 4
