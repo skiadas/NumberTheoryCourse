@@ -102,6 +102,7 @@ BREAK
 
 - Day 1
     - [Euler's Theorem](notes/residues_eulers_theorem.md)
+    - [Assignment 8](assignments/8.md)
 - Day 2
     - [Encryption via Exponentiation](notes/encryption_exponentiation.md)
 - Day 3
