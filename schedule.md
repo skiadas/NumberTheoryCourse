@@ -64,7 +64,7 @@ A week-by-week breakdown of the material.
 - Day 1
     - Review
 - Day 2
-    - MIDTERM
+    - MIDTERM ([Study guide](studyGuide1.md))
 - Day 3
     - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
     - [Assignment 6](assignments/6.md)
@@ -106,16 +106,18 @@ BREAK
 - Day 2
     - [Encryption via Exponentiation](notes/encryption_exponentiation.md)
 - Day 3
-    - [Public Key Cryprography and RSA](notes/encryption_rsa.md)
+    - Snow Day
 - Day 4
-    - [Order of Elements in Zn](notes/residues_order.md)
+    - [Public Key Cryprography and RSA](notes/encryption_rsa.md)
 
 ## Week 10 (03/09-03/13)
 
 - Day 1
-    - Everything below is work in progress.
+    - [Public Key Cryprography and RSA (cont)](notes/encryption_rsa.md)
 - Day 2
+    - [Order of Elements in Zn](notes/residues_order.md)
 - Day 3
+    - Everything below is work in progress.
     - [Polynomials over Zn](notes/residues_polynomials.md)
 - Day 4
     - [Primitive Roots](notes/residues_primitive_roots.md)
@@ -125,7 +127,7 @@ BREAK
 - Day 1
     - [Primitive Root Theorem](notes/residues_primitive_root_theorem.md)
 - Day 2
-    - MIDTERM
+    - MIDTERM ([Study guide](studyGuide2.md))
     - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 3
     - [Congruential Random Number Generators](notes/numbers_random.md)
