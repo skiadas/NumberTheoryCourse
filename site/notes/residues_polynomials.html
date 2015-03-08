@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="order-of-elements">Order of Elements</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 10.2</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>10.2</dt>
+<dd>1--4, 7, 8
+</dd>
+<dt>10.2</dt>
+<dd>(Optional) 9--13, 15. These problems concern the quadratic formula.
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="polynomials-over-zn">Polynomials over Zn</h3>
+<p>Polynomials over <span class="math">\(\mathbb{Z}_n\)</span> are defined similarly to real-valued polynomials, except for the fact that all numbers and operations come from <span class="math">\(\mathbb{Z}_n\)</span>. For instance we can write:</p>
+<p><span class="math">\[\bar 3 \bar x ^ 2 + \bar 4 \bar x + \bar 1\]</span></p>
+<p>Where all elements are considered modulo <span class="math">\(7\)</span>. We will omit the bars for simplicity.</p>
+<p>Given such a polynomial <span class="math">\(f(x)\)</span>, we can evaluate it at any point of <span class="math">\(\mathbb{Z}_n\)</span>, by replacing <span class="math">\(x\)</span> by that value and then carrying out the computations. For instance in the example above, let's compute the value of <span class="math">\(f\)</span> at all points:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math">\(x\)</span></td>
+<td align="left"><span class="math">\(f(x)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(0\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 0 ^ 2 + 4 \cdot 0 + 1 = 1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(1\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 1 ^ 2 + 4 \cdot 1 + 1 = 8 = 1\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(2\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 2 ^ 2 + 4 \cdot 2 + 1 = 21 = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(3\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 3 ^ 2 + 4 \cdot 3 + 1 = 40 = 5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(4\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 4 ^ 2 + 4 \cdot 4 + 1 = 65 = 2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(5\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 5 ^ 2 + 4 \cdot 5 + 1 = 3(-2)^2 - 4\cdot 2 + 1 = 5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(6\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 6 ^ 2 + 4 \cdot 6 + 1 = 3(-1)^2 - 4\cdot 1 + 1 = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>So this polynomial takes the values <span class="math">\(0\)</span>, <span class="math">\(1\)</span>, <span class="math">\(2\)</span> and <span class="math">\(5\)</span>. Notice also that there are two points <span class="math">\(x\)</span> for which <span class="math">\(f(x) = 0\)</span>.</p>
+<p>Many familiar algebraic properties hold. In particular, it makes sense to multiply polynomials together, or to add them, and evaluating the polynomials at a point gives the same result before and after.</p>
+<p>An important property of polynomials is <strong>polynomial division</strong>:</p>
+<blockquote>
+<p>If <span class="math">\(f(x)\)</span>, <span class="math">\(g(x)\)</span> are polynomials, and the leading coefficient of <span class="math">\(g(x)\)</span> is invertible, then there are (unique) polynomials <span class="math">\(q(x)\)</span> and <span class="math">\(k(x)\)</span> where the degree of <span class="math">\(k(x)\)</span> is less than the degree of <span class="math">\(g(x)\)</span> and: <span class="math">\[f(x) = q(x)g(x) + k(x)\]</span></p>
+<p>A special important case of this is when <span class="math">\(g(x) = x - a\)</span>. Then we have: <span class="math">\[f(x) = q(x)(x-a) + f(a)\]</span></p>
+<p>As a consequence, a polynomial <span class="math">\(f(x)\)</span> has <span class="math">\(a\)</span> as a root if any only if it is perfectly divisible by <span class="math">\(x-a\)</span>.</p>
+</blockquote>
+<p>Dividing by <span class="math">\(x-a\)</span> uses the familiar method of <a href="http://en.wikipedia.org/wiki/Synthetic_division"><strong>synthetic division</strong></a>, which is the same way in which a computer would in fact evaluate a polynomial.</p>
+<h3 id="roots-of-a-polynomial">Roots of a polynomial</h3>
+<p>One important consideration is the number of roots/zeros of a polynomial. For instance we can see in the example above that there are two roots, namely <span class="math">\(2\)</span> and <span class="math">\(6\)</span>. Could there be more? We will answer the question shortly. But first, suppose we were working modulo <span class="math">\(8\)</span>, and let us repeat the evaluations above:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math">\(x\)</span></td>
+<td align="left"><span class="math">\(f(x)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(0\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 0 ^ 2 + 4 \cdot 0 + 1 = 1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(1\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 1 ^ 2 + 4 \cdot 1 + 1 = 8 = 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(2\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 2 ^ 2 + 4 \cdot 2 + 1 = 21 = 5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(3\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 3 ^ 2 + 4 \cdot 3 + 1 = 40 = 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(4\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 4 ^ 2 + 4 \cdot 4 + 1 = 65 = 1\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(5\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 5 ^ 2 + 4 \cdot 5 + 1 = 96 = 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math">\(6\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 6 ^ 2 + 4 \cdot 6 + 1 = 133 = 5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math">\(7\)</span></td>
+<td align="left"><span class="math">\(3 \cdot 7 ^ 2 + 4 \cdot 7 + 1 = 176 = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>So you see that modulo 8, this polynomial has <span class="math">\(4\)</span> zeros! It is a polynomial of degree <span class="math">\(2\)</span>, and yet it has <span class="math">\(4\)</span> zeros.</p>
+<p>Let's try to understand how this might be possible. First let's start with the solution <span class="math">\(a=1\)</span>. This means that our polynomial is divisible by <span class="math">\(x-1\)</span>, and in fact it is easy to see that:</p>
+<p><span class="math">\[3x^2+4x+1 = (3x+7)(x-1)\]</span></p>
+<p>Now we look for other solutions. In a real variable case, we could say the following: If <span class="math">\(a\)</span> is another solution, then we must have:</p>
+<p><span class="math">\[0 = 3a^2+4a+1 = (3a+7)(a-1)\]</span></p>
+<p>Since <span class="math">\(a-1\)</span> is non-zero, it must mean that <span class="math">\(3a+7=0\)</span>, and solving for <span class="math">\(a\)</span> we find the unique other solution.</p>
+<p>In <span class="math">\(\mathbb{Z}_8\)</span> this is no longer the case! <span class="math">\((3a+7)(a-1)\)</span> might equal <span class="math">\(0\)</span> without either factor equaling <span class="math">\(0\)</span>, because we can have zero-divisors. For example when <span class="math">\(a=5\)</span> we have <span class="math">\(3a+7=22=-2\)</span> and <span class="math">\(a-1=4\)</span>, and therefore <span class="math">\((3a+7)(a-1) = -2\cdot 4 = 0\)</span>.</p>
+<p>This problem only occurs because of the presence of zero-divisors in <span class="math">\(\mathbb{Z}_8\)</span>. This is in fact the only obstacle. We have the following theorem:</p>
+<blockquote>
+<p>If <span class="math">\(p\)</span> is prime and <span class="math">\(f(x)\)</span> is a polynomial over <span class="math">\(\mathbb{Z}_p\)</span> of degree <span class="math">\(d\)</span>, then <span class="math">\(f(x)\)</span> has at most <span class="math">\(d\)</span> distinct roots in <span class="math">\(\mathbb{Z}_p\)</span>.</p>
+<p>This is true more generally when we use values from a field (<span class="math">\(\mathbb{Z}_p\)</span> in this instance).</p>
+</blockquote>
+<p>Let us prove this theorem.</p>
+<ul>
+<li>Say <span class="math">\(a\)</span> is a root of <span class="math">\(f(x)\)</span>.</li>
+<li>Then we can write <span class="math">\(f(x) = g(x)(x-a)\)</span> where <span class="math">\(g(x)\)</span> has degree <span class="math">\(d-1\)</span>.</li>
+<li>If <span class="math">\(b\neq a\)</span> is a root of <span class="math">\(f(x)\)</span> then:
+<ul>
+<li><span class="math">\(g(b)(b-a)=0\)</span>.</li>
+<li>In the absence of zero-divisors, <span class="math">\(g(b) = 0\)</span>.</li>
+<li>So <span class="math">\(b\)</span> is a root of <span class="math">\(g(x)\)</span>.</li>
+</ul></li>
+<li>So any root of <span class="math">\(f(x)\)</span> different from <span class="math">\(a\)</span> must be a root of <span class="math">\(g(x)\)</span>.</li>
+<li>But by induction, since <span class="math">\(g(x)\)</span> is of degree <span class="math">\(d-1\)</span>, it has at most <span class="math">\(d-1\)</span> roots.</li>
+<li>Adding <span class="math">\(a\)</span> to that list, we see that <span class="math">\(f(x)\)</span> has at most <span class="math">\(d\)</span> roots.</li>
+<li>All we need is to take care of the base case. A polynomial of degree <span class="math">\(0\)</span> is just a constant <span class="math">\(c\neq 0\)</span>, and it has <span class="math">\(0\)</span> roots.</li>
+</ul>
+<h3 id="roots-of-unity">Roots of unity</h3>
+<p>There is a special polynomial whose roots we will be interested in, namely <span class="math">\(x^m-1\)</span>.</p>
+<blockquote>
+<p>The roots of the polynomial <span class="math">\(x^m-1\)</span> are called the <span class="math">\(m\)</span>-th <em>roots of unity</em>.</p>
+<p>They are the solutions to the equation <span class="math">\(x^m = 1\)</span>.</p>
+</blockquote>
+<p>In <span class="math">\(\mathbb{Z}_p\)</span> it is easy to describe the solutions:</p>
+<blockquote>
+<p>If <span class="math">\(p\)</span> is a prime and <span class="math">\(m\in\mathbb{N}\)</span>, consider the equation <span class="math">\(x^m=1\)</span> in <span class="math">\(\mathbb{Z}_p\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math">\(m | (p-1)\)</span>, then there are exactly <span class="math">\(m\)</span> solutions.</li>
+<li>For any <span class="math">\(m\)</span>, then there are exactly <span class="math">\(\gcd(m, p - 1)\)</span> solutions.</li>
+</ol>
+</blockquote>
+<p>Let us prove this:</p>
+<ul>
+<li>We start with the case where <span class="math">\(m = p - 1\)</span>.
+<ul>
+<li>Fermat's theorem tells us that all numbers <span class="math">\(1,2,\ldots,p-1\)</span> are roots.</li>
+</ul></li>
+<li>Now for other cases with <span class="math">\(m | p - 1\)</span>.
+<ul>
+<li>We start with <span class="math">\(p - 1 = km\)</span>.</li>
+<li><p>This allows us to factor <span class="math">\(x^{p-1} - 1 = (x^m)^k - 1\)</span>, using the formula for <span class="math">\(y^k - 1 = y^{k-1} + y^{k-2} + \cdots + y^1 + 1\)</span>:</p>
+<span class="math">\[(x^m)^k - 1 = (x^m - 1)((x^m)^{k-1} + (x^m)^{k-2} + \cdots + (x^m)^1 + 1)\]</span></li>
+<li>Note that the left-hand-side has exactly <span class="math">\(p-1\)</span> distinct solutions.</li>
+<li>Each one of these solutions must also solve one of the two factors on the right.</li>
+<li>The one factor can have at most <span class="math">\(m\)</span> solutions, while the other can have at moat <span class="math">\(m(k-1) = mk-m\)</span> roots.</li>
+<li>This adds up to exactly <span class="math">\(mk = p-1\)</span>.</li>
+<li>Since that's how many solutions we must have, it must be the case that <span class="math">\(x^m-1\)</span> indeed has exactly <span class="math">\(m\)</span> roots.</li>
+</ul></li>
+<li>For the second part:
+<ul>
+<li>Let <span class="math">\(d = \gcd(m, p - 1)\)</span>.</li>
+<li>If <span class="math">\(x^m = 1\)</span> then <span class="math">\(x^d = 1\)</span> as well.
+<ul>
+<li>That is because <span class="math">\(d = a\cdot m + b(p-1)\)</span>.</li>
+<li>So <span class="math">\(x^d = (x^m)^a(x^{p-1})^b = 1\)</span>.</li>
+</ul></li>
+<li>Conversely if <span class="math">\(x^d = 1\)</span>, then since <span class="math">\(d\)</span> divides <span class="math">\(m\)</span> we also have <span class="math">\(x^m = 1\)</span>.</li>
+<li>So the roots of <span class="math">\(x^m-1\)</span> are the same as the roots of <span class="math">\(x^d-1\)</span>.</li>
+<li>And we know that <span class="math">\(x^d-1\)</span> has exactly <span class="math">\(d-1\)</span> roots.</li>
+</ul></li>
+</ul>
+</body>
+</html>

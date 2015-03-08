@@ -117,9 +117,9 @@ BREAK
 - Day 2
     - [Order of Elements in Zn](notes/residues_order.md)
 - Day 3
-    - Everything below is work in progress.
     - [Polynomials over Zn](notes/residues_polynomials.md)
 - Day 4
+    - Everything below is work in progress.
     - [Primitive Roots](notes/residues_primitive_roots.md)
 
 ## Week 11 (03/16-03/20)
