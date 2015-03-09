@@ -89,11 +89,20 @@ The RSA algorithm is an Public Key Encryption scheme that uses exponentiation. I
 > - Choose encryption exponent $e$ with $gcd(e, \phi(N)) = 1$.
 > - Compute decryption exponent $d$ such that $de = 1\bmod \phi(N)$.
 > - Share the public key: $(N, e)$
-> - Keep the private key: $(N, d)$
+> - Keep the private key: $(N, \phi(N), d)$
 > - To encrypt a message $x$: Compute $E(x) = x^e\bmod N$.
 > - To decrypt an encrypted message $c$: Compute $D(c) = c^d\bmod N$.
-> - $d$ can only be computed if you know $\phi(N)$.
+> - $d$ can only be computed from $(N, e)$ if you know $\phi(N)$.
 > - $\phi(N)$ can only be known if you know how to factor $N$ into $p$ and $q$.
 > - This factorization cannot be done efficiently without prior knowledge of $p$, $q$, if the those numbers are large enough.
 
-You might wanted
+Let us verify the next-to-last claim: The only way we can know both $\phi(N) = M$ and $N$ is if we knew the factors $pq$. To see this:
+
+- Note that $\phi(N)=(p-1)(q-1) = pq - (p+q) + 1 = N - (p+q) + 1$.
+- Therefore knowing $\phi(N)$ and $N$ means knowing both the product and the sum of $p,q$.
+- Since $(x-p)(x-q) = x^2 - (p+q) x + pq$, it follows that if we know the sum and product of $p, q$ then we know the quadratic equation they must satisfy.
+- We can then solve that quadratic equation to recover $p$ and $q$.
+
+As practice of this method, find the two numbers (they don't need to be prime for this to work) whose product is $90897$ and whose sum is $862$.
+
+The only other thing to verify is that the only way to know both $d$ and $e$ is if we also know $\phi(N)$. We won't go into that now as it deviates from our goals.

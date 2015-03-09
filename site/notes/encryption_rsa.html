@@ -93,14 +93,22 @@
 <li>Choose encryption exponent <span class="math">\(e\)</span> with <span class="math">\(gcd(e, \phi(N)) = 1\)</span>.</li>
 <li>Compute decryption exponent <span class="math">\(d\)</span> such that <span class="math">\(de = 1\bmod \phi(N)\)</span>.</li>
 <li>Share the public key: <span class="math">\((N, e)\)</span></li>
-<li>Keep the private key: <span class="math">\((N, d)\)</span></li>
+<li>Keep the private key: <span class="math">\((N, \phi(N), d)\)</span></li>
 <li>To encrypt a message <span class="math">\(x\)</span>: Compute <span class="math">\(E(x) = x^e\bmod N\)</span>.</li>
 <li>To decrypt an encrypted message <span class="math">\(c\)</span>: Compute <span class="math">\(D(c) = c^d\bmod N\)</span>.</li>
-<li><span class="math">\(d\)</span> can only be computed if you know <span class="math">\(\phi(N)\)</span>.</li>
+<li><span class="math">\(d\)</span> can only be computed from <span class="math">\((N, e)\)</span> if you know <span class="math">\(\phi(N)\)</span>.</li>
 <li><span class="math">\(\phi(N)\)</span> can only be known if you know how to factor <span class="math">\(N\)</span> into <span class="math">\(p\)</span> and <span class="math">\(q\)</span>.</li>
 <li>This factorization cannot be done efficiently without prior knowledge of <span class="math">\(p\)</span>, <span class="math">\(q\)</span>, if the those numbers are large enough.</li>
 </ul>
 </blockquote>
-<p>You might wanted</p>
+<p>Let us verify the next-to-last claim: The only way we can know both <span class="math">\(\phi(N) = M\)</span> and <span class="math">\(N\)</span> is if we knew the factors <span class="math">\(pq\)</span>. To see this:</p>
+<ul>
+<li>Note that <span class="math">\(\phi(N)=(p-1)(q-1) = pq - (p+q) + 1 = N - (p+q) + 1\)</span>.</li>
+<li>Therefore knowing <span class="math">\(\phi(N)\)</span> and <span class="math">\(N\)</span> means knowing both the product and the sum of <span class="math">\(p,q\)</span>.</li>
+<li>Since <span class="math">\((x-p)(x-q) = x^2 - (p+q) x + pq\)</span>, it follows that if we know the sum and product of <span class="math">\(p, q\)</span> then we know the quadratic equation they must satisfy.</li>
+<li>We can then solve that quadratic equation to recover <span class="math">\(p\)</span> and <span class="math">\(q\)</span>.</li>
+</ul>
+<p>As practice of this method, find the two numbers (they don't need to be prime for this to work) whose product is <span class="math">\(90897\)</span> and whose sum is <span class="math">\(862\)</span>.</p>
+<p>The only other thing to verify is that the only way to know both <span class="math">\(d\)</span> and <span class="math">\(e\)</span> is if we also know <span class="math">\(\phi(N)\)</span>. We won't go into that now as it deviates from our goals.</p>
 </body>
 </html>
