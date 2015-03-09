@@ -18,7 +18,7 @@
 
 The reduced residues modulo $n$ form a group under multiplication. In this section we start the study of this group, that has many interesting properties. We will not however assume knowledge of group theory.
 
-> Let $\bar a\in\mathbb{Z}_n$ be a reduced residue. The **order** of $\bar a$, also called the order of $a$ modulo $n$, is the smallest positive $r$ such that:
+> Let $\bar a\in\mathbb{Z}_n$ be a reduced residue. The **order** of $\bar a$, also called the order of $a$ modulo $n$, is the smallest positive $k$ such that:
 >
 > $$\bar a^k = 1$$
 >
