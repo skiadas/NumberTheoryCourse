@@ -95,6 +95,8 @@ The RSA algorithm is an Public Key Encryption scheme that uses exponentiation. I
 > - $d$ can only be computed from $(N, e)$ if you know $\phi(N)$.
 > - $\phi(N)$ can only be known if you know how to factor $N$ into $p$ and $q$.
 > - This factorization cannot be done efficiently without prior knowledge of $p$, $q$, if the those numbers are large enough.
+> - For the encryption to work, must have $x$ relatively prime to $N$.
+> - The chance of that happening is $\frac{\phi(N)}{N} = \frac{(p-1)(q-1)}{pq} = (1-\frac{1}{p})(1-\frac{1}{q})$. This is a number very close to $1$.
 
 Let us verify the next-to-last claim: The only way we can know both $\phi(N) = M$ and $N$ is if we knew the factors $pq$. To see this:
 

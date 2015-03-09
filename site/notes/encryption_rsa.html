@@ -99,6 +99,8 @@
 <li><span class="math">\(d\)</span> can only be computed from <span class="math">\((N, e)\)</span> if you know <span class="math">\(\phi(N)\)</span>.</li>
 <li><span class="math">\(\phi(N)\)</span> can only be known if you know how to factor <span class="math">\(N\)</span> into <span class="math">\(p\)</span> and <span class="math">\(q\)</span>.</li>
 <li>This factorization cannot be done efficiently without prior knowledge of <span class="math">\(p\)</span>, <span class="math">\(q\)</span>, if the those numbers are large enough.</li>
+<li>For the encryption to work, must have <span class="math">\(x\)</span> relatively prime to <span class="math">\(N\)</span>.</li>
+<li>The chance of that happening is <span class="math">\(\frac{\phi(N)}{N} = \frac{(p-1)(q-1)}{pq} = (1-\frac{1}{p})(1-\frac{1}{q})\)</span>. This is a number very close to <span class="math">\(1\)</span>.</li>
 </ul>
 </blockquote>
 <p>Let us verify the next-to-last claim: The only way we can know both <span class="math">\(\phi(N) = M\)</span> and <span class="math">\(N\)</span> is if we knew the factors <span class="math">\(pq\)</span>. To see this:</p>
