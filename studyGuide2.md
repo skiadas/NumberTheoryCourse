@@ -33,7 +33,7 @@ Chapters 7 through 9, and 10.1.
     - Why congruence is an equivalence relation.
     - A finite integral domain is necessarily a field.
     - $\mathbb{Z}_n$ has zero-divisors if and only if $n$ is prime if and only if $\mathbb{Z}_n$ is a field.
-    - Every invertible element is cancellable. (Also show by example the converse is not in general true)
+    - Every invertible element is cancellable.
     - Fermat's Little Theorem.
     - Order of a power of an element divides order of the element.
 
