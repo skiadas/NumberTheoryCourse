@@ -115,42 +115,44 @@ BREAK
 - Day 1
     - [Public Key Cryprography and RSA (cont)](notes/encryption_rsa.md)
 - Day 2
-    - [Order of Elements in Zn](notes/residues_order.md)
+    - [Public Key Cryprography and RSA (cont)](notes/encryption_rsa.md)
 - Day 3
-    - [Polynomials over Zn](notes/residues_polynomials.md)
+    - [Order of Elements in Zn](notes/residues_order.md)
 - Day 4
-    - Everything below is work in progress.
-    - [Primitive Roots](notes/residues_primitive_roots.md)
+    - [Polynomials over Zn](notes/residues_polynomials.md)
 
 ## Week 11 (03/16-03/20)
 
 - Day 1
-    - [Primitive Root Theorem](notes/residues_primitive_root_theorem.md)
+    - Review
 - Day 2
     - MIDTERM ([Study guide](studyGuide2.md))
-    - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 3
-    - [Congruential Random Number Generators](notes/numbers_random.md)
+    - Everything below is work in progress.
+    - [Primitive Roots](notes/residues_primitive_roots.md)
 - Day 4
+    - [Primitive Root Theorem](notes/residues_primitive_root_theorem.md)
 
 ## Week 12 (03/23-03/27)
 
 - Day 1
-    - [Quadratic Residues](notes/residues_quadratic.md)
+    - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 2
-    - [The Legendre Symbol](notes/residues_legendre.md)
+    - [Congruential Random Number Generators](notes/numbers_random.md)
 - Day 3
-    - [Euler's Identity](notes/residues_eulers_identity.md)
+    - [Quadratic Residues](notes/residues_quadratic.md)
 - Day 4
-    - [Properties of Legendre symbol](notes/residues_legendre_properties.md)
+    - [The Legendre Symbol](notes/residues_legendre.md)
+    - [Euler's Identity](notes/residues_eulers_identity.md)
 
 ## Week 13 (03/30-04/03)
 
 - Day 1
-    - [Law of Quadratic Reciprocity](notes/residues_reciprocity.md)
+    - [Properties of Legendre symbol](notes/residues_legendre_properties.md)
 - Day 2
-    - [Gauss's Lemma](notes/residues_gauss_lemma.md)
+    - [Law of Quadratic Reciprocity](notes/residues_reciprocity.md)
 - Day 3
+    - [Gauss's Lemma](notes/residues_gauss_lemma.md)
 - Day 4
 
 ## Week 14 (04/06-04/10)
