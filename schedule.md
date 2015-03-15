@@ -119,7 +119,7 @@ BREAK
 - Day 3
     - [Order of Elements in Zn](notes/residues_order.md)
 - Day 4
-    - [Polynomials over Zn](notes/residues_polynomials.md)
+    - [Order of Elements in Zn (cont)](notes/residues_order.md)
 
 ## Week 11 (03/16-03/20)
 
@@ -128,10 +128,10 @@ BREAK
 - Day 2
     - MIDTERM ([Study guide](studyGuide2.md))
 - Day 3
+    - [Polynomials over Zn](notes/residues_polynomials.md)
+- Day 4
     - Everything below is work in progress.
     - [Primitive Roots](notes/residues_primitive_roots.md)
-- Day 4
-    - [Primitive Root Theorem](notes/residues_primitive_root_theorem.md)
 
 ## Week 12 (03/23-03/27)
 
