@@ -130,12 +130,12 @@ BREAK
 - Day 3
     - [Polynomials over Zn](notes/residues_polynomials.md)
 - Day 4
-    - Everything below is work in progress.
     - [Primitive Roots](notes/residues_primitive_roots.md)
 
 ## Week 12 (03/23-03/27)
 
 - Day 1
+    - Everything below is work in progress.
     - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 2
     - [Congruential Random Number Generators](notes/numbers_random.md)
