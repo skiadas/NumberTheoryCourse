@@ -135,24 +135,22 @@ BREAK
 ## Week 12 (03/23-03/27)
 
 - Day 1
-    - Everything below is work in progress.
-    - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
+    - [Primitive Roots (cont)](notes/residues_primitive_roots.md)
 - Day 2
-    - [Congruential Random Number Generators](notes/numbers_random.md)
+    - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 3
     - [Quadratic Residues](notes/residues_quadratic.md)
 - Day 4
-    - [The Legendre Symbol](notes/residues_legendre.md)
-    - [Euler's Identity](notes/residues_eulers_identity.md)
+    - [Quadratic Residues (cont)](notes/residues_quadratic.md)
 
 ## Week 13 (03/30-04/03)
 
 - Day 1
-    - [Properties of Legendre symbol](notes/residues_legendre_properties.md)
-- Day 2
+    - Everything below is work in progress.
     - [Law of Quadratic Reciprocity](notes/residues_reciprocity.md)
-- Day 3
+- Day 2
     - [Gauss's Lemma](notes/residues_gauss_lemma.md)
+- Day 3
 - Day 4
 
 ## Week 14 (04/06-04/10)
