@@ -138,6 +138,7 @@ BREAK
     - [Primitive Roots (cont)](notes/residues_primitive_roots.md)
 - Day 2
     - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
+    - [Assignment 9](assignments/9.md)
 - Day 3
     - [Quadratic Residues](notes/residues_quadratic.md)
 - Day 4
