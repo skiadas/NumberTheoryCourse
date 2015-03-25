@@ -112,8 +112,8 @@
 <li>Alice and Bob agree on a prime <span class="math">\(p\)</span> and a primitive root <span class="math">\(\bar a\)</span> modulo <span class="math">\(p\)</span>. Everyone is aware of <span class="math">\(p\)</span>, <span class="math">\(\bar a\)</span>.</li>
 <li>Alice randomly chooses a number <span class="math">\(1\leq m \leq p-2\)</span> and computes <span class="math">\(\bar M = \bar a^m\)</span>. She transmits <span class="math">\(\bar M\)</span> to Bob.</li>
 <li>Bob similarly chooses at random a number <span class="math">\(1\leq n \leq p-2\)</span> and computes <span class="math">\(\bar N = \bar a^n\)</span>. Bob transmits <span class="math">\(N\)</span> to Alice.</li>
-<li>Evesdroppers can see <span class="math">\(M\)</span>, <span class="math">\(N\)</span>, but they do not see and cannot compute <span class="math">\(m\)</span>, <span class="math">\(n\)</span>.</li>
-<li>Both Alice and Bob can compute <span class="math">\(\bar k = \bar a ^ {mn} = N^m = M^n\)</span>. Evesdroppers cannot.</li>
+<li>Eavesdroppers can see <span class="math">\(M\)</span>, <span class="math">\(N\)</span>, but they do not see and cannot compute <span class="math">\(m\)</span>, <span class="math">\(n\)</span>.</li>
+<li>Both Alice and Bob can compute <span class="math">\(\bar k = \bar a ^ {mn} = N^m = M^n\)</span>. Eavesdroppers cannot.</li>
 <li>Alice finds their secret key by computing <span class="math">\(N^m\)</span>.</li>
 <li>Bob finds their secret key by computing <span class="math">\(M^n\)</span>.</li>
 </ul>

@@ -94,7 +94,7 @@ Let us proceed with the proof:
     - A similar argument, starting with raising to the $s$-th power, will tell us that $r|k$.
     - Since $s$ and $r$ are relatively prime, it must therefore be the case that $sr|k$.
 
-Let us continue our illustration from before. We have that $6$ has order $4$ and $16$ has order $9$, therefore $6\cdot 16 = 22$ must have order $6\cdot 9 = 36$. And we just found our primitive root!. To confirm that, you will need to verify that $ord(22) = 36$ by excluding all other possibilities.
+Let us continue our illustration from before. We have that $6$ has order $4$ and $16$ has order $9$, therefore $6\cdot 16 = 22$ must have order $6\cdot 9 = 36$. And we just found our primitive root! To confirm that, you will need to verify that $ord(22) = 36$ by excluding all other possibilities.
 
 It should be noted that this is not the only primitive root, in fact there are exactly $\phi(36) = 12$ primitive roots. But that's a topic for later.
 

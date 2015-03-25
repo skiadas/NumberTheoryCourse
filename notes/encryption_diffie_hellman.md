@@ -68,8 +68,8 @@ Here are the steps in the protocol:
 > - Alice and Bob agree on a prime $p$ and a primitive root $\bar a$ modulo $p$. Everyone is aware of $p$, $\bar a$.
 > - Alice randomly chooses a number $1\leq m \leq p-2$ and computes $\bar M = \bar a^m$. She transmits $\bar M$ to Bob.
 > - Bob similarly chooses at random a number $1\leq n \leq p-2$ and computes $\bar N = \bar a^n$. Bob transmits $N$ to Alice.
-> - Evesdroppers can see $M$, $N$, but they do not see and cannot compute $m$, $n$.
-> - Both Alice and Bob can compute $\bar k = \bar a ^ {mn} = N^m = M^n$. Evesdroppers cannot.
+> - Eavesdroppers can see $M$, $N$, but they do not see and cannot compute $m$, $n$.
+> - Both Alice and Bob can compute $\bar k = \bar a ^ {mn} = N^m = M^n$. Eavesdroppers cannot.
 > - Alice finds their secret key by computing $N^m$.
 > - Bob finds their secret key by computing $M^n$.
 
