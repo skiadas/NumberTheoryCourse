@@ -39,7 +39,7 @@ To prove this:
 - We must show that $b\neq -b$.
     - If it were the case, then we would have $2b=0$.
     - Since $2$ is invertible when $p > 2$, we would get $b=0$, which is of course a contradiction.
-- Since the polynomial $x^2-a$ has at most two roots,
+- Since the polynomial $x^2-a$ has at most two roots, there cannot be any other solutions.
 
 ### Legendre Symbol
 
