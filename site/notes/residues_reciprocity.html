@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="the-law-of-quadratic-reciprocity">The Law of Quadratic Reciprocity</h1>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 11.3</li>
+<li>Section 11.4</li>
+</ul>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>11.3</dt>
+<dd>1-10
+</dd>
+<dt>11.4</dt>
+<dd>1-10, 13, 14
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="law-of-quadratic-reciprocity">Law of Quadratic Reciprocity</h3>
+<p>The Law of Quadratic reciprocity provides us a relation between the Legendre Symbols <span class="math">\(\left(\frac{p}{q}\right)\)</span> and <span class="math">\(\left(\frac{q}{p}\right)\)</span>. It offers us a way to quickly determine one from the ohter.</p>
+<blockquote>
+<p><strong>Law of Quadratic Reciprocity</strong></p>
+<p>Let <span class="math">\(p\)</span>, <span class="math">\(q\)</span> be odd prime numbers with <span class="math">\(p\neq q\)</span>. Then:</p>
+<ol style="list-style-type: decimal">
+<li>If at least one of <span class="math">\(p\)</span>, <span class="math">\(q\)</span> is equal to <span class="math">\(1\bmod 4\)</span>, then <span class="math">\(\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)\)</span>.</li>
+<li>If both <span class="math">\(p\)</span> and <span class="math">\(q\)</span> are equal to <span class="math">\(3\bmod 4\)</span>, then <span class="math">\(\left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right)\)</span>.</li>
+</ol>
+</blockquote>
+<p>Before looking at the proof, let us see how we can use this in a simple example. Say we want to see if <span class="math">\(3\)</span> is a quadratic residue modulo <span class="math">\(47\)</span>. They are both primes. Since both <span class="math">\(3\)</span> and <span class="math">\(47\)</span> are equal to <span class="math">\(3\)</span> modulo <span class="math">\(4\)</span>, we are in case 2, so we would have:</p>
+<p><span class="math">\[\left(\frac{3}{47}\right) = -\left(\frac{47}{3}\right) = -\left(\frac{2}{3}\right) = - (-1) = 1\]</span></p>
+<p>The last step is by direct inspection, as <span class="math">\(2\)</span> is not a square modulo <span class="math">\(3\)</span>. So we conclude that <span class="math">\(3\)</span> is in fact a quadratic residue modulo <span class="math">\(47\)</span>. In fact with some inspection we can see that <span class="math">\(12^2 = 144 = 3 \bmod 47\)</span>.</p>
+<p>As another example, consider <span class="math">\(p=127\)</span> and <span class="math">\(q=157\)</span>. We want to determine if <span class="math">\(127\)</span> is a quadratic residue modulo <span class="math">\(157\)</span>. Since <span class="math">\(157 = 1 \bmod 4\)</span>, we have, we are in the first case, so:</p>
+<p><span class="math">\[\left(\frac{127}{157}\right) = \left(\frac{157}{127}\right) = \left(\frac{30}{127}\right) = \left(\frac{2}{127}\right)\left(\frac{3}{127}\right)\left(\frac{5}{127}\right)\]</span></p>
+<p>We now have 3 things to compute, but they will all be easier:</p>
+<ul>
+<li><span class="math">\(\left(\frac{2}{127}\right)\)</span>. We will learn how to deal with this case later on. For now, suffice to say that <span class="math">\(2\)</span> is in fact a square modulo <span class="math">\(127\)</span>, namely <span class="math">\(16^2 = 256 = 2\bmod 127\)</span>.</li>
+<li><p><span class="math">\(\left(\frac{3}{127}\right)\)</span>. We will have to use quadratic reciprocity again, and both <span class="math">\(3\)</span> and <span class="math">\(127\)</span> are <span class="math">\(3\bmod 4\)</span>, so we would have:</p>
+<span class="math">\[\left(\frac{3}{127}\right) = - \left(\frac{127}{3}\right) = - \left(\frac{1}{3}\right) = -1\]</span></li>
+<li><p><span class="math">\(\left(\frac{5}{127}\right)\)</span>. Again we start with quadratic reciprocity, and we have (since <span class="math">\(5 = 1\bmod 4\)</span>):</p>
+<p><span class="math">\[\left(\frac{5}{127}\right) = \left(\frac{127}{5}\right) = \left(\frac{2}{5}\right) = -1\]</span></p>
+<p>The last step is because the only squares modulo <span class="math">\(5\)</span> are <span class="math">\(1\)</span> and <span class="math">\(4\)</span>.</p></li>
+</ul>
+<p>Now we put it all together:</p>
+<p><span class="math">\[\left(\frac{127}{157}\right) = \left(\frac{2}{127}\right)\left(\frac{3}{127}\right)\left(\frac{5}{127}\right) = 1 \times -1 \times -1 = 1\]</span></p>
+<p>So <span class="math">\(127\)</span> is a quadratic residue modulo <span class="math">\(157\)</span>. In fact, <span class="math">\(21^2 = 441 = 127\bmod 157\)</span>.</p>
+<h3 id="restatement-of-law-of-quadratic-reciprocity">Restatement of Law of Quadratic Reciprocity</h3>
+<p>We start with a restatement:</p>
+<blockquote>
+<p><strong>Law of Quadratic Reciprocity</strong> (restatement)</p>
+<p>Let <span class="math">\(p\)</span>, <span class="math">\(q\)</span> be odd primes, <span class="math">\(p\neq q\)</span>. Then:</p>
+<p><span class="math">\[\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2}\cdot \frac{q-1}{2}}\]</span></p>
+</blockquote>
+<p>We start by proving that this restatement implies the law of quadratic reciprocity:</p>
+<ul>
+<li>The right-hand-side if <span class="math">\(1\)</span> if and only if the exponent is even, which happens if and only if at least one of <span class="math">\(\frac{p-1}{2}\)</span> or <span class="math">\(\frac{q-1}{2}\)</span> is even, which is equivalent to at least one of <span class="math">\(p=1\bmod 4\)</span>, <span class="math">\(q=1\bmod 4\)</span>.</li>
+<li>The left-hand-side is <span class="math">\(1\)</span> if and only if the two symbols have the same sign, i.e. if and only if <span class="math">\(\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)\)</span>.</li>
+</ul>
+<p>It is this restatement that we will prove in the following sections.</p>
+<h3 id="gausss-lemma">Gauss's Lemma</h3>
+<p>Gauss's lemma is a natural followup to Euler's identity. Let us review that identity:</p>
+<p><span class="math">\[\left(\frac{a}{p}\right) = \bar a ^{\frac{p-1}{2}}\bmod p\]</span></p>
+<p>The right-hand-side suggests an analogy with Fermat's theorem. In that proof, we obtained the power <span class="math">\(a^{p-1}\)</span> by observing the effect that multiplying by <span class="math">\(a\)</span> had on all the reduced residues. We will do something similar here.</p>
+<p>We start with a definition:</p>
+<blockquote>
+<p>We separate the reduced residues modulo <span class="math">\(p\)</span> in two groups:</p>
+<ul>
+<li><span class="math">\(1\)</span>, <span class="math">\(2\)</span>, <span class="math">\(\ldots\)</span>, <span class="math">\(\frac{p-1}{2}\)</span> we will call <strong>positive residues</strong>. The remaining ones, which we can write a <span class="math">\(-\frac{p-1}{2}\)</span>, <span class="math">\(-\frac{p-1}{2} + 1\)</span>, <span class="math">\(\ldots\)</span>, <span class="math">\(-1\)</span>, we will call <strong>negative residues</strong>. They are just the negatives of the positive residues.</li>
+</ul>
+</blockquote>
+<p>Multiplying the positive residues by <span class="math">\(\bar a\)</span> have a specific behavior: It results in a reordering of the positive residues, with possibly some of them replaced by their negative residues.</p>
+<blockquote>
+<p>If <span class="math">\(p&gt;2\)</span> is prime and <span class="math">\(\bar a\)</span> is a reduced residue, consider the set:</p>
+<p><span class="math">\[\left\{ a\cdot 1, a\cdot 2, \ldots, a\cdot \frac{p-1}{2} \right\}\]</span></p>
+<p>The resulting numbers are a reordering of <span class="math">\(\left\{ 1, 2, \ldots, \frac{p-1}{2} \right\}\)</span>, with possibly some signs introduced.</p>
+</blockquote>
+<p>To prove this, the only thing needed is the following:</p>
+<ul>
+<li>If <span class="math">\(ax =b\)</span> and <span class="math">\(ay = -b\)</span>, then <span class="math">\(x = a^{-1}b = -y\)</span>.</li>
+<li>Since the <span class="math">\(x\)</span>'s we consider are only the positive residues, this can't happen.</li>
+<li>In other words, the values we get from computing <span class="math">\(ax\)</span> can never include a positive residue as well as the corresponding negative residue.</li>
+<li>So up to the question of the sign, we will see every positive residue exactly once.</li>
+</ul>
+<p>This was a preamble to Gauss's Lemma:</p>
+<blockquote>
+<p><strong>Gauss's Lemma</strong></p>
+<p>Let <span class="math">\(p&gt;2\)</span> be prime, and <span class="math">\(\bar a\)</span> be a reduced residue. Let <span class="math">\(g\)</span> be the number of negative residues appearing in the list:</p>
+<p><span class="math">\[\left\{ a\cdot 1, a\cdot 2, \ldots, a\cdot \frac{p-1}{2} \right\}\]</span></p>
+<p>Then <span class="math">\[\left(\frac{a}{p}\right) = (-1)^g\]</span></p>
+</blockquote>
+<p>Let us prove Gauss's lemma:</p>
+<ul>
+<li><p>Per our previous discussion, we have:</p>
+<span class="math">\[(a \cdot 1)(a \cdot 3)\cdots(a\cdot \frac{p-1}{2}) = (-1)^g 1\cdot 2\cdots\cdot \frac{p-1}{2}\]</span></li>
+<li><p>We can cancel out the common terms, and get:</p>
+<span class="math">\[\bar a ^{\frac{p-1}{2}} = (-1)^g\]</span></li>
+<li><p>Euler's identity already tells us how to do the next step:</p>
+<p><span class="math">\[\left(\frac{a}{p}\right) = \bar a ^{\frac{p-1}{2}} = (-1)^g\]</span></p></li>
+</ul>
+<p>Let us do an illustration:</p>
+<p>We'll work modulo <span class="math">\(p = 13\)</span>. The positive residues are then the numbers <span class="math">\(1,2,\ldots,6\)</span>.</p>
+<p>We consider <span class="math">\(\bar a = 3\)</span>. We will multiply all the positive residues with it:</p>
+<p><span class="math">\[3\cdot 1 = 3\]</span> <span class="math">\[3\cdot 2 = 6\]</span> <span class="math">\[3\cdot 3 = 9 = -4\]</span> <span class="math">\[3\cdot 4 = 12 = -1\]</span> <span class="math">\[3\cdot 5 = 15 = 2\]</span> <span class="math">\[3\cdot 6 = 18 = 5\]</span></p>
+<p>So notice that up to the signs we just permuted the numbers <span class="math">\(1\)</span> through <span class="math">\(6\)</span>. And we got <span class="math">\(2\)</span> signs, so <span class="math">\(g=2\)</span>.</p>
+<p>Therefore <span class="math">\(\left(\frac{3}{13}\right) = (-1)^2 =1\)</span> and <span class="math">\(3\)</span> is a quadratic residue. In particular <span class="math">\(4^2 = 16 = 3 \bmod 13\)</span>.</p>
+<p>Let's try another number, <span class="math">\(a = 5\)</span> which will turn out to be a quadratic nonresidue. We would have:</p>
+<p><span class="math">\[5\cdot 1 = 5\]</span> <span class="math">\[5\cdot 2 = 10 = -3\]</span> <span class="math">\[5\cdot 3 = 15 = 2\]</span> <span class="math">\[5\cdot 4 = 20 = -6\]</span> <span class="math">\[5\cdot 5 = 25 = -1\]</span> <span class="math">\[5\cdot 6 = 30 = 4\]</span></p>
+<p>Notice once again how the numbers <span class="math">\(1\)</span> through <span class="math">\(6\)</span> got permuted. This time we got <span class="math">\(3\)</span> negative signs, so <span class="math">\(g = 3\)</span> and <span class="math">\(\left(\frac{5}{13}\right) = (-1)^3 =-1\)</span>, so <span class="math">\(5\)</span> is a quadratic nonresidue.</p>
+<h3 id="the-quadratic-character-of-2">The quadratic character of 2</h3>
+<p>We will use Gauss's lemma in our explorations on quadratic reciprocity, starting with determining when <span class="math">\(2\)</span> is a quadratic residue.</p>
+<blockquote>
+<p><strong>Quadratic Character of 2</strong></p>
+<p>Let <span class="math">\(p&gt;2\)</span> be prime. Then:</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math">\(p = \pm 1\bmod 8\)</span>, then <span class="math">\(\left(\frac{2}{p}\right) = 1\)</span>.</li>
+<li>If <span class="math">\(p = \pm 3\bmod 8\)</span>, then <span class="math">\(\left(\frac{2}{p}\right) = -1\)</span>.</li>
+<li>We have:</li>
+</ol>
+<p><span class="math">\[\left(\frac{2}{p}\right) = (-1)^{\frac{p^2-1}{8}}\]</span></p>
+</blockquote>
+<p>We proceed with the proof:</p>
+<p>We will use Gauss's lemma. In order to do that, we need to undestand how many of the products</p>
+<p><span class="math">\[\left\{2\cdot 1, 2\cdot 2,\ldots, 2\cdot \frac{p-1}{2}\right\}\]</span></p>
+<p>are negative. Note that the last of these is exactly, <span class="math">\(p-1\)</span> so the values never &quot;roll over to the positives&quot;, they are already reduced.</p>
+<ul>
+<li>The product <span class="math">\(2k\)</span> is a positive residue exactly when <span class="math">\(2k \leq \frac{p-1}{2}\)</span>, or in other words when <span class="math">\(k\leq \frac{p-1}{4}\)</span>.</li>
+<li>Therefore the number of positive residues in the products is equal to <span class="math">\(\lfloor \frac{p-1}{4}\rfloor\)</span>, the largest integer less than or equal to <span class="math">\(\frac{p-1}{4}\)</span>.</li>
+<li><p>So the number of negative residues equals the rest:</p>
+<span class="math">\[g = \frac{p-1}{2} - \lfloor \frac{p-1}{4}\rfloor\]</span></li>
+<li>All that remains is to perform this computation for the various cases of <span class="math">\(p\)</span> that we have to deal with:
+<ul>
+<li>If <span class="math">\(p = 1\bmod 8\)</span>, then:
+<ul>
+<li><span class="math">\(\frac{p-1}{2}\)</span> is even.</li>
+<li><span class="math">\(\lfloor \frac{p-1}{4}\rfloor = \frac{p-1}{4}\)</span> and is even.</li>
+<li><span class="math">\(g = \frac{p-1}{2} - \frac{p-1}{4} = \frac{p-1}{4}\)</span> is <strong>even</strong>.</li>
+</ul></li>
+<li>If <span class="math">\(p = 3\bmod 8\)</span>, then:
+<ul>
+<li><span class="math">\(\frac{p-1}{2}\)</span> is odd.</li>
+<li><span class="math">\(\lfloor \frac{p-1}{4}\rfloor = \frac{p-1}{4}- \frac{1}{2} = \frac{p-3}{4}\)</span> and is even.</li>
+<li><span class="math">\(g = \frac{p-1}{2} - \frac{p-3}{4} = \frac{p+1}{4}\)</span> is <strong>odd</strong>.</li>
+</ul></li>
+<li>If <span class="math">\(p = -3 = 5\bmod 8\)</span>, then:
+<ul>
+<li><span class="math">\(\frac{p-1}{2}\)</span> is even.</li>
+<li><span class="math">\(\lfloor \frac{p-1}{4}\rfloor = \frac{p-1}{4}\)</span> and is odd.</li>
+<li><span class="math">\(g = \frac{p-1}{2} - \frac{p-1}{4} = \frac{p-1}{4}\)</span> is <strong>odd</strong>.</li>
+</ul></li>
+<li>If <span class="math">\(p = -1 = 7\bmod 8\)</span>, then:
+<ul>
+<li><span class="math">\(\frac{p-1}{2}\)</span> is odd.</li>
+<li><span class="math">\(\lfloor \frac{p-1}{4}\rfloor = \frac{p-1}{4}- \frac{1}{2} = \frac{p-3}{4}\)</span> and is odd.</li>
+<li><span class="math">\(g = \frac{p-1}{2} - \frac{p-3}{4} = \frac{p+1}{4}\)</span> is <strong>even</strong>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>As an illustration, recall that earlier we needed to compute <span class="math">\(\left(\frac{2}{127}\right)\)</span>. Since <span class="math">\(127 = -1\bmod 8\)</span>, we see that <span class="math">\(\left(\frac{2}{127}\right) = 1\)</span> and that <span class="math">\(2\)</span> is a quadratic residue.</p>
+</body>
+</html>

@@ -17,6 +17,7 @@
 <h2 id="reading">Reading</h2>
 <ul>
 <li>Section 11.1</li>
+<li>Section 11.2</li>
 </ul>
 <h2 id="practice-problems">Practice Problems</h2>
 <dl>
@@ -86,7 +87,7 @@
 <li>Note that <span class="math">\(a^{-1}\)</span> is also a quadratic residue.</li>
 <li>If <span class="math">\(ab\)</span> was a quadratic residue, then <span class="math">\(b = a^{-1}ab\)</span> is a quadratic residue by part 2. Which is a contradiction.</li>
 </ul></li>
-<li>For par 4:
+<li>For part 4:
 <ul>
 <li>Consider the operation: multiplication by <span class="math">\(a\)</span>. We know it must be 1-1.</li>
 <li>By part 3 we know it takes the <span class="math">\(\frac{p-1}{2}\)</span> quadratic residues to the <span class="math">\(\frac{p-1}{2}\)</span> quadratic nonresidues.</li>
@@ -113,7 +114,7 @@
 </ul></li>
 <li>This is the challenging part. Suppose <span class="math">\(\bar a\)</span> is a quadratic nonresidue.
 <ul>
-<li>For each number <span class="math">\(c\)</span> in <span class="math">\(1\)</span>, <span class="math">\(2\)</span>, , <span class="math">\(p-1\)</span> modulo <span class="math">\(p\)</span>, we have that <span class="math">\(d=c^{-1}a\neq c\)</span>, as otherwise we would have <span class="math">\(c^2=a\)</span> and <span class="math">\(a\)</span> would have been a quadratic residue.</li>
+<li>For each number <span class="math">\(c\)</span> in <span class="math">\(1\)</span>, <span class="math">\(2\)</span>, <span class="math">\(\ldots\)</span>, <span class="math">\(p-1\)</span> modulo <span class="math">\(p\)</span>, we have that <span class="math">\(d=c^{-1}a\neq c\)</span>, as otherwise we would have <span class="math">\(c^2=a\)</span> and <span class="math">\(a\)</span> would have been a quadratic residue.</li>
 <li>So the numbers from <span class="math">\(1\)</span> to <span class="math">\(p-1\)</span> can be grouped up in pairs, each pair multiplying to <span class="math">\(\bar a\)</span>.</li>
 <li>Therefore the product of all those numbers equals <span class="math">\(\bar a ^ {\frac{p-1}{2}}\)</span>.</li>
 <li>By Wilson's theorem the product also equals <span class="math">\(-\bar 1\)</span>.</li>

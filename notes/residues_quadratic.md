@@ -3,6 +3,7 @@
 ## Reading
 
 - Section 11.1
+- Section 11.2
 
 ## Practice Problems
 
@@ -76,7 +77,7 @@ Let us prove these:
 - For part 3:
     - Note that $a^{-1}$ is also a quadratic residue.
     - If $ab$ was a quadratic residue, then $b = a^{-1}ab$ is a quadratic residue by part 2. Which is a contradiction.
-- For par 4:
+- For part 4:
     - Consider the operation: multiplication by $a$. We know it must be 1-1.
     - By part 3 we know it takes the $\frac{p-1}{2}$ quadratic residues to the $\frac{p-1}{2}$ quadratic nonresidues.
     - Therefore it must take the remaining $\frac{p-1}{2}$ quadratic nonresidues to the $\frac{p-1}{2}$ quadratic residues.
@@ -99,7 +100,7 @@ Let us prove these:
     - So $\bar a = \bar b^2$.
     - Then $\bar a ^{\frac{p-1}{2}} = b^{p-1} = 1$ by Fermat's theorem.
 2. This is the challenging part. Suppose $\bar a$ is a quadratic nonresidue.
-    - For each number $c$ in $1$, $2$, \ldots, $p-1$ modulo $p$, we have that $d=c^{-1}a\neq c$, as otherwise we would have $c^2=a$ and $a$ would have been a quadratic residue.
+    - For each number $c$ in $1$, $2$, $\ldots$, $p-1$ modulo $p$, we have that $d=c^{-1}a\neq c$, as otherwise we would have $c^2=a$ and $a$ would have been a quadratic residue.
     - So the numbers from $1$ to $p-1$ can be grouped up in pairs, each pair multiplying to $\bar a$.
     - Therefore the product of all those numbers equals $\bar a ^ {\frac{p-1}{2}}$.
     - By Wilson's theorem the product also equals $-\bar 1$.

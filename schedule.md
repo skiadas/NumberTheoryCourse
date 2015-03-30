@@ -142,19 +142,19 @@ BREAK
     - [Applications of Primitive Roots: Diffie-Hellman protocol](notes/encryption_diffie_hellman.md)
 - Day 4
     - [Applications of Primitive Roots: Diffie-Hellman protocol (cont)](notes/encryption_diffie_hellman.md)
+    - [Quadratic Residues](notes/residues_quadratic.md)
     - [Assignment 9](assignments/9.md)
 
 ## Week 13 (03/30-04/03)
 
 - Day 1
-    - [Quadratic Residues](notes/residues_quadratic.md)
-- Day 2
     - [Quadratic Residues (cont)](notes/residues_quadratic.md)
-- Day 3
-    - Everything below is work in progress.
+- Day 2
     - [Law of Quadratic Reciprocity](notes/residues_reciprocity.md)
+- Day 3
+    - [Gauss's Lemma](notes/residues_reciprocity.md)
 - Day 4
-    - [Gauss's Lemma](notes/residues_gauss_lemma.md)
+    - [Proof of Quadratic Reciprocity](notes/residues_reciprocity_proof.md)
 
 ## Week 14 (04/06-04/10)
 
