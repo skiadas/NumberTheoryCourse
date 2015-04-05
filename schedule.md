@@ -155,6 +155,7 @@ BREAK
     - [Gauss's Lemma](notes/residues_reciprocity.md)
 - Day 4
     - [Proof of Quadratic Reciprocity](notes/residues_reciprocity_proof.md)
+    - [Assignment 10](assignments/10.md)
 
 ## Week 14 (04/06-04/10)
 

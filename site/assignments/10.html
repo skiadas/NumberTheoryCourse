@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="assignment-10">Assignment 10<span class="small"> (<a href="10.pdf" title="10">pdf</a>)</span></h1>
+<p>True/False questions, not to turn in:</p>
+<ul>
+<li>If <span class="math">\(p &gt; 2\)</span> is a prime, and if <span class="math">\(2p+1\)</span> and <span class="math">\(9p+4\)</span> are both prime, then <span class="math">\(\left(\frac{2p+1}{9p+4}\right) = 1\)</span>. (Make sure you also have prove one way or the other)</li>
+<li>If <span class="math">\(p &gt; 2\)</span> and <span class="math">\(q = p + 2\)</span> are both prime, then <span class="math">\(\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)\)</span>.</li>
+<li>The product of two &quot;positive residues&quot; is a &quot;positive residue&quot;.</li>
+<li>Let <span class="math">\(a\)</span> be relatively prime to the prime <span class="math">\(p\)</span>. For each &quot;negative residue&quot; <span class="math">\(k\)</span> compute <span class="math">\(a\cdot k\)</span>, and denote by <span class="math">\(g&#39;\)</span> the number of those products that result in &quot;positive residues&quot;. Then <span class="math">\(g&#39;=g\)</span>.</li>
+<li>Let <span class="math">\(a\)</span> be relatively prime to the prime <span class="math">\(p\)</span>. For each &quot;positive residue&quot; <span class="math">\(k\)</span> compute <span class="math">\(a\cdot k\)</span>, and denote by <span class="math">\(g&#39;\)</span> the number of those products that result in &quot;positive residues&quot;. Then <span class="math">\(g&#39;=g\)</span>.</li>
+</ul>
+<p>Questions to turn in:</p>
+<ol style="list-style-type: decimal">
+<li>Using Euler's identity, we determined the quadratic character for <span class="math">\(-1\)</span>, namely the Law of Quadratic Reciprocity for <span class="math">\(\left(\frac{-1}{p}\right)\)</span>. Prove the same result by computing <span class="math">\(g\)</span> instead, and using Gauss's Lemma.</li>
+<li>During the proof that <span class="math">\(T(a,p)=g\bmod 2\)</span>, we used that <span class="math">\(a\)</span> is an odd number. What happens when <span class="math">\(a\)</span> is even? Can you demonstrate an example with <span class="math">\(p\)</span> odd, <span class="math">\(a\)</span> even, where <span class="math">\(T(a,p)\neq g\bmod 2\)</span>?</li>
+<li>Demonstrate that <span class="math">\(T(p, q) + T(q, p) = \frac{p-1}{2}\times \frac{q-1}{2}\)</span> by computing both sides directly, for <span class="math">\(p = 13\)</span> and <span class="math">\(q = 17\)</span>.</li>
+<li><p>The Law of Quadratic Reciprocity can help us determine if the equation <span class="math">\(x^2+bx+c = 0\)</span> has a solution modulo <span class="math">\(p\)</span>. The equation can be rewritten as:</p>
+<p><span class="math">\[\left(x+\frac{b}{2}\right)^2 = \frac{b^2-4c}{4}\]</span></p>
+So it will only have a solution if the quantity <span class="math">\(b^2-4x\)</span> is a square modulo <span class="math">\(p\)</span>. Use this on the equation <span class="math">\(x^2+13x+4 = 0\)</span> to find: At least two primes <span class="math">\(p\)</span> for which there is a solution and at least two primes <span class="math">\(p\)</span> for which there is not. For the primes for which there is a solution, find it using the above formula. Note that for each prime the equation should have 2 solutions, so you will be finding in total 4 solutions, 2 each for each of the two primes.</li>
+<li>Compute <span class="math">\(\left(\frac{7}{17}\right)\)</span> in a number of different ways:
+<ol style="list-style-type: lower-alpha">
+<li>Computing all the squares <span class="math">\(\bmod 17\)</span>.</li>
+<li>Using Euler's Identity and computing <span class="math">\(7^8\bmod 17\)</span>.</li>
+<li>Using Gauss's Lemma and computing <span class="math">\(g\)</span>.</li>
+<li>Using Eisenstein's Lemma and computing <span class="math">\(T(7, 17)\)</span>.</li>
+<li>Using the Laws of Quadratic Reciprocity to reduce the symbol to smaller symbols.</li>
+</ol>
+<p>You should of course get the same result in all cases.</p></li>
+</ol>
+</body>
+</html>
