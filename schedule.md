@@ -160,6 +160,8 @@ BREAK
 ## Week 14 (04/06-04/10)
 
 - Day 1
+    - [Primality Tests](notes/primes_testing.md)
 - Day 2
+    - [Primality Tests (cont)](notes/primes_testing.md)
 - Day 3
 - Day 4

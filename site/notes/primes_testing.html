@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1 id="primality-tests">Primality Tests</h1>
+<h2 id="reading">Reading</h2>
+<p>Sections 12.1, 12.2, 12.3, 12.7</p>
+<h2 id="practice-problems">Practice Problems</h2>
+<dl>
+<dt>12.1</dt>
+<dd>3, 4, 7, 13
+</dd>
+<dt>Challenge 12.1</dt>
+<dd>(optional) 14, 17, 18
+</dd>
+<dt>12.3</dt>
+<dd>1-5, 8, 9
+</dd>
+<dt>12.7</dt>
+<dd>1, 2
+</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<h3 id="fermats-test">Fermat's Test</h3>
+<p>In these sections we explore a number of results related to primality and compositeness testing, starting with Fermat's test for compositeness.</p>
+<blockquote>
+<p><strong>Fermat's Test for Compositeness</strong></p>
+<p>Suppose there is a <span class="math">\(\bar a\in \mathbb{Z}_n\)</span> such that:</p>
+<p><span class="math">\[a^{n-1}\neq 1 \bmod n\]</span></p>
+<p>Then <span class="math">\(n\)</span> must be a composite number. We call <span class="math">\(a\)</span> a <em>Fermat witness</em> for the compositeness of <span class="math">\(n\)</span>.</p>
+</blockquote>
+<p>This is a good start for a strategy for determining if a number is composite or not. If a number <span class="math">\(n\)</span> was prime, then raising anything to the <span class="math">\(n-1\)</span> would always result in <span class="math">\(1\)</span>. So we can try computing some <span class="math">\(a^{n-1}\)</span> and seeing if any of them is not equal to <span class="math">\(1\)</span>.</p>
+<p>This raises an important question though, namely whether it is possible for a composite number to always produce a <span class="math">\(1\)</span> when we compute <span class="math">\(a^{n-1}\)</span>. In fact it is possible. These numbers have a name:</p>
+<blockquote>
+<p>A composite number <span class="math">\(n\)</span> is called a <strong>Carmichael Number</strong> if for every integer <span class="math">\(a\)</span> with <span class="math">\(\gcd(a,n) = 1\)</span> we have:</p>
+<p><span class="math">\[a^{n-1} = 1\bmod n\]</span></p>
+<p>Carmichael numbers tend to &quot;fool&quot; Fermat's test. You cannot use the test to show a number is composite.</p>
+</blockquote>
+<p>Carmichael numbers are relatively rare occurences. The smallest Carmichael number is <span class="math">\(561\)</span>. Until recently we did not even know if there were infinitely many Carmichael numbers. This was settled positively in 1994.</p>
+<blockquote>
+<p>The composite number <span class="math">\(n\)</span> is a Carmichael number if and only if:</p>
+<ol style="list-style-type: decimal">
+<li>For every prime <span class="math">\(p\)</span> dividing <span class="math">\(n\)</span> we also have that <span class="math">\(p-1\)</span> divides <span class="math">\(n-1\)</span>.</li>
+<li><span class="math">\(n\)</span> is the product of distict primes (i.e. square-free).</li>
+</ol>
+</blockquote>
+<p>As you can tell, determining if a number is a Carmichael number is easy. Finding one that is however is considerably harder.</p>
+<p>We will not prove this very interesting result, but the book devotes two sections on it.</p>
+<h3 id="miller-rabin-test">Miller-Rabin Test</h3>
+<p>The Miller-Rabin test is an improvement on Fermat's test:</p>
+<blockquote>
+<p><strong>Miller-Rabin Test for Compositeness</strong></p>
+<p>Suppose <span class="math">\(n\in\mathbb{N}\)</span>, <span class="math">\(n-1 = 2^k q\)</span> where <span class="math">\(q\)</span> is odd. Let <span class="math">\(a\)</span> be an integer in the range <span class="math">\(1,2,\ldots,n-1\)</span>, and consider the congruences:</p>
+<p><span class="math">\[a^q = 1\bmod n\]</span> <span class="math">\[a^q = -1\bmod n\]</span> <span class="math">\[a^{2q} = -1\bmod n\]</span> <span class="math">\[a^{4q} = -1\bmod n\]</span> and so on till <span class="math">\[a^{2^{k-1}q} = -1\bmod n\]</span></p>
+<p>If none of these congruences holds, then <span class="math">\(n\)</span> is composite. <span class="math">\(a\)</span> is then called a <em>Miller-Rabin witness</em>.</p>
+</blockquote>
+<p>We will now prove this result.</p>
+<ul>
+<li>We will instead show the contrapositive: If <span class="math">\(n\)</span> is a prime, then one of those congruences must hold.</li>
+<li>To see that, consider <span class="math">\(a^{n-1} - 1\)</span>.</li>
+<li>By difference of squares formula: <span class="math">\(a^{n-1} - 1 = a^{2^k q} - 1 = (a^{2^{k-1} q} + 1)(a^{2^{k-1} q} - 1)\)</span>.</li>
+<li><p>Repeating it we get:</p>
+<span class="math">\[a^{n-1} - 1 = a^{2^k q} - 1 = (a^{2^{k-1} q} + 1)(a^{2^{k-1} q} - 1) = (a^{2^{k-1} q} + 1)(a^{2^{k-2} q} + 1)\cdots(a^q + 1)(a^q - 1)\]</span></li>
+<li><p>Since the left-hand-side is equal to <span class="math">\(1\)</span> for a prime, the right-hand-side must also. And since <span class="math">\(n\)</span> is prime it must mean that one of the factors in the right-hand-side must equal <span class="math">\(0\)</span>. This is exactly what the test calls for.</p></li>
+</ul>
+<p>Let us demonstrate the use of the Miller-Rabin test for the Carmichael number <span class="math">\(561 = 3\cdot 11\cdot 17\)</span>. Then <span class="math">\(561 - 1 = 560 = 2\cdot 280 = 2^2\cdot 70 = 2^3\cdot 5\)</span>. So <span class="math">\(k=3\)</span> and <span class="math">\(q = 35\)</span>.</p>
+<p>So according to the test we need to:</p>
+<ul>
+<li>Compute <span class="math">\(a^q = 2^{35}\)</span> and compare it to <span class="math">\(\pm 1\)</span>.</li>
+<li>Compute <span class="math">\(a^{2q}\)</span> and compare it to <span class="math">\(-1\)</span>.</li>
+<li>Compute <span class="math">\(a^{4q}\)</span> and compare it to <span class="math">\(-1\)</span>.</li>
+</ul>
+<p>We have <span class="math">\(2^{35} = 2^{32}2^3 = 103\cdot 8 = 824 = 263\bmod 561\)</span> which is not equal to <span class="math">\(\pm 1\)</span>.</p>
+<p>Next up we need to compute <span class="math">\((a^q)^2 = 263^2 = 166\)</span> which is not equal to <span class="math">\(-1\)</span> either.</p>
+<p>Next we need <span class="math">\(a^{4q} = (a^{2q})^2 = 166^2 = 67\)</span> which is also not equal to <span class="math">\(-1\)</span>.</p>
+<p>Since none of the 4 congruences is true, we conclude that <span class="math">\(561\)</span> is a composite.</p>
+<p>A question still remains, how many different numbers <span class="math">\(a\)</span> we would have to try. A useful theorem in that regard is the following:</p>
+<blockquote>
+<p>Suppose <span class="math">\(n\)</span> is odd and composite. Then the number of Miller-Rabin witnesses for <span class="math">\(n\)</span> is at least <span class="math">\(\frac{3}{4}(n-1)\)</span>.</p>
+</blockquote>
+<p>In other words, if <span class="math">\(n\)</span> is indeed composite and we pick an <span class="math">\(a\)</span> at random, we have a <span class="math">\(\frac{3}{4}\)</span> chance that this <span class="math">\(a\)</span> will be a witness. Three quarters of all the <span class="math">\(a\)</span>'s we could pick are witnesses for the Miller-Rabin test.</p>
+<p>This provides us an excellent practical test for primality:</p>
+<blockquote>
+<p><strong>Miller-Rabin Probabilistic Primality Test</strong></p>
+<p>Let <span class="math">\(n\)</span> be an odd number, and run the Miller-Rabin test many times, say <span class="math">\(100\)</span>, with randomly selected inputs <span class="math">\(a\)</span> in the range <span class="math">\(1,2,\ldots,n-1\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>If any of those values is a Miller-Rabin witness to the compositeness of <span class="math">\(n\)</span>, then <span class="math">\(n\)</span> is in fact definitely composite.</li>
+<li>If all those values are not Miller-Rabin witnesses, then <span class="math">\(n\)</span> is prime with very high probability.</li>
+</ol>
+</blockquote>
+<h3 id="the-aks-test-for-primality">The AKS test for primality</h3>
+<p>In 2002 a wonderful event occured. Manindra Agrawal, Neeraj Kayal and Nitin Saxena devised an algorithm that can run efficiently and can deterministically prove that a number is prime. Kayal and Saxena were undergraduates at the time.</p>
+<p>The AKS test is based on the following theorem:</p>
+<blockquote>
+<p>Let <span class="math">\(a\)</span> be such that <span class="math">\(\gcd(a, n) = 1\)</span>. Then <span class="math">\(n\)</span> is prime if and only if: <span class="math">\[(x + \bar a)^n = x^n + \bar a\]</span></p>
+<p>As polynomials over <span class="math">\(\mathbb{Z}_n\)</span>.</p>
+</blockquote>
+<p>Let us discuss the proof of this theorem:</p>
+<ul>
+<li>First, assume <span class="math">\(n=p\)</span> is prime.
+<ul>
+<li><p>By the binomial theorem, we have:</p>
+<p><span class="math">\[(x+\bar a)^p = \sum_{k=0}^{p}\binom{p}{k}x^k\bar a^{n-k}\]</span></p>
+where we have used the binomial coefficient <span class="math">\(\binom{p}{k} = \frac{p!}{k!(p-k)!}\)</span>.</li>
+<li>When <span class="math">\(0 &lt; k &lt; p\)</span> this binomial coefficient has to be a multiple of <span class="math">\(p\)</span>, as none of the denominator terms can cancel it out.</li>
+<li>So all the terms of the polynomial other than the first and last must be equal to <span class="math">\(0\)</span>.</li>
+<li>All that is left is to compare the constant terms, <span class="math">\(\bar a ^p\)</span> and <span class="math">\(\bar a\)</span>. Fermat's theorem guarantees that those two are indeed equal.</li>
+</ul></li>
+<li>Conversely, if the two polynomials are equal to each other then that means that all the intermediate coefficients must vanish, so <span class="math">\(\frac{n!}{k!(n-k)!} = 0\bmod n\)</span> for all <span class="math">\(0 &lt; k &lt; n\)</span>. We show that this would mean <span class="math">\(n\)</span> must be prime.
+<ul>
+<li>Suppose <span class="math">\(n\)</span> was composite, so that there is some prime <span class="math">\(q\)</span> that divides <span class="math">\(n\)</span>. Then we consider <span class="math">\(\binom{n}{q} = \frac{n!}{q!(n-q)!}\)</span>.</li>
+<li><p>We can write this as:</p>
+<span class="math">\[\frac{n(n-1)(n-2)\cdots(n-q+1)}{q(q-1)(q-2)\cdots 1}\]</span></li>
+<li>If this is to be equal to <span class="math">\(0\)</span> modulo <span class="math">\(n\)</span>, then it must be the case that <span class="math">\(n\)</span> divides it.</li>
+<li>But that means that the quantity <span class="math">\(\frac{(n-1)(n-2)\cdots(n-q+1)}{q(q-1)(q-2)\cdots 1}\)</span> must be an integer, i.e. that <span class="math">\(q\)</span> must divide the numerator.</li>
+<li>Since <span class="math">\(q\)</span> divides <span class="math">\(n\)</span>, it cannot divide any of those factors in the numerator (they are not equal to <span class="math">\(0\)</span> modulo <span class="math">\(q\)</span>).</li>
+<li><p>So we get a contradiction. Therefore <span class="math">\(n\)</span> must be prime.</p></li>
+</ul></li>
+</ul>
+<p>While this proves our theorem, it does not yet provide an efficient way to determine if a number is prime, as the number of coefficients that need to be examined are numerous.</p>
+<p>What AKS were able to do is show that in fact you don't need to compute the polynomial <span class="math">\((x+\bar a)^n\)</span> itself, but rather its reduction modulo <span class="math">\(x^r-1\)</span> for an appropriately chosen relatively small <span class="math">\(r\)</span>.</p>
+<blockquote>
+<p>The remainder of the polynomial division of <span class="math">\((x+\bar a)^n\)</span> by <span class="math">\(x^r-1\)</span> can be computed in reasonable time based on <span class="math">\(r\)</span> and <span class="math">\(\log_2(n)\)</span>.</p>
+<p>The method is essentially that of fast exponentiation.</p>
+</blockquote>
+<p>As an example, consider <span class="math">\(n = 43\)</span>, which is a prime. And suppose for now that <span class="math">\(r=3\)</span> and <span class="math">\(\bar a = 2\)</span>. Then we would be looking for:</p>
+<p><span class="math">\[(x+2)^{43} = \left(a_1 x^2 + a_2 x + a_3\right) \bmod{(x^3 - 1, 43)}\]</span></p>
+<p>We can do this by fast exponentiation. For example:</p>
+<p><span class="math">\[(x+2)^2 = x^2 + 4x + 4\]</span> <span class="math">\[(x+2)^4 = (x^2 + 4x + 4)^2 = 24x^2 + 33x + 24 \bmod{(x^3-1, 43)}\]</span> <span class="math">\[(x+2)^8 = (24x^2 + 33x + 24)^2 = 5x^2 + 10x + 10\bmod{(x^3-1, 43)}\]</span> <span class="math">\[(x+2)^{16} = (5x^2 + 10x + 10)^2 = 28x^2 + 10x + 28\bmod{(x^3-1, 43)}\]</span> <span class="math">\[(x+2)^{32} = (28x^2 + 10x + 28)^2 = 34x^2 + 11x + 11\bmod{(x^3-1, 43)}\]</span> <span class="math">\[(x+2)^{11} = (x+2)^8(x+2)^2(x+2) = (27x^2+42x+27)(x+2) = 10x^2+25x+38\bmod{(x^3-1, 43)}\]</span> <span class="math">\[(x+2)^{43} = (x+2)^{32}(x+2)^{11} = x+2\bmod{(x^3-1, 43)}\]</span></p>
+<p>And of course computing <span class="math">\(x^{43} + 2\)</span> is even simpler, since modulo the polynomial <span class="math">\(x^3-1\)</span> we can treat every third power of <span class="math">\(x\)</span> as a <span class="math">\(1\)</span>, therefore <span class="math">\(x^{43} = x\bmod(x^3-1, 43)\)</span>.</p>
+<p>So in this case we observe that we get the same resulting polynomial from both computations.</p>
+<p>We can now describe the AKS algorithm, but first the main theorem:</p>
+<blockquote>
+<p><strong>AKS Theorem</strong></p>
+<p>Let <span class="math">\(n &gt; 1\)</span> be a natural number. Suppose <span class="math">\(r\)</span> be such that:</p>
+<ul>
+<li><span class="math">\(ord_r(n) &gt; (\log_2(n))^2\)</span>,</li>
+<li><span class="math">\(n\)</span> is not a perfect power</li>
+<li><span class="math">\(n\)</span> has no prime factor less than or equal to <span class="math">\(r\)</span>.</li>
+</ul>
+<p>Then <span class="math">\(n\)</span> is prime if and only if <span class="math">\[(x+a)^n = x^n + a\bmod{(x^r-1, n)}\]</span> for all <span class="math">\(a\leq \sqrt{r}\log_2(n)\)</span>.</p>
+</blockquote>
+<p>We can turn this theorem into an algorithm:</p>
+<blockquote>
+<p><strong>AKS Algorithm for Primality</strong></p>
+<ol style="list-style-type: decimal">
+<li>Determine if <span class="math">\(n\)</span> is a perfect power. If so then <span class="math">\(n\)</span> is composite. End.</li>
+<li>Determine a number <span class="math">\(r\)</span> such that <span class="math">\(ord_r(n) &gt; (\log_2(n))^2\)</span>.</li>
+<li>Check whether <span class="math">\(a\)</span> has a prime factor <span class="math">\(\leq r\)</span>. If so, <span class="math">\(n\)</span> composite. End.</li>
+<li>Check <span class="math">\((x+a)^n = x^n + a\bmod{(x^r-1, n)}\)</span> for all <span class="math">\(a\leq \sqrt{r}\log_2(n)\)</span>. If it holds for all those numbers, <span class="math">\(n\)</span> is prime. Otherwise <span class="math">\(n\)</span> is composite. End.</li>
+</ol>
+</blockquote>
+<p>Let us see how all these can be done fast.</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math">\(n = a^b\)</span> with <span class="math">\(a \geq 2\)</span>, then we must have that <span class="math">\(b \leq \log_2(n)\)</span>. All we have to do then is compute the <span class="math">\(b\)</span>-th root of <span class="math">\(n\)</span> for each <span class="math">\(b=2,\ldots,\log_2(n)\)</span> and see if any of them is an integer. That is relatively easy and fast to do.</li>
+<li>This part is complicated, but it turns out that such an <span class="math">\(r\)</span> can be found of size approximately <span class="math">\(\log_2(n)^3\)</span>, which is very small compared to <span class="math">\(n\)</span>.</li>
+<li>For this part we just need to do one division for each number up to <span class="math">\(r\)</span>. There are not all that many of those.</li>
+<li>Again there are not all that many numbers to test, and testing each of them does not take all that much time, as we discussed earlier.</li>
+</ol>
+</body>
+</html>
