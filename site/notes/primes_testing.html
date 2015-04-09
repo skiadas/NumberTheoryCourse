@@ -72,7 +72,7 @@
 <li>By difference of squares formula: <span class="math">\(a^{n-1} - 1 = a^{2^k q} - 1 = (a^{2^{k-1} q} + 1)(a^{2^{k-1} q} - 1)\)</span>.</li>
 <li><p>Repeating it we get:</p>
 <span class="math">\[a^{n-1} - 1 = a^{2^k q} - 1 = (a^{2^{k-1} q} + 1)(a^{2^{k-1} q} - 1) = (a^{2^{k-1} q} + 1)(a^{2^{k-2} q} + 1)\cdots(a^q + 1)(a^q - 1)\]</span></li>
-<li><p>Since the left-hand-side is equal to <span class="math">\(1\)</span> for a prime, the right-hand-side must also. And since <span class="math">\(n\)</span> is prime it must mean that one of the factors in the right-hand-side must equal <span class="math">\(0\)</span>. This is exactly what the test calls for.</p></li>
+<li><p>Since the left-hand-side is equal to <span class="math">\(0\)</span> for a prime, the right-hand-side must also. And since <span class="math">\(n\)</span> is prime it must mean that one of the factors in the right-hand-side must equal <span class="math">\(0\)</span>. This is exactly what the test calls for.</p></li>
 </ul>
 <p>Let us demonstrate the use of the Miller-Rabin test for the Carmichael number <span class="math">\(561 = 3\cdot 11\cdot 17\)</span>. Then <span class="math">\(561 - 1 = 560 = 2\cdot 280 = 2^2\cdot 70 = 2^3\cdot 5\)</span>. So <span class="math">\(k=3\)</span> and <span class="math">\(q = 35\)</span>.</p>
 <p>So according to the test we need to:</p>

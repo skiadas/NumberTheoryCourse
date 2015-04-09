@@ -78,7 +78,7 @@ We will now prove this result.
   - Repeating it we get:
 
       $$a^{n-1} - 1 = a^{2^k q} - 1 = (a^{2^{k-1} q} + 1)(a^{2^{k-1} q} - 1) = (a^{2^{k-1} q} + 1)(a^{2^{k-2} q} + 1)\cdots(a^q + 1)(a^q - 1)$$
-  - Since the left-hand-side is equal to $1$ for a prime, the right-hand-side must also. And since $n$ is prime it must mean that one of the factors in the right-hand-side must equal $0$. This is exactly what the test calls for.
+  - Since the left-hand-side is equal to $0$ for a prime, the right-hand-side must also. And since $n$ is prime it must mean that one of the factors in the right-hand-side must equal $0$. This is exactly what the test calls for.
 
 Let us demonstrate the use of the Miller-Rabin test for the Carmichael number $561 = 3\cdot 11\cdot 17$. Then $561 - 1 = 560 = 2\cdot 280 = 2^2\cdot 70 = 2^3\cdot 5$. So $k=3$ and $q = 35$.
 
