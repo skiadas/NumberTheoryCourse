@@ -64,7 +64,7 @@ A week-by-week breakdown of the material.
 - Day 1
     - Review
 - Day 2
-    - MIDTERM ([Study guide](studyGuide1.md))
+    - MIDTERM ([Study guide](notes/studyGuide1.md))
 - Day 3
     - [Chinese Remainder Theorem](notes/congruence_chinese_remainder.md)
     - [Assignment 6](assignments/6.md)
@@ -126,7 +126,7 @@ BREAK
 - Day 1
     - Review
 - Day 2
-    - MIDTERM ([Study guide](studyGuide2.md))
+    - MIDTERM ([Study guide](notes/studyGuide2.md))
 - Day 3
     - [Polynomials over Zn](notes/residues_polynomials.md)
 - Day 4
