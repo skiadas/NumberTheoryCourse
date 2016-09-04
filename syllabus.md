@@ -9,13 +9,13 @@ Instructor
   ~ Charilaos Skiadas (skiadas at hanover dot edu)
 
 Term
-  ~ Winter 2014-2015
+  ~ Fall 2016-2017
 
 Office
   ~ SCH 121C
 
 Office Hours
-  ~ MWF 3pm-3:30pm, WRF 9am-10am, T 10am-12am
+  ~ MWF 10am-11am, and by appointment
 
 Book
   ~ *Number Theory: A Lively Introduction with Proofs, Applications, and Stories* by Pommersheim, Tim Marks, Erica Flapan
@@ -24,7 +24,7 @@ Websites
   ~ [for notes](skiadas.github.io/NumberTheoryCourse/site/)
 
 Class times
-  ~ MWRF 10am-11am in SCH246
+  ~ MWF 1:20pm-2:30pm in SCH102
 
 ## Course Description
 
@@ -38,7 +38,7 @@ This course is also a perfect opportunity to familiarize yourselves with the var
 
 ### Reading Assignments
 
-In the [class schedule page](skiadas.github.io/NumberTheoryCourse/site/schedule.html) you will find, for each class day, a list of links to reading assignments. Your homework and lab work will require you to have a solid understanding of the material covered there, so I strongly encourage you not to get behind.
+In the [class schedule page](skiadas.github.io/NumberTheoryCourse/site/schedule.html) you will find, for each class day, a list of links to reading assignments. Your homework will require you to have a solid understanding of the material covered there, so I strongly encourage you not to get behind.
 
 ### Class Attendance
 
@@ -50,7 +50,7 @@ There will be homework assignments roughly once or twice each week. You are expe
 
 ### Exams
 
-There will be two midterms, on Wednesday, February 4th and Wednesday, March 18th, and a final/3rd midterm during finals week. **You have to be here for the exams**. If you have conflicts with these days, let me know as soon as possible. Do not plan your vacation before you are aware of the finals schedule. In terms of your final grade, the exams you did better on will weigh more.
+There will be two midterms, on Friday, October 7th and Friday, November 11th, and a final/3rd midterm during finals week. **You have to be here for the exams**. If you have conflicts with these days, let me know as soon as possible. Do not plan your vacation before you are aware of the finals schedule. In terms of your final grade, the exams you did better on will weigh more.
 
 ### Getting Help
 
