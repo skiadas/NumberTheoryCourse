@@ -25,6 +25,7 @@ First a short survey of number systems.
     - We can define addition and multiplication of complex numbers by extending the properties for reals.
     - There is a zero, $0 + 0i$.
     - Cool fact: Every polynomial equation has solutions in the complex numbers. For example $x^2 + 1 = 0$ has solutions $i$ and $-i$.
+- There is a special subset of the complex numbers, called *Gaussian integers*. These consist of all complex numbers $a+bi$ where $a$ and $b$ are both integers.
 - The standard number systems:
 
     $\mathbb{N}$
