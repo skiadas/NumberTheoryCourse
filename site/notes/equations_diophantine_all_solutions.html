@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -30,75 +30,75 @@
 <h2 id="notes">Notes</h2>
 <p>Now that we know how to find one solution, the question naturally arises if we can find more, preferably if we can find them all.</p>
 <p>Let us think about this for a minute. Suppose we did have another solution, so:</p>
-<p><span class="math">\[ax_1 + by_1 = c = ax_2 + by_2\]</span></p>
+<p><span class="math display">\[ax_1 + by_1 = c = ax_2 + by_2\]</span></p>
 <p>Then we should be able to say:</p>
-<p><span class="math">\[a(x_1-x_2) = b(y_2-y_1)\]</span></p>
-<p>So there is some relation between these solutions and a <em>common multiple</em> of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. Let's make it more precise:</p>
+<p><span class="math display">\[a(x_1-x_2) = b(y_2-y_1)\]</span></p>
+<p>So there is some relation between these solutions and a <em>common multiple</em> of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Let's make it more precise:</p>
 <blockquote>
-<p>If <span class="math">\(ax_1 + by_1 = c\)</span> is a solution.</p>
+<p>If <span class="math inline">\(ax_1 + by_1 = c\)</span> is a solution.</p>
 <p>Then every other solution can be obtained as</p>
-<p><span class="math">\[x_2 = x_1 - k_1, \quad y_2 = y_1 + k_2\]</span></p>
-<p>where <span class="math">\((k_1, k_2)\)</span> are such that <span class="math">\(ak_1 = bk_2\)</span>.</p>
+<p><span class="math display">\[x_2 = x_1 - k_1, \quad y_2 = y_1 + k_2\]</span></p>
+<p>where <span class="math inline">\((k_1, k_2)\)</span> are such that <span class="math inline">\(ak_1 = bk_2\)</span>.</p>
 </blockquote>
 <p>This is easy to see. So the solutions to the diophantine equations are in 1-1 correspondence with these pairs of numbers.</p>
 <p>Before we see the main theorem, let us have some definitions and a key result:</p>
 <blockquote>
-<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(m=lcm(a,b)\)</span>. Further let <span class="math">\(a&#39;d = a\)</span> and <span class="math">\(b&#39;d = b\)</span>. Then:</p>
+<p>Let <span class="math inline">\(d=\gcd(a,b)\)</span> and <span class="math inline">\(m=lcm(a,b)\)</span>. Further let <span class="math inline">\(a&#39;d = a\)</span> and <span class="math inline">\(b&#39;d = b\)</span>. Then:</p>
 <ul>
-<li><span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are relatively prime.</li>
-<li><span class="math">\(a&#39;b = ab&#39; = m\)</span>.</li>
-<li><span class="math">\(dm = ab\)</span>.</li>
+<li><span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(b&#39;\)</span> are relatively prime.</li>
+<li><span class="math inline">\(a&#39;b = ab&#39; = m\)</span>.</li>
+<li><span class="math inline">\(dm = ab\)</span>.</li>
 </ul>
 </blockquote>
 <p>To see this:</p>
 <ul>
-<li>Any common factor of <span class="math">\(a&#39;\)</span> and <span class="math">\(b&#39;\)</span> would, when multiplied by <span class="math">\(d\)</span>, provide a common divisor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. <span class="math">\(d\)</span> is the largest such divisor, so that common factor can only be 1. So <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> must be relatively prime.</li>
-<li>The other two parts say the same thing, so we only need to show one of them. We will show the last one, that <span class="math">\(dm = ab\)</span>.
+<li>Any common factor of <span class="math inline">\(a&#39;\)</span> and <span class="math inline">\(b&#39;\)</span> would, when multiplied by <span class="math inline">\(d\)</span>, provide a common divisor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. <span class="math inline">\(d\)</span> is the largest such divisor, so that common factor can only be 1. So <span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(b&#39;\)</span> must be relatively prime.</li>
+<li>The other two parts say the same thing, so we only need to show one of them. We will show the last one, that <span class="math inline">\(dm = ab\)</span>.
 <ul>
-<li>First, notice that <span class="math">\(\frac{ab}{d}\)</span> is an integer that is a common multiple of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>. Therefore <span class="math">\(\frac{ab}{d}\geq m\)</span>, so <span class="math">\(ab\geq md\)</span>.</li>
-<li>Second, notice that since <span class="math">\(d\)</span> is the gcd we can write <span class="math">\(d = ax + by\)</span>. Multiplying by <span class="math">\(m\)</span> gives us: <span class="math">\(md = amx + bmy\)</span>.</li>
-<li>Since <span class="math">\(m\)</span> is a multiple of <span class="math">\(b\)</span>, and also a mupltiple of <span class="math">\(a\)</span>, it follows that the two terms in the right hand side are both multiples of <span class="math">\(ab\)</span>.</li>
-<li>So that equation becomes <span class="math">\(md = K \times ab\)</span>. But this says <span class="math">\(md\geq ab\)</span>.</li>
-<li>Hence <span class="math">\(md = ab\)</span>.</li>
+<li>First, notice that <span class="math inline">\(\frac{ab}{d}\)</span> is an integer that is a common multiple of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Therefore <span class="math inline">\(\frac{ab}{d}\geq m\)</span>, so <span class="math inline">\(ab\geq md\)</span>.</li>
+<li>Second, notice that since <span class="math inline">\(d\)</span> is the gcd we can write <span class="math inline">\(d = ax + by\)</span>. Multiplying by <span class="math inline">\(m\)</span> gives us: <span class="math inline">\(md = amx + bmy\)</span>.</li>
+<li>Since <span class="math inline">\(m\)</span> is a multiple of <span class="math inline">\(b\)</span>, and also a mupltiple of <span class="math inline">\(a\)</span>, it follows that the two terms in the right hand side are both multiples of <span class="math inline">\(ab\)</span>.</li>
+<li>So that equation becomes <span class="math inline">\(md = K \times ab\)</span>. But this says <span class="math inline">\(md\geq ab\)</span>.</li>
+<li>Hence <span class="math inline">\(md = ab\)</span>.</li>
 </ul></li>
 </ul>
 <p>Here is the main theorem that tells us how to find other solutions:</p>
 <blockquote>
-<p>Suppose <span class="math">\(a x_1 + b y_1 = c\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are as above.</p>
-<p>Then <span class="math">\(a (x_1 - kb&#39;) + b (y_1 + ka&#39;) = c\)</span> for all integers <span class="math">\(k\)</span>.</p>
-<p>Moreover, all solutions to <span class="math">\(ax+by = c\)</span> have this form.</p>
+<p>Suppose <span class="math inline">\(a x_1 + b y_1 = c\)</span> and <span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(b&#39;\)</span> are as above.</p>
+<p>Then <span class="math inline">\(a (x_1 - kb&#39;) + b (y_1 + ka&#39;) = c\)</span> for all integers <span class="math inline">\(k\)</span>.</p>
+<p>Moreover, all solutions to <span class="math inline">\(ax+by = c\)</span> have this form.</p>
 </blockquote>
 <p>To see this:</p>
 <ul>
-<li><p>We have already seen that other solutions <span class="math">\((x_2,y_2)\)</span> have to relate to the original <span class="math">\((x_1,y_1)\)</span> via:</p>
-<p><span class="math">\[x_1 - x_2 = k_1\]</span></p>
-<p><span class="math">\[y_2 - y_1 = k_2\]</span></p>
-<p>where <span class="math">\(k_1\)</span> and <span class="math">\(k_2\)</span> are such that</p>
-<span class="math">\[ak_1 = bk_2\]</span></li>
-<li><p>All we need to do now is find all such pairs <span class="math">\((k_1, k_2)\)</span>. This will be done in the next theorem.</p></li>
+<li><p>We have already seen that other solutions <span class="math inline">\((x_2,y_2)\)</span> have to relate to the original <span class="math inline">\((x_1,y_1)\)</span> via:</p>
+<p><span class="math display">\[x_1 - x_2 = k_1\]</span></p>
+<p><span class="math display">\[y_2 - y_1 = k_2\]</span></p>
+<p>where <span class="math inline">\(k_1\)</span> and <span class="math inline">\(k_2\)</span> are such that</p>
+<span class="math display">\[ak_1 = bk_2\]</span></li>
+<li><p>All we need to do now is find all such pairs <span class="math inline">\((k_1, k_2)\)</span>. This will be done in the next theorem.</p></li>
 </ul>
 <blockquote>
-<p>Let <span class="math">\(d=\gcd(a,b)\)</span> and <span class="math">\(a&#39;\)</span>, <span class="math">\(b&#39;\)</span> are as before.</p>
-<p>Then for any pair <span class="math">\((k_1, k_2)\)</span> with <span class="math">\(ak_1 = bk_2\)</span> there is an integer <span class="math">\(k\)</span> such that</p>
-<p><span class="math">\[k_1 = k b&#39;,\quad k_2 = k a&#39;\]</span></p>
+<p>Let <span class="math inline">\(d=\gcd(a,b)\)</span> and <span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(b&#39;\)</span> are as before.</p>
+<p>Then for any pair <span class="math inline">\((k_1, k_2)\)</span> with <span class="math inline">\(ak_1 = bk_2\)</span> there is an integer <span class="math inline">\(k\)</span> such that</p>
+<p><span class="math display">\[k_1 = k b&#39;,\quad k_2 = k a&#39;\]</span></p>
 </blockquote>
 <p>Let us prove this:</p>
 <ul>
-<li>First of all, note that numbers <span class="math">\((k_1,k_2)\)</span> that have this form <span class="math">\((kb&#39;,ka&#39;)\)</span> do satisfy the needed equation <span class="math">\(ak_1=bk_2\)</span>. So this does in fact give us all such pairs of numbers.</li>
-<li>For proving the other direction, suppose <span class="math">\(ak_1 = bk_2\)</span>.</li>
-<li>This number is a common multiple of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, so must be equal to <span class="math">\(mk\)</span> for some <span class="math">\(k\)</span>.</li>
-<li>Then <span class="math">\(ak_1=mk\)</span>, <span class="math">\(bk_2 = mk\)</span>.</li>
-<li>Since <span class="math">\(b&#39; = m/a\)</span> and <span class="math">\(a&#39; = m/b\)</span>, we see that <span class="math">\(k_1 = b&#39;k\)</span> and <span class="math">\(k_2=a&#39;k\)</span>.</li>
+<li>First of all, note that numbers <span class="math inline">\((k_1,k_2)\)</span> that have this form <span class="math inline">\((kb&#39;,ka&#39;)\)</span> do satisfy the needed equation <span class="math inline">\(ak_1=bk_2\)</span>. So this does in fact give us all such pairs of numbers.</li>
+<li>For proving the other direction, suppose <span class="math inline">\(ak_1 = bk_2\)</span>.</li>
+<li>This number is a common multiple of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, so must be equal to <span class="math inline">\(mk\)</span> for some <span class="math inline">\(k\)</span>.</li>
+<li>Then <span class="math inline">\(ak_1=mk\)</span>, <span class="math inline">\(bk_2 = mk\)</span>.</li>
+<li>Since <span class="math inline">\(b&#39; = m/a\)</span> and <span class="math inline">\(a&#39; = m/b\)</span>, we see that <span class="math inline">\(k_1 = b&#39;k\)</span> and <span class="math inline">\(k_2=a&#39;k\)</span>.</li>
 </ul>
 <p>Random property of the gcd that is worth mentioning.</p>
 <blockquote>
-<p>If <span class="math">\(\gcd(a,b) = 1\)</span> and <span class="math">\(b | ac\)</span>, then it must be the case that <span class="math">\(b|c\)</span>.</p>
+<p>If <span class="math inline">\(\gcd(a,b) = 1\)</span> and <span class="math inline">\(b | ac\)</span>, then it must be the case that <span class="math inline">\(b|c\)</span>.</p>
 </blockquote>
 <p>To prove this:</p>
 <ul>
-<li>We start with the equation <span class="math">\(ax+by=1\)</span>, which we know must have a solution since <span class="math">\(a,b\)</span> are relatively prime.</li>
-<li>We multiply both sides by <span class="math">\(c\)</span>. We then get <span class="math">\(acx + bcx = c\)</span>.</li>
-<li>Since <span class="math">\(b\)</span> divides both terms on the left side, it must also divide the right hand side <span class="math">\(c\)</span>.</li>
+<li>We start with the equation <span class="math inline">\(ax+by=1\)</span>, which we know must have a solution since <span class="math inline">\(a,b\)</span> are relatively prime.</li>
+<li>We multiply both sides by <span class="math inline">\(c\)</span>. We then get <span class="math inline">\(acx + bcx = c\)</span>.</li>
+<li>Since <span class="math inline">\(b\)</span> divides both terms on the left side, it must also divide the right hand side <span class="math inline">\(c\)</span>.</li>
 </ul>
 </body>
 </html>

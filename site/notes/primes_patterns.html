@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -17,7 +17,7 @@
 <p>We will discuss a number of issues related to the pattern of the sequence of primes</p>
 <ul>
 <li>First we show there are infinitely many primes</li>
-<li>We then discuss the Prime Number Theorem, that gives us an estimate of the number of primes up to <span class="math">\(n\)</span>.</li>
+<li>We then discuss the Prime Number Theorem, that gives us an estimate of the number of primes up to <span class="math inline">\(n\)</span>.</li>
 <li>We then consider various sequences of numbers, and examine whether they contain infinitely many numbers or not.</li>
 </ul>
 <h2 id="reading">Reading</h2>
@@ -41,37 +41,37 @@
 <p>There are infinitely many prime numbers</p>
 </blockquote>
 <ul>
-<li>This is a perfect example for a proof by contradiction. Assume that there were only finitely many prime numbers, let's call them <span class="math">\(p_1, p_2, \ldots, p_k\)</span></li>
+<li>This is a perfect example for a proof by contradiction. Assume that there were only finitely many prime numbers, let's call them <span class="math inline">\(p_1, p_2, \ldots, p_k\)</span></li>
 <li>Before we look at the more general logic, let's consider a simpler example.
 <ul>
-<li>Say there were only 3 prime numbers, <span class="math">\(2\)</span>, <span class="math">\(3\)</span> and <span class="math">\(5\)</span>. Can we derive a contradiction?</li>
+<li>Say there were only 3 prime numbers, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>. Can we derive a contradiction?</li>
 <li>All we need to do is find a number that is not divisible by any of these 3 numbers. That number must have some prime divisor, and since it cannot be one of those 3, there must more prime numbers. Hence the contradiction.</li>
-<li>In this particular case it is easy to do, for instance <span class="math">\(7\)</span> is not divisible by any of those 3 numbers. But we want an argument we would be able to carry out in general.</li>
-<li>The trick is to note that for any <span class="math">\(n &gt; 1\)</span>, the numbers <span class="math">\(n\)</span> and <span class="math">\(n+1\)</span> cannot have any prime factors in common, something we discussed some time ago.</li>
-<li>So if we find a number <span class="math">\(n\)</span> that is divisible by the <span class="math">\(3\)</span> primes, then <span class="math">\(n+1\)</span> cannot be divisible by any of them.</li>
-<li>Their product <span class="math">\(n = 2*3*5 = 30\)</span>, is such a number. That completes the proof.</li>
+<li>In this particular case it is easy to do, for instance <span class="math inline">\(7\)</span> is not divisible by any of those 3 numbers. But we want an argument we would be able to carry out in general.</li>
+<li>The trick is to note that for any <span class="math inline">\(n &gt; 1\)</span>, the numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(n+1\)</span> cannot have any prime factors in common, something we discussed some time ago.</li>
+<li>So if we find a number <span class="math inline">\(n\)</span> that is divisible by the <span class="math inline">\(3\)</span> primes, then <span class="math inline">\(n+1\)</span> cannot be divisible by any of them.</li>
+<li>Their product <span class="math inline">\(n = 2*3*5 = 30\)</span>, is such a number. That completes the proof.</li>
 </ul></li>
-<li>The general proof is similar. Take the product <span class="math">\(n=p_1p_2\cdots p_k\)</span>.</li>
-<li>Consider <span class="math">\(n+1\)</span>. There must be a prime dividing it. And that prime cannot be any of the <span class="math">\(p_1, \ldots, p_k\)</span>. So there must be more primes than those!</li>
+<li>The general proof is similar. Take the product <span class="math inline">\(n=p_1p_2\cdots p_k\)</span>.</li>
+<li>Consider <span class="math inline">\(n+1\)</span>. There must be a prime dividing it. And that prime cannot be any of the <span class="math inline">\(p_1, \ldots, p_k\)</span>. So there must be more primes than those!</li>
 </ul>
 <h3 id="the-prime-number-theorem">The Prime Number Theorem</h3>
 <p>Knowing there are infinitely many primes is a nice start. But <em>how many</em> primes are there? Are they somewhat rare, or is every 5th number a prime number? The proof above does not give us any indication.</p>
-<p>For instance, the way we figured out there are more primes than <span class="math">\(2,3,5\)</span> was to say that none of them can divide <span class="math">\(30 + 1 = 31\)</span>, so there must be some prime factor dividing <span class="math">\(31\)</span>. In fact, <span class="math">\(31\)</span> itself is prime. But in our search for that prime number, we missed <span class="math">\(7\)</span>, <span class="math">\(13\)</span>, <span class="math">\(17\)</span> and so on.</p>
+<p>For instance, the way we figured out there are more primes than <span class="math inline">\(2,3,5\)</span> was to say that none of them can divide <span class="math inline">\(30 + 1 = 31\)</span>, so there must be some prime factor dividing <span class="math inline">\(31\)</span>. In fact, <span class="math inline">\(31\)</span> itself is prime. But in our search for that prime number, we missed <span class="math inline">\(7\)</span>, <span class="math inline">\(13\)</span>, <span class="math inline">\(17\)</span> and so on.</p>
 <p>In order to answer this question, mathematicians often start with a definition:</p>
 <blockquote>
-<p>Define the function <span class="math">\(\pi(n)\)</span> to be the number of primes that are less than or equal to <span class="math">\(n\)</span>.</p>
+<p>Define the function <span class="math inline">\(\pi(n)\)</span> to be the number of primes that are less than or equal to <span class="math inline">\(n\)</span>.</p>
 </blockquote>
-<p>For example, <span class="math">\(\pi(10) = 4\)</span>, <span class="math">\(\pi(20) = 8\)</span>, <span class="math">\(\pi(30) = 10\)</span>.</p>
-<p>Our question now becomes: What can we say about how this function grows with <span class="math">\(n\)</span>?</p>
+<p>For example, <span class="math inline">\(\pi(10) = 4\)</span>, <span class="math inline">\(\pi(20) = 8\)</span>, <span class="math inline">\(\pi(30) = 10\)</span>.</p>
+<p>Our question now becomes: What can we say about how this function grows with <span class="math inline">\(n\)</span>?</p>
 <p>The result goes under the name of the <strong>Prime Number Theorem</strong>:</p>
 <blockquote>
-<p>For large <span class="math">\(n\)</span>, the function <span class="math">\(\pi(n)\)</span> is approximately equal to <span class="math">\(\frac{n}{\log n}\)</span>.</p>
+<p>For large <span class="math inline">\(n\)</span>, the function <span class="math inline">\(\pi(n)\)</span> is approximately equal to <span class="math inline">\(\frac{n}{\log n}\)</span>.</p>
 </blockquote>
 <p>This doesn't tell us whether a number is prime or not, but it does tell us roughly how many primes to expect. This is a very difficult theorem to prove, and we will not do so here.</p>
 <h3 id="formulas">Formulas</h3>
 <p>There are some standard formulas that people have come up over the years in the hopes of generating prime numbers. Here are some of these topics.</p>
 <h4 id="fermats-numbers">Fermat's numbers</h4>
-<p>Fermat looked at the formula <span class="math">\(F(n) = 2^{2^n} + 1\)</span>, in the hopes it would always produce prime numbers. In fact the first couple are prime numbers:</p>
+<p>Fermat looked at the formula <span class="math inline">\(F(n) = 2^{2^n} + 1\)</span>, in the hopes it would always produce prime numbers. In fact the first couple are prime numbers:</p>
 <table>
 <thead>
 <tr class="header">
@@ -102,28 +102,28 @@
 </tr>
 </tbody>
 </table>
-<p>Fermat was able to show the first 4 of those to be prime, but the sequence grows too fast after that. Later on it was shown that <span class="math">\(F(5)\)</span> is in fact NOT a prime number.</p>
+<p>Fermat was able to show the first 4 of those to be prime, but the sequence grows too fast after that. Later on it was shown that <span class="math inline">\(F(5)\)</span> is in fact NOT a prime number.</p>
 <p>Here are some open questions about Fermat numbers:</p>
 <ul>
-<li>Is <span class="math">\(F_n\)</span> composite for all <span class="math">\(n &gt; 4\)</span>?</li>
+<li>Is <span class="math inline">\(F_n\)</span> composite for all <span class="math inline">\(n &gt; 4\)</span>?</li>
 <li>Are there infinitely many Fermat primes?</li>
 <li>Are there infinitely many composite Fermat numbers?</li>
 <li>Are there any Fermat numbers that are not square-free?</li>
 </ul>
 <p>Fermat primes are related to constructible regular polygons.</p>
 <blockquote>
-<p>The only regular <span class="math">\(n\)</span>-gons that can be constructed with compass and straightedge are those where <span class="math">\(n=2^k p_1 \ldots p_t\)</span> where all the <span class="math">\(p_i\)</span> are Fermat primes. (Gauss)</p>
+<p>The only regular <span class="math inline">\(n\)</span>-gons that can be constructed with compass and straightedge are those where <span class="math inline">\(n=2^k p_1 \ldots p_t\)</span> where all the <span class="math inline">\(p_i\)</span> are Fermat primes. (Gauss)</p>
 </blockquote>
 <p>Fermat primes also have applications to the generation of pseudo-random numbers.</p>
 <h4 id="dirichlets-theorem">Dirichlet's Theorem</h4>
-<p>Dirichlet asked a different question. If we look at &quot;arithmetic&quot; progressions, namely the sequence <span class="math">\(an + b\)</span> with <span class="math">\(a\)</span>, <span class="math">\(b\)</span> fixed and <span class="math">\(n\)</span> ranging over the natural numbers, can we figure out if such a sequence can or must have infinitely many prime numbers in it?</p>
-<p>If <span class="math">\(a\)</span>, <span class="math">\(b\)</span> have factors in common then it is impossible to find any primes in the sequence, as any number in it is a linear combination of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, so they have as factor any common factor of <span class="math">\(a\)</span> and <span class="math">\(b\)</span>.</p>
-<p>However, if <span class="math">\(a\)</span> and <span class="math">\(b\)</span> have no factors in common, then it makes sense to ask how many primes there are in the sequence <span class="math">\(an+b\)</span>.</p>
+<p>Dirichlet asked a different question. If we look at &quot;arithmetic&quot; progressions, namely the sequence <span class="math inline">\(an + b\)</span> with <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> fixed and <span class="math inline">\(n\)</span> ranging over the natural numbers, can we figure out if such a sequence can or must have infinitely many prime numbers in it?</p>
+<p>If <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> have factors in common then it is impossible to find any primes in the sequence, as any number in it is a linear combination of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, so they have as factor any common factor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>However, if <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> have no factors in common, then it makes sense to ask how many primes there are in the sequence <span class="math inline">\(an+b\)</span>.</p>
 <p>Dirichlet proved not only that there are infinitely many primes in any such sequence, but also that they are more or less uniformly distributed between the different arithmetic sequences, something that we might be able to state more precisely later.</p>
-<p>For instance, the sequences <span class="math">\(3n+1\)</span> and <span class="math">\(3n+2\)</span> contain infinitely many prime numbers each, and in fact each contains roughly half of the prime numbers.</p>
+<p>For instance, the sequences <span class="math inline">\(3n+1\)</span> and <span class="math inline">\(3n+2\)</span> contain infinitely many prime numbers each, and in fact each contains roughly half of the prime numbers.</p>
 <h4 id="mersenne-primes">Mersenne Primes</h4>
-<p>A very interesting sequence of primes is known as the <a href="http://en.wikipedia.org/wiki/Mersenne_prime">Mersenne Primes</a>, which are numbers of the form <span class="math">\(M(p) = 2^p-1\)</span>.</p>
-<p>These numbers only have a chance of being prime if <span class="math">\(p\)</span> is itself a prime, so let us list some of those:</p>
+<p>A very interesting sequence of primes is known as the <a href="http://en.wikipedia.org/wiki/Mersenne_prime">Mersenne Primes</a>, which are numbers of the form <span class="math inline">\(M(p) = 2^p-1\)</span>.</p>
+<p>These numbers only have a chance of being prime if <span class="math inline">\(p\)</span> is itself a prime, so let us list some of those:</p>
 <table>
 <thead>
 <tr class="header">
@@ -158,8 +158,8 @@
 </tr>
 </tbody>
 </table>
-<p>We already see that not all of these numbers are prime. For example, <span class="math">\(2047 = 23 \times 89\)</span>. But they are considered as good candidates for large prime numbers.</p>
-<p>Currently we know a total of <span class="math">\(42\)</span> Mersenne Primes, the largest of them being <span class="math">\(2^{57,885,161} - 1\)</span>, which has <span class="math">\(17\)</span> million digits. It would take about 4600 pages to display this number on a standard word processor.</p>
+<p>We already see that not all of these numbers are prime. For example, <span class="math inline">\(2047 = 23 \times 89\)</span>. But they are considered as good candidates for large prime numbers.</p>
+<p>Currently we know a total of <span class="math inline">\(42\)</span> Mersenne Primes, the largest of them being <span class="math inline">\(2^{57,885,161} - 1\)</span>, which has <span class="math inline">\(17\)</span> million digits. It would take about 4600 pages to display this number on a standard word processor.</p>
 <p>The <a href="http://en.wikipedia.org/wiki/Great_Internet_Mersenne_Prime_Search">Great Internet Mersenne Prime Search</a> project is a massive distributed computing project constantly searching for new Mersenne numbers.</p>
 </body>
 </html>

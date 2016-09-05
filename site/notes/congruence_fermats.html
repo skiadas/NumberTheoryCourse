@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -26,37 +26,37 @@
 </dl>
 <h2 id="notes">Notes</h2>
 <h3 id="fermats-theorem">Fermat's Theorem</h3>
-<p>Fermat's Little Theorem concerns itself with powers of elements modulo a prime number. Let us look at the simple example of <span class="math">\(p=7\)</span>, and considering the powers of all non-zero elements, modulo <span class="math">\(7\)</span>. We stop the first time we encounter 1 (because the values will repeat after that point).</p>
-<p><span class="math">\[2^2 = 4, 2^3 = 8 = 1\]</span> <span class="math">\[3^2 = 9 = 2, 3^3 = 2\cdot 3 = 6, 3^4 = 6\cdot 3 = 18 = 4, 3^5 = 4\cdot 3 = 12 = 5, 3^6 = 5\cdot 3 = 15 = 1\]</span> <span class="math">\[4^2 = 16 = 2, 4^3=2\cdot 4 = 8 = 1\]</span> <span class="math">\[5^2 = 25 = 4, 5^3= 4\cdot 5 = 20 = 6,5^4 = 6\cdot 5 = 30 = 2, 5^5=2\cdot 5 = 10 = 3, 5^6 = 3\cdot 5 = 15 = 1\]</span> <span class="math">\[6^2 = 36 = 1\]</span></p>
+<p>Fermat's Little Theorem concerns itself with powers of elements modulo a prime number. Let us look at the simple example of <span class="math inline">\(p=7\)</span>, and considering the powers of all non-zero elements, modulo <span class="math inline">\(7\)</span>. We stop the first time we encounter 1 (because the values will repeat after that point).</p>
+<p><span class="math display">\[2^2 = 4, 2^3 = 8 = 1\]</span> <span class="math display">\[3^2 = 9 = 2, 3^3 = 2\cdot 3 = 6, 3^4 = 6\cdot 3 = 18 = 4, 3^5 = 4\cdot 3 = 12 = 5, 3^6 = 5\cdot 3 = 15 = 1\]</span> <span class="math display">\[4^2 = 16 = 2, 4^3=2\cdot 4 = 8 = 1\]</span> <span class="math display">\[5^2 = 25 = 4, 5^3= 4\cdot 5 = 20 = 6,5^4 = 6\cdot 5 = 30 = 2, 5^5=2\cdot 5 = 10 = 3, 5^6 = 3\cdot 5 = 15 = 1\]</span> <span class="math display">\[6^2 = 36 = 1\]</span></p>
 <p>Let us repeat this for different prime moduli: I am listing below only the first power that equals 1:</p>
 <p>mod 11:</p>
-<p><span class="math">\[2^{10} = 1, 3^5 = 1, 4^5 = 1, 5^5 = 1, 6^{10} = 1, 7^{10} = 1, 8^{10} = 1,9^5 = 1, 10^2 = 1\]</span></p>
+<p><span class="math display">\[2^{10} = 1, 3^5 = 1, 4^5 = 1, 5^5 = 1, 6^{10} = 1, 7^{10} = 1, 8^{10} = 1,9^5 = 1, 10^2 = 1\]</span></p>
 <p>So the possible powers are 1,2,5,10.</p>
 <p>mod 13:</p>
-<p><span class="math">\[2^{12}, 3^3, 4^6, 5^4, 6^{12}, 7^{12}, 8^4, 9^3, 10^6, 11^{12}, 12^2\]</span></p>
+<p><span class="math display">\[2^{12}, 3^3, 4^6, 5^4, 6^{12}, 7^{12}, 8^4, 9^3, 10^6, 11^{12}, 12^2\]</span></p>
 <p>So the possible powers are 1,2,3,4,6,12.</p>
 <p>Starting to notice a pattern?</p>
-<p>It looks like the first power that an element becomes equal to 1 is always a divisor of <span class="math">\(p-1\)</span>. In particular, if we raise that element to <span class="math">\(p-1\)</span> we will always get 1. This is the essence of Fermat's Little Theorem:</p>
+<p>It looks like the first power that an element becomes equal to 1 is always a divisor of <span class="math inline">\(p-1\)</span>. In particular, if we raise that element to <span class="math inline">\(p-1\)</span> we will always get 1. This is the essence of Fermat's Little Theorem:</p>
 <blockquote>
 <p><strong>Fermat's Little Theorem</strong></p>
-<p>If <span class="math">\(p\)</span> is prime and <span class="math">\(a\)</span> is relatively prime to <span class="math">\(p\)</span>, then <span class="math">\(a^{p-1} = 1 \bmod p\)</span>.</p>
-<p>In general for any <span class="math">\(a\)</span>, we have <span class="math">\(a^p = a\bmod p\)</span>.</p>
+<p>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(a\)</span> is relatively prime to <span class="math inline">\(p\)</span>, then <span class="math inline">\(a^{p-1} = 1 \bmod p\)</span>.</p>
+<p>In general for any <span class="math inline">\(a\)</span>, we have <span class="math inline">\(a^p = a\bmod p\)</span>.</p>
 </blockquote>
 <p>This can be used to test that a number is prime, as this property will not hold for most non-prime numbers (there are a few exceptions).</p>
-<p>For instance, consider <span class="math">\(n=15\)</span>. Let us compute <span class="math">\(7^{14}\)</span> and see if it equals 1.</p>
-<p>We have: <span class="math">\(7^2 = 49 = 4\bmod 15\)</span>, <span class="math">\(7^4 = 4^2=16=1\bmod 15\)</span>, <span class="math">\(7^{12} = (7^4)^3 = 1^3=1\bmod 15\)</span>, <span class="math">\(7^{14} = 7^{12}\cdot 7^2 = 4\bmod 15\)</span>.</p>
-<p>If we had computed <span class="math">\(4^{14}\)</span> instead, we would have found that to be <span class="math">\(1\)</span>, so you often have to try more than one element.</p>
+<p>For instance, consider <span class="math inline">\(n=15\)</span>. Let us compute <span class="math inline">\(7^{14}\)</span> and see if it equals 1.</p>
+<p>We have: <span class="math inline">\(7^2 = 49 = 4\bmod 15\)</span>, <span class="math inline">\(7^4 = 4^2=16=1\bmod 15\)</span>, <span class="math inline">\(7^{12} = (7^4)^3 = 1^3=1\bmod 15\)</span>, <span class="math inline">\(7^{14} = 7^{12}\cdot 7^2 = 4\bmod 15\)</span>.</p>
+<p>If we had computed <span class="math inline">\(4^{14}\)</span> instead, we would have found that to be <span class="math inline">\(1\)</span>, so you often have to try more than one element.</p>
 <p>Now we proceed to discuss a proof of Fermat's Little Theorem:</p>
 <ul>
-<li>Recall we have the set of congruence classes (leaving 0 out): <span class="math">\(\{\bar 1, \bar 2,\ldots \, \overline{p-1}\}\)</span>.</li>
-<li>What happens when we multiply all these by <span class="math">\(\bar a\)</span>? Because multiplication is 1-1, and we can never get 0 as the result, then multiplying by <span class="math">\(\bar a\)</span> just <em>rearranges</em> them.</li>
-<li>So the numbers <span class="math">\(\{\bar a \cdot \bar 1, \bar a \cdot \bar 2,\ldots \}\)</span> are exactly the same as <span class="math">\(\{\bar 1, \bar 2,\ldots, \overline{p-1}\}\)</span>, just in a different order.</li>
+<li>Recall we have the set of congruence classes (leaving 0 out): <span class="math inline">\(\{\bar 1, \bar 2,\ldots \, \overline{p-1}\}\)</span>.</li>
+<li>What happens when we multiply all these by <span class="math inline">\(\bar a\)</span>? Because multiplication is 1-1, and we can never get 0 as the result, then multiplying by <span class="math inline">\(\bar a\)</span> just <em>rearranges</em> them.</li>
+<li>So the numbers <span class="math inline">\(\{\bar a \cdot \bar 1, \bar a \cdot \bar 2,\ldots \}\)</span> are exactly the same as <span class="math inline">\(\{\bar 1, \bar 2,\ldots, \overline{p-1}\}\)</span>, just in a different order.</li>
 <li><p>So they should have the exact same product:</p>
-<span class="math">\[(\bar a \cdot \bar 1)\cdot(\bar a \cdot \bar 2)\cdots(\bar a \cdot \overline{p-1}) = \bar 1 \cdot \bar 2 \cdots \overline{p-1}\]</span></li>
+<span class="math display">\[(\bar a \cdot \bar 1)\cdot(\bar a \cdot \bar 2)\cdots(\bar a \cdot \overline{p-1}) = \bar 1 \cdot \bar 2 \cdots \overline{p-1}\]</span></li>
 <li><p>Taking out the factors of a from the front we get:</p>
-<span class="math">\[\bar a^{p-1}(\bar 1 \cdot \bar 2 \cdots \overline{p-1}) = \bar 1 \cdot \bar 2 \cdots \overline{p-1}\]</span></li>
-<li>By Wilson's theorem, that product is invertible (in fact equal to <span class="math">\(-1\)</span>). So we can cancel it out.</li>
-<li><p>This leaves us with <span class="math">\(\bar a^{p-1} = 1\bmod p\)</span>.</p></li>
+<span class="math display">\[\bar a^{p-1}(\bar 1 \cdot \bar 2 \cdots \overline{p-1}) = \bar 1 \cdot \bar 2 \cdots \overline{p-1}\]</span></li>
+<li>By Wilson's theorem, that product is invertible (in fact equal to <span class="math inline">\(-1\)</span>). So we can cancel it out.</li>
+<li><p>This leaves us with <span class="math inline">\(\bar a^{p-1} = 1\bmod p\)</span>.</p></li>
 </ul>
 </body>
 </html>

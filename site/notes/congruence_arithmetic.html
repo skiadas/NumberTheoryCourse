@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -30,31 +30,31 @@
 <h2 id="notes">Notes</h2>
 <p>One of the most powerful facts about congruence relations is that they respect arithmetic operations:</p>
 <blockquote>
-<p>If <span class="math">\(a \equiv b \bmod n\)</span> and <span class="math">\(c \equiv d \bmod n\)</span> then:</p>
-<p><span class="math">\[a + c \equiv b + d \bmod n\]</span></p>
-<p><span class="math">\[ac \equiv bd \bmod n\]</span></p>
-<p><span class="math">\[a^k \equiv b^k \bmod n\]</span> for all <span class="math">\(k\in\mathbb{Z}\)</span>.</p>
+<p>If <span class="math inline">\(a \equiv b \bmod n\)</span> and <span class="math inline">\(c \equiv d \bmod n\)</span> then:</p>
+<p><span class="math display">\[a + c \equiv b + d \bmod n\]</span></p>
+<p><span class="math display">\[ac \equiv bd \bmod n\]</span></p>
+<p><span class="math display">\[a^k \equiv b^k \bmod n\]</span> for all <span class="math inline">\(k\in\mathbb{Z}\)</span>.</p>
 </blockquote>
 <p>This has many far-reaching consequences, that we will examine in due course.</p>
 <p>The proof of these two statements is fairly straighforward:</p>
 <ul>
-<li>If <span class="math">\(n|(b-a)\)</span> and <span class="math">\(n|(d-c)\)</span>, then it also is the case that <span class="math">\(n|(b-a+d-c) = b+d- (a+c)\)</span>.</li>
+<li>If <span class="math inline">\(n|(b-a)\)</span> and <span class="math inline">\(n|(d-c)\)</span>, then it also is the case that <span class="math inline">\(n|(b-a+d-c) = b+d- (a+c)\)</span>.</li>
 <li>For the second assertion:
 <ul>
-<li>If <span class="math">\(n|(b-a)\)</span> then it also divides <span class="math">\(db-da\)</span>.</li>
-<li>If <span class="math">\(n|(d-c)\)</span> then it also divides <span class="math">\(ad-ac\)</span>.</li>
-<li>Therefore it divides <span class="math">\(db - da + ad - ac = bd - ac\)</span>.</li>
+<li>If <span class="math inline">\(n|(b-a)\)</span> then it also divides <span class="math inline">\(db-da\)</span>.</li>
+<li>If <span class="math inline">\(n|(d-c)\)</span> then it also divides <span class="math inline">\(ad-ac\)</span>.</li>
+<li>Therefore it divides <span class="math inline">\(db - da + ad - ac = bd - ac\)</span>.</li>
 </ul></li>
 <li>The third assertion follows by induction and using the second assertion.</li>
 </ul>
 <p>As a simple example, we can easily reduce a complex computation if can reduce its individual parts first. For instance, if we want to compute &quot;mod 10&quot;, then we are effectively talking about keeping only the ones digit from the number. So for instance we can do:</p>
-<p><span class="math">\[45322 \times 343523 \times 34519 \equiv 2\times 3 \times 9 \equiv 54 \equiv 4\bmod 10\]</span></p>
-<p>As another example, let us try to compute <span class="math">\(2^{10}\bmod 5\)</span>:</p>
-<p><span class="math">\[2^3 = 8 \equiv 3 \bmod 5\]</span></p>
-<p><span class="math">\[2^4 = 8 \times 2 = 3\times 2 = 6 \equiv 1 \bmod 5\]</span></p>
-<p><span class="math">\[2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5\]</span></p>
-<p><span class="math">\[2^{10} = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5\]</span></p>
-<p>In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to <span class="math">\(2^{100}\)</span> modulo 5, as well as <span class="math">\(3^{100}\)</span> and <span class="math">\(4^{100}\)</span>.</p>
+<p><span class="math display">\[45322 \times 343523 \times 34519 \equiv 2\times 3 \times 9 \equiv 54 \equiv 4\bmod 10\]</span></p>
+<p>As another example, let us try to compute <span class="math inline">\(2^{10}\bmod 5\)</span>:</p>
+<p><span class="math display">\[2^3 = 8 \equiv 3 \bmod 5\]</span></p>
+<p><span class="math display">\[2^4 = 8 \times 2 = 3\times 2 = 6 \equiv 1 \bmod 5\]</span></p>
+<p><span class="math display">\[2^8 = 2^4 \times 2^4 \equiv 1\times 1 = 1\bmod 5\]</span></p>
+<p><span class="math display">\[2^{10} = 2^8 \times 2^2 \equiv 1 \times 4 = 4\bmod 5\]</span></p>
+<p>In fact we can efficiently compute powers with very large exponents very efficiently, if we work modulo a number. Think of how we could get to <span class="math inline">\(2^{100}\)</span> modulo 5, as well as <span class="math inline">\(3^{100}\)</span> and <span class="math inline">\(4^{100}\)</span>.</p>
 <p>This technique can give rise to some really nice divisibility tests:</p>
 <blockquote>
 <p>A number is congruent to the sum of its digits modulo 9.</p>
@@ -62,9 +62,9 @@
 <p>A number is congruent to the alternating sum of its digits modulo 11.</p>
 <p>Consequently a number is divisible by 11 if and only if the alternating sum of its digits is.</p>
 </blockquote>
-<p>For example, 3412458 is divisible by <span class="math">\(9\)</span> since <span class="math">\(8+5+4+2+1+4+3 = 27\)</span>. It is not divisible by <span class="math">\(11\)</span> since <span class="math">\(8-5+4-2+1-4+3 = 5\)</span>.</p>
+<p>For example, 3412458 is divisible by <span class="math inline">\(9\)</span> since <span class="math inline">\(8+5+4+2+1+4+3 = 27\)</span>. It is not divisible by <span class="math inline">\(11\)</span> since <span class="math inline">\(8-5+4-2+1-4+3 = 5\)</span>.</p>
 <blockquote>
-<p>Question: Can we have two numbers that are not <span class="math">\(\equiv 0\mod n\)</span> but whose product is <span class="math">\(\equiv 0\mod n\)</span>?</p>
+<p>Question: Can we have two numbers that are not <span class="math inline">\(\equiv 0\mod n\)</span> but whose product is <span class="math inline">\(\equiv 0\mod n\)</span>?</p>
 </blockquote>
 </body>
 </html>

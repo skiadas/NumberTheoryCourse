@@ -7,33 +7,33 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
-<h1 id="assignment-9">Assignment 9<span class="small"> (<a href="9.pdf" title="9">pdf</a>)</span></h1>
+<h1 id="assignment-9">Assignment 9<span class="small"> (<a href="9.pdf" class="small" title="9">pdf</a>)</span></h1>
 <p>True/False questions, not to turn in:</p>
 <ul>
-<li>The order of an element modulo <span class="math">\(n\)</span> is always <span class="math">\(1\)</span> or an even number.</li>
-<li>Let <span class="math">\(p &gt; 2\)</span> be a prime. A polynomial of odd degree over <span class="math">\(\mathbb{Z}_p\)</span> necessarily has a root.</li>
-<li>If a polynomial <span class="math">\(f(x)\)</span> with integer coefficients has no solutions modulo a prime <span class="math">\(p\)</span>, then it also has no solution modulo other primes.</li>
-<li>If <span class="math">\(\bar a\)</span> is a primitive root modulo a prime <span class="math">\(p\)</span>, then <span class="math">\(\bar a\)</span> is also a primitive root modulo other primes.</li>
-<li>If <span class="math">\(\bar a = \bar b ^ 2\)</span> then <span class="math">\(a\)</span> cannot be a primitive root.</li>
+<li>The order of an element modulo <span class="math inline">\(n\)</span> is always <span class="math inline">\(1\)</span> or an even number.</li>
+<li>Let <span class="math inline">\(p &gt; 2\)</span> be a prime. A polynomial of odd degree over <span class="math inline">\(\mathbb{Z}_p\)</span> necessarily has a root.</li>
+<li>If a polynomial <span class="math inline">\(f(x)\)</span> with integer coefficients has no solutions modulo a prime <span class="math inline">\(p\)</span>, then it also has no solution modulo other primes.</li>
+<li>If <span class="math inline">\(\bar a\)</span> is a primitive root modulo a prime <span class="math inline">\(p\)</span>, then <span class="math inline">\(\bar a\)</span> is also a primitive root modulo other primes.</li>
+<li>If <span class="math inline">\(\bar a = \bar b ^ 2\)</span> then <span class="math inline">\(a\)</span> cannot be a primitive root.</li>
 </ul>
 <p>Questions to turn in:</p>
 <ol style="list-style-type: decimal">
-<li>Find a primitive root modulo <span class="math">\(p=53\)</span> using the techniques we learned in class. Use it to find at least 2 more primitive roots.</li>
-<li>In normal calculus we have the formula: <span class="math">\(\log_a(c) = \frac{\log_b(c)}{\log_b(a)}\)</span>. Is the same true when discussing discrete logarithms in <span class="math">\(\mathbb{Z}_p\)</span>? i.e. when <span class="math">\(a\)</span>, <span class="math">\(b\)</span> are primitive roots modulo <span class="math">\(p\)</span>, and <span class="math">\(\bar c\)</span> is a nonzero element, is it the case that <span class="math">\(\log_b(c) = \log_a(c)\log_b(a)\)</span>? Either prove or provide a counterexample.</li>
-<li>Suppose that <span class="math">\(f\colon\mathbb{Z}_p^* \to \mathbb{Z}_{p-1}\)</span> is a well-defined, 1-1 function from the set of nonzero residues modulo <span class="math">\(p\)</span> to the set of residues modulo <span class="math">\(p-1\)</span> that has the property that <span class="math">\(f(xy) = f(x) + f(y)\)</span> for all <span class="math">\(x,y\in\mathbb{Z}_p^*\)</span>. Show that it is in fact a discrete logarithm function for some primitive root. (All discrete logarithms would have those properties). Here are some steps to help you:
+<li>Find a primitive root modulo <span class="math inline">\(p=53\)</span> using the techniques we learned in class. Use it to find at least 2 more primitive roots.</li>
+<li>In normal calculus we have the formula: <span class="math inline">\(\log_a(c) = \frac{\log_b(c)}{\log_b(a)}\)</span>. Is the same true when discussing discrete logarithms in <span class="math inline">\(\mathbb{Z}_p\)</span>? i.e. when <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> are primitive roots modulo <span class="math inline">\(p\)</span>, and <span class="math inline">\(\bar c\)</span> is a nonzero element, is it the case that <span class="math inline">\(\log_b(c) = \log_a(c)\log_b(a)\)</span>? Either prove or provide a counterexample.</li>
+<li>Suppose that <span class="math inline">\(f\colon\mathbb{Z}_p^* \to \mathbb{Z}_{p-1}\)</span> is a well-defined, 1-1 function from the set of nonzero residues modulo <span class="math inline">\(p\)</span> to the set of residues modulo <span class="math inline">\(p-1\)</span> that has the property that <span class="math inline">\(f(xy) = f(x) + f(y)\)</span> for all <span class="math inline">\(x,y\in\mathbb{Z}_p^*\)</span>. Show that it is in fact a discrete logarithm function for some primitive root. (All discrete logarithms would have those properties). Here are some steps to help you:
 <ul>
-<li>Show there must be an <span class="math">\(a\)</span> such that <span class="math">\(f(a) = 1\)</span>.</li>
-<li>Show that <span class="math">\(a\)</span> is a primitive root, i.e. that the order of <span class="math">\(a\)</span> is <span class="math">\(p-1\)</span>. The function <span class="math">\(f\)</span> and its properties can help you with that.</li>
-<li>Show that <span class="math">\(f\)</span> equals the discrete logarithm with base <span class="math">\(a\)</span>.</li>
+<li>Show there must be an <span class="math inline">\(a\)</span> such that <span class="math inline">\(f(a) = 1\)</span>.</li>
+<li>Show that <span class="math inline">\(a\)</span> is a primitive root, i.e. that the order of <span class="math inline">\(a\)</span> is <span class="math inline">\(p-1\)</span>. The function <span class="math inline">\(f\)</span> and its properties can help you with that.</li>
+<li>Show that <span class="math inline">\(f\)</span> equals the discrete logarithm with base <span class="math inline">\(a\)</span>.</li>
 </ul></li>
-<li>Illustrate the Diffie-Hellman protocol for <span class="math">\(p=53\)</span>, using the primitive root you found in question 1. You will need to use two randomly selected numbers between <span class="math">\(1\)</span> and <span class="math">\(51 = 53-2\)</span>, use the numbers <span class="math">\(10\)</span> and <span class="math">\(14\)</span>. What is the secret shared key in this instance, and what are the messages that Alice and Bob exchange?</li>
-<li>According to our theory, the polynomial <span class="math">\(x^{13}-1\)</span> would have exactly <span class="math">\(13\)</span> roots in <span class="math">\(\mathbb{Z}_{53}\)</span> (make sure you understand why). In other words, there are exactly <span class="math">\(13\)</span> elements in <span class="math">\(\mathbb{Z}_{53}\)</span> such that <span class="math">\(x^{13} = 1\)</span>. Find those elements. Here are some steps to help you:
+<li>Illustrate the Diffie-Hellman protocol for <span class="math inline">\(p=53\)</span>, using the primitive root you found in question 1. You will need to use two randomly selected numbers between <span class="math inline">\(1\)</span> and <span class="math inline">\(51 = 53-2\)</span>, use the numbers <span class="math inline">\(10\)</span> and <span class="math inline">\(14\)</span>. What is the secret shared key in this instance, and what are the messages that Alice and Bob exchange?</li>
+<li>According to our theory, the polynomial <span class="math inline">\(x^{13}-1\)</span> would have exactly <span class="math inline">\(13\)</span> roots in <span class="math inline">\(\mathbb{Z}_{53}\)</span> (make sure you understand why). In other words, there are exactly <span class="math inline">\(13\)</span> elements in <span class="math inline">\(\mathbb{Z}_{53}\)</span> such that <span class="math inline">\(x^{13} = 1\)</span>. Find those elements. Here are some steps to help you:
 <ul>
 <li>Find one such element that is not 1. Our technique for finding a primitive root should help.</li>
 <li>Try powers of that element. Explain why they would also have this property.</li>

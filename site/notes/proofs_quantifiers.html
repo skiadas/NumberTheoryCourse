@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -27,29 +27,29 @@
 <ul>
 <li><p>There are two quantifiers:</p>
 <dl>
-<dt><span class="math">\(\forall\)</span></dt>
+<dt><span class="math inline">\(\forall\)</span></dt>
 <dd>&quot;for all&quot;. Called the <strong>universal quantifier</strong>.
 </dd>
-<dt><span class="math">\(\exists\)</span></dt>
+<dt><span class="math inline">\(\exists\)</span></dt>
 <dd>&quot;exists&quot;. Called the <strong>existential quantifier</strong>.
 </dd>
 </dl>
 They are followed by a variable, and they are meant to suggest that the remaining statement is true for all values (respectively for at least one value).</li>
 <li>In every theorem or lemma, any variable needs to be quantified. If it is not, it is implicitly assumed that &quot;forall&quot; was intended.</li>
-<li>To prove a statement &quot;for every integer <span class="math">\(n\)</span>&quot;:
+<li>To prove a statement &quot;for every integer <span class="math inline">\(n\)</span>&quot;:
 <ul>
-<li>Say &quot;let <span class="math">\(n\)</span> be an integer&quot;. <span class="math">\(n\)</span> is now a specific, fixed, but unknown number. It stands as a &quot;placeholder&quot; for any arbitrary number.</li>
+<li>Say &quot;let <span class="math inline">\(n\)</span> be an integer&quot;. <span class="math inline">\(n\)</span> is now a specific, fixed, but unknown number. It stands as a &quot;placeholder&quot; for any arbitrary number.</li>
 <li>Continue with the proof.</li>
-<li>If you end up proving the statement for this <span class="math">\(n\)</span>, and since it could be absolutely any number, you have proven it for all numbers.</li>
+<li>If you end up proving the statement for this <span class="math inline">\(n\)</span>, and since it could be absolutely any number, you have proven it for all numbers.</li>
 <li>NOTE: the word &quot;let&quot; is also used to introduce new intermediate variables that we define to help us along.</li>
 </ul></li>
-<li>To prove a statement &quot;there exists an integer <span class="math">\(n\)</span> such that ...&quot;
+<li>To prove a statement &quot;there exists an integer <span class="math inline">\(n\)</span> such that ...&quot;
 <ul>
-<li>The simplest approach is to in fact demonstrate a specific number <span class="math">\(n\)</span> that has the property. A single example suffices, even if there might be many numbers that have the property.</li>
+<li>The simplest approach is to in fact demonstrate a specific number <span class="math inline">\(n\)</span> that has the property. A single example suffices, even if there might be many numbers that have the property.</li>
 <li>Some times you can prove by contradiction:
 <ul>
-<li>Assume the &quot;there exists an integer such that ...&quot; statement is false. Then it must be the case that for all integers <span class="math">\(n\)</span>, whatever is in the &quot;...&quot; has to be false.</li>
-<li>So we end up instead assuming a statement that says &quot;for all integers <span class="math">\(n\)</span>, ... is false&quot;.</li>
+<li>Assume the &quot;there exists an integer such that ...&quot; statement is false. Then it must be the case that for all integers <span class="math inline">\(n\)</span>, whatever is in the &quot;...&quot; has to be false.</li>
+<li>So we end up instead assuming a statement that says &quot;for all integers <span class="math inline">\(n\)</span>, ... is false&quot;.</li>
 <li>If we can prove that this somehow produces a contradiction, that means there must be an integer.</li>
 </ul></li>
 <li>One subtle point however. Here is what you should NOT do: Say we want to show that &quot;there exists an integer n that is even&quot;.
@@ -62,17 +62,17 @@ They are followed by a variable, and they are meant to suggest that the remainin
 </ul></li>
 <li><p>Order of quantifiers matters. Consider the following two statements:</p>
 <dl>
-<dt><span class="math">\(\forall x\exists y\, x+y &gt; 0\)</span></dt>
+<dt><span class="math inline">\(\forall x\exists y\, x+y &gt; 0\)</span></dt>
 <dd>This is true (why?)
 </dd>
-<dt><span class="math">\(\exists y\forall x\, x+y &gt; 0\)</span></dt>
+<dt><span class="math inline">\(\exists y\forall x\, x+y &gt; 0\)</span></dt>
 <dd>This is false (why?)
 </dd>
 </dl></li>
 <li>Negating quantified statements ends up switching the quantifiers:
 <ul>
-<li>The negation of &quot;<span class="math">\(\forall n\,P(n)\)</span>&quot; is &quot;<span class="math">\(\exists n\, \text{not} P(n)\)</span>&quot;</li>
-<li>The negation of &quot;<span class="math">\(\exists n\,P(n)\)</span>&quot; is &quot;<span class="math">\(\forall n\, \text{not} P(n)\)</span>&quot;</li>
+<li>The negation of &quot;<span class="math inline">\(\forall n\,P(n)\)</span>&quot; is &quot;<span class="math inline">\(\exists n\, \text{not} P(n)\)</span>&quot;</li>
+<li>The negation of &quot;<span class="math inline">\(\exists n\,P(n)\)</span>&quot; is &quot;<span class="math inline">\(\forall n\, \text{not} P(n)\)</span>&quot;</li>
 </ul></li>
 </ul>
 </body>

@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -20,9 +20,9 @@
 </ul>
 <h2 id="notes">Notes</h2>
 <p>Instead of adding a number to encode, we could instead multiply by a number. In order to do that, we need to make sure that we can properly decrypt, which would amount to multiplying by the inverse. So we need to have an inverse to begin with, so we should only multiply by invertible elements.</p>
-<p>Let's give that a go. We are working modulo 26 to have enough space for all the letters, so we need a number that's relatively prime to 26. Since <span class="math">\(26=2\times 13\)</span>, numbers like 3, 5 and 7 would do. Let's use 3.</p>
+<p>Let's give that a go. We are working modulo 26 to have enough space for all the letters, so we need a number that's relatively prime to 26. Since <span class="math inline">\(26=2\times 13\)</span>, numbers like 3, 5 and 7 would do. Let's use 3.</p>
 <p>We will use the word NUMBER again as our plaintext. In terms of numbers this becomes &quot;14 21 13 2 5 18&quot;. We multiply these by 3 then reduce modulo 26: &quot;42 63 39 6 15 54&quot; or &quot;16 11 13 6 15 2&quot;. In terms of letters this would be: PKMFOB. So that is our cyphertext that we would transmit.</p>
-<p>In order to decrypt this at the other end, we would need to figure out what the multiplicative inverse of 3 is. Since <span class="math">\(3\cdot 9 = 27 \equiv 1 (\bmod 26)\)</span>, we see that 9 is the multiplicative inverse. So to decrypt the message, we need to take the numbers &quot;16 11 13 6 15 2&quot;, multiply them with 9 and reduce modulo 26: &quot;144 99 117 54 135 18&quot; or &quot;14 21 13 2 5 18&quot;, which is what we started with.</p>
+<p>In order to decrypt this at the other end, we would need to figure out what the multiplicative inverse of 3 is. Since <span class="math inline">\(3\cdot 9 = 27 \equiv 1 (\bmod 26)\)</span>, we see that 9 is the multiplicative inverse. So to decrypt the message, we need to take the numbers &quot;16 11 13 6 15 2&quot;, multiply them with 9 and reduce modulo 26: &quot;144 99 117 54 135 18&quot; or &quot;14 21 13 2 5 18&quot;, which is what we started with.</p>
 <p>To practice this some more, decrypt the message ILYEV which was encrypted by multiplying by 5.</p>
 </body>
 </html>

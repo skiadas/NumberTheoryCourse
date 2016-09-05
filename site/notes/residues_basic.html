@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -28,71 +28,71 @@
 <p>Before we extend Fermat's theorem to non-primes, we will need some preliminary work.</p>
 <h3 id="reduced-residues">Reduced Residues</h3>
 <blockquote>
-<p><span class="math">\(\bar a\)</span> is a <strong>reduced residue</strong> if <span class="math">\(\gcd(a,n) = 1\)</span>.</p>
-<p>The reduced residues are exactly those numbers that have a multiplicative inverse modulo <span class="math">\(n\)</span>.</p>
-<p>Reduced residues are also called &quot;units&quot;. The set of all reduced residues is some times denoted by <span class="math">\(\mathbb{Z}_n^*\)</span>.</p>
-<p>In simple terms, a number is a reduced residue if it has no common prime factors with the modulus <span class="math">\(n\)</span>.</p>
-<p>Euler's phi function is: <span class="math">\(\phi(n)=\)</span> the number of reduced residues modulo <span class="math">\(n\)</span>, i.e. the size of <span class="math">\(\mathbb{Z}_n^*\)</span>.</p>
+<p><span class="math inline">\(\bar a\)</span> is a <strong>reduced residue</strong> if <span class="math inline">\(\gcd(a,n) = 1\)</span>.</p>
+<p>The reduced residues are exactly those numbers that have a multiplicative inverse modulo <span class="math inline">\(n\)</span>.</p>
+<p>Reduced residues are also called &quot;units&quot;. The set of all reduced residues is some times denoted by <span class="math inline">\(\mathbb{Z}_n^*\)</span>.</p>
+<p>In simple terms, a number is a reduced residue if it has no common prime factors with the modulus <span class="math inline">\(n\)</span>.</p>
+<p>Euler's phi function is: <span class="math inline">\(\phi(n)=\)</span> the number of reduced residues modulo <span class="math inline">\(n\)</span>, i.e. the size of <span class="math inline">\(\mathbb{Z}_n^*\)</span>.</p>
 </blockquote>
-<p>This is well defined: If <span class="math">\(\bar a = \bar b\)</span> and <span class="math">\(\gcd(a,n) = 1\)</span>, then it is also the case that <span class="math">\(\gcd(b,n) = 1\)</span>. To see this, note that <span class="math">\(b = a + nk\)</span> for some integer <span class="math">\(k\)</span>. And we already know <span class="math">\(\gcd(a + nk, n) =\gcd(a, n)\)</span>.</p>
-<p>What are the reduced residues in <span class="math">\(\mathbb{Z}_{10}\)</span>, <span class="math">\(\mathbb{Z}_{12}\)</span>, <span class="math">\(\mathbb{Z}_{15}\)</span>?</p>
+<p>This is well defined: If <span class="math inline">\(\bar a = \bar b\)</span> and <span class="math inline">\(\gcd(a,n) = 1\)</span>, then it is also the case that <span class="math inline">\(\gcd(b,n) = 1\)</span>. To see this, note that <span class="math inline">\(b = a + nk\)</span> for some integer <span class="math inline">\(k\)</span>. And we already know <span class="math inline">\(\gcd(a + nk, n) =\gcd(a, n)\)</span>.</p>
+<p>What are the reduced residues in <span class="math inline">\(\mathbb{Z}_{10}\)</span>, <span class="math inline">\(\mathbb{Z}_{12}\)</span>, <span class="math inline">\(\mathbb{Z}_{15}\)</span>?</p>
 <p>Here is a crucial property of reduced residues:</p>
 <blockquote>
-<p>If <span class="math">\(\bar a\)</span> and <span class="math">\(\bar b\)</span> are two reduced residues in <span class="math">\(\mathbb{Z}_n\)</span>, then their product <span class="math">\(\bar a \cdot \bar b\)</span> is also a reduced residue.</p>
-<p>In other words the set <span class="math">\(\mathbb{Z}_n^*\)</span> of residues is closed under the operation of multiplication. And as we also know, all elements there also have inverses.</p>
-<p>In algebraic systems language, we say that <span class="math">\(\mathbb{Z}_n^*\)</span> is a <strong>group</strong> under multiplication.</p>
+<p>If <span class="math inline">\(\bar a\)</span> and <span class="math inline">\(\bar b\)</span> are two reduced residues in <span class="math inline">\(\mathbb{Z}_n\)</span>, then their product <span class="math inline">\(\bar a \cdot \bar b\)</span> is also a reduced residue.</p>
+<p>In other words the set <span class="math inline">\(\mathbb{Z}_n^*\)</span> of residues is closed under the operation of multiplication. And as we also know, all elements there also have inverses.</p>
+<p>In algebraic systems language, we say that <span class="math inline">\(\mathbb{Z}_n^*\)</span> is a <strong>group</strong> under multiplication.</p>
 </blockquote>
 <p>Some standard results about Euler's phi function:</p>
 <blockquote>
 <ul>
-<li>If <span class="math">\(p\)</span> is prime, then <span class="math">\(\phi(p) = p-1\)</span>.</li>
-<li>If <span class="math">\(p\)</span> is prime and <span class="math">\(a &gt; 0\)</span> then <span class="math">\(\phi(p^a) = (p-1)p^{a-1}\)</span>.</li>
-<li>If <span class="math">\(p,q\)</span> are distinct primes, then <span class="math">\(\phi(pq) = (p-1)(q-1)\)</span>.</li>
-<li>In general if <span class="math">\(m,n\)</span> are relatively prime, then <span class="math">\(\phi(mn) = \phi(m)\phi(n)\)</span>.</li>
-<li>If <span class="math">\(p_1, p_2, \ldots p_k\)</span> are distinct primes and <span class="math">\(a_1, a_2, \ldots a_k\)</span> are nonnegative, then: <span class="math">\[\phi(p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}) = (p_1-1)p_1^{a_1 - 1}\cdots (p_k - 1)p_k^{a_k - 1}\]</span></li>
+<li>If <span class="math inline">\(p\)</span> is prime, then <span class="math inline">\(\phi(p) = p-1\)</span>.</li>
+<li>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(a &gt; 0\)</span> then <span class="math inline">\(\phi(p^a) = (p-1)p^{a-1}\)</span>.</li>
+<li>If <span class="math inline">\(p,q\)</span> are distinct primes, then <span class="math inline">\(\phi(pq) = (p-1)(q-1)\)</span>.</li>
+<li>In general if <span class="math inline">\(m,n\)</span> are relatively prime, then <span class="math inline">\(\phi(mn) = \phi(m)\phi(n)\)</span>.</li>
+<li>If <span class="math inline">\(p_1, p_2, \ldots p_k\)</span> are distinct primes and <span class="math inline">\(a_1, a_2, \ldots a_k\)</span> are nonnegative, then: <span class="math display">\[\phi(p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}) = (p_1-1)p_1^{a_1 - 1}\cdots (p_k - 1)p_k^{a_k - 1}\]</span></li>
 </ul>
 </blockquote>
-<p>Let us discuss the proofs of some of the above, starting with the second one, <span class="math">\(\phi(p^a) = (p-1)p^{a-1}\)</span>:</p>
+<p>Let us discuss the proofs of some of the above, starting with the second one, <span class="math inline">\(\phi(p^a) = (p-1)p^{a-1}\)</span>:</p>
 <ul>
-<li>We need to count all the numbers from <span class="math">\(1\)</span> to <span class="math">\(p^a-1\)</span> that are relatively prime to <span class="math">\(p^a\)</span>, or simply relatively prime to <span class="math">\(p\)</span>.</li>
-<li>Since <span class="math">\(p\)</span> is prime, we need to exclude all multiples of <span class="math">\(p\)</span>.</li>
-<li>The first such multiple is <span class="math">\(0\)</span>, the last is <span class="math">\(p^a - p = p(p^{a-1}-1)\)</span>.</li>
-<li>There are exactly <span class="math">\(p^{a-1}\)</span> such numbers.</li>
-<li>There is a total of <span class="math">\(p^a\)</span> numbers.</li>
-<li>So there are <span class="math">\(p^a-p^{a-1}\)</span> numbers that are relatively prime to <span class="math">\(p^a\)</span>.</li>
+<li>We need to count all the numbers from <span class="math inline">\(1\)</span> to <span class="math inline">\(p^a-1\)</span> that are relatively prime to <span class="math inline">\(p^a\)</span>, or simply relatively prime to <span class="math inline">\(p\)</span>.</li>
+<li>Since <span class="math inline">\(p\)</span> is prime, we need to exclude all multiples of <span class="math inline">\(p\)</span>.</li>
+<li>The first such multiple is <span class="math inline">\(0\)</span>, the last is <span class="math inline">\(p^a - p = p(p^{a-1}-1)\)</span>.</li>
+<li>There are exactly <span class="math inline">\(p^{a-1}\)</span> such numbers.</li>
+<li>There is a total of <span class="math inline">\(p^a\)</span> numbers.</li>
+<li>So there are <span class="math inline">\(p^a-p^{a-1}\)</span> numbers that are relatively prime to <span class="math inline">\(p^a\)</span>.</li>
 </ul>
-<p>The next key thing to prove is the fourth case: If <span class="math">\(m,n\)</span> are relatively prime, then <span class="math">\(\phi(mn) = \phi(m) \cdot \phi(n)\)</span>. This will turn out to be related to the Chinese Remainder Theorem. For this we will need the following:</p>
+<p>The next key thing to prove is the fourth case: If <span class="math inline">\(m,n\)</span> are relatively prime, then <span class="math inline">\(\phi(mn) = \phi(m) \cdot \phi(n)\)</span>. This will turn out to be related to the Chinese Remainder Theorem. For this we will need the following:</p>
 <blockquote>
-<p>Consider <span class="math">\(m,n\)</span> relatively prime. Then there is a function:</p>
-<p><span class="math">\[I:\mathbb{Z}_{mn} \to \mathbb{Z}_m \times \mathbb{Z}_n\]</span></p>
-<p>that sends the conguence class <span class="math">\(\bar x\)</span> in <span class="math">\(\mathbb{Z}_{mn}\)</span> to the pair <span class="math">\((\bar x, \bar x) \in \mathbb{Z}_m \times \mathbb{Z}_n\)</span></p>
+<p>Consider <span class="math inline">\(m,n\)</span> relatively prime. Then there is a function:</p>
+<p><span class="math display">\[I:\mathbb{Z}_{mn} \to \mathbb{Z}_m \times \mathbb{Z}_n\]</span></p>
+<p>that sends the conguence class <span class="math inline">\(\bar x\)</span> in <span class="math inline">\(\mathbb{Z}_{mn}\)</span> to the pair <span class="math inline">\((\bar x, \bar x) \in \mathbb{Z}_m \times \mathbb{Z}_n\)</span></p>
 <p>This function is 1-1 and onto (this is effectively the Chinese Remainder Theorem).</p>
-<p>Further, this function respects addition and multiplication: <span class="math">\(I(x+y) = I(x) + I(y)\)</span> and <span class="math">\(I(xy) = I(x)I(y)\)</span>.</p>
-<p>A class <span class="math">\(\bar x \in \mathbb{Z}_{mn}\)</span> is a reduced residue if and only if the corresponding <span class="math">\(\bar x\)</span> in <span class="math">\(\mathbb{Z}_m\)</span> and <span class="math">\(\mathbb{Z}_n\)</span> are reduced residues.</p>
+<p>Further, this function respects addition and multiplication: <span class="math inline">\(I(x+y) = I(x) + I(y)\)</span> and <span class="math inline">\(I(xy) = I(x)I(y)\)</span>.</p>
+<p>A class <span class="math inline">\(\bar x \in \mathbb{Z}_{mn}\)</span> is a reduced residue if and only if the corresponding <span class="math inline">\(\bar x\)</span> in <span class="math inline">\(\mathbb{Z}_m\)</span> and <span class="math inline">\(\mathbb{Z}_n\)</span> are reduced residues.</p>
 </blockquote>
 <p>Let us discuss the 1-1 / onto statement:</p>
 <ul>
-<li>Suppose <span class="math">\(I(\bar x) = I(\bar y)\)</span>.
+<li>Suppose <span class="math inline">\(I(\bar x) = I(\bar y)\)</span>.
 <ul>
-<li>This means that <span class="math">\(x\equiv y\bmod m\)</span> and also <span class="math">\(x\equiv y\bmod n\)</span>.</li>
-<li>By the Chinese Remainder Theorem, the common solution to <span class="math">\(x=a\bmod m\)</span> and <span class="math">\(x=b\bmod n\)</span> is unique modulo <span class="math">\(mn\)</span>.</li>
-<li>Therefore <span class="math">\(x\)</span> and <span class="math">\(y\)</span> must be equal modulo <span class="math">\(mn\)</span>.</li>
+<li>This means that <span class="math inline">\(x\equiv y\bmod m\)</span> and also <span class="math inline">\(x\equiv y\bmod n\)</span>.</li>
+<li>By the Chinese Remainder Theorem, the common solution to <span class="math inline">\(x=a\bmod m\)</span> and <span class="math inline">\(x=b\bmod n\)</span> is unique modulo <span class="math inline">\(mn\)</span>.</li>
+<li>Therefore <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> must be equal modulo <span class="math inline">\(mn\)</span>.</li>
 </ul></li>
-<li>Suppose <span class="math">\((\bar a, \bar b)\)</span> is an element in <span class="math">\(\mathbb{Z}_m\times \mathbb{Z}_n\)</span>.
+<li>Suppose <span class="math inline">\((\bar a, \bar b)\)</span> is an element in <span class="math inline">\(\mathbb{Z}_m\times \mathbb{Z}_n\)</span>.
 <ul>
-<li>The Chinese Remainder Theorem says that there is an <span class="math">\(x\)</span> such that <span class="math">\(x\equiv a\bmod m\)</span> and <span class="math">\(x\equiv b \bmod n\)</span>.</li>
-<li>We just showed that <span class="math">\(I(\bar x) = (\bar a, \bar b)\)</span>.</li>
+<li>The Chinese Remainder Theorem says that there is an <span class="math inline">\(x\)</span> such that <span class="math inline">\(x\equiv a\bmod m\)</span> and <span class="math inline">\(x\equiv b \bmod n\)</span>.</li>
+<li>We just showed that <span class="math inline">\(I(\bar x) = (\bar a, \bar b)\)</span>.</li>
 </ul></li>
 </ul>
 <p>Now we consider the last part, about reduced residues.</p>
 <ul>
-<li>If <span class="math">\(\bar x\)</span> has an inverse, i.e. there is a <span class="math">\(y\)</span> such that <span class="math">\(\bar x \bar y = \bar 1\)</span> in <span class="math">\(\mathbb{Z}_{mn}\)</span>, then the same formula holds in <span class="math">\(\mathbb{Z}_m\)</span> and in <span class="math">\(\mathbb{Z}_n\)</span>.</li>
-<li>So if a number is invertible (hence reduced residue) in <span class="math">\(\mathbb{Z}_{mn}\)</span>, then it is also invertible (reduced residue) in <span class="math">\(\mathbb{Z}_m\)</span> and in <span class="math">\(\mathbb{Z}_n\)</span>.</li>
-<li><p>Conversely, suppose <span class="math">\(\bar x\)</span> is invertible in <span class="math">\(\mathbb{Z}_m\)</span> and in <span class="math">\(\mathbb{Z}_n\)</span>. Then there are <span class="math">\(y_1\)</span> and <span class="math">\(y_2\)</span> such that:</p>
-<span class="math">\[x y_1 = 1 \bmod m\]</span> <span class="math">\[x y_2 = 1 \bmod n\]</span></li>
-<li><p>The Chinese Remainder Theorem (onto property of <span class="math">\(I\)</span>) essentially says that there is a <span class="math">\(y\)</span> that is both equal to <span class="math">\(y_1\bmod m\)</span> and equal to <span class="math">\(y_2\bmod n\)</span>.</p>
-Then <span class="math">\(I(\bar x \bar y) = (\bar 1, \bar 1)\)</span>.</li>
-<li><p>Again by the Chinese Remainder Theorem (1-1 property of <span class="math">\(I\)</span>), it follows that <span class="math">\(\bar x\bar y = \bar 1\)</span> in <span class="math">\(\mathbb{Z}_{mn}\)</span>. So <span class="math">\(\bar x\)</span> is a reduced residue.</p></li>
+<li>If <span class="math inline">\(\bar x\)</span> has an inverse, i.e. there is a <span class="math inline">\(y\)</span> such that <span class="math inline">\(\bar x \bar y = \bar 1\)</span> in <span class="math inline">\(\mathbb{Z}_{mn}\)</span>, then the same formula holds in <span class="math inline">\(\mathbb{Z}_m\)</span> and in <span class="math inline">\(\mathbb{Z}_n\)</span>.</li>
+<li>So if a number is invertible (hence reduced residue) in <span class="math inline">\(\mathbb{Z}_{mn}\)</span>, then it is also invertible (reduced residue) in <span class="math inline">\(\mathbb{Z}_m\)</span> and in <span class="math inline">\(\mathbb{Z}_n\)</span>.</li>
+<li><p>Conversely, suppose <span class="math inline">\(\bar x\)</span> is invertible in <span class="math inline">\(\mathbb{Z}_m\)</span> and in <span class="math inline">\(\mathbb{Z}_n\)</span>. Then there are <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> such that:</p>
+<span class="math display">\[x y_1 = 1 \bmod m\]</span> <span class="math display">\[x y_2 = 1 \bmod n\]</span></li>
+<li><p>The Chinese Remainder Theorem (onto property of <span class="math inline">\(I\)</span>) essentially says that there is a <span class="math inline">\(y\)</span> that is both equal to <span class="math inline">\(y_1\bmod m\)</span> and equal to <span class="math inline">\(y_2\bmod n\)</span>.</p>
+Then <span class="math inline">\(I(\bar x \bar y) = (\bar 1, \bar 1)\)</span>.</li>
+<li><p>Again by the Chinese Remainder Theorem (1-1 property of <span class="math inline">\(I\)</span>), it follows that <span class="math inline">\(\bar x\bar y = \bar 1\)</span> in <span class="math inline">\(\mathbb{Z}_{mn}\)</span>. So <span class="math inline">\(\bar x\)</span> is a reduced residue.</p></li>
 </ul>
 </body>
 </html>

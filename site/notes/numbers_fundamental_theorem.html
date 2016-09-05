@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -30,48 +30,48 @@
 <h2 id="notes">Notes</h2>
 <p>The <strong>Fundamental Theorem of Arithmetic</strong> is straightforward:</p>
 <blockquote>
-<p>Every natural number <span class="math">\(n &gt; 1\)</span> can be written as a product of prime numbers, and this factorization is unique up to reordering of the factors.</p>
+<p>Every natural number <span class="math inline">\(n &gt; 1\)</span> can be written as a product of prime numbers, and this factorization is unique up to reordering of the factors.</p>
 <p>In particular, if we collect same prime factors together in one term, and order according to size, we get a unique expression of the form:</p>
-<p><span class="math">\[n = p_1^{k_1}p_2^{k_2}p_3^{k_3}\cdots p_s^{k_s}\]</span></p>
-<p>where <span class="math">\(p_1 &lt; p_2 &lt; \cdots &lt; p_s\)</span> are prime, and all <span class="math">\(k_i &gt; 0\)</span>.</p>
+<p><span class="math display">\[n = p_1^{k_1}p_2^{k_2}p_3^{k_3}\cdots p_s^{k_s}\]</span></p>
+<p>where <span class="math inline">\(p_1 &lt; p_2 &lt; \cdots &lt; p_s\)</span> are prime, and all <span class="math inline">\(k_i &gt; 0\)</span>.</p>
 </blockquote>
 <p>We have already proven such an expression exists. We now have to prove uniqueness. This will follow from a key property of prime numbers:</p>
 <blockquote>
-<p>If <span class="math">\(p\)</span> is prime and <span class="math">\(p|ab\)</span>, then it must be the case that <span class="math">\(p|a\)</span> or <span class="math">\(p|b\)</span>.</p>
+<p>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(p|ab\)</span>, then it must be the case that <span class="math inline">\(p|a\)</span> or <span class="math inline">\(p|b\)</span>.</p>
 <p>In other words, a prime cannot divide a product without dividing one of the factors.</p>
 <p>This extends naturally to more than 2 terms.</p>
 </blockquote>
 <p>We now prove this fact. This in fact follows from our work with Euclidean division and the gcd.</p>
 <ul>
-<li>We assume that <span class="math">\(p|ab\)</span>.</li>
-<li>If <span class="math">\(p|a\)</span> we are done. Therefore we assume <span class="math">\(p\)</span> does not divide a, and we want to show that <span class="math">\(p|b\)</span>.</li>
-<li>Since <span class="math">\(p\)</span> is prime and does not divide <span class="math">\(a\)</span>, we saw previously that it must be the case that <span class="math">\(\gcd(p, a) = 1\)</span>.</li>
+<li>We assume that <span class="math inline">\(p|ab\)</span>.</li>
+<li>If <span class="math inline">\(p|a\)</span> we are done. Therefore we assume <span class="math inline">\(p\)</span> does not divide a, and we want to show that <span class="math inline">\(p|b\)</span>.</li>
+<li>Since <span class="math inline">\(p\)</span> is prime and does not divide <span class="math inline">\(a\)</span>, we saw previously that it must be the case that <span class="math inline">\(\gcd(p, a) = 1\)</span>.</li>
 <li>We also saw earlier that if a number divides a product and is relatively prime to the first term, then it must fully divide the second term. (Euclid's lemma)</li>
-<li>Therefore <span class="math">\(p|b\)</span>.</li>
+<li>Therefore <span class="math inline">\(p|b\)</span>.</li>
 </ul>
 <blockquote>
 <p>Aside:</p>
 <p>In other number systems where Euclidean Division doesn't hold, there are two different types of elements:</p>
 <ul>
-<li>Those elements that satisfy &quot;If <span class="math">\(p|ab\)</span> then <span class="math">\(p|a\)</span> or <span class="math">\(p|b\)</span>&quot; are called <em>prime elements</em>.</li>
-<li>Those elements that satisfy &quot;If <span class="math">\(p = ab\)</span> then either <span class="math">\(a\)</span> or <span class="math">\(b\)</span> equals <span class="math">\(\pm 1\)</span>&quot; are called <em>irreducible elements</em>.</li>
+<li>Those elements that satisfy &quot;If <span class="math inline">\(p|ab\)</span> then <span class="math inline">\(p|a\)</span> or <span class="math inline">\(p|b\)</span>&quot; are called <em>prime elements</em>.</li>
+<li>Those elements that satisfy &quot;If <span class="math inline">\(p = ab\)</span> then either <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> equals <span class="math inline">\(\pm 1\)</span>&quot; are called <em>irreducible elements</em>.</li>
 </ul>
 <p>Every prime element is irreducible, but the converse is not always true. If You have Euclidean Division, the above proof shows that it is true.</p>
 </blockquote>
 <p>Now we proceed to <em>prove the Fundamental Theorem</em>.</p>
 <ul>
-<li><p>Suppose we can write <span class="math">\(n\)</span> as a product of primes in possibly two different ways:</p>
-<p><span class="math">\[n = p_1 p_2 p_3 \cdots p_k\]</span></p>
-<p><span class="math">\[n = q_1 q_2 q_3 \cdots q_m\]</span></p>
+<li><p>Suppose we can write <span class="math inline">\(n\)</span> as a product of primes in possibly two different ways:</p>
+<p><span class="math display">\[n = p_1 p_2 p_3 \cdots p_k\]</span></p>
+<p><span class="math display">\[n = q_1 q_2 q_3 \cdots q_m\]</span></p>
 possibly involving different prime numbers and a different number of numbers.</li>
-<li>Since <span class="math">\(p_1\)</span> divides <span class="math">\(n = q_1 q_2 q_3 \cdots q_m\)</span>, it must divide one of the <span class="math">\(q_i\)</span>.</li>
-<li>Up to reordering of the <span class="math">\(q_i\)</span>'s we can assume that <span class="math">\(p_1\)</span> divides <span class="math">\(q_1\)</span>.</li>
+<li>Since <span class="math inline">\(p_1\)</span> divides <span class="math inline">\(n = q_1 q_2 q_3 \cdots q_m\)</span>, it must divide one of the <span class="math inline">\(q_i\)</span>.</li>
+<li>Up to reordering of the <span class="math inline">\(q_i\)</span>'s we can assume that <span class="math inline">\(p_1\)</span> divides <span class="math inline">\(q_1\)</span>.</li>
 <li>But a prime number cannot divide another prime number unless they are equal.</li>
-<li>So <span class="math">\(p_1 = q_1\)</span>.</li>
+<li>So <span class="math inline">\(p_1 = q_1\)</span>.</li>
 <li><p>Cancelling out those common terms, we get:</p>
-<span class="math">\[p_2p_3\cdots p_k = q_2q_3\cdots q_m\]</span></li>
-<li>We can now repeat the same procedure to get that, up to reordering, <span class="math">\(p_2=q_2\)</span>, <span class="math">\(p_3=q_3\)</span> etc.</li>
-<li>If one of the sequences ends before the other, we end up with an equation saying that <span class="math">\(1\)</span> is equal to a product of one or more primes, which is impossible.</li>
+<span class="math display">\[p_2p_3\cdots p_k = q_2q_3\cdots q_m\]</span></li>
+<li>We can now repeat the same procedure to get that, up to reordering, <span class="math inline">\(p_2=q_2\)</span>, <span class="math inline">\(p_3=q_3\)</span> etc.</li>
+<li>If one of the sequences ends before the other, we end up with an equation saying that <span class="math inline">\(1\)</span> is equal to a product of one or more primes, which is impossible.</li>
 <li><p>So there must be the same number of factors, and they must equal each other up to a reordering.</p></li>
 </ul>
 </body>

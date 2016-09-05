@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -29,46 +29,46 @@
 </dl>
 <h2 id="notes">Notes</h2>
 <h3 id="primitive-roots-definition">Primitive Roots: Definition</h3>
-<p>We have shown in previous sections that the order of each element must divide <span class="math">\(\phi(n)\)</span>. Elements that achieve this largest possible value are special:</p>
+<p>We have shown in previous sections that the order of each element must divide <span class="math inline">\(\phi(n)\)</span>. Elements that achieve this largest possible value are special:</p>
 <blockquote>
-<p>Let <span class="math">\(p\)</span> be prime and <span class="math">\(\bar a \in\mathbb{Z}_p\)</span>. We say that <span class="math">\(\bar a\)</span> is a <strong>primitive root</strong> in <span class="math">\(\mathbb{Z}_p\)</span>, or a <em>primitive root modulo <span class="math">\(p\)</span></em>, if <span class="math">\(ord(\bar a) = p - 1\)</span>.</p>
-<p>If <span class="math">\(\bar a\)</span> is a primitive root, then <span class="math">\(1,\bar a, \bar a^2,\ldots, \bar a^{p-2}\)</span> are all distict elements, all reduced residues, and since there are <span class="math">\(\phi(p) = p - 1\)</span> of them they must be all the reduced residues. We say that the primitive root <strong>generates</strong> all reduced residues.</p>
+<p>Let <span class="math inline">\(p\)</span> be prime and <span class="math inline">\(\bar a \in\mathbb{Z}_p\)</span>. We say that <span class="math inline">\(\bar a\)</span> is a <strong>primitive root</strong> in <span class="math inline">\(\mathbb{Z}_p\)</span>, or a <em>primitive root modulo <span class="math inline">\(p\)</span></em>, if <span class="math inline">\(ord(\bar a) = p - 1\)</span>.</p>
+<p>If <span class="math inline">\(\bar a\)</span> is a primitive root, then <span class="math inline">\(1,\bar a, \bar a^2,\ldots, \bar a^{p-2}\)</span> are all distict elements, all reduced residues, and since there are <span class="math inline">\(\phi(p) = p - 1\)</span> of them they must be all the reduced residues. We say that the primitive root <strong>generates</strong> all reduced residues.</p>
 </blockquote>
 <p>The main result of this section will be that there is always a primitive root, a very nontrivial result.</p>
 <p>Find primitive roots modulo 17 and modulo 19.</p>
 <h3 id="primitive-root-theorem">Primitive Root Theorem</h3>
 <p>The <strong>Primitive Root Theorem</strong> is fairly straightforward:</p>
 <blockquote>
-<p>Let <span class="math">\(p\)</span> be a prime. Then there exists a primitive root modulo <span class="math">\(p\)</span>.</p>
+<p>Let <span class="math inline">\(p\)</span> be a prime. Then there exists a primitive root modulo <span class="math inline">\(p\)</span>.</p>
 </blockquote>
 <p>Its proof will take many steps. The two main steps are as follows:</p>
 <ul>
-<li>We first show there are elements of order <span class="math">\(q^s\)</span>, where <span class="math">\(q^s|p-1\)</span> and <span class="math">\(q\)</span> is a prime.</li>
-<li>We then show that if <span class="math">\(a,b\)</span> are two elements with relatively prime orders, then the order of <span class="math">\(ab\)</span> is the product, i.e. <span class="math">\(ord(ab) = ord(a)ord(b)\)</span>.</li>
+<li>We first show there are elements of order <span class="math inline">\(q^s\)</span>, where <span class="math inline">\(q^s|p-1\)</span> and <span class="math inline">\(q\)</span> is a prime.</li>
+<li>We then show that if <span class="math inline">\(a,b\)</span> are two elements with relatively prime orders, then the order of <span class="math inline">\(ab\)</span> is the product, i.e. <span class="math inline">\(ord(ab) = ord(a)ord(b)\)</span>.</li>
 <li>We finally combine these two parts to get to our result.</li>
 </ul>
 <h4 id="lemma-1-existence-of-elements-of-prime-power-order">Lemma 1 (existence of elements of prime power order)</h4>
 <blockquote>
-<p>Suppose <span class="math">\(p\)</span> is prime and <span class="math">\(q^s|p-1\)</span>. Then there is an element of order <span class="math">\(q^s\)</span> in <span class="math">\(\mathbb{Z}_p\)</span>.</p>
+<p>Suppose <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(q^s|p-1\)</span>. Then there is an element of order <span class="math inline">\(q^s\)</span> in <span class="math inline">\(\mathbb{Z}_p\)</span>.</p>
 </blockquote>
 <p>Let us proceed with the proof:</p>
 <ul>
-<li>Since <span class="math">\(q^s|p-1=\phi(p)\)</span>, our previous work says that the equation <span class="math">\(x^{q^s} = 1\)</span> has <span class="math">\(q^s\)</span> solutions.</li>
-<li>Similarly, the equation <span class="math">\(x^{q^{s-1}}= 1\)</span> has <span class="math">\(q^{s-1}\)</span> solutions, all of which are also solutions of the previous equation.</li>
-<li>Since <span class="math">\(q^s &gt; q^{s-1}\)</span>, there must be a solution of the first equation that does not solve the other question.</li>
-<li>So there is an element <span class="math">\(\bar a\)</span> such that <span class="math">\(\bar a ^{q^s}= \bar 1\)</span> such that <span class="math">\(\bar a^{q^{s-1}}\neq 1\)</span>.</li>
-<li>All we need is to show that <span class="math">\(\bar a\)</span> has order exactly <span class="math">\(q^s\)</span>.
+<li>Since <span class="math inline">\(q^s|p-1=\phi(p)\)</span>, our previous work says that the equation <span class="math inline">\(x^{q^s} = 1\)</span> has <span class="math inline">\(q^s\)</span> solutions.</li>
+<li>Similarly, the equation <span class="math inline">\(x^{q^{s-1}}= 1\)</span> has <span class="math inline">\(q^{s-1}\)</span> solutions, all of which are also solutions of the previous equation.</li>
+<li>Since <span class="math inline">\(q^s &gt; q^{s-1}\)</span>, there must be a solution of the first equation that does not solve the other question.</li>
+<li>So there is an element <span class="math inline">\(\bar a\)</span> such that <span class="math inline">\(\bar a ^{q^s}= \bar 1\)</span> such that <span class="math inline">\(\bar a^{q^{s-1}}\neq 1\)</span>.</li>
+<li>All we need is to show that <span class="math inline">\(\bar a\)</span> has order exactly <span class="math inline">\(q^s\)</span>.
 <ul>
-<li>The order must divide <span class="math">\(q^s\)</span>, so it must be <span class="math">\(q^k\)</span> for some <span class="math">\(k\leq s\)</span>.</li>
-<li>If <span class="math">\(k &lt; s\)</span> this would have led to <span class="math">\(a^{q^{s-1}}=1\)</span>, which is not true.</li>
-<li>So <span class="math">\(q^s\)</span> is the first power of <span class="math">\(\bar a\)</span> that could equal <span class="math">\(1\)</span>.</li>
+<li>The order must divide <span class="math inline">\(q^s\)</span>, so it must be <span class="math inline">\(q^k\)</span> for some <span class="math inline">\(k\leq s\)</span>.</li>
+<li>If <span class="math inline">\(k &lt; s\)</span> this would have led to <span class="math inline">\(a^{q^{s-1}}=1\)</span>, which is not true.</li>
+<li>So <span class="math inline">\(q^s\)</span> is the first power of <span class="math inline">\(\bar a\)</span> that could equal <span class="math inline">\(1\)</span>.</li>
 </ul></li>
 </ul>
 <p>Let us do a demonstration of this:</p>
-<p>Consider <span class="math">\(p = 37\)</span>. Then <span class="math">\(p-1 = 36 = 2^2 3^2\)</span>. This lemma tells us that there must be elements of each of the order <span class="math">\(1\)</span>, <span class="math">\(2\)</span>, <span class="math">\(2^2=4\)</span>, <span class="math">\(3\)</span>, <span class="math">\(3^2=9\)</span>.</p>
-<p>We focus on orders <span class="math">\(2\)</span> and <span class="math">\(2^2\)</span> for now. <span class="math">\(36 = -1\)</span> is of course of order <span class="math">\(2\)</span>. Note that <span class="math">\(6^2 = 36\)</span>, so <span class="math">\(6\)</span> has order <span class="math">\(4\)</span>. The four solutions to the equation <span class="math">\(x^4=1\)</span> would therefore be <span class="math">\(1, 36=-1,6,-6=31\)</span>.</p>
-<p>Now we want to look for elements of orders <span class="math">\(3\)</span> and <span class="math">\(3^2\)</span>. A simple way to do so is to take any element and raise it to the <span class="math">\(4\)</span>-th power. Since <span class="math">\(a^{36} = 1\)</span>, then for each element we have <span class="math">\((a^4)^9=1\)</span>. So if <span class="math">\(a^4\neq 1\)</span> this is a good place to start.</p>
-<p>To do this, we start with <span class="math">\(2\)</span>, then <span class="math">\(2^4=16\)</span>. We know for sure that <span class="math">\(16^9=1\)</span>, so we check <span class="math">\(16^3 = 4096 = 26\)</span>. This is not 1. Therefore we found an element <span class="math">\(16\)</span> of order <span class="math">\(9\)</span>. We also found an element, <span class="math">\(26\)</span>, of order <span class="math">\(3\)</span>.</p>
+<p>Consider <span class="math inline">\(p = 37\)</span>. Then <span class="math inline">\(p-1 = 36 = 2^2 3^2\)</span>. This lemma tells us that there must be elements of each of the order <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(2^2=4\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(3^2=9\)</span>.</p>
+<p>We focus on orders <span class="math inline">\(2\)</span> and <span class="math inline">\(2^2\)</span> for now. <span class="math inline">\(36 = -1\)</span> is of course of order <span class="math inline">\(2\)</span>. Note that <span class="math inline">\(6^2 = 36\)</span>, so <span class="math inline">\(6\)</span> has order <span class="math inline">\(4\)</span>. The four solutions to the equation <span class="math inline">\(x^4=1\)</span> would therefore be <span class="math inline">\(1, 36=-1,6,-6=31\)</span>.</p>
+<p>Now we want to look for elements of orders <span class="math inline">\(3\)</span> and <span class="math inline">\(3^2\)</span>. A simple way to do so is to take any element and raise it to the <span class="math inline">\(4\)</span>-th power. Since <span class="math inline">\(a^{36} = 1\)</span>, then for each element we have <span class="math inline">\((a^4)^9=1\)</span>. So if <span class="math inline">\(a^4\neq 1\)</span> this is a good place to start.</p>
+<p>To do this, we start with <span class="math inline">\(2\)</span>, then <span class="math inline">\(2^4=16\)</span>. We know for sure that <span class="math inline">\(16^9=1\)</span>, so we check <span class="math inline">\(16^3 = 4096 = 26\)</span>. This is not 1. Therefore we found an element <span class="math inline">\(16\)</span> of order <span class="math inline">\(9\)</span>. We also found an element, <span class="math inline">\(26\)</span>, of order <span class="math inline">\(3\)</span>.</p>
 <p>So in total we have:</p>
 <table>
 <tbody>
@@ -101,44 +101,44 @@
 <p>Now we proceed to the second claim.</p>
 <h4 id="lemma-2-product-of-elements-of-relatively-prime-orders">Lemma 2 (product of elements of relatively prime orders)</h4>
 <blockquote>
-<p>Let <span class="math">\(\bar a, \bar b\in\mathbb{Z}_n\)</span> be reduced residues whose orders <span class="math">\(ord(\bar a)\)</span> and <span class="math">\(ord(\bar b)\)</span> are relatively prime. Then the order of <span class="math">\(\bar a \bar b\)</span> is equal to <span class="math">\(ord(\bar a)\cdot ord(\bar b)\)</span> i.e.:</p>
-<p><span class="math">\[ord(\bar a \bar b) = ord(\bar a)\cdot ord(\bar b)\]</span></p>
+<p>Let <span class="math inline">\(\bar a, \bar b\in\mathbb{Z}_n\)</span> be reduced residues whose orders <span class="math inline">\(ord(\bar a)\)</span> and <span class="math inline">\(ord(\bar b)\)</span> are relatively prime. Then the order of <span class="math inline">\(\bar a \bar b\)</span> is equal to <span class="math inline">\(ord(\bar a)\cdot ord(\bar b)\)</span> i.e.:</p>
+<p><span class="math display">\[ord(\bar a \bar b) = ord(\bar a)\cdot ord(\bar b)\]</span></p>
 </blockquote>
 <p>Let us proceed with the proof:</p>
 <ul>
-<li>Suppose <span class="math">\(ord(\bar a ) = r\)</span> and <span class="math">\(ord(\bar b) = s\)</span>.</li>
-<li>Then first of all it is clear that <span class="math">\((\bar a \bar b)^{rs} = \bar a^{rs} \bar b^{rs} = \bar 1\)</span>.</li>
-<li>Now suppose that for some power <span class="math">\(k\)</span> we have <span class="math">\((\bar a \bar b)^k = \bar 1\)</span>. We will show that <span class="math">\(rs\)</span> divides <span class="math">\(k\)</span>. This will finish the proof.
+<li>Suppose <span class="math inline">\(ord(\bar a ) = r\)</span> and <span class="math inline">\(ord(\bar b) = s\)</span>.</li>
+<li>Then first of all it is clear that <span class="math inline">\((\bar a \bar b)^{rs} = \bar a^{rs} \bar b^{rs} = \bar 1\)</span>.</li>
+<li>Now suppose that for some power <span class="math inline">\(k\)</span> we have <span class="math inline">\((\bar a \bar b)^k = \bar 1\)</span>. We will show that <span class="math inline">\(rs\)</span> divides <span class="math inline">\(k\)</span>. This will finish the proof.
 <ul>
-<li>Raising to <span class="math">\(r\)</span>-th power we see that <span class="math">\((\bar a \bar b)^{rk} = \bar 1\)</span>.</li>
-<li>This becomes <span class="math">\(\bar b^{rk} = \bar 1\)</span>.</li>
-<li>So we must have <span class="math">\(s|rk\)</span>.</li>
-<li>Since <span class="math">\(s\)</span> and <span class="math">\(r\)</span> are relatively prime, then <span class="math">\(s|k\)</span>.</li>
-<li>A similar argument, starting with raising to the <span class="math">\(s\)</span>-th power, will tell us that <span class="math">\(r|k\)</span>.</li>
-<li>Since <span class="math">\(s\)</span> and <span class="math">\(r\)</span> are relatively prime, it must therefore be the case that <span class="math">\(sr|k\)</span>.</li>
+<li>Raising to <span class="math inline">\(r\)</span>-th power we see that <span class="math inline">\((\bar a \bar b)^{rk} = \bar 1\)</span>.</li>
+<li>This becomes <span class="math inline">\(\bar b^{rk} = \bar 1\)</span>.</li>
+<li>So we must have <span class="math inline">\(s|rk\)</span>.</li>
+<li>Since <span class="math inline">\(s\)</span> and <span class="math inline">\(r\)</span> are relatively prime, then <span class="math inline">\(s|k\)</span>.</li>
+<li>A similar argument, starting with raising to the <span class="math inline">\(s\)</span>-th power, will tell us that <span class="math inline">\(r|k\)</span>.</li>
+<li>Since <span class="math inline">\(s\)</span> and <span class="math inline">\(r\)</span> are relatively prime, it must therefore be the case that <span class="math inline">\(sr|k\)</span>.</li>
 </ul></li>
 </ul>
-<p>Let us continue our illustration from before. We have that <span class="math">\(6\)</span> has order <span class="math">\(4\)</span> and <span class="math">\(16\)</span> has order <span class="math">\(9\)</span>, therefore <span class="math">\(6\cdot 16 = 22\)</span> must have order <span class="math">\(6\cdot 9 = 36\)</span>. And we just found our primitive root! To confirm that, you will need to verify that <span class="math">\(ord(22) = 36\)</span> by excluding all other possibilities.</p>
-<p>It should be noted that this is not the only primitive root, in fact there are exactly <span class="math">\(\phi(36) = 12\)</span> primitive roots. But that's a topic for later.</p>
+<p>Let us continue our illustration from before. We have that <span class="math inline">\(6\)</span> has order <span class="math inline">\(4\)</span> and <span class="math inline">\(16\)</span> has order <span class="math inline">\(9\)</span>, therefore <span class="math inline">\(6\cdot 16 = 22\)</span> must have order <span class="math inline">\(6\cdot 9 = 36\)</span>. And we just found our primitive root! To confirm that, you will need to verify that <span class="math inline">\(ord(22) = 36\)</span> by excluding all other possibilities.</p>
+<p>It should be noted that this is not the only primitive root, in fact there are exactly <span class="math inline">\(\phi(36) = 12\)</span> primitive roots. But that's a topic for later.</p>
 <h4 id="proof-of-primitive-root-theorem">Proof of Primitive Root Theorem</h4>
 <p>We now bring it all together.</p>
 <ul>
-<li>Suppose <span class="math">\(p - 1 = q_1^{s_1} q_2^{s_2} \cdots q_m^{s_m}\)</span>, where the <span class="math">\(q_i\)</span> are distict primes.</li>
-<li>By our previous lemma there are elements <span class="math">\(x_1, x_2, \ldots, x_m\)</span> with respective orders <span class="math">\(q_1^{s_1}, q_2^{s_2}, \ldots, q_m^{s_m}\)</span>.</li>
-<li>By our other previous lemma, iterated <span class="math">\(m\)</span> times, their product <span class="math">\(x_1x_2\cdots x_m\)</span> would have order equal to the product of the orders, namely <span class="math">\(p-1\)</span>.</li>
+<li>Suppose <span class="math inline">\(p - 1 = q_1^{s_1} q_2^{s_2} \cdots q_m^{s_m}\)</span>, where the <span class="math inline">\(q_i\)</span> are distict primes.</li>
+<li>By our previous lemma there are elements <span class="math inline">\(x_1, x_2, \ldots, x_m\)</span> with respective orders <span class="math inline">\(q_1^{s_1}, q_2^{s_2}, \ldots, q_m^{s_m}\)</span>.</li>
+<li>By our other previous lemma, iterated <span class="math inline">\(m\)</span> times, their product <span class="math inline">\(x_1x_2\cdots x_m\)</span> would have order equal to the product of the orders, namely <span class="math inline">\(p-1\)</span>.</li>
 <li>That is our primitive root.</li>
 </ul>
 <h4 id="counting-the-primitive-roots">Counting the Primitive Roots</h4>
 <p>Now that we know primitive roots exist, we can determine exactly how many there are. From previous sections, we have:</p>
 <blockquote>
-<p>Let <span class="math">\(p\)</span> be prime and <span class="math">\(\bar a\)</span> be a primitive root modulo <span class="math">\(p\)</span>. Then:</p>
+<p>Let <span class="math inline">\(p\)</span> be prime and <span class="math inline">\(\bar a\)</span> be a primitive root modulo <span class="math inline">\(p\)</span>. Then:</p>
 <ul>
-<li>For any <span class="math">\(j\)</span> we have <span class="math">\(\bar a^j = \frac{p-1}{\gcd(j, p-1)}\)</span>.</li>
-<li><span class="math">\(\bar a^j\)</span> is a primitive root if and only if <span class="math">\(j\)</span> is relatively prime to <span class="math">\(p-1\)</span>.</li>
-<li>There are exactly <span class="math">\(\phi(p-1)\)</span> primitive roots.</li>
+<li>For any <span class="math inline">\(j\)</span> we have <span class="math inline">\(\bar a^j = \frac{p-1}{\gcd(j, p-1)}\)</span>.</li>
+<li><span class="math inline">\(\bar a^j\)</span> is a primitive root if and only if <span class="math inline">\(j\)</span> is relatively prime to <span class="math inline">\(p-1\)</span>.</li>
+<li>There are exactly <span class="math inline">\(\phi(p-1)\)</span> primitive roots.</li>
 </ul>
 </blockquote>
-<p>Let us demonstrate this in our example with <span class="math">\(p=37\)</span>. We already found one primitive root, <span class="math">\(22\)</span>. We now find all primitive roots. They would be all the elements of the form <span class="math">\(22^j\)</span> where <span class="math">\(\gcd(j,36)=1\)</span>. Let us find some of these elements:</p>
+<p>Let us demonstrate this in our example with <span class="math inline">\(p=37\)</span>. We already found one primitive root, <span class="math inline">\(22\)</span>. We now find all primitive roots. They would be all the elements of the form <span class="math inline">\(22^j\)</span> where <span class="math inline">\(\gcd(j,36)=1\)</span>. Let us find some of these elements:</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -163,6 +163,6 @@
 </tr>
 </tbody>
 </table>
-<p>There is a total of <span class="math">\(\phi(36) = \phi(2^2)\phi(3^2) = 12\)</span> such elements.</p>
+<p>There is a total of <span class="math inline">\(\phi(36) = \phi(2^2)\phi(3^2) = 12\)</span> such elements.</p>
 </body>
 </html>

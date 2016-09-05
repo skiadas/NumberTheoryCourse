@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -30,16 +30,16 @@
 <h2 id="notes">Notes</h2>
 <p>The fundamental theorem of arithmetic has two important consequences. One is regarding the divisors of a number, the other is regarding gcd and lcm.</p>
 <blockquote>
-<p>If <span class="math">\(n = p_1^{a_1}\cdots p_k^{a_k}\)</span> is the prime factorization of the number <span class="math">\(n\)</span>, then any positive divisor <span class="math">\(d\)</span> of <span class="math">\(n\)</span> has the form:</p>
-<p><span class="math">\[d = p_1^{b_1}\cdots p_k^{b_k}\]</span></p>
-<p>where each <span class="math">\(b_i\leq a_i\)</span>.</p>
-<p>In particular, there are exactly <span class="math">\((a_1 + 1)(a_2 + 1)\cdots(a_k + 1)\)</span> different positive divisors of <span class="math">\(n\)</span>.</p>
+<p>If <span class="math inline">\(n = p_1^{a_1}\cdots p_k^{a_k}\)</span> is the prime factorization of the number <span class="math inline">\(n\)</span>, then any positive divisor <span class="math inline">\(d\)</span> of <span class="math inline">\(n\)</span> has the form:</p>
+<p><span class="math display">\[d = p_1^{b_1}\cdots p_k^{b_k}\]</span></p>
+<p>where each <span class="math inline">\(b_i\leq a_i\)</span>.</p>
+<p>In particular, there are exactly <span class="math inline">\((a_1 + 1)(a_2 + 1)\cdots(a_k + 1)\)</span> different positive divisors of <span class="math inline">\(n\)</span>.</p>
 </blockquote>
 <blockquote>
-<p>Suppose <span class="math">\(n = p_1^{a_1}\cdots p_k^{a_k}\)</span> and <span class="math">\(m = p_1^{b_1}\cdots p_k^{b_k}\)</span> are prime number factorizations of <span class="math">\(n\)</span> and <span class="math">\(m\)</span>, where we have allowed some of the exponents to equal <span class="math">\(0\)</span> to ensure we have the same list of prime numbers. Then we have:</p>
-<p><span class="math">\[\gcd(n, m) = p_1^{\min(a_1, b_1)}p_2^{\min(a_2,b_2)}\cdots p_k^{\min(a_k, b_k)}\]</span></p>
-<p><span class="math">\[lcm(n, m) = p_1^{\max(a_1, b_1)}p_2^{\max(a_2,b_2)}\cdots p_k^{\max(a_k, b_k)}\]</span></p>
+<p>Suppose <span class="math inline">\(n = p_1^{a_1}\cdots p_k^{a_k}\)</span> and <span class="math inline">\(m = p_1^{b_1}\cdots p_k^{b_k}\)</span> are prime number factorizations of <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, where we have allowed some of the exponents to equal <span class="math inline">\(0\)</span> to ensure we have the same list of prime numbers. Then we have:</p>
+<p><span class="math display">\[\gcd(n, m) = p_1^{\min(a_1, b_1)}p_2^{\min(a_2,b_2)}\cdots p_k^{\min(a_k, b_k)}\]</span></p>
+<p><span class="math display">\[lcm(n, m) = p_1^{\max(a_1, b_1)}p_2^{\max(a_2,b_2)}\cdots p_k^{\max(a_k, b_k)}\]</span></p>
 </blockquote>
-<p>A direct consequence of this is the formula <span class="math">\(nm = \gcd(n, m)lcm(n,m)\)</span> that we saw earlier.</p>
+<p>A direct consequence of this is the formula <span class="math inline">\(nm = \gcd(n, m)lcm(n,m)\)</span> that we saw earlier.</p>
 </body>
 </html>

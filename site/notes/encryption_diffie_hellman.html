@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -26,16 +26,16 @@
 </dl>
 <h2 id="notes">Notes</h2>
 <h3 id="discrete-logarithms">Discrete Logarithms</h3>
-<p>We have seen that when working modulo a prime <span class="math">\(p\)</span> there is a primitive root <span class="math">\(\bar a\in\mathbb{Z}_p\)</span>, with the property that any non-zero element is a power of <span class="math">\(\bar a\)</span>, unique modulo <span class="math">\(p-1\)</span>.</p>
+<p>We have seen that when working modulo a prime <span class="math inline">\(p\)</span> there is a primitive root <span class="math inline">\(\bar a\in\mathbb{Z}_p\)</span>, with the property that any non-zero element is a power of <span class="math inline">\(\bar a\)</span>, unique modulo <span class="math inline">\(p-1\)</span>.</p>
 <blockquote>
-<p>We call the number <span class="math">\(\bar y\in\mathbb{Z}_{p-1}\)</span> the <strong>discrete logarithm</strong> of <span class="math">\(\bar x\in\mathbb{Z}_p\)</span> with base <span class="math">\(\bar a\)</span> if</p>
-<p><span class="math">\[ \bar a ^ y = \bar x\]</span></p>
-<p>We write <span class="math">\(\bar y = \log_{\bar a}(\bar x)\)</span>.</p>
+<p>We call the number <span class="math inline">\(\bar y\in\mathbb{Z}_{p-1}\)</span> the <strong>discrete logarithm</strong> of <span class="math inline">\(\bar x\in\mathbb{Z}_p\)</span> with base <span class="math inline">\(\bar a\)</span> if</p>
+<p><span class="math display">\[ \bar a ^ y = \bar x\]</span></p>
+<p>We write <span class="math inline">\(\bar y = \log_{\bar a}(\bar x)\)</span>.</p>
 <p>We can think of the logarithm by saying that we have a 1-1 and onto function:</p>
-<p><span class="math">\[\mathbb{Z}_{p-1} \longrightarrow \mathbb{Z}_p^*\]</span></p>
-<p>Defined by <span class="math">\(\bar y \mapsto \bar a ^ {\bar y}\)</span>. This function is 1-1 and onto, and turns addition into multiplication, and the discrete logarithm is its inverse.</p>
+<p><span class="math display">\[\mathbb{Z}_{p-1} \longrightarrow \mathbb{Z}_p^*\]</span></p>
+<p>Defined by <span class="math inline">\(\bar y \mapsto \bar a ^ {\bar y}\)</span>. This function is 1-1 and onto, and turns addition into multiplication, and the discrete logarithm is its inverse.</p>
 </blockquote>
-<p>Let's do an example, with <span class="math">\(p = 37\)</span>. In the previous section we showed that <span class="math">\(\bar 2\)</span> is one of the primitive roots. We will find the logarithms of some elements:</p>
+<p>Let's do an example, with <span class="math inline">\(p = 37\)</span>. In the previous section we showed that <span class="math inline">\(\bar 2\)</span> is one of the primitive roots. We will find the logarithms of some elements:</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -88,9 +88,9 @@
 </tr>
 </tbody>
 </table>
-<p>Basically the only efficient way to find the discrete logarithm of a number is to try all the exponents out up to <span class="math">\(p-2\)</span>, noone has found a faster way.</p>
+<p>Basically the only efficient way to find the discrete logarithm of a number is to try all the exponents out up to <span class="math inline">\(p-2\)</span>, noone has found a faster way.</p>
 <blockquote>
-<p>Given <span class="math">\(\bar a\)</span> and <span class="math">\(\bar x\)</span>, there is no efficient way to compute <span class="math">\(\log_{\bar a}(\bar x)\)</span>.</p>
+<p>Given <span class="math inline">\(\bar a\)</span> and <span class="math inline">\(\bar x\)</span>, there is no efficient way to compute <span class="math inline">\(\log_{\bar a}(\bar x)\)</span>.</p>
 </blockquote>
 <h3 id="the-diffie-hellman-protocol">The Diffie-Hellman protocol</h3>
 <p>The problem solved by Diffie, Hellman and Merkle is the following:</p>
@@ -109,18 +109,18 @@
 <p>Here are the steps in the protocol:</p>
 <blockquote>
 <ul>
-<li>Alice and Bob agree on a prime <span class="math">\(p\)</span> and a primitive root <span class="math">\(\bar a\)</span> modulo <span class="math">\(p\)</span>. Everyone is aware of <span class="math">\(p\)</span>, <span class="math">\(\bar a\)</span>.</li>
-<li>Alice randomly chooses a number <span class="math">\(1\leq m \leq p-2\)</span> and computes <span class="math">\(\bar M = \bar a^m\)</span>. She transmits <span class="math">\(\bar M\)</span> to Bob.</li>
-<li>Bob similarly chooses at random a number <span class="math">\(1\leq n \leq p-2\)</span> and computes <span class="math">\(\bar N = \bar a^n\)</span>. Bob transmits <span class="math">\(N\)</span> to Alice.</li>
-<li>Eavesdroppers can see <span class="math">\(M\)</span>, <span class="math">\(N\)</span>, but they do not see and cannot compute <span class="math">\(m\)</span>, <span class="math">\(n\)</span>.</li>
-<li>Both Alice and Bob can compute <span class="math">\(\bar k = \bar a ^ {mn} = N^m = M^n\)</span>. Eavesdroppers cannot.</li>
-<li>Alice finds their secret key by computing <span class="math">\(N^m\)</span>.</li>
-<li>Bob finds their secret key by computing <span class="math">\(M^n\)</span>.</li>
+<li>Alice and Bob agree on a prime <span class="math inline">\(p\)</span> and a primitive root <span class="math inline">\(\bar a\)</span> modulo <span class="math inline">\(p\)</span>. Everyone is aware of <span class="math inline">\(p\)</span>, <span class="math inline">\(\bar a\)</span>.</li>
+<li>Alice randomly chooses a number <span class="math inline">\(1\leq m \leq p-2\)</span> and computes <span class="math inline">\(\bar M = \bar a^m\)</span>. She transmits <span class="math inline">\(\bar M\)</span> to Bob.</li>
+<li>Bob similarly chooses at random a number <span class="math inline">\(1\leq n \leq p-2\)</span> and computes <span class="math inline">\(\bar N = \bar a^n\)</span>. Bob transmits <span class="math inline">\(N\)</span> to Alice.</li>
+<li>Eavesdroppers can see <span class="math inline">\(M\)</span>, <span class="math inline">\(N\)</span>, but they do not see and cannot compute <span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span>.</li>
+<li>Both Alice and Bob can compute <span class="math inline">\(\bar k = \bar a ^ {mn} = N^m = M^n\)</span>. Eavesdroppers cannot.</li>
+<li>Alice finds their secret key by computing <span class="math inline">\(N^m\)</span>.</li>
+<li>Bob finds their secret key by computing <span class="math inline">\(M^n\)</span>.</li>
 </ul>
 </blockquote>
-<p>For a little example, let us revisit our example with <span class="math">\(p = 37\)</span> and <span class="math">\(\bar a = 2\)</span>. We need to pick two random numbers between <span class="math">\(0\)</span> and <span class="math">\(35\)</span>, and let's say we end up with <span class="math">\(m=29\)</span> and <span class="math">\(n=31\)</span>.</p>
-<p>Alice sees the <span class="math">\(m=29\)</span> and she computes <span class="math">\(M = 2^{29} = 2^{10}2^{10}2^9 = 25\cdot 25\cdot 31 = 24\)</span>. She shares that number with Bob.</p>
-<p>Bob sees the <span class="math">\(N=31\)</span> and he computes <span class="math">\(N = 2^{31} = (2^{10})^3 2 = 25^3 2 = 22\)</span>. He shares that number with Alice.</p>
-<p>To find their secret key, Alice would compute <span class="math">\(22^{29} = 19\)</span>. Bob would instead compute <span class="math">\(24^{31} = 19\)</span>. <span class="math">\(19\)</span> is their secret key.</p>
+<p>For a little example, let us revisit our example with <span class="math inline">\(p = 37\)</span> and <span class="math inline">\(\bar a = 2\)</span>. We need to pick two random numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(35\)</span>, and let's say we end up with <span class="math inline">\(m=29\)</span> and <span class="math inline">\(n=31\)</span>.</p>
+<p>Alice sees the <span class="math inline">\(m=29\)</span> and she computes <span class="math inline">\(M = 2^{29} = 2^{10}2^{10}2^9 = 25\cdot 25\cdot 31 = 24\)</span>. She shares that number with Bob.</p>
+<p>Bob sees the <span class="math inline">\(N=31\)</span> and he computes <span class="math inline">\(N = 2^{31} = (2^{10})^3 2 = 25^3 2 = 22\)</span>. He shares that number with Alice.</p>
+<p>To find their secret key, Alice would compute <span class="math inline">\(22^{29} = 19\)</span>. Bob would instead compute <span class="math inline">\(24^{31} = 19\)</span>. <span class="math inline">\(19\)</span> is their secret key.</p>
 </body>
 </html>

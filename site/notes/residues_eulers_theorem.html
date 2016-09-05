@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -29,60 +29,60 @@
 <h3 id="eulers-theorem-1">Euler's Theorem</h3>
 <blockquote>
 <p><strong>Euler's Theorem</strong></p>
-<p>If <span class="math">\(a\)</span> is relatively prime to <span class="math">\(n\)</span>, then: <span class="math">\[a^{\phi(n)}\equiv 1\bmod n\]</span></p>
-<p>Since when <span class="math">\(n\)</span> is prime we have <span class="math">\(\phi(n) = n-1\)</span>, this reverts back to Fermat's theorem.</p>
+<p>If <span class="math inline">\(a\)</span> is relatively prime to <span class="math inline">\(n\)</span>, then: <span class="math display">\[a^{\phi(n)}\equiv 1\bmod n\]</span></p>
+<p>Since when <span class="math inline">\(n\)</span> is prime we have <span class="math inline">\(\phi(n) = n-1\)</span>, this reverts back to Fermat's theorem.</p>
 </blockquote>
 <p>The proof is very similar to the one for Fermat's:</p>
 <ul>
-<li>Consider the set of reduced residues (those relatively prime to <span class="math">\(n\)</span>). Let us denote them by <span class="math">\(b_1\)</span>, <span class="math">\(b_2\)</span>, <span class="math">\(b_3\)</span>, , <span class="math">\(b_{\phi(n)}\)</span>.</li>
-<li>Because <span class="math">\(a\)</span> is also a reduced residue, multiplying those reduced residues by <span class="math">\(a\)</span> gives back reduced residues.</li>
-<li>Multiplying by the (invertible) <span class="math">\(a\)</span> is also 1-1, so it will simply permute them.</li>
-<li>We can then multiply them together: <span class="math">\((ab_1)(ab_2)\cdots(ab_{\phi(n)}) = b_1b_2\cdots b_{\phi(n)}\)</span> in <span class="math">\(\mathbb{Z}_n\)</span>.</li>
-<li>Pulling the <span class="math">\(a\)</span>'s out, we would have: <span class="math">\(a^{\phi(n)}b_1b_2\cdots b_{\phi(n)} = b_1b_2\cdots b_{\phi(n)}\)</span></li>
-<li>The <span class="math">\(b\)</span>'s are invertible, so we can cancel them out from both sides.</li>
-<li>So we end up with <span class="math">\(a^{\phi(n)} = 1\)</span>.</li>
+<li>Consider the set of reduced residues (those relatively prime to <span class="math inline">\(n\)</span>). Let us denote them by <span class="math inline">\(b_1\)</span>, <span class="math inline">\(b_2\)</span>, <span class="math inline">\(b_3\)</span>, , <span class="math inline">\(b_{\phi(n)}\)</span>.</li>
+<li>Because <span class="math inline">\(a\)</span> is also a reduced residue, multiplying those reduced residues by <span class="math inline">\(a\)</span> gives back reduced residues.</li>
+<li>Multiplying by the (invertible) <span class="math inline">\(a\)</span> is also 1-1, so it will simply permute them.</li>
+<li>We can then multiply them together: <span class="math inline">\((ab_1)(ab_2)\cdots(ab_{\phi(n)}) = b_1b_2\cdots b_{\phi(n)}\)</span> in <span class="math inline">\(\mathbb{Z}_n\)</span>.</li>
+<li>Pulling the <span class="math inline">\(a\)</span>'s out, we would have: <span class="math inline">\(a^{\phi(n)}b_1b_2\cdots b_{\phi(n)} = b_1b_2\cdots b_{\phi(n)}\)</span></li>
+<li>The <span class="math inline">\(b\)</span>'s are invertible, so we can cancel them out from both sides.</li>
+<li>So we end up with <span class="math inline">\(a^{\phi(n)} = 1\)</span>.</li>
 </ul>
 <h3 id="repeated-squaring-for-fast-exponentiation">Repeated Squaring for fast exponentiation</h3>
 <p>It is time to discuss how to quickly compute powers of a number. The trick here is repeated squaring. But first:</p>
 <blockquote>
-<p>If <span class="math">\(a\)</span> is relatively prime to <span class="math">\(n\)</span>, and <span class="math">\(k\equiv r\bmod \phi(n)\)</span>, then:</p>
-<p><span class="math">\[a^k \equiv a^r\bmod n\]</span></p>
+<p>If <span class="math inline">\(a\)</span> is relatively prime to <span class="math inline">\(n\)</span>, and <span class="math inline">\(k\equiv r\bmod \phi(n)\)</span>, then:</p>
+<p><span class="math display">\[a^k \equiv a^r\bmod n\]</span></p>
 </blockquote>
-<p>So Euler's and Fermat's theorems can considerably lessen the work involved in computing <span class="math">\(a^k\bmod n\)</span> by reducing the power <span class="math">\(k\)</span> to a number less than <span class="math">\(\phi(n)\)</span>. This might still be a very high number however. This is where repeated squaring comes in.</p>
-<p>Let us suppose for example that we want to compute <span class="math">\(6^{91}\bmod 715\)</span>. The trick to answer that is the <strong>binary representation</strong> of <span class="math">\(91\)</span>: We can find that representation by looking at the powers of <span class="math">\(2\)</span> and taking one power out at a time:</p>
-<p><span class="math">\[91 = 64 + 27 = 64 + 16 + 11 = 64 + 16 + 8 + 3 = 64 + 16 + 8 + 2 + 1\]</span></p>
+<p>So Euler's and Fermat's theorems can considerably lessen the work involved in computing <span class="math inline">\(a^k\bmod n\)</span> by reducing the power <span class="math inline">\(k\)</span> to a number less than <span class="math inline">\(\phi(n)\)</span>. This might still be a very high number however. This is where repeated squaring comes in.</p>
+<p>Let us suppose for example that we want to compute <span class="math inline">\(6^{91}\bmod 715\)</span>. The trick to answer that is the <strong>binary representation</strong> of <span class="math inline">\(91\)</span>: We can find that representation by looking at the powers of <span class="math inline">\(2\)</span> and taking one power out at a time:</p>
+<p><span class="math display">\[91 = 64 + 27 = 64 + 16 + 11 = 64 + 16 + 8 + 3 = 64 + 16 + 8 + 2 + 1\]</span></p>
 <p>Based on this, we can tell that:</p>
-<p><span class="math">\[6^{91} = 6^{64 + 16 + 8 + 2 + 1} = 6^{64}6^{16}6^8 6^2 6^1\]</span></p>
-<p>So if we have computed <span class="math">\(6\)</span> raised to those powers of 2, we can put those answers together to get the answer for all other powers. Let us compute them:</p>
-<p><span class="math">\[6^1 = 6\]</span> <span class="math">\[6^2 = 36\]</span> <span class="math">\[6^4 = 36^2 = 1296 \equiv 581\]</span> <span class="math">\[6^8 = 581^2 = 337561 \equiv 81\]</span> <span class="math">\[6^{16} = 81^2 = 6561 \equiv 126\]</span> <span class="math">\[6^{32} = 126^2 = 15876 \equiv 146\]</span> <span class="math">\[6^{64} = 146^2 = 21316 \equiv 581\]</span></p>
+<p><span class="math display">\[6^{91} = 6^{64 + 16 + 8 + 2 + 1} = 6^{64}6^{16}6^8 6^2 6^1\]</span></p>
+<p>So if we have computed <span class="math inline">\(6\)</span> raised to those powers of 2, we can put those answers together to get the answer for all other powers. Let us compute them:</p>
+<p><span class="math display">\[6^1 = 6\]</span> <span class="math display">\[6^2 = 36\]</span> <span class="math display">\[6^4 = 36^2 = 1296 \equiv 581\]</span> <span class="math display">\[6^8 = 581^2 = 337561 \equiv 81\]</span> <span class="math display">\[6^{16} = 81^2 = 6561 \equiv 126\]</span> <span class="math display">\[6^{32} = 126^2 = 15876 \equiv 146\]</span> <span class="math display">\[6^{64} = 146^2 = 21316 \equiv 581\]</span></p>
 <p>As we compute those, we would at the same time multiply those that we need:</p>
-<p><span class="math">\[6^1 = 6\]</span> <span class="math">\[6^2 \cdot 6^1 = 36\cdot 6 = 216\]</span> <span class="math">\[6^8 \cdot 6^2 \cdot 6^1 = 81 \cdot 216 = 17496 \equiv 336\]</span> <span class="math">\[6^{16} \cdot 6^8 \cdot 6^2 \cdot 6^1 = 126\cdot 336 = 42336 \equiv 151\]</span> <span class="math">\[6^{64} \cdot 6^{16} \cdot 6^8 \cdot 6^2 \cdot 6^1 = 581\cdot 151 = 87731 \equiv 501\]</span></p>
-<p>So that's our final answer, <span class="math">\(6^{91}\equiv 501\bmod 715\)</span>.</p>
-<p>This may have been a lot of work, but let us count the operations: We had to do 7 multiplications to compute <span class="math">\(6\)</span> raised to the powers of <span class="math">\(2\)</span>, and at most another 7 multiplications to combine those powers to get our answer. So a total of <span class="math">\(2\times 7 = 14\)</span> multiplications (instead of <span class="math">\(91\)</span>).</p>
+<p><span class="math display">\[6^1 = 6\]</span> <span class="math display">\[6^2 \cdot 6^1 = 36\cdot 6 = 216\]</span> <span class="math display">\[6^8 \cdot 6^2 \cdot 6^1 = 81 \cdot 216 = 17496 \equiv 336\]</span> <span class="math display">\[6^{16} \cdot 6^8 \cdot 6^2 \cdot 6^1 = 126\cdot 336 = 42336 \equiv 151\]</span> <span class="math display">\[6^{64} \cdot 6^{16} \cdot 6^8 \cdot 6^2 \cdot 6^1 = 581\cdot 151 = 87731 \equiv 501\]</span></p>
+<p>So that's our final answer, <span class="math inline">\(6^{91}\equiv 501\bmod 715\)</span>.</p>
+<p>This may have been a lot of work, but let us count the operations: We had to do 7 multiplications to compute <span class="math inline">\(6\)</span> raised to the powers of <span class="math inline">\(2\)</span>, and at most another 7 multiplications to combine those powers to get our answer. So a total of <span class="math inline">\(2\times 7 = 14\)</span> multiplications (instead of <span class="math inline">\(91\)</span>).</p>
 <blockquote>
-<p>Exponentiation via repeated squaring requires <span class="math">\(2 \log_2(k)\)</span> multiplications.</p>
+<p>Exponentiation via repeated squaring requires <span class="math inline">\(2 \log_2(k)\)</span> multiplications.</p>
 </blockquote>
-<p>This scales very well as the power <span class="math">\(k\)</span> grows.</p>
+<p>This scales very well as the power <span class="math inline">\(k\)</span> grows.</p>
 <p>For completeness, let us describe an algorithm for carrying the fast exponentiation out. Those of you with programming inclinations should try implement the algorithm.</p>
 <blockquote>
 <p><strong>Algorithm for fast exponentiation</strong></p>
-<p>Inputs: <span class="math">\(n\)</span>, <span class="math">\(k\)</span>, <span class="math">\(a\)</span></p>
-<p>Output: <span class="math">\(a^k\bmod n\)</span></p>
+<p>Inputs: <span class="math inline">\(n\)</span>, <span class="math inline">\(k\)</span>, <span class="math inline">\(a\)</span></p>
+<p>Output: <span class="math inline">\(a^k\bmod n\)</span></p>
 <p>Local variables:</p>
 <ul>
 <li>&quot;prod&quot; accumulates the final product</li>
-<li>&quot;<span class="math">\(b\)</span>&quot; keeps track of the power <span class="math">\(a^{2^x}\)</span> as we compute each new one</li>
+<li>&quot;<span class="math inline">\(b\)</span>&quot; keeps track of the power <span class="math inline">\(a^{2^x}\)</span> as we compute each new one</li>
 </ul>
 <p>Steps:</p>
 <ul>
-<li>Initialize: <span class="math">\(\textrm{prod} = 1\)</span>, <span class="math">\(b = a\)</span></li>
+<li>Initialize: <span class="math inline">\(\textrm{prod} = 1\)</span>, <span class="math inline">\(b = a\)</span></li>
 <li>Repeat:
 <ul>
-<li>If <span class="math">\(a=0\)</span> we are done. Return &quot;prod&quot;.</li>
-<li>Divide <span class="math">\(a\)</span> by <span class="math">\(2\)</span>: <span class="math">\(a = 2q + r\)</span>. (You wouldn't need to do this step as is, can rely on using the operators for mod and div. But conceptually it happens.)</li>
-<li>If <span class="math">\(r=1\)</span> we need to use this <span class="math">\(b\)</span>. So <span class="math">\(prod \leftarrow prod\cdot b \bmod n\)</span>.</li>
-<li><span class="math">\(b \leftarrow b \cdot b \bmod n\)</span>.</li>
-<li><span class="math">\(a \leftarrow q\)</span>.</li>
+<li>If <span class="math inline">\(a=0\)</span> we are done. Return &quot;prod&quot;.</li>
+<li>Divide <span class="math inline">\(a\)</span> by <span class="math inline">\(2\)</span>: <span class="math inline">\(a = 2q + r\)</span>. (You wouldn't need to do this step as is, can rely on using the operators for mod and div. But conceptually it happens.)</li>
+<li>If <span class="math inline">\(r=1\)</span> we need to use this <span class="math inline">\(b\)</span>. So <span class="math inline">\(prod \leftarrow prod\cdot b \bmod n\)</span>.</li>
+<li><span class="math inline">\(b \leftarrow b \cdot b \bmod n\)</span>.</li>
+<li><span class="math inline">\(a \leftarrow q\)</span>.</li>
 </ul></li>
 </ul>
 </blockquote>

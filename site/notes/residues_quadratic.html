@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -35,48 +35,48 @@
 <h3 id="quadratic-residues-1">Quadratic residues</h3>
 <p>Quadratic residues are just a fancy way of talking about whether an element is a square or not:</p>
 <blockquote>
-<p>We say that <span class="math">\(0\neq \bar a\in\mathbb{Z}_n\)</span> is a <strong>quadratic residue</strong> modulo <span class="math">\(n\)</span> if there is a <span class="math">\(b\)</span> such that <span class="math">\(\bar b^2 = \bar a\)</span>.</p>
-<p>A non-zero number that is not a quadratic residue is called a <strong>quadratic nonresidue</strong> modulo <span class="math">\(n\)</span>.</p>
-<p><span class="math">\(0\)</span> is considered neither.</p>
+<p>We say that <span class="math inline">\(0\neq \bar a\in\mathbb{Z}_n\)</span> is a <strong>quadratic residue</strong> modulo <span class="math inline">\(n\)</span> if there is a <span class="math inline">\(b\)</span> such that <span class="math inline">\(\bar b^2 = \bar a\)</span>.</p>
+<p>A non-zero number that is not a quadratic residue is called a <strong>quadratic nonresidue</strong> modulo <span class="math inline">\(n\)</span>.</p>
+<p><span class="math inline">\(0\)</span> is considered neither.</p>
 </blockquote>
 <p>Our main goal in this section is to develop ways to determine when a number is a quadratic residue. We start with a simple observation:</p>
 <blockquote>
-<p>If <span class="math">\(p &gt; 2\)</span> is a prime and <span class="math">\(\bar a\in\mathbb{Z}_p\)</span> is a quadratic residue, then there are <em>exactly two</em> elements in <span class="math">\(\mathbb{Z}_p\)</span> such that <span class="math">\(\bar x ^2 = \bar a\)</span>.</p>
-<p>As a consequence, exactly <span class="math">\(\frac{p-1}{2}\)</span> quadratic residues modulo <span class="math">\(p\)</span>, therefore exactly <span class="math">\(\frac{p-1}{2}\)</span> quadratic nonresidues.</p>
+<p>If <span class="math inline">\(p &gt; 2\)</span> is a prime and <span class="math inline">\(\bar a\in\mathbb{Z}_p\)</span> is a quadratic residue, then there are <em>exactly two</em> elements in <span class="math inline">\(\mathbb{Z}_p\)</span> such that <span class="math inline">\(\bar x ^2 = \bar a\)</span>.</p>
+<p>As a consequence, exactly <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic residues modulo <span class="math inline">\(p\)</span>, therefore exactly <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic nonresidues.</p>
 </blockquote>
 <p>To prove this:</p>
 <ul>
-<li>Suppose that <span class="math">\(b^2 = a\)</span>. Then we also have that <span class="math">\((-b)^2 = a\)</span>.</li>
-<li>We must show that <span class="math">\(b\neq -b\)</span>.
+<li>Suppose that <span class="math inline">\(b^2 = a\)</span>. Then we also have that <span class="math inline">\((-b)^2 = a\)</span>.</li>
+<li>We must show that <span class="math inline">\(b\neq -b\)</span>.
 <ul>
-<li>If it were the case, then we would have <span class="math">\(2b=0\)</span>.</li>
-<li>Since <span class="math">\(2\)</span> is invertible when <span class="math">\(p &gt; 2\)</span>, we would get <span class="math">\(b=0\)</span>, which is of course a contradiction.</li>
+<li>If it were the case, then we would have <span class="math inline">\(2b=0\)</span>.</li>
+<li>Since <span class="math inline">\(2\)</span> is invertible when <span class="math inline">\(p &gt; 2\)</span>, we would get <span class="math inline">\(b=0\)</span>, which is of course a contradiction.</li>
 </ul></li>
-<li>Since the polynomial <span class="math">\(x^2-a\)</span> has at most two roots, there cannot be any other solutions.</li>
+<li>Since the polynomial <span class="math inline">\(x^2-a\)</span> has at most two roots, there cannot be any other solutions.</li>
 </ul>
 <h3 id="legendre-symbol">Legendre Symbol</h3>
 <p>The Legendre Symbol is defined as follows:</p>
 <blockquote>
-<p><span class="math">\[\left(\frac{a}{p}\right) = \begin{cases}\phantom{-}1 &amp;\textrm{if }\bar a \textrm{ quadratic residue modulo }p\\
+<p><span class="math display">\[\left(\frac{a}{p}\right) = \begin{cases}\phantom{-}1 &amp;\textrm{if }\bar a \textrm{ quadratic residue modulo }p\\
 -1 &amp;\textrm{if }\bar a \textrm{ quadratic nonresidue modulo }p\\
 \phantom{-}0 &amp;\textrm{if }\bar a = 0\end{cases}\]</span></p>
-<p>Note that this only depends on <span class="math">\(a\bmod p\)</span>, and not on <span class="math">\(a\)</span> itself.</p>
+<p>Note that this only depends on <span class="math inline">\(a\bmod p\)</span>, and not on <span class="math inline">\(a\)</span> itself.</p>
 </blockquote>
-<p>It essentially captures the information as to whether <span class="math">\(a\)</span> is a quadratic residue or not.</p>
+<p>It essentially captures the information as to whether <span class="math inline">\(a\)</span> is a quadratic residue or not.</p>
 <p>Examples:</p>
-<p><span class="math">\(\left(\frac{13}{7}\right) = \left(\frac{6}{7}\right) = -1\)</span> because the only squares modulo <span class="math">\(7\)</span> are 1, 2, 4.</p>
-<p>Similarly <span class="math">\(\left(\frac{11}{7}\right) = \left(\frac{4}{7}\right) = 1\)</span>.</p>
+<p><span class="math inline">\(\left(\frac{13}{7}\right) = \left(\frac{6}{7}\right) = -1\)</span> because the only squares modulo <span class="math inline">\(7\)</span> are 1, 2, 4.</p>
+<p>Similarly <span class="math inline">\(\left(\frac{11}{7}\right) = \left(\frac{4}{7}\right) = 1\)</span>.</p>
 <p>One really important property of the Legendre Symbol is that it is multiplicative:</p>
 <blockquote>
-<p><span class="math">\[\left(\frac{ab}{p}\right) = \left(\frac{a}{p}\right)\left(\frac{b}{p}\right)\]</span></p>
+<p><span class="math display">\[\left(\frac{ab}{p}\right) = \left(\frac{a}{p}\right)\left(\frac{b}{p}\right)\]</span></p>
 </blockquote>
 <p>This will follow from the following results:</p>
 <blockquote>
 <ol style="list-style-type: decimal">
-<li>If <span class="math">\(a\)</span> or <span class="math">\(b\)</span> is divisible by <span class="math">\(p\)</span>, then so is their product.</li>
-<li>If <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are quadratic residues, then so is their product.</li>
-<li>If <span class="math">\(a\)</span> is a quadratic residue and <span class="math">\(b\)</span> is a quadratic nonresidue, then their product is a quadratic nonresidue.</li>
-<li>If <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are quadratic nonresidues, then <span class="math">\(ab\)</span> is a quadratic residue.</li>
+<li>If <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(p\)</span>, then so is their product.</li>
+<li>If <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are quadratic residues, then so is their product.</li>
+<li>If <span class="math inline">\(a\)</span> is a quadratic residue and <span class="math inline">\(b\)</span> is a quadratic nonresidue, then their product is a quadratic nonresidue.</li>
+<li>If <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are quadratic nonresidues, then <span class="math inline">\(ab\)</span> is a quadratic residue.</li>
 </ol>
 </blockquote>
 <p>Let us prove these:</p>
@@ -84,54 +84,54 @@
 <li>Part 1 is straightforward, as is part 2.</li>
 <li>For part 3:
 <ul>
-<li>Note that <span class="math">\(a^{-1}\)</span> is also a quadratic residue.</li>
-<li>If <span class="math">\(ab\)</span> was a quadratic residue, then <span class="math">\(b = a^{-1}ab\)</span> is a quadratic residue by part 2. Which is a contradiction.</li>
+<li>Note that <span class="math inline">\(a^{-1}\)</span> is also a quadratic residue.</li>
+<li>If <span class="math inline">\(ab\)</span> was a quadratic residue, then <span class="math inline">\(b = a^{-1}ab\)</span> is a quadratic residue by part 2. Which is a contradiction.</li>
 </ul></li>
 <li>For part 4:
 <ul>
-<li>Consider the operation: multiplication by <span class="math">\(a\)</span>. We know it must be 1-1.</li>
-<li>By part 3 we know it takes the <span class="math">\(\frac{p-1}{2}\)</span> quadratic residues to the <span class="math">\(\frac{p-1}{2}\)</span> quadratic nonresidues.</li>
-<li>Therefore it must take the remaining <span class="math">\(\frac{p-1}{2}\)</span> quadratic nonresidues to the <span class="math">\(\frac{p-1}{2}\)</span> quadratic residues.</li>
-<li>So <span class="math">\(ab\)</span> must be a quadratic nonresidue.</li>
+<li>Consider the operation: multiplication by <span class="math inline">\(a\)</span>. We know it must be 1-1.</li>
+<li>By part 3 we know it takes the <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic residues to the <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic nonresidues.</li>
+<li>Therefore it must take the remaining <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic nonresidues to the <span class="math inline">\(\frac{p-1}{2}\)</span> quadratic residues.</li>
+<li>So <span class="math inline">\(ab\)</span> must be a quadratic nonresidue.</li>
 </ul></li>
 </ul>
 <h3 id="eulers-identity">Euler's identity</h3>
 <p>Euler's identity offers us another way to determine the quadratic residues.</p>
 <blockquote>
-<p>Let <span class="math">\(p &gt; 2\)</span> and <span class="math">\(0 \neq \bar a\in\mathbb{Z}_p\)</span>.</p>
+<p>Let <span class="math inline">\(p &gt; 2\)</span> and <span class="math inline">\(0 \neq \bar a\in\mathbb{Z}_p\)</span>.</p>
 <ol style="list-style-type: decimal">
-<li>If <span class="math">\(\bar a\)</span> is a quadratic residue, then <span class="math">\(\bar a ^{\frac{p-1}{2}} = \bar 1\)</span>.</li>
-<li>If <span class="math">\(\bar a\)</span> is a quadratic nonresidue, then <span class="math">\(\bar a ^{\frac{p-1}{2}} = -\bar 1\)</span>.</li>
-<li>(Euler's identity) We have: <span class="math">\[\left(\frac{a}{p}\right) = \bar a ^{\frac{p-1}{2}}\bmod p\]</span></li>
+<li>If <span class="math inline">\(\bar a\)</span> is a quadratic residue, then <span class="math inline">\(\bar a ^{\frac{p-1}{2}} = \bar 1\)</span>.</li>
+<li>If <span class="math inline">\(\bar a\)</span> is a quadratic nonresidue, then <span class="math inline">\(\bar a ^{\frac{p-1}{2}} = -\bar 1\)</span>.</li>
+<li>(Euler's identity) We have: <span class="math display">\[\left(\frac{a}{p}\right) = \bar a ^{\frac{p-1}{2}}\bmod p\]</span></li>
 </ol>
 </blockquote>
 <p>Let us prove these:</p>
 <ol style="list-style-type: decimal">
-<li>Suppose <span class="math">\(\bar a\)</span> is a quadratic residue.
+<li>Suppose <span class="math inline">\(\bar a\)</span> is a quadratic residue.
 <ul>
-<li>So <span class="math">\(\bar a = \bar b^2\)</span>.</li>
-<li>Then <span class="math">\(\bar a ^{\frac{p-1}{2}} = b^{p-1} = 1\)</span> by Fermat's theorem.</li>
+<li>So <span class="math inline">\(\bar a = \bar b^2\)</span>.</li>
+<li>Then <span class="math inline">\(\bar a ^{\frac{p-1}{2}} = b^{p-1} = 1\)</span> by Fermat's theorem.</li>
 </ul></li>
-<li>This is the challenging part. Suppose <span class="math">\(\bar a\)</span> is a quadratic nonresidue.
+<li>This is the challenging part. Suppose <span class="math inline">\(\bar a\)</span> is a quadratic nonresidue.
 <ul>
-<li>For each number <span class="math">\(c\)</span> in <span class="math">\(1\)</span>, <span class="math">\(2\)</span>, <span class="math">\(\ldots\)</span>, <span class="math">\(p-1\)</span> modulo <span class="math">\(p\)</span>, we have that <span class="math">\(d=c^{-1}a\neq c\)</span>, as otherwise we would have <span class="math">\(c^2=a\)</span> and <span class="math">\(a\)</span> would have been a quadratic residue.</li>
-<li>So the numbers from <span class="math">\(1\)</span> to <span class="math">\(p-1\)</span> can be grouped up in pairs, each pair multiplying to <span class="math">\(\bar a\)</span>.</li>
-<li>Therefore the product of all those numbers equals <span class="math">\(\bar a ^ {\frac{p-1}{2}}\)</span>.</li>
-<li>By Wilson's theorem the product also equals <span class="math">\(-\bar 1\)</span>.</li>
+<li>For each number <span class="math inline">\(c\)</span> in <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(p-1\)</span> modulo <span class="math inline">\(p\)</span>, we have that <span class="math inline">\(d=c^{-1}a\neq c\)</span>, as otherwise we would have <span class="math inline">\(c^2=a\)</span> and <span class="math inline">\(a\)</span> would have been a quadratic residue.</li>
+<li>So the numbers from <span class="math inline">\(1\)</span> to <span class="math inline">\(p-1\)</span> can be grouped up in pairs, each pair multiplying to <span class="math inline">\(\bar a\)</span>.</li>
+<li>Therefore the product of all those numbers equals <span class="math inline">\(\bar a ^ {\frac{p-1}{2}}\)</span>.</li>
+<li>By Wilson's theorem the product also equals <span class="math inline">\(-\bar 1\)</span>.</li>
 </ul></li>
-<li>This more or less follows from the two previous cases, and the trivial case where <span class="math">\(a=0\bmod p\)</span>.</li>
+<li>This more or less follows from the two previous cases, and the trivial case where <span class="math inline">\(a=0\bmod p\)</span>.</li>
 </ol>
-<p>Use this method to determine the quadratic residues modulo <span class="math">\(7\)</span>.</p>
-<p>There are two important consequences of Euler's identity. The first is that, as we saw previously in a more complicated way, the Legendre symbol behaves multiplicatively. This follows directly as it relates to a (fixed) power of <span class="math">\(a\)</span>, and raising to a power behaves multiplicatively on the base.</p>
-<p>The other is the determination of when <span class="math">\(-1\)</span> is a quadratic residue.</p>
+<p>Use this method to determine the quadratic residues modulo <span class="math inline">\(7\)</span>.</p>
+<p>There are two important consequences of Euler's identity. The first is that, as we saw previously in a more complicated way, the Legendre symbol behaves multiplicatively. This follows directly as it relates to a (fixed) power of <span class="math inline">\(a\)</span>, and raising to a power behaves multiplicatively on the base.</p>
+<p>The other is the determination of when <span class="math inline">\(-1\)</span> is a quadratic residue.</p>
 <h3 id="the-quadratic-character-of--1">The quadratic character of -1</h3>
-<p>Euler's identity gives us a way to find when <span class="math">\(-1\)</span> is a quadratic residue. We have:</p>
+<p>Euler's identity gives us a way to find when <span class="math inline">\(-1\)</span> is a quadratic residue. We have:</p>
 <blockquote>
-<p><span class="math">\[\left(\frac{-1}{p}\right) = (-1)^{\frac{p-1}{2}}\]</span></p>
+<p><span class="math display">\[\left(\frac{-1}{p}\right) = (-1)^{\frac{p-1}{2}}\]</span></p>
 <p>So:</p>
 <ul>
-<li>If <span class="math">\(p =1\bmod 4\)</span>, i.e. <span class="math">\(\frac{p-1}{2}\)</span> is even, then <span class="math">\(-1\)</span> is a quadratic residue modulo <span class="math">\(p\)</span>.</li>
-<li>If <span class="math">\(p =3\bmod 4\)</span>, i.e. <span class="math">\(\frac{p-1}{2}\)</span> is odd, then <span class="math">\(-1\)</span> is a quadratic nonresidue modulo <span class="math">\(p\)</span>.</li>
+<li>If <span class="math inline">\(p =1\bmod 4\)</span>, i.e. <span class="math inline">\(\frac{p-1}{2}\)</span> is even, then <span class="math inline">\(-1\)</span> is a quadratic residue modulo <span class="math inline">\(p\)</span>.</li>
+<li>If <span class="math inline">\(p =3\bmod 4\)</span>, i.e. <span class="math inline">\(\frac{p-1}{2}\)</span> is odd, then <span class="math inline">\(-1\)</span> is a quadratic nonresidue modulo <span class="math inline">\(p\)</span>.</li>
 </ul>
 </blockquote>
 </body>

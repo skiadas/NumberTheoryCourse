@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -31,99 +31,99 @@
 <h3 id="inverses">Inverses</h3>
 <p>The question of a multiplicative inverse is straightforward:</p>
 <blockquote>
-<p>Working modulo <span class="math">\(n\)</span>, for which <span class="math">\(a\)</span> is there an <span class="math">\(x\)</span> such that <span class="math">\(\bar a \cdot \bar x = \bar 1\)</span>?</p>
+<p>Working modulo <span class="math inline">\(n\)</span>, for which <span class="math inline">\(a\)</span> is there an <span class="math inline">\(x\)</span> such that <span class="math inline">\(\bar a \cdot \bar x = \bar 1\)</span>?</p>
 </blockquote>
 <p>This has a suprisingly simple answer, if we simply unravel the definitions:</p>
 <ul>
-<li>The question is when the congruence classes <span class="math">\(\overline{ax} = \bar 1\)</span>.</li>
-<li>By definition, this means that <span class="math">\(ax - 1\)</span> is divisible by <span class="math">\(n\)</span>, i.e. <span class="math">\(ax - 1 = ny\)</span> for some <span class="math">\(y\)</span>.</li>
-<li>In other words, <span class="math">\(ax - ny = 1\)</span>.</li>
-<li>But this just means that <span class="math">\(\gcd(a, n) = 1\)</span>.</li>
+<li>The question is when the congruence classes <span class="math inline">\(\overline{ax} = \bar 1\)</span>.</li>
+<li>By definition, this means that <span class="math inline">\(ax - 1\)</span> is divisible by <span class="math inline">\(n\)</span>, i.e. <span class="math inline">\(ax - 1 = ny\)</span> for some <span class="math inline">\(y\)</span>.</li>
+<li>In other words, <span class="math inline">\(ax - ny = 1\)</span>.</li>
+<li>But this just means that <span class="math inline">\(\gcd(a, n) = 1\)</span>.</li>
 </ul>
 <p>This leads us to:</p>
 <blockquote>
-<p><span class="math">\(\bar a\)</span> has a multiplicative inverse modulo <span class="math">\(n\)</span> if and only if <span class="math">\(\gcd(a,n) = 1\)</span>.</p>
+<p><span class="math inline">\(\bar a\)</span> has a multiplicative inverse modulo <span class="math inline">\(n\)</span> if and only if <span class="math inline">\(\gcd(a,n) = 1\)</span>.</p>
 <p>The Euclidean algorithm is a concrete way to find the inverse.</p>
 </blockquote>
 <h3 id="cancellation">Cancellation</h3>
-<p>An important property of our normal number systems is that of cancellation: If <span class="math">\(ax=ay\)</span> and <span class="math">\(a\neq 0\)</span>, then <span class="math">\(x=y\)</span>. This is called the <strong>cancellation property</strong>.</p>
+<p>An important property of our normal number systems is that of cancellation: If <span class="math inline">\(ax=ay\)</span> and <span class="math inline">\(a\neq 0\)</span>, then <span class="math inline">\(x=y\)</span>. This is called the <strong>cancellation property</strong>.</p>
 <p>In modular arithmetic, a weaker version is true, and is a general truth: Elements with multiplicative inverses can be cancelled.</p>
 <blockquote>
-<p>Working modulo <span class="math">\(n\)</span>, if <span class="math">\(\gcd(a, n) = 1\)</span> and <span class="math">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math">\(\bar x = \bar y\)</span>.</p>
+<p>Working modulo <span class="math inline">\(n\)</span>, if <span class="math inline">\(\gcd(a, n) = 1\)</span> and <span class="math inline">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math inline">\(\bar x = \bar y\)</span>.</p>
 </blockquote>
 <p>This is easy to see:</p>
 <ul>
-<li>Since <span class="math">\(\gcd(a, n) = 1\)</span> then there is a <span class="math">\(b\)</span> such that <span class="math">\(\bar b \bar a = \bar 1\)</span>.</li>
-<li>If <span class="math">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math">\(\bar b \bar a \bar x = \bar b \bar a \bar y\)</span>.</li>
-<li>This leads to <span class="math">\(\bar x = \bar y\)</span>. So <span class="math">\(\bar a\)</span> is cancellable.</li>
+<li>Since <span class="math inline">\(\gcd(a, n) = 1\)</span> then there is a <span class="math inline">\(b\)</span> such that <span class="math inline">\(\bar b \bar a = \bar 1\)</span>.</li>
+<li>If <span class="math inline">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math inline">\(\bar b \bar a \bar x = \bar b \bar a \bar y\)</span>.</li>
+<li>This leads to <span class="math inline">\(\bar x = \bar y\)</span>. So <span class="math inline">\(\bar a\)</span> is cancellable.</li>
 </ul>
 <h3 id="zp-is-a-field">Zp is a field</h3>
-<p>A very special case is when <span class="math">\(n=p\)</span> is prime. Then <span class="math">\(\gcd(a,p) = 1\)</span> if and only if <span class="math">\(p\)</span> doesn't divide <span class="math">\(a\)</span>, if and only if <span class="math">\(\bar a\neq 0\)</span>.</p>
+<p>A very special case is when <span class="math inline">\(n=p\)</span> is prime. Then <span class="math inline">\(\gcd(a,p) = 1\)</span> if and only if <span class="math inline">\(p\)</span> doesn't divide <span class="math inline">\(a\)</span>, if and only if <span class="math inline">\(\bar a\neq 0\)</span>.</p>
 <blockquote>
-<p>When <span class="math">\(p\)</span> is prime, then every non-zero element in <span class="math">\(\mathbb{Z}_p\)</span> has a multiplicative inverse.</p>
-<p>This makes <span class="math">\(\mathbb{Z}_p\)</span> a <strong>field</strong>.</p>
+<p>When <span class="math inline">\(p\)</span> is prime, then every non-zero element in <span class="math inline">\(\mathbb{Z}_p\)</span> has a multiplicative inverse.</p>
+<p>This makes <span class="math inline">\(\mathbb{Z}_p\)</span> a <strong>field</strong>.</p>
 </blockquote>
-<p>The converse is also true: If <span class="math">\(\mathbb{Z}_n\)</span> has multiplicative inverses, then <span class="math">\(n\)</span> must be prime. This follows by the following:</p>
+<p>The converse is also true: If <span class="math inline">\(\mathbb{Z}_n\)</span> has multiplicative inverses, then <span class="math inline">\(n\)</span> must be prime. This follows by the following:</p>
 <blockquote>
 <ul>
-<li>When <span class="math">\(n\)</span> is composite, <span class="math">\(\mathbb{Z}_n\)</span> has zero-divisors.</li>
+<li>When <span class="math inline">\(n\)</span> is composite, <span class="math inline">\(\mathbb{Z}_n\)</span> has zero-divisors.</li>
 <li>A field cannot have zero-divisors.</li>
 </ul>
 </blockquote>
-<p><strong>Zero-divisors</strong> are two non-zero elements <span class="math">\(x\)</span>, <span class="math">\(y\)</span> such that <span class="math">\(xy=0\)</span>, i.e. they are non-zero elements that multiply to zero.</p>
-<p>If <span class="math">\(n\)</span> is a composite number, then <span class="math">\(n = ab\)</span> for some <span class="math">\(0 &lt; a,b&lt; n\)</span>. Then <span class="math">\(\bar a\neq 0\)</span> and <span class="math">\(\bar b\neq 0\)</span>. But <span class="math">\(\bar a \bar b = \bar n = \bar 0\)</span>. So <span class="math">\(\mathbb{Z}_n\)</span> has zero-divisors.</p>
-<p>Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So if <span class="math">\(\bar a \bar b = \bar 0 = \bar a \bar 0\)</span>, and <span class="math">\(\bar a\neq 0\)</span>, then we could cancel it and get <span class="math">\(\bar b = \bar 0\)</span>.</p>
+<p><strong>Zero-divisors</strong> are two non-zero elements <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> such that <span class="math inline">\(xy=0\)</span>, i.e. they are non-zero elements that multiply to zero.</p>
+<p>If <span class="math inline">\(n\)</span> is a composite number, then <span class="math inline">\(n = ab\)</span> for some <span class="math inline">\(0 &lt; a,b&lt; n\)</span>. Then <span class="math inline">\(\bar a\neq 0\)</span> and <span class="math inline">\(\bar b\neq 0\)</span>. But <span class="math inline">\(\bar a \bar b = \bar n = \bar 0\)</span>. So <span class="math inline">\(\mathbb{Z}_n\)</span> has zero-divisors.</p>
+<p>Now we show that a field cannot have zero-divisors. This is because each non-zero element in a field has an inverse, and so is cancellable. So if <span class="math inline">\(\bar a \bar b = \bar 0 = \bar a \bar 0\)</span>, and <span class="math inline">\(\bar a\neq 0\)</span>, then we could cancel it and get <span class="math inline">\(\bar b = \bar 0\)</span>.</p>
 <p>In this case the converse is true also:</p>
 <blockquote>
 <p>Any finite ring with no zero-divisor is a field: Every non-zero element has a multiplicative inverse.</p>
 <p>This is usually phrased as: &quot;Any finite integral domain is a field&quot;</p>
 </blockquote>
-<p>To see this in our specific case, consider a fixed non-zero <span class="math">\(\bar a\)</span>, and consider it as a function that takes <span class="math">\(\bar x\)</span> to <span class="math">\(\bar a \bar x\)</span>. This is a function:</p>
-<p><span class="math">\[\mathbb{Z}_n \to \mathbb{Z}_n\]</span></p>
-<p>Let us see what &quot;no zero-divisors&quot; means for this function: If <span class="math">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math">\(\bar a (\bar x - \bar y) = \bar 0\)</span>. Since we have no zero-divisors and <span class="math">\(\bar a\neq 0\)</span>, it must be that <span class="math">\(\bar x = \bar y\)</span>. In other words:</p>
+<p>To see this in our specific case, consider a fixed non-zero <span class="math inline">\(\bar a\)</span>, and consider it as a function that takes <span class="math inline">\(\bar x\)</span> to <span class="math inline">\(\bar a \bar x\)</span>. This is a function:</p>
+<p><span class="math display">\[\mathbb{Z}_n \to \mathbb{Z}_n\]</span></p>
+<p>Let us see what &quot;no zero-divisors&quot; means for this function: If <span class="math inline">\(\bar a \bar x = \bar a \bar y\)</span>, then <span class="math inline">\(\bar a (\bar x - \bar y) = \bar 0\)</span>. Since we have no zero-divisors and <span class="math inline">\(\bar a\neq 0\)</span>, it must be that <span class="math inline">\(\bar x = \bar y\)</span>. In other words:</p>
 <blockquote>
-<p>No zero-divisors means that the function &quot;multiply by <span class="math">\(\bar a\)</span>&quot; is 1-1.</p>
+<p>No zero-divisors means that the function &quot;multiply by <span class="math inline">\(\bar a\)</span>&quot; is 1-1.</p>
 </blockquote>
-<p>Because the function is between two sets of the same finite size, a function is 1-1 if and only if it is also an onto function. In particular, there must be a <span class="math">\(\bar x\)</span> so that <span class="math">\(\bar a \bar x = \bar 1\)</span>, i.e. <span class="math">\(\bar a\)</span> has a multiplicative inverse.</p>
+<p>Because the function is between two sets of the same finite size, a function is 1-1 if and only if it is also an onto function. In particular, there must be a <span class="math inline">\(\bar x\)</span> so that <span class="math inline">\(\bar a \bar x = \bar 1\)</span>, i.e. <span class="math inline">\(\bar a\)</span> has a multiplicative inverse.</p>
 <p>Let us put all this in order:</p>
 <blockquote>
 <ul>
-<li><span class="math">\(\bar a\)</span> cancellable iff not a zero-divisor.</li>
-<li><span class="math">\(\bar a\)</span> invertible iff <span class="math">\(\bar a \bar x = \bar c\)</span> solvable for all <span class="math">\(c\)</span>.</li>
+<li><span class="math inline">\(\bar a\)</span> cancellable iff not a zero-divisor.</li>
+<li><span class="math inline">\(\bar a\)</span> invertible iff <span class="math inline">\(\bar a \bar x = \bar c\)</span> solvable for all <span class="math inline">\(c\)</span>.</li>
 <li>Invertible elements cannot be zero-divisors.</li>
 <li>Every field is also an integral domain.</li>
-<li>Not all integral domains are fields (e.g. <span class="math">\(\mathbb{Z}\)</span>)</li>
-<li>In <span class="math">\(\mathbb{Z}_n\)</span>, <span class="math">\(\bar a\)</span> is invertible iff <span class="math">\(\gcd(a,n) = 1\)</span>.</li>
-<li>If <span class="math">\(n\)</span> is prime, all nonzero elements in <span class="math">\(\mathbb{Z}_n\)</span> are invertible, so <span class="math">\(\mathbb{Z}_n\)</span> is a field.</li>
-<li>If <span class="math">\(n\)</span> is composite, it has zero-divisors, so <span class="math">\(\mathbb{Z}_n\)</span> is not even an integral domain.</li>
-<li><span class="math">\(\bar a\)</span> is not a zero-divisor iff the function &quot;multiply by a&quot; is 1-1.</li>
-<li><span class="math">\(\bar a\)</span> is invertible iff the function &quot;multiply by a&quot; is onto.</li>
+<li>Not all integral domains are fields (e.g. <span class="math inline">\(\mathbb{Z}\)</span>)</li>
+<li>In <span class="math inline">\(\mathbb{Z}_n\)</span>, <span class="math inline">\(\bar a\)</span> is invertible iff <span class="math inline">\(\gcd(a,n) = 1\)</span>.</li>
+<li>If <span class="math inline">\(n\)</span> is prime, all nonzero elements in <span class="math inline">\(\mathbb{Z}_n\)</span> are invertible, so <span class="math inline">\(\mathbb{Z}_n\)</span> is a field.</li>
+<li>If <span class="math inline">\(n\)</span> is composite, it has zero-divisors, so <span class="math inline">\(\mathbb{Z}_n\)</span> is not even an integral domain.</li>
+<li><span class="math inline">\(\bar a\)</span> is not a zero-divisor iff the function &quot;multiply by a&quot; is 1-1.</li>
+<li><span class="math inline">\(\bar a\)</span> is invertible iff the function &quot;multiply by a&quot; is onto.</li>
 <li>any integral domain with finitely many elements must be a field.</li>
 </ul>
 </blockquote>
 <h3 id="wilsons-theorem">Wilson's Theorem</h3>
-<p>Wilson's Theorem is an interesting observation on the product of elements in <span class="math">\(\mathbb{Z}_n\)</span>. The question concerns the product of all non-zero elements:</p>
+<p>Wilson's Theorem is an interesting observation on the product of elements in <span class="math inline">\(\mathbb{Z}_n\)</span>. The question concerns the product of all non-zero elements:</p>
 <blockquote>
-<p><span class="math">\[\bar 1\cdot \bar 2\cdots \overline{n-1}\]</span></p>
+<p><span class="math display">\[\bar 1\cdot \bar 2\cdots \overline{n-1}\]</span></p>
 </blockquote>
-<p>It is clear that if <span class="math">\(n\)</span> is composite then this must equal <span class="math">\(0\)</span>, since two of those elements multiply to <span class="math">\(0\)</span>.</p>
-<p>We now focus on the case where <span class="math">\(n=p\)</span> is prime. Recall that each non-zero element has a multiplicative inverse.</p>
-<p>So for each of these elements <span class="math">\(\bar x\)</span> there is a multiplicative inverse <span class="math">\(\bar y\)</span>. When we think of the product above, we can pair these numbers up this way, and they cancel each other out.</p>
-<p>The only numbers that can't be paired up are those that are their own inverses, i.e. those where <span class="math">\(\bar x \bar x = \bar 1\)</span>. We now find those numbers.</p>
+<p>It is clear that if <span class="math inline">\(n\)</span> is composite then this must equal <span class="math inline">\(0\)</span>, since two of those elements multiply to <span class="math inline">\(0\)</span>.</p>
+<p>We now focus on the case where <span class="math inline">\(n=p\)</span> is prime. Recall that each non-zero element has a multiplicative inverse.</p>
+<p>So for each of these elements <span class="math inline">\(\bar x\)</span> there is a multiplicative inverse <span class="math inline">\(\bar y\)</span>. When we think of the product above, we can pair these numbers up this way, and they cancel each other out.</p>
+<p>The only numbers that can't be paired up are those that are their own inverses, i.e. those where <span class="math inline">\(\bar x \bar x = \bar 1\)</span>. We now find those numbers.</p>
 <blockquote>
-<p>If <span class="math">\(p\)</span> is prime and <span class="math">\(\bar x\in\mathbb{Z}_p\)</span>, then <span class="math">\(\bar x\)</span> is its own multiplicative inverse if and only if <span class="math">\(\bar x = \bar 1\)</span> or <span class="math">\(\bar x = \overline{p-1}\)</span>.</p>
+<p>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(\bar x\in\mathbb{Z}_p\)</span>, then <span class="math inline">\(\bar x\)</span> is its own multiplicative inverse if and only if <span class="math inline">\(\bar x = \bar 1\)</span> or <span class="math inline">\(\bar x = \overline{p-1}\)</span>.</p>
 </blockquote>
 <ul>
-<li>It is obvious that those two numbers are their own inverses (<span class="math">\(\overline{p-1}\)</span> is just another way of writing <span class="math">\(\overline{-1}\)</span>).</li>
-<li>Suppose <span class="math">\(\bar x ^2 = \bar 1\)</span>.</li>
-<li>Then <span class="math">\(p\)</span> divides <span class="math">\(x^2 - 1 = (x-1)(x+1)\)</span>.</li>
-<li>Since <span class="math">\(p\)</span> is prime, it must divide <span class="math">\(x-1\)</span> or <span class="math">\(x+1\)</span>.</li>
-<li>So <span class="math">\(\bar x = \bar 1\)</span> or <span class="math">\(\bar x = \overline{-1}\)</span>.</li>
+<li>It is obvious that those two numbers are their own inverses (<span class="math inline">\(\overline{p-1}\)</span> is just another way of writing <span class="math inline">\(\overline{-1}\)</span>).</li>
+<li>Suppose <span class="math inline">\(\bar x ^2 = \bar 1\)</span>.</li>
+<li>Then <span class="math inline">\(p\)</span> divides <span class="math inline">\(x^2 - 1 = (x-1)(x+1)\)</span>.</li>
+<li>Since <span class="math inline">\(p\)</span> is prime, it must divide <span class="math inline">\(x-1\)</span> or <span class="math inline">\(x+1\)</span>.</li>
+<li>So <span class="math inline">\(\bar x = \bar 1\)</span> or <span class="math inline">\(\bar x = \overline{-1}\)</span>.</li>
 </ul>
 <blockquote>
 <p><strong>Wilson's Theorem</strong></p>
-<p>If <span class="math">\(p\)</span> is prime, then <span class="math">\(\bar 1\cdot \bar 2\cdots \overline{p-1} = -\bar 1\)</span>.</p>
+<p>If <span class="math inline">\(p\)</span> is prime, then <span class="math inline">\(\bar 1\cdot \bar 2\cdots \overline{p-1} = -\bar 1\)</span>.</p>
 </blockquote>
-<p>This follows from the above observations: All numbers along the way are paired up to multiply to <span class="math">\(1\)</span>, with the exception of <span class="math">\(\bar 1\)</span> and <span class="math">\(\overline{p-1}\)</span>. And these two multiply to <span class="math">\(-1\)</span>.</p>
+<p>This follows from the above observations: All numbers along the way are paired up to multiply to <span class="math inline">\(1\)</span>, with the exception of <span class="math inline">\(\bar 1\)</span> and <span class="math inline">\(\overline{p-1}\)</span>. And these two multiply to <span class="math inline">\(-1\)</span>.</p>
 </body>
 </html>

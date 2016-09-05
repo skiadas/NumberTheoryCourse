@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -36,74 +36,74 @@
 <p>A key component of the proof of quadratic reciprocity is Eisenstein's Lemma, which is a rather surprising:</p>
 <blockquote>
 <p><strong>Eisenstein's Lemma</strong></p>
-<p>Let <span class="math">\(p &gt; 2\)</span> be prime and <span class="math">\(a\)</span> be an <em>odd</em> number that is not a multiple of <span class="math">\(p\)</span>. Let <span class="math">\(q_k\)</span> be the quotient when dividing <span class="math">\(a\cdot k\)</span> by <span class="math">\(p\)</span>. Then we define the quantity:</p>
-<p><span class="math">\[T(a, p) = q_1 + q_2 + \cdots + q_{\frac{k-1}{2}}\]</span></p>
-<p>Then: <span class="math">\[\left(\frac{a}{p}\right) = (-1)^{T(a, p)}\]</span></p>
+<p>Let <span class="math inline">\(p &gt; 2\)</span> be prime and <span class="math inline">\(a\)</span> be an <em>odd</em> number that is not a multiple of <span class="math inline">\(p\)</span>. Let <span class="math inline">\(q_k\)</span> be the quotient when dividing <span class="math inline">\(a\cdot k\)</span> by <span class="math inline">\(p\)</span>. Then we define the quantity:</p>
+<p><span class="math display">\[T(a, p) = q_1 + q_2 + \cdots + q_{\frac{k-1}{2}}\]</span></p>
+<p>Then: <span class="math display">\[\left(\frac{a}{p}\right) = (-1)^{T(a, p)}\]</span></p>
 </blockquote>
 <p>Eisenstein's Lemma offers us yet another way to compute the Legendre Symbol. Let us look at an example, before discussing the proof.</p>
-<p>Consider <span class="math">\(p = 13\)</span> and <span class="math">\(a = 3\)</span>. We have:</p>
+<p>Consider <span class="math inline">\(p = 13\)</span> and <span class="math inline">\(a = 3\)</span>. We have:</p>
 <ul>
-<li><span class="math">\(3\cdot 1 = 3 = 0 \cdot 13 + 3\)</span>. <span class="math">\(q_1 = 0\)</span>.</li>
-<li><span class="math">\(3\cdot 2 = 6 = 0 \cdot 13 + 6\)</span>. <span class="math">\(q_2 = 0\)</span>.</li>
-<li><span class="math">\(3\cdot 3 = 9 = 0 \cdot 13 + 9\)</span>. <span class="math">\(q_3 = 0\)</span>.</li>
-<li><span class="math">\(3\cdot 4 = 12 = 0 \cdot 13 + 12\)</span>. <span class="math">\(q_4 = 0\)</span>.</li>
-<li><span class="math">\(3\cdot 5 = 15 = 1 \cdot 13 + 2\)</span>. <span class="math">\(q_5 = 1\)</span>.</li>
-<li><span class="math">\(3\cdot 6 = 18 = 1 \cdot 13 + 5\)</span>. <span class="math">\(q_6 = 1\)</span>.</li>
-<li><span class="math">\(T(3, 13) = 0 + 0 + 0 + 0 + 1 + 1 = 2\)</span>.</li>
+<li><span class="math inline">\(3\cdot 1 = 3 = 0 \cdot 13 + 3\)</span>. <span class="math inline">\(q_1 = 0\)</span>.</li>
+<li><span class="math inline">\(3\cdot 2 = 6 = 0 \cdot 13 + 6\)</span>. <span class="math inline">\(q_2 = 0\)</span>.</li>
+<li><span class="math inline">\(3\cdot 3 = 9 = 0 \cdot 13 + 9\)</span>. <span class="math inline">\(q_3 = 0\)</span>.</li>
+<li><span class="math inline">\(3\cdot 4 = 12 = 0 \cdot 13 + 12\)</span>. <span class="math inline">\(q_4 = 0\)</span>.</li>
+<li><span class="math inline">\(3\cdot 5 = 15 = 1 \cdot 13 + 2\)</span>. <span class="math inline">\(q_5 = 1\)</span>.</li>
+<li><span class="math inline">\(3\cdot 6 = 18 = 1 \cdot 13 + 5\)</span>. <span class="math inline">\(q_6 = 1\)</span>.</li>
+<li><span class="math inline">\(T(3, 13) = 0 + 0 + 0 + 0 + 1 + 1 = 2\)</span>.</li>
 </ul>
-<p>According to Eisenstein's Lemma, this means that <span class="math">\(3\)</span> is a quadratic residue modulo <span class="math">\(13\)</span>.</p>
-<p>Let us try the same with <span class="math">\(5\)</span>:</p>
+<p>According to Eisenstein's Lemma, this means that <span class="math inline">\(3\)</span> is a quadratic residue modulo <span class="math inline">\(13\)</span>.</p>
+<p>Let us try the same with <span class="math inline">\(5\)</span>:</p>
 <ul>
-<li><span class="math">\(5\cdot 1 = 5 = 0 \cdot 13 + 5\)</span>. <span class="math">\(q_1 = 0\)</span>.</li>
-<li><span class="math">\(5\cdot 2 = 10 = 0 \cdot 13 + 10\)</span>. <span class="math">\(q_2 = 0\)</span>.</li>
-<li><span class="math">\(5\cdot 3 = 15 = 1 \cdot 13 + 2\)</span>. <span class="math">\(q_3 = 1\)</span>.</li>
-<li><span class="math">\(5\cdot 4 = 20 = 1 \cdot 13 + 7\)</span>. <span class="math">\(q_4 = 1\)</span>.</li>
-<li><span class="math">\(5\cdot 5 = 25 = 1 \cdot 13 + 12\)</span>. <span class="math">\(q_5 = 1\)</span>.</li>
-<li><span class="math">\(5\cdot 6 = 30 = 2 \cdot 13 + 4\)</span>. <span class="math">\(q_6 = 2\)</span>.</li>
-<li><span class="math">\(T(5, 13) = 0 + 0 + 1 + 1 + 1 + 2 = 5\)</span>.</li>
+<li><span class="math inline">\(5\cdot 1 = 5 = 0 \cdot 13 + 5\)</span>. <span class="math inline">\(q_1 = 0\)</span>.</li>
+<li><span class="math inline">\(5\cdot 2 = 10 = 0 \cdot 13 + 10\)</span>. <span class="math inline">\(q_2 = 0\)</span>.</li>
+<li><span class="math inline">\(5\cdot 3 = 15 = 1 \cdot 13 + 2\)</span>. <span class="math inline">\(q_3 = 1\)</span>.</li>
+<li><span class="math inline">\(5\cdot 4 = 20 = 1 \cdot 13 + 7\)</span>. <span class="math inline">\(q_4 = 1\)</span>.</li>
+<li><span class="math inline">\(5\cdot 5 = 25 = 1 \cdot 13 + 12\)</span>. <span class="math inline">\(q_5 = 1\)</span>.</li>
+<li><span class="math inline">\(5\cdot 6 = 30 = 2 \cdot 13 + 4\)</span>. <span class="math inline">\(q_6 = 2\)</span>.</li>
+<li><span class="math inline">\(T(5, 13) = 0 + 0 + 1 + 1 + 1 + 2 = 5\)</span>.</li>
 </ul>
-<p>According to Eisenstein's Lemma, this would mean that <span class="math">\(5\)</span> is a quadratic nonresidue modulo <span class="math">\(13\)</span>.</p>
+<p>According to Eisenstein's Lemma, this would mean that <span class="math inline">\(5\)</span> is a quadratic nonresidue modulo <span class="math inline">\(13\)</span>.</p>
 <h3 id="proof-of-eisensteins-lemma">Proof of Eisenstein's Lemma</h3>
 <p>It is time to prove Eisenstein's Lemma, not the easiest of proofs:</p>
-<p>We start with carrying out the divisions for <span class="math">\(k=1,\ldots, h=\frac{p-1}{2}\)</span>:</p>
-<p><span class="math">\[a \cdot k = q_k p + r_k\]</span></p>
-<p>Where the <span class="math">\(r_k\)</span> are the remainders. In accordance to what we looked at earlier, we will define the &quot;signed&quot; remainders:</p>
-<p><span class="math">\[s_k = \begin{cases} r_k-p &amp;\textrm{if }r_k &gt; \frac{p-1}{2}\\
+<p>We start with carrying out the divisions for <span class="math inline">\(k=1,\ldots, h=\frac{p-1}{2}\)</span>:</p>
+<p><span class="math display">\[a \cdot k = q_k p + r_k\]</span></p>
+<p>Where the <span class="math inline">\(r_k\)</span> are the remainders. In accordance to what we looked at earlier, we will define the &quot;signed&quot; remainders:</p>
+<p><span class="math display">\[s_k = \begin{cases} r_k-p &amp;\textrm{if }r_k &gt; \frac{p-1}{2}\\
 r_k&amp;\textrm{if }r_k \leq \frac{p-1}{2}\end{cases}\]</span></p>
-<p>So <span class="math">\(s_k\)</span> are the positive/negative residues we looked at previously. Notice:</p>
-<p><span class="math">\[r_1 + r_2 + \cdots + r_h = (s_1 + s_2 + \cdots + s_h) + g\cdot p\]</span></p>
-<p>where <span class="math">\(g\)</span> is as defined previously.</p>
+<p>So <span class="math inline">\(s_k\)</span> are the positive/negative residues we looked at previously. Notice:</p>
+<p><span class="math display">\[r_1 + r_2 + \cdots + r_h = (s_1 + s_2 + \cdots + s_h) + g\cdot p\]</span></p>
+<p>where <span class="math inline">\(g\)</span> is as defined previously.</p>
 <p>We then add all those formulas up:</p>
-<p><span class="math">\[a (1+2+\cdots + h) = T(a, p) \cdot p + (s_1 + s_2 + \cdots +s_h) + g\cdot p\]</span></p>
-<p>We will examine this relation modulo <span class="math">\(2\)</span>, as we are only interested at the end of the day in raising <span class="math">\(-1\)</span> to those powers. Because <span class="math">\(a\)</span> and <span class="math">\(p\)</span> are both odd, the above formula becomes:</p>
-<p><span class="math">\[1+2+\cdots + h = T(a, p) + (s_1 + s_2 + \cdots +s_h) + g\]</span></p>
-<p>Recall that the <span class="math">\(s_k\)</span> are just a permutation of the <span class="math">\(1,2,\ldots,h\)</span>, with some signs thrown in. Since we are computing modulo <span class="math">\(2\)</span>, the signs do not matter. Therefore the sum <span class="math">\(s_1 + s_2 + \cdots +s_h\)</span> will cancel out the sum <span class="math">\(1+2+\cdots + h\)</span>. Therefore we get:</p>
-<p><span class="math">\[T(a, p) = -g = g\bmod 2\]</span></p>
+<p><span class="math display">\[a (1+2+\cdots + h) = T(a, p) \cdot p + (s_1 + s_2 + \cdots +s_h) + g\cdot p\]</span></p>
+<p>We will examine this relation modulo <span class="math inline">\(2\)</span>, as we are only interested at the end of the day in raising <span class="math inline">\(-1\)</span> to those powers. Because <span class="math inline">\(a\)</span> and <span class="math inline">\(p\)</span> are both odd, the above formula becomes:</p>
+<p><span class="math display">\[1+2+\cdots + h = T(a, p) + (s_1 + s_2 + \cdots +s_h) + g\]</span></p>
+<p>Recall that the <span class="math inline">\(s_k\)</span> are just a permutation of the <span class="math inline">\(1,2,\ldots,h\)</span>, with some signs thrown in. Since we are computing modulo <span class="math inline">\(2\)</span>, the signs do not matter. Therefore the sum <span class="math inline">\(s_1 + s_2 + \cdots +s_h\)</span> will cancel out the sum <span class="math inline">\(1+2+\cdots + h\)</span>. Therefore we get:</p>
+<p><span class="math display">\[T(a, p) = -g = g\bmod 2\]</span></p>
 <p>This completes the proof of Eisenstein's Lemma.</p>
 <h3 id="visualizing-eisensteins-lemma">Visualizing Eisenstein's Lemma</h3>
 <p>A key aspect of using Eisenstein's Lemma for the proof of Quadratic Reciprocity is a visualization of the lemma.</p>
 <blockquote>
-<p>Consider the triangle defined by the lines <span class="math">\(y=\frac{q}{p}\)</span>, <span class="math">\(y=0\)</span> and <span class="math">\(x=\frac{p}{2}\)</span>.</p>
-<p>Then <span class="math">\(T(q,p)\)</span> is equal to the number of &quot;lattice points&quot; in the triangle. Lattice points are points with integer coordinates.</p>
+<p>Consider the triangle defined by the lines <span class="math inline">\(y=\frac{q}{p}\)</span>, <span class="math inline">\(y=0\)</span> and <span class="math inline">\(x=\frac{p}{2}\)</span>.</p>
+<p>Then <span class="math inline">\(T(q,p)\)</span> is equal to the number of &quot;lattice points&quot; in the triangle. Lattice points are points with integer coordinates.</p>
 </blockquote>
-<p>To see this, consider an <span class="math">\(k\)</span> between <span class="math">\(1\)</span> and <span class="math">\(h\)</span>. Then the lattice points under discussion are points <span class="math">\((k,y)\)</span> where <span class="math">\(y\leq \frac{q}{p}k\)</span>. The largest one of those values <span class="math">\(y\)</span> would be what we previously denoted as <span class="math">\(q_k\)</span>. So there are exactly <span class="math">\(q_k\)</span> such values. Adding over all <span class="math">\(k\)</span> from <span class="math">\(1\)</span> to <span class="math">\(h\)</span> results in <span class="math">\(T(q,p)\)</span>.</p>
+<p>To see this, consider an <span class="math inline">\(k\)</span> between <span class="math inline">\(1\)</span> and <span class="math inline">\(h\)</span>. Then the lattice points under discussion are points <span class="math inline">\((k,y)\)</span> where <span class="math inline">\(y\leq \frac{q}{p}k\)</span>. The largest one of those values <span class="math inline">\(y\)</span> would be what we previously denoted as <span class="math inline">\(q_k\)</span>. So there are exactly <span class="math inline">\(q_k\)</span> such values. Adding over all <span class="math inline">\(k\)</span> from <span class="math inline">\(1\)</span> to <span class="math inline">\(h\)</span> results in <span class="math inline">\(T(q,p)\)</span>.</p>
 <h3 id="proof-of-quadratic-reciprocity-1">Proof of Quadratic Reciprocity</h3>
 <p>Finally it is time to finish the proof of our quadratic reciprocity law. It will boil down to the following:</p>
 <blockquote>
-<p>If <span class="math">\(p\neq q\)</span> are odd primes, then:</p>
-<p><span class="math">\[T(p, q) + T(q, p) = \frac{p-1}{2} \times\frac{q-1}{2}\]</span></p>
+<p>If <span class="math inline">\(p\neq q\)</span> are odd primes, then:</p>
+<p><span class="math display">\[T(p, q) + T(q, p) = \frac{p-1}{2} \times\frac{q-1}{2}\]</span></p>
 </blockquote>
 <p>If we take this for granted for the moment, let us review how this relates to the law of quadratic reciprocity:</p>
 <ul>
-<li>Quadratic Reciprocity was restated equivalently as <span class="math">\(\left(\frac{q}{p}\right)\left(\frac{p}{q}\right) = (-1)^{\frac{p-1}{2}\times \frac{q-1}{2}}\)</span>.</li>
-<li>We showed in steps that <span class="math">\(\left(\frac{q}{p}\right) = q^{\frac{p-1}{2}} = (-1)^g = (-1)^{T(q, p)}\)</span>.</li>
-<li>We now show that <span class="math">\(T(p, q) + T(q, p) = \frac{p-1}{2} \times\frac{q-1}{2}\)</span>.</li>
+<li>Quadratic Reciprocity was restated equivalently as <span class="math inline">\(\left(\frac{q}{p}\right)\left(\frac{p}{q}\right) = (-1)^{\frac{p-1}{2}\times \frac{q-1}{2}}\)</span>.</li>
+<li>We showed in steps that <span class="math inline">\(\left(\frac{q}{p}\right) = q^{\frac{p-1}{2}} = (-1)^g = (-1)^{T(q, p)}\)</span>.</li>
+<li>We now show that <span class="math inline">\(T(p, q) + T(q, p) = \frac{p-1}{2} \times\frac{q-1}{2}\)</span>.</li>
 <li><p>We will now be able to say:</p>
-<p><span class="math">\[\left(\frac{q}{p}\right)\left(\frac{p}{q}\right) = (-1)^{T(q, p) + T(p, q)} = (-1)^{\frac{p-1}{2}\times \frac{q-1}{2}}\]</span></p>
+<p><span class="math display">\[\left(\frac{q}{p}\right)\left(\frac{p}{q}\right) = (-1)^{T(q, p) + T(p, q)} = (-1)^{\frac{p-1}{2}\times \frac{q-1}{2}}\]</span></p>
 <p>And this completes the proof.</p></li>
 </ul>
-<p>Now what is left is to prove the formula for <span class="math">\(T(p, q)\)</span>. There is a very elegant argument to it.</p>
-<p>Consider the rectangle with opposing vertices at <span class="math">\((0,0)\)</span> and <span class="math">\(\left(\frac{p}{2},\frac{q}{2}\right)\)</span>. The diagonal through those vertices has equation <span class="math">\(y=\frac{q}{p} x\)</span> and splits it in 2 triangles.</p>
-<p>We now examine the points with integer coordinates (starting at 1) that lie in that rectangle. There are <span class="math">\(\frac{p-1}{2}\times \frac{q-1}{2}\)</span> such points. They are split between the two triangles. Those triangles are what we examined earlier. The points in the lower right one are <span class="math">\(T(q,p)\)</span>, those in the upper left are <span class="math">\(T(p,q)\)</span>. This gives us the desired property.</p>
+<p>Now what is left is to prove the formula for <span class="math inline">\(T(p, q)\)</span>. There is a very elegant argument to it.</p>
+<p>Consider the rectangle with opposing vertices at <span class="math inline">\((0,0)\)</span> and <span class="math inline">\(\left(\frac{p}{2},\frac{q}{2}\right)\)</span>. The diagonal through those vertices has equation <span class="math inline">\(y=\frac{q}{p} x\)</span> and splits it in 2 triangles.</p>
+<p>We now examine the points with integer coordinates (starting at 1) that lie in that rectangle. There are <span class="math inline">\(\frac{p-1}{2}\times \frac{q-1}{2}\)</span> such points. They are split between the two triangles. Those triangles are what we examined earlier. The points in the lower right one are <span class="math inline">\(T(q,p)\)</span>, those in the upper left are <span class="math inline">\(T(p,q)\)</span>. This gives us the desired property.</p>
 </body>
 </html>

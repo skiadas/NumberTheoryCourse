@@ -7,9 +7,9 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet" href="http://skiadas.github.io/css/course.css" type="text/css" />
+<link rel="stylesheet" href="https://skiadas.github.io/css/course.css" type="text/css" />
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </head>
 <body>
@@ -46,17 +46,17 @@
 <h3 id="direct-proofs">Direct proofs</h3>
 <ul>
 <li>Direct proofs simply start from their hypotheses, and move in a logical progression towards their conclusions.</li>
-<li>Example 1: Let <span class="math">\(m\)</span> and <span class="math">\(n\)</span> be two integers. If they are both odd, then their product is also odd.
+<li>Example 1: Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be two integers. If they are both odd, then their product is also odd.
 <ul>
-<li>To be odd means we can write the number as <span class="math">\(2k+1\)</span> where <span class="math">\(k\)</span> is an integer (why is it important to say that last part?)</li>
-<li>We start with the hypothesis: <span class="math">\(m\)</span> and <span class="math">\(n\)</span> are odd, so we can write them as <span class="math">\(m = 2k_1 + 1\)</span> and <span class="math">\(n = 2k_2 + 1\)</span> where <span class="math">\(k_1\)</span> and <span class="math">\(k_2\)</span> are integers.</li>
-<li>Now we compute <span class="math">\(mn = ... = 2(2k_1k_2 + k_1 + k_2) + 1\)</span></li>
-<li>Since the parenthesized part is an integer (why?), we get that <span class="math">\(mn\)</span> has the form required to be an odd integer.</li>
+<li>To be odd means we can write the number as <span class="math inline">\(2k+1\)</span> where <span class="math inline">\(k\)</span> is an integer (why is it important to say that last part?)</li>
+<li>We start with the hypothesis: <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are odd, so we can write them as <span class="math inline">\(m = 2k_1 + 1\)</span> and <span class="math inline">\(n = 2k_2 + 1\)</span> where <span class="math inline">\(k_1\)</span> and <span class="math inline">\(k_2\)</span> are integers.</li>
+<li>Now we compute <span class="math inline">\(mn = ... = 2(2k_1k_2 + k_1 + k_2) + 1\)</span></li>
+<li>Since the parenthesized part is an integer (why?), we get that <span class="math inline">\(mn\)</span> has the form required to be an odd integer.</li>
 </ul></li>
-<li>Example 2: Show that for every integer <span class="math">\(n\)</span>, the expression <span class="math">\(n^2+n\)</span> is necessarily an even number.
+<li>Example 2: Show that for every integer <span class="math inline">\(n\)</span>, the expression <span class="math inline">\(n^2+n\)</span> is necessarily an even number.
 <ul>
-<li>Exercise for the students. You have two cases to deal with: If <span class="math">\(n\)</span> is odd, and if <span class="math">\(n\)</span> is even. Do each separately.</li>
-<li>Together in class: Every integer can be written as <span class="math">\(2n+\epsilon\)</span> where <span class="math">\(\epsilon\)</span> is either 0 or 1. This can bring the two cases together in this case.</li>
+<li>Exercise for the students. You have two cases to deal with: If <span class="math inline">\(n\)</span> is odd, and if <span class="math inline">\(n\)</span> is even. Do each separately.</li>
+<li>Together in class: Every integer can be written as <span class="math inline">\(2n+\epsilon\)</span> where <span class="math inline">\(\epsilon\)</span> is either 0 or 1. This can bring the two cases together in this case.</li>
 </ul></li>
 <li>Food for thought: How do we know that each integer is either even or odd?</li>
 </ul>
@@ -76,8 +76,8 @@
 </blockquote>
 <ul>
 <li>By contradiction: We assume there is one and derive an absurd statement from that assumption.</li>
-<li>Say <span class="math">\(q\)</span> is this &quot;smallest positive rational number&quot;.</li>
-<li>Can we construct a number that is positive and smaller? If we can, that is a contradiction, so <span class="math">\(q\)</span> could not have existed in the first place.</li>
+<li>Say <span class="math inline">\(q\)</span> is this &quot;smallest positive rational number&quot;.</li>
+<li>Can we construct a number that is positive and smaller? If we can, that is a contradiction, so <span class="math inline">\(q\)</span> could not have existed in the first place.</li>
 </ul></li>
 <li>Food for thought:
 <ul>
@@ -86,16 +86,16 @@
 </ul></li>
 <li><p>Contradiction Example 2:</p>
 <blockquote>
-<p>Show that for integers <span class="math">\(m\)</span>, <span class="math">\(n\)</span>, if <span class="math">\(mn\)</span> is odd, then both <span class="math">\(m\)</span> and <span class="math">\(n\)</span> must be odd.</p>
+<p>Show that for integers <span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span>, if <span class="math inline">\(mn\)</span> is odd, then both <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> must be odd.</p>
 </blockquote>
 <ul>
-<li>By way of contradiction, assume that <span class="math">\(mn\)</span> is odd and one of <span class="math">\(m\)</span> or <span class="math">\(n\)</span> is not odd, hence even. Without loss of generality, assume it is <span class="math">\(m\)</span>.</li>
-<li>We know (show separately) that if <span class="math">\(m\)</span> is even then <span class="math">\(mn\)</span> is also even. This contradicts the assumption that <span class="math">\(mn\)</span> was odd.</li>
+<li>By way of contradiction, assume that <span class="math inline">\(mn\)</span> is odd and one of <span class="math inline">\(m\)</span> or <span class="math inline">\(n\)</span> is not odd, hence even. Without loss of generality, assume it is <span class="math inline">\(m\)</span>.</li>
+<li>We know (show separately) that if <span class="math inline">\(m\)</span> is even then <span class="math inline">\(mn\)</span> is also even. This contradicts the assumption that <span class="math inline">\(mn\)</span> was odd.</li>
 </ul></li>
 <li>This is actually best seen as an example of the <strong>contrapositive</strong>:
 <ul>
 <li>Showing &quot;if P then Q&quot; is the same as showing &quot;if not Q then not P&quot;</li>
-<li>In the above example, this would read: If <span class="math">\(m\)</span> or <span class="math">\(n\)</span> is even, then the product <span class="math">\(mn\)</span> is also even.</li>
+<li>In the above example, this would read: If <span class="math inline">\(m\)</span> or <span class="math inline">\(n\)</span> is even, then the product <span class="math inline">\(mn\)</span> is also even.</li>
 <li>Food for thought: Understand why these two are equivalent (page 25 from the book but think about it first).</li>
 </ul></li>
 <li><p>The <strong>converse</strong> of &quot;if P then Q&quot; is &quot;if Q then P&quot;. These are in general not equivalent statements, one could be true while the other is false. (Students: come up with examples)</p></li>
