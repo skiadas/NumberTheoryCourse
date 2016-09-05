@@ -12,7 +12,7 @@ Term
   ~ Fall 2016-2017
 
 Office
-  ~ SCH 121C
+  ~ SCH 121C / LYN 108
 
 Office Hours
   ~ MWF 10am-11am, and by appointment
