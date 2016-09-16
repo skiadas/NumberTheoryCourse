@@ -44,7 +44,7 @@
 <li><p>Consider the set:</p>
 <p><span class="math display">\[S = \{ a - xb \mid x\in\mathbb{Z}, a-xb \geq 0 \}\]</span></p></li>
 <li>This set <span class="math inline">\(S\)</span> is always non-empty (WHY?).</li>
-<li>By the Well-Ordering principle, there must be a smallest element, so there is some <span class="math inline">\(x=q\)</span> that achieves this smallest element in S.</li>
+<li>By the well-ordering principle, there must be a smallest element, so there is some <span class="math inline">\(x=q\)</span> that achieves this smallest element in S.</li>
 <li>Define <span class="math inline">\(r = a-qb\)</span>, which is this smallest element in <span class="math inline">\(S\)</span>.</li>
 <li>Then first of all <span class="math inline">\(r\geq 0\)</span>.</li>
 <li>All that is left is to show that <span class="math inline">\(r &lt; b\)</span>. We proceed by contradiction.
@@ -54,24 +54,25 @@
 <li>So <span class="math inline">\(r - b\)</span> is a number in <span class="math inline">\(S\)</span>, and it's smaller that <span class="math inline">\(r\)</span>, which is a contradiction.</li>
 <li>So it must be the case that <span class="math inline">\(r &lt; b\)</span>.</li>
 </ul></li>
-<li><p>Essentially the Well-Ordering principle captures the idea to &quot;use as many <span class="math inline">\(b\)</span>'s as you can fit&quot;.</p></li>
+<li><p>Essentially the well-ordering principle captures the idea to &quot;use as many <span class="math inline">\(b\)</span>'s as you can fit&quot;.</p></li>
 </ul>
 <p>Proof that they are unique:</p>
 <ul>
-<li><p>This is a simpler contradiction proof. Suppose that we had two ways, so:</p>
+<li><p>This is a simple contradiction proof. Suppose that we had two ways to write <span class="math inline">\(a\)</span>, so:</p>
 <p><span class="math display">\[a = bq + r = bq&#39; + r&#39;\]</span></p></li>
 <li><p>We can rewrite this as:</p>
 <p><span class="math display">\[b(q-q&#39;) = r&#39; - r\]</span></p></li>
-<li>Now this equation has on the left side the product of <span class="math inline">\(b\)</span> with an integer. So unless that integer is <span class="math inline">\(0\)</span>, this product will be either at least <span class="math inline">\(b\)</span> or at most <span class="math inline">\(-b\)</span>.</li>
-<li><p>On the right side it has the difference of two numbers that are <span class="math inline">\(\geq 0\)</span> and <span class="math inline">\(&lt;b\)</span>. So this difference must be:</p>
-<p><span class="math display">\[-b &lt; r&#39; - r &lt; b\]</span></p></li>
-<li><p>So the only way they can equal each other is if they are both <span class="math inline">\(0\)</span>. But then <span class="math inline">\(q=q&#39;\)</span> and <span class="math inline">\(r=r&#39;\)</span>.</p></li>
+<li>If <span class="math inline">\(q\neq q&#39;\)</span>, then we can assume without loss of generality that <span class="math inline">\(q &gt; q&#39;\)</span> and hence that the left-hand-side is positive.</li>
+<li>Now this equation has on the left side the product of <span class="math inline">\(b\)</span> with a positive integer. So unless that integer is <span class="math inline">\(0\)</span>, this product will be at least <span class="math inline">\(b\)</span>.</li>
+<li><p>On the right side we have that <span class="math inline">\(r&#39; &lt; b\)</span> and <span class="math inline">\(r \geq 0\)</span>, so their difference must be:</p>
+<p><span class="math display">\[ r&#39; - r &lt; b\]</span></p></li>
+<li><p>So the only way they can equal each other is if we in fact had <span class="math inline">\(q=q&#39;\)</span>, and then we must also have <span class="math inline">\(r=r&#39;\)</span>.</p></li>
 </ul>
-<p>We call <span class="math inline">\(r\)</span> the <em>remainder</em>, and <span class="math inline">\(q\)</span> the <em>quotient</em>.</p>
+<p>We call <span class="math inline">\(r\)</span> the <em>remainder</em>, and <span class="math inline">\(q\)</span> the <em>quotient</em>. Here is a simple consequence of the division theorem:</p>
 <blockquote>
 <p><span class="math inline">\(b\)</span> divides <span class="math inline">\(a\)</span> if and only if the remainder of dividing <span class="math inline">\(a\)</span> by <span class="math inline">\(b\)</span> is <span class="math inline">\(0\)</span>.</p>
 </blockquote>
-<p>This is fairly straightforward to see.</p>
+<p>This is fairly straightforward to see (DO IT!).</p>
 <p>Here is one nice consequence of the division theorem:</p>
 <blockquote>
 <p>If <span class="math inline">\(a|x\)</span> and <span class="math inline">\(b|x\)</span>, then their least common multiple <span class="math inline">\(lcm(a,b)\)</span> also must divide <span class="math inline">\(x\)</span>.</p>
@@ -93,11 +94,12 @@
 </ul>
 <p>Another important theorem relates to the greatest common divisor:</p>
 <blockquote>
-<ul>
+<p><strong>GCD as a linear combination</strong></p>
+<ol style="list-style-type: decimal">
 <li><span class="math inline">\(\gcd(a,b)\)</span> is an integer linear combination of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</li>
 <li>In fact it is the smallest positive number that is an integer linear combination of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</li>
 <li>If <span class="math inline">\(d|a\)</span> and <span class="math inline">\(d|b\)</span>, then we also have that <span class="math inline">\(d|\gcd(a,b)\)</span>.</li>
-</ul>
+</ol>
 </blockquote>
 <p>To see this:</p>
 <ul>

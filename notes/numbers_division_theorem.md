@@ -38,7 +38,7 @@ Proof that they exist:
     $$S = \{ a - xb \mid x\in\mathbb{Z}, a-xb \geq 0 \}$$
 
 - This set $S$ is always non-empty (WHY?).
-- By the Well-Ordering principle, there must be a smallest element, so there is some $x=q$ that achieves this smallest element in S.
+- By the well-ordering principle, there must be a smallest element, so there is some $x=q$ that achieves this smallest element in S.
 - Define $r = a-qb$, which is this smallest element in $S$.
 - Then first of all $r\geq 0$.
 - All that is left is to show that $r < b$. We proceed by contradiction.
@@ -46,11 +46,11 @@ Proof that they exist:
     - And $r - b = a - (q+1)b$.
     - So $r - b$ is a number in $S$, and it's smaller that $r$, which is a contradiction.
     - So it must be the case that $r < b$.
-- Essentially the Well-Ordering principle captures the idea to "use as many $b$'s as you can fit".
+- Essentially the well-ordering principle captures the idea to "use as many $b$'s as you can fit".
 
 Proof that they are unique:
 
-- This is a simpler contradiction proof. Suppose that we had two ways, so:
+- This is a simple contradiction proof. Suppose that we had two ways to write $a$, so:
 
     $$a = bq + r = bq' + r'$$
 
@@ -58,18 +58,19 @@ Proof that they are unique:
 
     $$b(q-q') = r' - r$$
 
-- Now this equation has on the left side the product of $b$ with an integer. So unless that integer is $0$, this product will be either at least $b$ or at most $-b$.
-- On the right side it has the difference of two numbers that are $\geq 0$ and $<b$. So this difference must be:
+- If $q\neq q'$, then we can assume without loss of generality that $q > q'$ and hence that the left-hand-side is positive.
+- Now this equation has on the left side the product of $b$ with a positive integer. So unless that integer is $0$, this product will be at least $b$.
+- On the right side we have that $r' < b$ and $r \geq 0$, so their difference must be:
 
-    $$-b < r' - r < b$$
+    $$ r' - r < b$$
 
-- So the only way they can equal each other is if they are both $0$. But then $q=q'$ and $r=r'$.
+- So the only way they can equal each other is if we in fact had $q=q'$, and then we must also have $r=r'$.
 
-We call $r$ the *remainder*, and $q$ the *quotient*.
+We call $r$ the *remainder*, and $q$ the *quotient*. Here is a simple consequence of the division theorem:
 
 > $b$ divides $a$ if and only if the remainder of dividing $a$ by $b$ is $0$.
 
-This is fairly straightforward to see.
+This is fairly straightforward to see (DO IT!).
 
 Here is one nice consequence of the division theorem:
 
@@ -90,9 +91,11 @@ To prove this:
 
 Another important theorem relates to the greatest common divisor:
 
-> - $\gcd(a,b)$ is an integer linear combination of $a$ and $b$.
-> - In fact it is the smallest positive number that is an integer linear combination of $a$ and $b$.
-> - If $d|a$ and $d|b$, then we also have that $d|\gcd(a,b)$.
+> **GCD as a linear combination**
+>
+> 1. $\gcd(a,b)$ is an integer linear combination of $a$ and $b$.
+> 2. In fact it is the smallest positive number that is an integer linear combination of $a$ and $b$.
+> 3. If $d|a$ and $d|b$, then we also have that $d|\gcd(a,b)$.
 
 
 To see this:
