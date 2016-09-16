@@ -28,13 +28,13 @@
 <h2 id="notes">Notes</h2>
 <p>The main result in this section is the <strong>Division Theorem</strong>:</p>
 <blockquote>
-<p>For any natural <span class="math inline">\(a\in\mathbb{Z}\)</span>, <span class="math inline">\(b\in\mathbb{N}\)</span>, there are unique integers <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> such that <span class="math inline">\(0\leq r &lt; b\)</span> and:</p>
+<p>For any <span class="math inline">\(a\in\mathbb{Z}\)</span>, <span class="math inline">\(b\in\mathbb{N}\)</span>, there are unique integers <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> such that <span class="math inline">\(0\leq r &lt; b\)</span> and:</p>
 <p><span class="math display">\[a = qb + r\]</span></p>
 </blockquote>
 <p>The intuitive idea is that we add together as many <span class="math inline">\(b\)</span>'s as we can before we reach <span class="math inline">\(a\)</span>. Then whatever remains cannot have any more <span class="math inline">\(b\)</span>'s in it, and it will serve as our <span class="math inline">\(r\)</span>.</p>
 <p>Before we look at the proof, let us look at some consequences of the theorem:</p>
 <ul>
-<li>The fact that every integers is odd or even follows directly, by using <span class="math inline">\(b=2\)</span>.</li>
+<li>The fact that every integer is odd or even follows directly, by using <span class="math inline">\(b=2\)</span>.</li>
 <li>The fact from your homework that every integer was in one of the types A, B, C follows directly, by using <span class="math inline">\(b=3\)</span>.</li>
 </ul>
 <p>Technical proof:</p>
@@ -74,7 +74,7 @@
 <p>This is fairly straightforward to see.</p>
 <p>Here is one nice consequence of the division theorem:</p>
 <blockquote>
-<p>If <span class="math inline">\(a|x\)</span> and <span class="math inline">\(b|x\)</span>, then their least common multiple <span class="math inline">\(lcm(a,b)|x\)</span> also must divide <span class="math inline">\(x\)</span>.</p>
+<p>If <span class="math inline">\(a|x\)</span> and <span class="math inline">\(b|x\)</span>, then their least common multiple <span class="math inline">\(lcm(a,b)\)</span> also must divide <span class="math inline">\(x\)</span>.</p>
 </blockquote>
 <p>To prove this:</p>
 <ul>
@@ -114,7 +114,7 @@
 <li>So <span class="math inline">\(S\)</span> must have a smallest element, call it <span class="math inline">\(D = ax + by\)</span>.</li>
 <li>We have seen that any divisor of both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> must divide their linear combinations.</li>
 <li>So it must be the case that <span class="math inline">\(\gcd(a,b)|D\)</span>, so <span class="math inline">\(\gcd(a,b)\leq D\)</span>.</li>
-<li>We will now show that <span class="math inline">\(D\)</span> must divide <span class="math inline">\(a\)</span>, and consequently must also divide <span class="math inline">\(b\)</span> by symmetry.
+<li>We will now show that <span class="math inline">\(D\)</span> must perfectly divide <span class="math inline">\(a\)</span>, and consequently must also perfectly divide <span class="math inline">\(b\)</span> by symmetry.
 <ul>
 <li>Let us divide <span class="math inline">\(D\)</span> into <span class="math inline">\(a\)</span>: <span class="math inline">\(a = Dm + r\)</span> where <span class="math inline">\(0\leq r &lt; D\)</span>.</li>
 <li>The key observation is that <span class="math inline">\(D-r\)</span> is also in the set <span class="math inline">\(S\)</span>.</li>

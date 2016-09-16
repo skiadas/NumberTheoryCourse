@@ -16,7 +16,7 @@ Challenge 3.5
 
 The main result in this section is the **Division Theorem**:
 
-> For any natural $a\in\mathbb{Z}$, $b\in\mathbb{N}$, there are unique integers $q$ and $r$ such that $0\leq r < b$ and:
+> For any $a\in\mathbb{Z}$, $b\in\mathbb{N}$, there are unique integers $q$ and $r$ such that $0\leq r < b$ and:
 >
 > $$a = qb + r$$
 
@@ -24,7 +24,7 @@ The intuitive idea is that we add together as many $b$'s as we can before we rea
 
 Before we look at the proof, let us look at some consequences of the theorem:
 
-- The fact that every integers is odd or even follows directly, by using $b=2$.
+- The fact that every integer is odd or even follows directly, by using $b=2$.
 - The fact from your homework that every integer was in one of the types A, B, C follows directly, by using $b=3$.
 
 Technical proof:
@@ -73,7 +73,7 @@ This is fairly straightforward to see.
 
 Here is one nice consequence of the division theorem:
 
-> If $a|x$ and $b|x$, then their least common multiple $lcm(a,b)|x$ also must divide $x$.
+> If $a|x$ and $b|x$, then their least common multiple $lcm(a,b)$ also must divide $x$.
 
 To prove this:
 
@@ -109,7 +109,7 @@ To see this:
     - So $S$ must have a smallest element, call it $D = ax + by$.
     - We have seen that any divisor of both $a$ and $b$ must divide their linear combinations.
     - So it must be the case that $\gcd(a,b)|D$, so $\gcd(a,b)\leq D$.
-    - We will now show that $D$ must divide $a$, and consequently must also divide $b$ by symmetry.
+    - We will now show that $D$ must perfectly divide $a$, and consequently must also perfectly divide $b$ by symmetry.
         - Let us divide $D$ into $a$: $a = Dm + r$ where $0\leq r < D$.
         - The key observation is that $D-r$ is also in the set $S$.
         - This is because $r$ is a linear combination of $a$ and $b$.
