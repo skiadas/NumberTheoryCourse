@@ -47,12 +47,11 @@ A week-by-week breakdown of the material.
 ## Week  4 (09/26-09/30)
 
 - Day 1
-    - [Finding all Solutions (cont)](notes/equations_diophantine_all_solutions.md)
     - [Fundamental Theorem of Arithmetic](notes/numbers_fundamental_theorem.md)
-- Day 2
     - [Consequences of Fundamental Theorem](notes/numbers_fta_consequences.md)
-- Day 3
+- Day 2
     - [Modular Arithmetic and Congruences](notes/congruence_intro.md)
+- Day 3
     - [Arithmetic with Congruences](notes/congruence_arithmetic.md)
 
 ## Week  5 (10/03-10/07)
