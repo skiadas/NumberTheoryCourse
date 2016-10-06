@@ -62,15 +62,15 @@ A week-by-week breakdown of the material.
 - Day 2
     - [Congruence Classes as a Number System](notes/congruence_system.md)
 - Day 3
-    - MIDTERM ([Study guide](notes/studyGuide1.md))
+    - [Multiplicative Inverses](notes/congruence_multiplicative_inverses.md)
 
 ## Week  6 (10/10-10/14)
 
 - Day 1
-    - [Multiplicative Inverses](notes/congruence_multiplicative_inverses.md)
-- Day 2
     - [Basics of Encryption](notes/encryption_basic.md)
     - [Encryption via Multiplication](notes/encryption_mult.md)
+- Day 2
+    - MIDTERM ([Study guide](notes/studyGuide1.md))
 - Day 3
     - [Fermat's Little Theorem](notes/congruence_fermats.md)
     - [Assignment 7](assignments/7.md)
